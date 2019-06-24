@@ -5,3 +5,74 @@
 .banner .nav a {
   @extend .nav-link;
 }
+
+.navbar-wrapper {
+  background: white;
+  position: fixed;
+  height: 100vh;
+  width: 105px;
+}
+
+.navbar-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brand {
+  background: url(images/logo.png) center center no-repeat;
+  overflow: hidden;
+  text-indent: -2000px;
+  height: 75px;
+}
+
+.button-burger {
+  height: 115px;
+  border-bottom: 1px solid #c8c8c8;
+  cursor: pointer;
+
+  #bar1,
+  #bar2,
+  #bar3 {
+    transition: all 0.5s $easeOutCubic;
+    transform-origin: center center;
+  }
+
+  &:hover {
+    #bar1 {
+      transform: translateY(13px);
+    }
+
+    #bar2 {
+      transform: scaleX(0);
+    }
+
+    #bar3 {
+      transform: translateY(-13px);
+    }
+  }
+
+  &:active {
+    #bar1 {
+      transform: rotate(42deg) translateY(13px);
+    }
+
+    #bar2 {
+      transform: scaleX(0);
+    }
+
+    #bar3 {
+      transform: rotate(-42deg) translateY(-13px);
+    }
+  }
+}
+
+.button-contact {
+  height: 115px;
+  border-top: 1px solid #c8c8c8;
+}
+
+.svg-container {
+  padding: 45px 35px;
+}

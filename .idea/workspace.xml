@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9531693-14c0-4a9e-b396-2b5be08affcd" name="Default Changelist" comment="" />
+    <list default="true" id="e9531693-14c0-4a9e-b396-2b5be08affcd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/app/themes/bbsp/app/setup.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1395">
+            <state relative-caret-position="1785">
               <caret line="108" column="7" selection-start-line="108" selection-start-column="7" selection-end-line="108" selection-end-column="7" />
             </state>
           </provider>
@@ -88,6 +91,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/themes/bbsp/app/helpers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="105" column="56" lean-forward="true" selection-start-line="105" selection-start-column="56" selection-end-line="105" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -99,6 +111,7 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/web/app/themes/bbsp/resources/assets/config.json" />
         <option value="$PROJECT_DIR$/web/app/themes/bbsp/resources/views/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/web/app/themes/bbsp/resources/views/partials/header.blade.php" />
       </list>
     </option>
@@ -219,9 +232,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -246,12 +260,13 @@
       <option name="presentableId" value="Default" />
       <updated>1558701286082</updated>
       <workItem from="1558701288100" duration="681000" />
-      <workItem from="1558701989296" duration="1908000" />
+      <workItem from="1558701989296" duration="2562000" />
+      <workItem from="1558712790641" duration="3615000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2589000" />
+    <option name="totallyTimeSpent" value="6858000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -265,7 +280,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4994641" visible="true" weight="0.18017058" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4994641" visible="true" weight="0.18176973" />
       <window_info id="Structure" order="1" sideWeight="0.5005359" side_tool="true" weight="0.18017058" />
       <window_info id="Favorites" order="2" sideWeight="0.5005359" side_tool="true" weight="0.18017058" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -279,7 +294,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="10" weight="0.3290461" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3290461" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3290461" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -310,7 +325,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/themes/bbsp/app/setup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
+        <state relative-caret-position="1785">
           <caret line="108" column="7" selection-start-line="108" selection-start-column="7" selection-end-line="108" selection-end-column="7" />
         </state>
       </provider>
@@ -324,6 +339,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/themes/bbsp/resources/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/themes/bbsp/app/helpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="105" column="56" lean-forward="true" selection-start-line="105" selection-start-column="56" selection-end-line="105" selection-end-column="56" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/themes/bbsp/resources/views/partials/head.blade.php">
       <provider selected="true" editor-type-id="text-editor" />

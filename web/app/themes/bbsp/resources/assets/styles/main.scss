@@ -12,6 +12,7 @@
 // @import "~some-node-module";
 
 /** Import theme styles */
+@import "common/custom-functions";
 @import "common/global";
 @import "components/buttons";
 @import "components/comments";

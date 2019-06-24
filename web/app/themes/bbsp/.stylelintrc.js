@@ -27,6 +27,8 @@ module.exports = {
           'responsive',
           'variants',
           'screen',
+          'rule-empty-line-before',
+          'block-no-empty',
         ],
       },
     ],
