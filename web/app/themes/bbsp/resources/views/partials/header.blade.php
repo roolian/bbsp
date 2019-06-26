@@ -1,5 +1,9 @@
 <header class="navbar-wrapper">
-  <div class="navbar-container">
+  <div class="navbar-container container">
+    <div class="brand">
+      <a class="" href="{{ home_url('/') }}" title="{{ get_bloginfo('name', 'display') }}">{{ get_bloginfo('name', 'display') }}</a>
+    </div>
+    
     <div class="button-burger">
       <div class="svg-container">
         <?xml version="1.0" encoding="utf-8"?>
@@ -12,9 +16,7 @@
 
       </div>
     </div>
-    <div class="brand">
-      <a class="" href="{{ home_url('/') }}" title="{{ get_bloginfo('name', 'display') }}">{{ get_bloginfo('name', 'display') }}</a>
-    </div>
+
     <div class="button-contact">
       <div class="svg-container">
         <?xml version="1.0" encoding="utf-8"?>
