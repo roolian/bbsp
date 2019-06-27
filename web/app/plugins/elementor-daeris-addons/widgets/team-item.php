@@ -115,16 +115,6 @@ class Team_Item extends Widget_Base {
 			]
 		);
 
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'title_typography',
-				'label' => __( 'Typography', 'elementor-daeris-addons' ),
-				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-				'selector' => '{{WRAPPER}} .team-item-text-title',
-			]
-		);
-
 		$this->add_control(
 			'hr',
 			[
@@ -137,16 +127,6 @@ class Team_Item extends Widget_Base {
 			[
 				'label' => __( 'Job Title', 'elementor-daeris-addons' ),
 				'type' => Controls_Manager::TEXT,
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'job_typography',
-				'label' => __( 'Typography', 'elementor-daeris-addons' ),
-				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-				'selector' => '{{WRAPPER}} .team-item-text-job',
 			]
 		);
 
@@ -199,15 +179,6 @@ class Team_Item extends Widget_Base {
 			]
 		);
 
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'box_shadow',
-				'label' => __( 'Box Shadow', 'elementor-daeris-addons' ),
-				'selector' => '{{WRAPPER}} .team-item-image',
-			]
-		);
-
 		$this->end_controls_section();
 
 		$this->start_controls_section(
@@ -215,6 +186,35 @@ class Team_Item extends Widget_Base {
 			[
 				'label' => __( 'Style', 'elementor-daeris-addons' ),
 				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'title_typography',
+				'label' => __( 'Typography', 'elementor-daeris-addons' ),
+				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+				'selector' => '{{WRAPPER}} .team-item-text-title',
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'job_typography',
+				'label' => __( 'Typography', 'elementor-daeris-addons' ),
+				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+				'selector' => '{{WRAPPER}} .team-item-text-job',
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'box_shadow',
+				'label' => __( 'Box Shadow', 'elementor-daeris-addons' ),
+				'selector' => '{{WRAPPER}} .team-item-image',
 			]
 		);
 
