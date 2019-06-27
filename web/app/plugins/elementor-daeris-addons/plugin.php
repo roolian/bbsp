@@ -47,6 +47,7 @@ class Plugin {
 	 */
 	public function widget_scripts() {
 		wp_register_script( 'elementor-daeris-addons', plugins_url( '/assets/js/hello-world.js', __FILE__ ), [ 'jquery' ], false, true );
+		wp_enqueue_style('elementor-daeris-addons-styles', plugins_url( '/assets/css/eda-styles.css', __FILE__ ), false, null);
 	}
 
 	/**
@@ -60,6 +61,7 @@ class Plugin {
 	private function include_widgets_files() {
 		require_once( __DIR__ . '/widgets/hello-world.php' );
 		require_once( __DIR__ . '/widgets/inline-editing.php' );
+		require_once( __DIR__ . '/widgets/team-item.php' );
 	}
 
 	/**
@@ -77,6 +79,7 @@ class Plugin {
 		// Register Widgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Hello_World() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Inline_Editing() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Team_Item() );
 	}
 
 	/**

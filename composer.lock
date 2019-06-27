@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "133ee4a8b79e9b0f36e935860bcfa857",
+    "content-hash": "b04cc417ef4649502163a903d3bf192c",
     "packages": [
         {
             "name": "composer/installers",
@@ -229,7 +229,8 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.2.1",
-                "reference": "5.2.1"
+                "reference": "5.2.1",
+                "shasum": null
             },
             "require": {
                 "php": ">=5.3.2",
@@ -519,6 +520,46 @@
                 "environment"
             ],
             "time": "2019-01-30T10:43:17+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/elementor",
+            "version": "2.5.16",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/elementor/",
+                "reference": "tags/2.5.16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.2.5.16.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/elementor/"
+        },
+        {
+            "name": "wpackagist-plugin/wordpress-seo",
+            "version": "11.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
+                "reference": "tags/11.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.11.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordpress-seo/"
         }
     ],
     "packages-dev": [

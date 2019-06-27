@@ -39,7 +39,9 @@
     "oscarotero/env": "^1.1.0",
     "roots/wordpress": "5.2.1",
     "roots/wp-config": "1.0.0",
-    "roots/wp-password-bcrypt": "1.0.0"
+    "roots/wp-password-bcrypt": "1.0.0",
+    "wpackagist-plugin/wordpress-seo": "^11.5",
+    "wpackagist-plugin/elementor": "^2.5"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",

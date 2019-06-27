@@ -8,7 +8,7 @@
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/app/themes/sage",
+  "publicPath": "/app/themes/bbsp",
   "devUrl": "http://bbsp.loc",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
