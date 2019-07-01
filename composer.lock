@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "011644dac0764205158dd2313d573c0b",
+    "content-hash": "0b7100de1a5c3f9fefd723733352e1cf",
     "packages": [
         {
             "name": "composer/installers",
@@ -560,6 +560,46 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/elementor/"
+        },
+        {
+            "name": "wpackagist-plugin/extended-buttons-for-elementor",
+            "version": "1.0.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/extended-buttons-for-elementor/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/extended-buttons-for-elementor.zip?timestamp=1551767613",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/extended-buttons-for-elementor/"
+        },
+        {
+            "name": "wpackagist-plugin/secupress",
+            "version": "1.4.9.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/secupress/",
+                "reference": "tags/1.4.9.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/secupress.1.4.9.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/secupress/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
