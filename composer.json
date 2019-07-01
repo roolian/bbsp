@@ -44,7 +44,7 @@
     "wpackagist-plugin/elementor": "^2.5",
     "wpackagist-plugin/classic-editor": "^1.5",
     "wpackagist-plugin/secupress": "1.4.9.2",
-    "wpackagist-plugin/extended-buttons-for-elementor": "^1.0"
+    "wpackagist-plugin/the-plus-addons-for-elementor-page-builder": "^1.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
