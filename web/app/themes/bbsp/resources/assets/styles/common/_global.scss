@@ -9,6 +9,17 @@
   font-weight: 300;
 }
 
+.popover {
+  @include commonFont();
+
+  font-weight: 400;
+  font-size: 1em;
+
+  .popover-body {
+    padding: 20px;
+  }
+}
+
 body {
   @include commonFont();
 
