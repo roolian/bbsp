@@ -35,7 +35,8 @@ h1 {
   font-weight: 400;
 }
 
-h2 {
+h2,
+.h2 {
   @include titleFont();
 
   font-size: 2em;
