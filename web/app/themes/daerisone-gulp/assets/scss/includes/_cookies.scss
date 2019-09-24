@@ -1,0 +1,43 @@
+.cookies-container {
+  width: 100%;
+  padding: 30px 0;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999998;
+
+  background: transparentize($grey, 0.1);
+
+  font-size: 1.2rem;
+  color: #fff;
+
+  .container {
+    position: relative;
+    //padding-right: 90px;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  p {
+    padding-right: 45px;
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
+#cookies-closer {
+  height: 30px;
+  width: 30px;
+
+  position: absolute;
+  top: 0;
+  right: 15px;
+  background: transparent url("./../img/icons/icon-close.png") center center no-repeat;
+  background-size: cover;
+}

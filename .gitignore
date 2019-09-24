@@ -7,6 +7,8 @@ web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep
 
+web/app/themes/daerisone-gulp/node_modules
+
 # WordPress
 web/wp
 web/.htaccess

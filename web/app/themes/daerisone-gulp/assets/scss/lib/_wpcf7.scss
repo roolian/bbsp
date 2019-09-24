@@ -1,0 +1,25 @@
+//contact
+.wpcf7-form-control-wrap{
+  display: block;
+}
+span.wpcf7-not-valid-tip {
+  position: absolute;
+  width:100%;
+  right:15px;
+  bottom:-20px;
+  font-size: 12px;
+  text-align: right;
+  display:none;
+}
+.wpcf7-not-valid{
+  border-color:#c13d53;
+}
+
+.screen-reader-response{display:none;}
+
+div.wpcf7-validation-errors{
+  border: 1px solid #c13d53;
+  margin: 2em 0 1em 0;
+  padding: 1em;
+  font-size:1.1em;
+}

@@ -1,0 +1,82 @@
+/*
+ * Bootstrap v4.1.1 (https://getbootstrap.com/)
+ * Copyright 2011-2018 The Bootstrap Authors
+ * Copyright 2011-2018 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+
+$grid-columns:                12 ;
+$grid-gutter-width:           50px ;
+$grid-gutter-width-mobile:    30px ;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 860px,
+  xl: 1040px,
+  xxl: 1340px
+);
+$grid-breakpoints: (
+  xs: 0,
+  sm: 567px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1600px
+);
+
+@import "functions";
+@import "variables";
+@import "mixins";
+@import "root";
+@import "reboot";
+@import "type";
+@import "images";
+@import "code";
+@import "grid";
+@import "tables";
+//@import "forms";
+//@import "buttons";
+//@import "transitions";
+//@import "dropdown";
+//@import "button-group";
+//@import "input-group";
+//@import "custom-forms";
+//@import "nav";
+//@import "navbar";
+//@import "card";
+//@import "breadcrumb";
+//@import "pagination";
+//@import "badge";
+//@import "jumbotron";
+//@import "alert";
+//@import "progress";
+//@import "media";
+//@import "list-group";
+//@import "close";
+//@import "modal";
+//@import "tooltip";
+//@import "popover";
+//@import "carousel";
+@import "utilities";
+@import "print";
+ 
+
+
+@include media-breakpoint-down(sm) {
+    .row > .col,
+    .row > [class*="col-"] {
+      padding-right: $grid-gutter-width-mobile/2;
+      padding-left: $grid-gutter-width-mobile/2;
+    }
+    .container{
+      padding-right: $grid-gutter-width-mobile/2;
+      padding-left: $grid-gutter-width-mobile/2;
+    }
+    .row{
+      margin-right: $grid-gutter-width-mobile/-2;
+      margin-left: $grid-gutter-width-mobile/-2;
+    }
+}
+

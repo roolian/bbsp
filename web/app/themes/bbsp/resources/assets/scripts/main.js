@@ -1,8 +1,10 @@
 // import external dependencies
 import 'jquery';
 
+import {flexibility} from 'flexibility';
+
 // Import everything from autoload
-import './autoload/**/*'
+import './autoload/**/*';
 
 // import local dependencies
 import Router from './util/Router';
@@ -19,6 +21,20 @@ const routes = new Router({
   // About Us page, note the change from about-us to aboutUs.
   aboutUs,
 });
+
+function isIE() {
+    var ua = window.navigator.userAgent; //Check the userAgent property of the window.navigator object
+    var msie = ua.indexOf('MSIE '); // IE 10 or older
+    var trident = ua.indexOf('Trident/'); //IE 11
+
+    return (msie > 0 || trident > 0);
+}
+
+if (!isIE()) {
+    console.log(flexibility);
+    flexibility(document.getElementById('flexibility'));
+} 
+
 
 // Load Events
 jQuery(document).ready(() => routes.loadEvents());

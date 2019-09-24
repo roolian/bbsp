@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+// Libs
+//@import 'font-awesome';
+
+// Bootstrap 4
+@import "./lib/bootstrap4";
+// Swiper
+@import './lib/swiper';
+//@import "./includes/plyr";
+// Simple scrollbar
+@import './lib/simple-scrollbar';
+
+//Contact form 7
+@import './lib/wpcf7';
+
+
+//@import 'swiper';
+
+
+
+// Initialize
+@import "./includes/variables"; 
+
+// Mixins
+@import "./includes/mixins";
+
+// Fonts
+@import "./includes/fonts";
+
+// Base
+@import "./includes/base";
+
+// Sidebar
+@import "./includes/sidebar";
+
+// Buttons
+@import './includes/buttons';
+
+// header
+@import './includes/header';
+
+// footer
+@import './includes/footer';
+
+// Slider
+@import './includes/slider';
+
+// Cookies
+@import './includes/cookies';
+

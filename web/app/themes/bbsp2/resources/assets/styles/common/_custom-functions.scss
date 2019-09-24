@@ -1,0 +1,14 @@
+@mixin vertical-align() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Animations */
+$type: cubic-bezier(0, 0, 0, 0.96);
+
+@mixin animate($property , $sec) {
+  -webkit-transition: $property $sec $type;
+  -moz-transition: $property $sec $type;
+  -o-transition: $property $sec $type;
+}

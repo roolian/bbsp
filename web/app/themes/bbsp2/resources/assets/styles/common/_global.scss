@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300,400|Oswald:300,400&display=swap");
+
+@mixin titleFont() {
+  font-family: "Oswald", sans-serif;
+}
+
+@mixin commonFont() {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 300;
+}
+
+.popover {
+  @include commonFont();
+
+  font-weight: 400;
+  font-size: 1em;
+
+  .popover-body {
+    padding: 20px;
+  }
+}
+
+body {
+  @include commonFont();
+
+  background-color: #fff;
+  font-size: 16px;
+}
+
+h1 {
+  @include titleFont();
+
+  font-size: 2.5em;
+  color: #fff;
+  font-weight: 400;
+}
+
+h2,
+.h2 {
+  @include titleFont();
+
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #404040;
+  font-weight: 400;
+  position: relative;
+  //padding-bottom: 0.5em !important;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 60%;
+    height: 2px;
+    background: $red;
+    position: relative;
+    top: -0.6em;
+    bottom: 0;
+  }
+}
+
+h3 {
+  @include commonFont();
+}
+
+h4 {
+  @include titleFont();
+
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 1.3em;
+}

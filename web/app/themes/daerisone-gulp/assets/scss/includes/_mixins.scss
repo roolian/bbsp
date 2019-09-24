@@ -1,0 +1,83 @@
+/*Fond blanc*/
+@mixin vertical-align() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*Animations*/
+$type: cubic-bezier(0, 0, 0, 0.96);
+@mixin animate($property , $sec) {
+  -webkit-transition:   $property $sec $type;
+  -moz-transition:      $property $sec $type;
+  -o-transition:        $property $sec $type;
+}
+
+@mixin subline(){
+  &:after{
+    content:"";
+        display:block;
+        height:1px;
+        width:200px;
+        border-top:1px solid $green;
+        margin-top:10px;
+  }
+}
+
+
+@mixin bloc-margin(){
+  margin:$blocSpace/2 0;
+  @include media-breakpoint-up(lg) { margin:$blocSpace 0;}
+}
+
+
+@mixin cta(){
+  padding:20px 60px 20px 20px;
+  display:inline-block;
+  text-transform:uppercase;
+  color:white;
+  @include fontTitle(medium);
+  font-size:1.25em;
+  background:$softgreen url("./../img/icon-arrow-right-white.png") no-repeat;
+  background-position: right 20px center;
+  margin-bottom:1em;
+  text-align:left;
+  &:hover{
+    color:white;
+  }
+  @include media-breakpoint-up(lg) {
+    padding:25px 70px 25px 30px;
+    background-position: right 30px center;
+  }
+}
+
+
+@mixin cta-light(){
+  border:1px solid $green;
+  color:$dark;
+  background-color:transparent;
+  background-image: url("./../img/icon-arrow-right-green.png");
+  &:hover{
+    color:$dark;
+  }
+}
+
+
+@mixin cta-white(){
+  border-color:white;
+  color:white;
+  background-image: url("./../img/icon-arrow-right-white.png");
+  &:hover{
+    color:white;
+  }
+}
+
+
+@mixin cta-green(){
+  border-color:$green;
+  color:$green;
+  background-image: url("./../img/icon-arrow-right-green.png");
+  &:hover{
+    color:$green;
+  }
+}
