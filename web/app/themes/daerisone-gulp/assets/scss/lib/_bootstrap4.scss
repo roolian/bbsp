@@ -32,8 +32,7 @@ $main-breakpoint: 'md';
 $enable-rounded:false;
 
 $theme-colors: (
-  "primary": #a53835,
-  "secondary":#357549 
+  primary: #525ddc
 );
 
 @import "functions";
@@ -53,8 +52,8 @@ $theme-colors: (
 //@import "button-group";
 //@import "input-group";
 //@import "custom-forms";
-//@import "nav";
-//@import "navbar";
+@import "nav";
+@import "navbar";
 //@import "card";
 //@import "breadcrumb";
 @import "pagination";

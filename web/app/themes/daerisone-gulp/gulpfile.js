@@ -41,9 +41,10 @@ const scriptPaths = [
     './node_modules/jquery/dist/jquery.min.js',
     './node_modules/jquery-migrate/dist/jquery-migrate.min.js',
 
+
     // PLYER
     //'./node_modules/plyr/dist/plyr.min.js',
-    //
+
     './assets/js/lib/simple-scrollbar.min.js',
 
     // BARBA

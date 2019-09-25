@@ -1,125 +1,94 @@
-/*====================================================*/
-/*=======================Header ======================*/
-/*====================================================*/
+.nav-primary .nav li {
+  @extend .nav-item;
+}
 
-.topbar-wrapper{
-  z-index:10000;
-  background-color: white;
-  position:fixed;
-  top:0;
+.nav-primary .nav a {
+  @extend .nav-link;
+
+  color: #000;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.1em;
+}
+
+.navbar-wrapper {
+  //background: red;
+  height: 100px;
+  position: absolute;
+  z-index: 2;
   width: 100%;
-  height:$spaceVertical;
+}
 
-  @include media-breakpoint-up($main-breakpoint) { 
-    position:absolute;
-    padding:0 $spaceHorizontal;
-  }
+.navbar-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  @include animate(all, 0.3s);
-  .topbar-container{
-    height:100%;
-    >.row{
-      height:100%;
-    }
-  }
+.brand {
+  background: url(../images/logo-white-alpha2.png) left center no-repeat;
+  //background-size: contain;
+  overflow: hidden;
+  text-indent: -2000px;
+  height: 100px;
+  width: 100px;
+}
 
-  &.scrolled{
-    padding:15px 0 15px 0;
-    background: white;
-    -webkit-box-shadow: 0 1px 10px 5px rgba(0,0,0,0.3);
-    box-shadow: 0 1px 10px 5px rgba(0,0,0,0.3);
-    .main-menu li {
-      &.btn-resa{
-        border-color:$red;
-        &:hover{
-          background-color:rgba(163,55,52,0.1);
-        }
-      }
-      a{
-        color:$red;
-        &:after{
-          background: $red;
-        }
-      }
-    }
-    .logo-wrapper{
-      max-width:150px;
-      .logo-container{
-        background-image:url(../img/logo/logo-couleur.png);
-        //background-image:url(../img/logo/logo-noir.png);
-      }
-    }
-    .button-burger .icon-burger .bar{
-      background: $red;
-    }
-
+.home {
+  .page-header {
+    display: none;
   }
 }
 
-.logo-wrapper{
-  @include animate(all, 0.3s);
-  .logo-container{
-    background-size: 100%;
-    a{
-      display: block; 
-      height:100%;
-      position:relative;
-      top:-10px;
+.button-burger {
+  display: none;
+  height: 115px;
+  width: 115px;
+  cursor: pointer;
+
+  #bar1,
+  #bar2,
+  #bar3 {
+    transition: all 0.5s $easeOutCubic;
+    transform-origin: center center;
+  }
+
+  &:hover {
+    #bar1 {
+      transform: translateY(13px);
     }
-    img{ 
-      height: 60px;
-      width:auto;
-      @include media-breakpoint-up(md) {
-        height: 60px;
-        width:auto;
-      }
+
+    #bar2 {
+      transform: scaleX(0);
+    }
+
+    #bar3 {
+      transform: translateY(-13px);
+    }
+  }
+
+  &:active {
+    #bar1 {
+      transform: rotate(42deg) translateY(13px);
+    }
+
+    #bar2 {
+      transform: scaleX(0);
+    }
+
+    #bar3 {
+      transform: rotate(-42deg) translateY(-13px);
     }
   }
 }
 
-.navigation-wrapper{
-  position: fixed;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  z-index:1000;
-  transform:translateX(-100%);
-  background:rgba(248, 248, 248, 0.95);
-  padding:$spaceVertical/2 0 ;
-  @include media-breakpoint-up($main-breakpoint) {
-    padding:$spaceVertical 0 $spaceVertical $spaceHorizontal;
-    width:50%;
-    position: absolute;
-  }
-  @include media-breakpoint-up(xl) {
-    width:33%;
-  }
-  .navigation-container{
-    padding: $spaceVertical $spaceHorizontal;
-  }
-  .mobile-main-menu{
-    background-size: 100%;
-  }
-  @include animate(transform, 1s);
-  ul{
-    list-style-type: none;
-    margin:0;
-    padding: 0;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    padding:5px 0 50px 0;
-    li{
-      padding:5px 0;
-    }
-    a{
-      @include fontTitle();
-      font-size:2.1em;
-      display: block;
-    }
-  }
-  &.open{
-    transform:translateX(0);
-  }
+.button-contact {
+  height: 115px;
+}
+
+.svg-container {
+  padding: 45px 35px;
 }
