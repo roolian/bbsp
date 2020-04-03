@@ -239,8 +239,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.3.2",
-                "reference": "5.3.2",
-                "shasum": null
+                "reference": "5.3.2"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -546,9 +545,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/classic-editor.1.5.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/classic-editor.1.5.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -566,9 +563,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.2.9.2.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/elementor.2.9.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -586,9 +581,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1582187293",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1582187293"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -606,9 +599,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/secupress.1.4.9.2.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/secupress.1.4.9.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -626,9 +617,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/the-plus-addons-for-elementor-page-builder.1.1.2.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/the-plus-addons-for-elementor-page-builder.1.1.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -646,9 +635,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/user-role-editor.4.53.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/user-role-editor.4.53.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -666,9 +653,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.13.1.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.13.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
