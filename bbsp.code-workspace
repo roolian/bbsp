@@ -1,11 +1,14 @@
 {
 	"folders": [
-		{
-			"path": "web\\app\\themes\\daerisone-gulp"
-		},
-		{
-			"path": "web\\app\\themes\\daerisone"
-		}
-	],
+        {
+            "path": "web\\app\\themes\\daerisone-gulp"
+        },
+        {
+            "path": "web\\app\\themes\\daerisone"
+        },
+        {
+            "path": "."
+        }
+    ],
     "settings": {}
 }
