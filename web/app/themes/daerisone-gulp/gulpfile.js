@@ -64,7 +64,7 @@ const scriptPaths = [
 
 const scss = () => {
     const plugins = [
-        autoprefixer({ browsers: ['last 2 versions', 'ie >= 9'] }),
+        autoprefixer(),
         cssnano()
     ];
     return gulp.src(paths.scss.src)
