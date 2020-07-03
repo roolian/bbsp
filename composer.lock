@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ebe0a9609039e68167d5964620caac53",
+    "content-hash": "5fc7243a43cfc5b40592755212829d7a",
     "packages": [
         {
             "name": "composer/installers",
@@ -233,16 +233,16 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "5.4.1",
+            "version": "5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "5.4.1"
+                "reference": "5.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.4.1",
-                "reference": "5.4.1",
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.4.2",
+                "reference": "5.4.2",
                 "shasum": null
             },
             "require": {
@@ -267,7 +267,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2020-04-29T18:50:02+00:00"
+            "time": "2020-06-10T21:43:59+00:00"
         },
         {
             "name": "roots/wordpress-core-installer",
@@ -571,15 +571,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "2.9.12",
+            "version": "2.9.13",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/2.9.12"
+                "reference": "tags/2.9.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.2.9.12.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.2.9.13.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -591,7 +591,7 @@
         },
         {
             "name": "wpackagist-plugin/leadin",
-            "version": "7.34.4",
+            "version": "7.35.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/leadin/",
@@ -599,7 +599,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1592231906",
+                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1593702067",
                 "reference": null,
                 "shasum": null
             },
@@ -671,15 +671,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "14.3",
+            "version": "14.4.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/14.3"
+                "reference": "tags/14.4.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.14.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.14.4.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -717,12 +717,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "6d2e5ab854782830911ddd33b7d4649b9f18c10f"
+                "reference": "9ec84501a85a3b0c7b260042ae81a8efb2f234ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/6d2e5ab854782830911ddd33b7d4649b9f18c10f",
-                "reference": "6d2e5ab854782830911ddd33b7d4649b9f18c10f",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/9ec84501a85a3b0c7b260042ae81a8efb2f234ce",
+                "reference": "9ec84501a85a3b0c7b260042ae81a8efb2f234ce",
                 "shasum": ""
             },
             "conflict": {
@@ -817,7 +817,7 @@
                 "monolog/monolog": ">=1.8,<1.12",
                 "namshi/jose": "<2.2",
                 "nzo/url-encryptor-bundle": ">=4,<4.3.2|>=5,<5.0.1",
-                "october/october": ">=1.0.319,<1.0.466",
+                "october/october": ">=1.0.319,<1.0.467",
                 "onelogin/php-saml": "<2.10.4",
                 "oneup/uploader-bundle": "<1.9.3|>=2,<2.1.5",
                 "openid/php-openid": "<2.3",
@@ -984,7 +984,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2020-06-19T13:23:43+00:00"
+            "time": "2020-07-02T17:01:23+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
