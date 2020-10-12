@@ -40,7 +40,7 @@
     "roots/wordpress": "^5.5",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
-    "wpackagist-plugin/wordpress-seo": "^14.2",
+    "wpackagist-plugin/wordpress-seo": "^15.0",
     "wpackagist-plugin/elementor": "^3",
     "wpackagist-plugin/classic-editor": "^1.5",
     "wpackagist-plugin/secupress": "^1.4",
