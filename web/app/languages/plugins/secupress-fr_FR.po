@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - SecuPress Free — WordPress Security - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-07-28 11:33:48+0000\n"
+"PO-Revision-Date: 2021-02-02 21:25:33+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,8 +15,8 @@ msgstr ""
 msgid "You are using <strong>PHP v%1$s</strong>, but the latest supported version is <strong>PHP v%2$s</strong>."
 msgstr "Vous utilisez <strong>PHP %1$s</strong>, mais la dernière version prise en charge est <strong>PHP %2$s</strong>."
 
-#: inc/modules/users-login/settings/move-login.php:60
 #: inc/modules/users-login/settings/double-auth.php:22
+#: inc/modules/users-login/settings/move-login.php:60
 msgid "The %1$s constant is set, you cannot use the %2$s module."
 msgstr "La constante %1$s est en place, vous ne pouvez pas utiliser le module %2$s."
 
@@ -34,7 +34,7 @@ msgstr "Correctif : la liste de blocage d’IP ne fonctionnait pas comme attend
 
 #: inc/admin/upgrader.php:749
 msgid "New Feature: Do not allow User Creation"
-msgstr "Nouvelle fonctionnalité : ne pas autoriser la création d’utilisateurs"
+msgstr "Nouvelle fonctionnalité : ne pas autoriser la création de comptes"
 
 #: inc/admin/upgrader.php:746
 msgid "Read full changelog on secupress.me"
@@ -46,16 +46,16 @@ msgstr "Quoi de neuf dans SecuPress %s"
 
 #: inc/modules/users-login/settings/blacklist-logins.php:43
 msgid "Yes, prevent attacks to exploit user creation"
-msgstr "Oui, éviter l’exploitation de la création d’utilisateurs"
+msgstr "Oui, éviter l’exploitation de la création de comptes"
 
 #: inc/modules/users-login/settings/blacklist-logins.php:37
 #: inc/functions/modules.php:53
 msgid "Prevent User Creation"
-msgstr "Prévenir la création d’utilisateur"
+msgstr "Prévenir la création de comptes"
 
 #: inc/modules/users-login/settings/blacklist-logins.php:32
 msgid "You cannot prevent user creation since your subscriptions are open."
-msgstr "Vous ne pouvez pas prévenir la création d’utilisateur car les abonnements sont ouverts."
+msgstr "Vous ne pouvez pas prévenir la création de comptes car les abonnements sont ouverts."
 
 #: inc/admin/scanner-step-2.php:251
 msgid "You’ll be automatically redirected to the next step,<br>if you are not within 5 minutes, please reload the page or ignore this step."
@@ -306,8 +306,8 @@ msgid "What to do when the old page is triggered?"
 msgstr "Que faire quand l’ancienne page est chargée ?"
 
 #. translators: accessibility text
-#: inc/classes/scanners/class-secupress-scan-wporg.php:77
 #: inc/admin/functions/site-health.php:260
+#: inc/classes/scanners/class-secupress-scan-wporg.php:77
 msgid "(opens in a new tab)"
 msgstr "(dans un nouvel onglet)"
 
@@ -544,7 +544,7 @@ msgstr "Ces options sont désactivées car le fichier %1$s n’est pas en écrit
 
 #: inc/modules/users-login/settings/login-protection.php:65
 msgid "Disconnect or Reset Password of any user in one click."
-msgstr "Déconnecter ou renvoyer un mot de passe à n’importe quel utilisateur."
+msgstr "Déconnecter ou renvoyer son mot de passe à n’importe quel compte, en un clic."
 
 #: inc/functions/modules.php:209
 msgid "Events Alerts"
@@ -648,7 +648,7 @@ msgstr "Déplacer la page de connexion"
 
 #: inc/functions/modules.php:51
 msgid "Forbidden Usernames"
-msgstr "Noms d’utilisateur interdits"
+msgstr "Identifiants interdits"
 
 #: inc/functions/modules.php:50
 msgid "Ask Old Password"
@@ -668,7 +668,7 @@ msgstr "PasswordLess authentification"
 
 #: inc/functions/modules.php:44
 msgid "Ban Non Existing Users"
-msgstr "Bannir les noms d'utilisateurs inexistants"
+msgstr "Bannir les comptes inexistants"
 
 #: inc/functions/modules.php:43
 msgid "Limit Login Attempts"
@@ -773,12 +773,12 @@ msgstr "Partager ça"
 
 #: inc/modules/users-login/settings/blacklist-logins.php:24
 msgid "Yes, stop user and author enumeration"
-msgstr "Oui, stopper l’énumération des utilisateurs et auteurs"
+msgstr "Oui, stopper l’énumération des comptes et auteurs/autrices"
 
 #: inc/modules/users-login/settings/blacklist-logins.php:19
 #: inc/functions/modules.php:52
 msgid "Stop User Enumeration"
-msgstr "Stopper l’énumération des utilisateurs"
+msgstr "Stopper l’énumération des comptes"
 
 #: inc/modules/users-login/plugins/stop-user-enumeration.php:68
 msgid "Sorry, you are not allowed to do that."
@@ -821,7 +821,7 @@ msgstr "veuillez vous connecter"
 #. translators: %s is a "please log in" link
 #: inc/modules/antispam/plugins/fightspam.php:57
 msgid "Can’t process because this username or email belongs to a registered user. If it’s you, %s."
-msgstr "Impossible de continuer car cet identifiant ou cet e-mail appartient à un utilisateur. Si c’est vous, %s."
+msgstr "Impossible de continuer car cet identifiant ou cet e-mail appartient à un compte. Si c’est vous, %s."
 
 #: inc/classes/settings/class-secupress-settings.php:1514
 msgid "Got an issue? Ask for support."
@@ -936,19 +936,19 @@ msgstr "Le mot de passe de votre base de données est <strong>vide</strong>, ce 
 msgid "The login page is protected by double authentication with %s."
 msgstr "La page de connexion est protégée par une double authentification avec %s."
 
-#: inc/classes/settings/class-secupress-settings.php:1581
-#: inc/admin/scanner-step-3.php:288 inc/functions/common.php:496
-msgid "pricing"
-msgstr "fr/tarifs"
-
-#: inc/classes/settings/class-secupress-settings.php:1517
-#: inc/admin/settings.php:273
-msgid "support"
-msgstr "fr/support"
-
 #: inc/admin/settings.php:312 inc/admin-bar.php:140
 msgid "More Security"
 msgstr "Plus de sécurité"
+
+#: inc/admin/settings.php:273
+#: inc/classes/settings/class-secupress-settings.php:1517
+msgid "support"
+msgstr "fr/support"
+
+#: inc/functions/common.php:496 inc/admin/scanner-step-3.php:288
+#: inc/classes/settings/class-secupress-settings.php:1581
+msgid "pricing"
+msgstr "fr/tarifs"
 
 #: inc/modules/users-login/settings/move-login.php:156
 msgid "You need to add the following code from your %1$s file, inside the %2$s block:"
@@ -971,7 +971,7 @@ msgstr "Pages de connexion"
 
 #: inc/modules/users-login/settings/double-auth.php:42
 msgid "This module will not work until validated by a link sent to your email address when you activated it."
-msgstr "Ce module ne fonctionnera que quand il aura été validé par le lien qui vous a été envoyé par email."
+msgstr "Ce module ne fonctionnera que quand il aura été validé par le lien qui vous a été envoyé par e-mail."
 
 #: inc/modules/users-login/plugins/move-login.php:455
 #: inc/modules/users-login/settings/move-login.php:121
@@ -986,9 +986,9 @@ msgstr "Nouvelle page d’inscription"
 msgid "New login page"
 msgstr "Nouvelle page de connexion"
 
-#: inc/common.php:223 inc/modules/users-login/settings/move-login.php:122
+#: inc/modules/users-login/settings/move-login.php:122 inc/common.php:223
 msgid "If you are Administrator and have been accidentally locked out, enter your email address here to unlock yourself."
-msgstr "Si vous êtes administrateur et que vous êtes coincé, entrez votre adresse email pour vous déverrouiller."
+msgstr "Si vous êtes admin et que vous êtes coincé, saisissez votre adresse e-mail pour vous déverrouiller."
 
 #: inc/common.php:181
 msgid "The message could not be sent. Sorry"
@@ -1002,33 +1002,37 @@ msgstr "Mince"
 msgid "You got yourself locked out? No problem, simply follow this link to %s."
 msgstr "Vous vous êtes coincé(e) ? Pas de problème, suivez simplement ce lien pour vous %s."
 
-#: inc/admin/ajax-post-callbacks.php:761
-msgid "(Valid 1 day)"
-msgstr "(Valide 1 jour)"
-
-#: inc/admin/ajax-post-callbacks.php:757
-msgid "###SITENAME### – Unlock an administrator"
-msgstr "###SITENAME### – Débloquer un administrateur"
+#: inc/admin/functions/modules.php:141
+msgid "Open the %s settings page"
+msgstr "Ouvrir la page des réglages de %s"
 
 #: inc/admin/functions/modules.php:139
 msgid "You can not use this feature now because you are using the plugin %s which is already doing this job well."
 msgstr "Vous ne pouvez pas utiliser cette fonctionnalité maintenant car vous avez l’extension %s qui fait déjà très bien le travail."
 
-#: inc/admin/ajax-post-callbacks.php:758
-msgid "Hello %1$s, it seems you are locked out from your website ###SITENAME###.<br><br>You can now click to go to the login page or deactivate the Move Login module.<br><br>%2$s<br>%3$s<br><br>Have a nice day!"
-msgstr "Bonjour %1$s, il semble que vous êtes coincé(e) dehors de votre site ###SITENAME###.<br><br>Vous pouvez cliquer maintenant sur la page de connexion ou désactiver le module de déplacement de page.<br><br>%2$s<br>%3$s<br><br>Bonne journée !"
+#: inc/admin/ajax-post-callbacks.php:764
+msgid "Email not sent, please contact the support."
+msgstr "Email non envoyé, merci de contacter le support."
 
 #: inc/admin/ajax-post-callbacks.php:764
 msgid "Email sent, check your mailbox."
 msgstr "Email envoyé, vérifiez votre boite mail."
 
-#: inc/admin/ajax-post-callbacks.php:764
-msgid "Email not sent, please contact the support."
-msgstr "Email non envoyé, merci de contacter le support."
+#: inc/admin/ajax-post-callbacks.php:761
+msgid "(Valid 1 day)"
+msgstr "(Valide 1 jour)"
 
-#: inc/admin/functions/modules.php:141
-msgid "Open the %s settings page"
-msgstr "Ouvrir la page des réglages de %s"
+#: inc/admin/ajax-post-callbacks.php:758
+msgid "Hello %1$s, it seems you are locked out from your website ###SITENAME###.<br><br>You can now click to go to the login page or deactivate the Move Login module.<br><br>%2$s<br>%3$s<br><br>Have a nice day!"
+msgstr "Bonjour %1$s, il semble que vous êtes coincé(e) dehors de votre site ###SITENAME###.<br><br>Vous pouvez cliquer maintenant sur la page de connexion ou désactiver le module de déplacement de page.<br><br>%2$s<br>%3$s<br><br>Bonne journée !"
+
+#: inc/admin/ajax-post-callbacks.php:757
+msgid "###SITENAME### – Unlock an administrator"
+msgstr "###SITENAME### – Débloquage d’un admin"
+
+#. Author of the plugin
+msgid "SecuPress"
+msgstr "SecuPress"
 
 #. Plugin Name of the plugin
 #: secupress.php:407
@@ -1065,8 +1069,8 @@ msgstr "%1$s est <strong>déprécié</strong> depuis la version %2$s sans autre 
 msgid "%1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
 msgstr "%1$s est <strong>déprécié</strong> depuis la version %2$s. Utilisez %3$s à la place."
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:46
 #: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:53
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:46
 msgid "Not fixable on Multisite."
 msgstr "Non corrigeable en multisite."
 
@@ -1182,6 +1186,10 @@ msgstr[1] "%1$s n’a pas pu supprimer certaines définitions de constante du fi
 msgid "http://docs.secupress.me/article/104-wpml-version-number-disclosure-scan"
 msgstr "http://fr.docs.secupress.me/article/55-scan-de-la-divulgation-de-la-version-de-wpml"
 
+#: inc/classes/scanners/class-secupress-scan-wp-config.php:162
+msgid "http://docs.secupress.me/article/93-wp-config-php-file-constants-scan"
+msgstr "http://fr.docs.secupress.me/article/46-scan-des-constantes-de-wp-config-php"
+
 #: inc/classes/scanners/class-secupress-scan-woocommerce-discloses.php:106
 msgid "http://docs.secupress.me/article/105-woocommerce-version-number-disclosure-scan"
 msgstr "http://fr.docs.secupress.me/article/54-scan-de-la-divulgation-de-la-version-de-woocommerce"
@@ -1218,8 +1226,8 @@ msgstr "http://fr.docs.secupress.me/article/56-scan-de-l-acces-aux-fichiers-read
 msgid "http://docs.secupress.me/article/120-plugin-update-scan"
 msgstr "http://fr.docs.secupress.me/article/43-scan-de-mise-a-jour-des-extensions"
 
-#: inc/classes/scanners/class-secupress-scan-wporg.php:99
 #: inc/classes/scanners/class-secupress-scan-phpversion.php:95
+#: inc/classes/scanners/class-secupress-scan-wporg.php:99
 msgid "http://docs.secupress.me/article/114-php-version-scan"
 msgstr "http://fr.docs.secupress.me/article/68-scan-de-la-version-php"
 
@@ -1255,10 +1263,6 @@ msgstr "http://fr.docs.secupress.me/article/60-scan-du-listing-des-fichiers"
 #: inc/classes/scanners/class-secupress-scan-https.php:91
 msgid "http://docs.secupress.me/article/99-database-table-prefix-scan"
 msgstr "http://fr.docs.secupress.me/article/45-scan-du-prefixe-des-tables-de-la-base-de-donnees"
-
-#: inc/classes/scanners/class-secupress-scan-wp-config.php:162
-msgid "http://docs.secupress.me/article/93-wp-config-php-file-constants-scan"
-msgstr "http://fr.docs.secupress.me/article/46-scan-des-constantes-de-wp-config-php"
 
 #: inc/classes/scanners/class-secupress-scan-core-update.php:94
 msgid "http://docs.secupress.me/article/95-wordpress-core-update-scan"
@@ -1328,8 +1332,8 @@ msgstr "http://fr.docs.secupress.me/article/47-scan-des-sauvegardes-de-wp-config
 msgid "http://docs.secupress.me/article/98-automatic-updates-scan"
 msgstr "http://fr.docs.secupress.me/article/50-scan-des-mises-a-jour-automatiques"
 
-#: inc/classes/scanners/class-secupress-scan-auto-update.php:93
 #: inc/modules/wordpress-core/plugins/minor-updates.php:62
+#: inc/classes/scanners/class-secupress-scan-auto-update.php:93
 msgid "The %1$s file is not writable. Please remove the following code from the file: %2$s"
 msgstr "Votre fichier %1$s n’est pas inscriptible. Merci de supprimer le code suivant du fichier : %2$s"
 
@@ -1344,6 +1348,11 @@ msgstr "Notre module %s pourrait corriger cela."
 #: inc/classes/scanners/class-secupress-scan-admin-user.php:101
 msgid "http://docs.secupress.me/article/132-admin-user-account-scan"
 msgstr "http://fr.docs.secupress.me/article/33-scan-du-compte-admin"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://secupress.me"
+msgstr "https://secupress.me"
 
 #. Description of the plugin
 #: secupress.php:409
@@ -1364,7 +1373,7 @@ msgstr "Oui, filtrer les téléversements"
 
 #: inc/modules/wordpress-core/settings/wp-config.php:39
 msgid "A constant (%s) may be defined to allow Administrators to upload any type of file. Of course it is insecure and shouldn't be done. By activating this option, you will remove this constant and allow only files with common type to be uploaded."
-msgstr "Une constante (%s) peut être définie pour permettre aux administrateurs de téléverser n’importe quel type de fichier. Bien sûr ceci n’est pas sécurisé et ne devrait pas être réalisé. En activant cette option, vous supprimez cette constante et n’autorisez que les types communs d’être téléversés."
+msgstr "Une constante (%s) peut être définie pour permettre aux administrateurs et administratrices de téléverser n’importe quel type de fichier. Bien sûr ceci n’est pas sécurisé et ne devrait pas être réalisé. En activant cette option, vous supprimez cette constante et n’autorisez que les types communs à être téléversés."
 
 #: inc/modules/wordpress-core/settings/wp-config.php:38
 msgid "Unfiltered uploads"
@@ -1376,7 +1385,7 @@ msgstr "Oui, désactiver l’éditeur de fichiers"
 
 #: inc/modules/wordpress-core/settings/wp-config.php:19
 msgid "By default Administrators are able to edit the plugins and themes' files directly within the WordPress administration area. It is insecure and should be disabled. By activating this option, you will set the constant %s and disable the plugins and themes editor."
-msgstr "Par défaut les administrateurs peuvent modifier les fichiers des extensions et thèmes directement depuis l’administration de WordPress. Ceci n’est pas sécurisé et devrait être désactivé. En activant cette option, la constante %s sera ajoutée et l’éditeur des extensions et thèmes désactivé."
+msgstr "Par défaut les administrateurs et administratrices peuvent modifier les fichiers des extensions et thèmes directement depuis l’administration de WordPress. Ceci n’est pas sécurisé et devrait être désactivé. En activant cette option, la constante %s sera ajoutée et l’éditeur des extensions et thèmes désactivé."
 
 #: inc/modules/wordpress-core/settings/wp-config.php:18
 msgid "File edition"
@@ -1445,11 +1454,11 @@ msgstr "Le fichier %1$s n’est pas en écriture. Merci d’appliquer les droits
 
 #: inc/modules/users-login/settings/password-policy.php:45
 msgid "For all users."
-msgstr "Pour tous les utilisateurs."
+msgstr "Pour tous les comptes."
 
 #: inc/modules/users-login/settings/password-policy.php:41
 msgid "Yes, ask for old password when a user changes it"
-msgstr "Oui, demander l’ancien mot de passe quand un utilisateur veut changer le sien"
+msgstr "Oui, demander l’ancien mot de passe quand un utilisateur ou une utilisatrice veut changer le sien"
 
 #: inc/modules/users-login/settings/password-policy.php:36
 msgid "Password changement"
@@ -1461,7 +1470,7 @@ msgstr "Oui, forcer l’utilisation des mots de passe forts"
 
 #: inc/modules/users-login/settings/password-policy.php:26
 msgid "When a user is changing their password, a strong password will be required to continue."
-msgstr "Quand un utilisateur change son mot de passe, il lui sera demandé un fort pour continuer."
+msgstr "Quand un utilisateur ou une utilisatrice change son mot de passe, il lui est demandé un mot de passe fort pour continuer."
 
 #: inc/modules/users-login/settings/password-policy.php:25
 msgid "Force Strong Passwords"
@@ -1494,11 +1503,11 @@ msgstr "URL"
 
 #: inc/modules/users-login/settings/login-protection.php:74
 msgid "You will find action links on every user's row in the <a href=\"%s\">user listing administration page</a>."
-msgstr "Vous trouverez les liens d’actions dans une colonne de <a href=\"%s\">la page des utilisateurs</a>."
+msgstr "Vous trouverez les liens d’actions dans une colonne de <a href=\"%s\">la page des comptes</a>."
 
 #: inc/modules/users-login/settings/login-protection.php:70
 msgid "Yes, control user sessions"
-msgstr "Oui, contrôler les sessions utilisateurs"
+msgstr "Oui, contrôler les sessions des utilisateurs et utilisatrices"
 
 #: inc/modules/users-login/settings/login-protection.php:64
 #: inc/functions/modules.php:45
@@ -1533,7 +1542,7 @@ msgstr "Utiliser un bloqueur de tentatives"
 
 #: inc/modules/users-login/settings/login-protection.php:12
 msgid "Ban login attempts on non-existing usernames"
-msgstr "Bannir les tentatives de connexions avec des noms d’utilisateurs inconnus"
+msgstr "Bannir les tentatives de connexions avec des identifiants inconnus"
 
 #: inc/modules/users-login/settings/login-protection.php:11
 msgid "Limit the number of bad login attempts"
@@ -1557,7 +1566,7 @@ msgstr "Un Captcha peut éviter que le formulaire ne soit envoyé si sa règle n
 
 #: inc/modules/users-login/settings/double-auth.php:38
 msgid "Users will just have to enter their email address when log in, then click on a link in the email they receive."
-msgstr "Les utilisateurs devront juste entrer leur adresse email pour se connecter, puis cliquer sur un lien dans le mail reçu."
+msgstr "Les utilisateurs et utilisatrices devront juste entrer leur adresse email pour se connecter, puis cliquer sur un lien dans l’e-mail reçu."
 
 #: inc/modules/users-login/settings/double-auth.php:33
 msgid "Yes, use the <strong>PasswordLess</strong> method"
@@ -1578,11 +1587,11 @@ msgstr "Une Double Authentification est un moyen de renforcer la connexion avec 
 
 #: inc/modules/users-login/settings/blacklist-logins.php:15
 msgid "Yes, forbid users to use blacklisted usernames"
-msgstr "Oui, utiliser une liste de noms d’utilisateurs non autorisés"
+msgstr "Oui, utiliser une liste d’identifiants non autorisés"
 
 #: inc/modules/users-login/settings/blacklist-logins.php:6
 msgid "Usernames"
-msgstr "Noms d’utilisateurs"
+msgstr "Identifiants"
 
 #: inc/modules/users-login/plugins/login-captcha.php:297
 #: inc/modules/users-login/plugins/login-captcha.php:318
@@ -1623,7 +1632,7 @@ msgstr "Désolé, cet identifiant n’est pas autorisé."
 #. Translators: 1 is a blog name.
 #: inc/modules/users-login/plugins/blacklist-logins.php:194
 msgid "[%s] Your username info"
-msgstr "[%s] Votre nom d’utilisateur"
+msgstr "[%s] Informations sur votre identifiant"
 
 #: inc/modules/users-login/plugins/blacklist-logins.php:195
 msgid "Username: %s"
@@ -1631,7 +1640,7 @@ msgstr "Identifiant : %s"
 
 #: inc/modules/users-login/plugins/blacklist-logins.php:170
 msgid "Sorry, that username already exists!"
-msgstr "Désolé, ce nom d’utilisateur existe déjà !"
+msgstr "Désolé, cet identifiant existe déjà !"
 
 #: inc/modules/users-login/plugins/blacklist-logins.php:166
 msgid "Username may not be longer than 60 characters."
@@ -1639,11 +1648,11 @@ msgstr "L’identifiant ne doit pas dépasser 60 caractères."
 
 #: inc/modules/users-login/plugins/blacklist-logins.php:164
 msgid "Cannot create a user with an empty login name."
-msgstr "Impossible de créer un utilisateur avec un nom vide."
+msgstr "Impossible de créer un compte avec un nom vide."
 
 #: inc/modules/users-login/plugins/blacklist-logins.php:139
 msgid "You will receive your new login in your mailbox."
-msgstr "Vous recevrez votre nouveau nom dans votre boite mail."
+msgstr "Vous recevrez votre nouvel identifiant dans votre boite e-mail."
 
 #: inc/modules/users-login/plugins/blacklist-logins.php:105
 msgid "New username:"
@@ -1655,20 +1664,20 @@ msgstr "pour le site"
 
 #: inc/modules/users-login/plugins/blacklist-logins.php:98
 msgid "Your current username %1$s is blacklisted. You will not be able to reach the administration area until you change your username. Meanwhile, you still have access %2$s."
-msgstr "Votre nom d’utilisateur actuel %1$s n’est pas autorisé. Vous ne pourrez plus visiter l’administration tant que vous ne l’aurez pas changé. Mais vous avez toujours accès à %2$s."
+msgstr "Votre identifiant actuel %1$s n’est pas autorisé. Vous ne pourrez plus visiter l’administration tant que vous ne l’aurez pas changé. Mais vous avez toujours accès à %2$s."
 
 #: inc/modules/users-login/plugins/blacklist-logins.php:93
 #: inc/modules/users-login/plugins/blacklist-logins.php:111
 msgid "Please change your username"
-msgstr "Merci de changer votre nom d’utilisateur"
+msgstr "Veuillez modifier votre identifiant"
 
 #: inc/modules/users-login/plugins/blacklist-logins.php:58
 msgid "This username is also blacklisted"
-msgstr "Ce nom d’utilisateur n’est pas autorisé non plus"
+msgstr "Cet identifiant n’est pas autorisé non plus"
 
 #: inc/modules/users-login/plugins/blacklist-logins.php:51
 msgid "Username required"
-msgstr "Nom d’utilisateur requis"
+msgstr "Identifiant requis"
 
 #: inc/modules/users-login/plugins/ask-old-password.php:153
 msgid "<strong>ERROR</strong>: Please enter your current password."
@@ -1755,7 +1764,7 @@ msgstr "Oui, protéger les pages de profil"
 
 #: inc/modules/sensitive-data/settings/page-protect.php:11
 msgid "You can easily protect the user's profile settings page by asking them to enter their password."
-msgstr "Vous pouvez facilement protéger la page de profil des utilisateurs en leur demandant d’entrer leur mot de passe."
+msgstr "Vous pouvez facilement protéger la page de profil des comptes en leur demandant de saisir leur mot de passe."
 
 #: inc/modules/sensitive-data/settings/page-protect.php:10
 msgid "Protect the profile page"
@@ -1911,8 +1920,8 @@ msgstr "Votre fichier %1$s n’est pas en écriture. Merci de remplacer les règ
 msgid "Your %1$s file is not writable. Please replace previous lines between %2$s and %3$s by the following ones: %4$s"
 msgstr "Votre fichier %1$s n’est pas en écriture. Merci de remplacer les lignes précédentes entre %2$s et %3$s par les suivantes : %4$s"
 
-#: inc/modules/schedules/settings/schedules-scan.php:35
 #: inc/modules/schedules/settings/schedules-file-monitoring.php:35
+#: inc/modules/schedules/settings/schedules-scan.php:35
 msgid "Maximum %d days."
 msgstr "Maximum %d jours."
 
@@ -1921,27 +1930,27 @@ msgstr "Maximum %d jours."
 msgid "File Monitoring"
 msgstr "Surveillance des fichiers"
 
-#: inc/modules/schedules/settings/schedules-scan.php:43
 #: inc/modules/schedules/settings/schedules-file-monitoring.php:43
 #: inc/modules/schedules/settings/schedules-backups.php:44
+#: inc/modules/schedules/settings/schedules-scan.php:43
 msgid "When finished, a notification will be sent to the following email address (optional)."
 msgstr "Quand le travail sera terminé, une notification peut être envoyée à l’adresse email suivante (facultatif)."
 
-#: inc/modules/schedules/settings/schedules-scan.php:42
 #: inc/modules/schedules/settings/schedules-file-monitoring.php:42
 #: inc/modules/schedules/settings/schedules-backups.php:43
+#: inc/modules/schedules/settings/schedules-scan.php:42
 msgid "Notification of result"
 msgstr "Notification de fin de travail"
 
-#: inc/modules/schedules/settings/schedules-scan.php:23
 #: inc/modules/schedules/settings/schedules-file-monitoring.php:23
 #: inc/modules/schedules/settings/schedules-backups.php:31
+#: inc/modules/schedules/settings/schedules-scan.php:23
 msgid "Frequency"
 msgstr "Fréquence"
 
-#: inc/modules/schedules/settings/schedules-scan.php:17
 #: inc/modules/schedules/settings/schedules-file-monitoring.php:17
 #: inc/modules/schedules/settings/schedules-backups.php:25
+#: inc/modules/schedules/settings/schedules-scan.php:17
 msgid "Every %d days"
 msgstr "Tous les %d jours"
 
@@ -2163,7 +2172,7 @@ msgstr "Journaux des actions de WordPress"
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:936
 msgid "Unknown user"
-msgstr "Utilisateur inconnu"
+msgstr "Compte inconnu"
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:826
 msgid "External request to: %1$s with the following arguments: %2$s The response was: %3$s"
@@ -2179,35 +2188,35 @@ msgstr "Blog %s supprimé."
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:823
 msgid "Blog %1$s created with %2$s as Administrator."
-msgstr "Le blog %1$s a été créé par %2$s en tant qu’administrateur."
+msgstr "Le blog %1$s a été créé avec %2$s en tant que compte chargé de son administration."
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:822
 msgid "User meta %2$s deleted for %1$s."
-msgstr "La donnée meta %2$s a été supprimée pour l’utilisateur %1$s."
+msgstr "La donnée meta %2$s a été supprimée pour le compte %1$s."
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:821
 msgid "User meta %2$s updated for %1$s with the value %3$s Previous value was: %3$s"
-msgstr "La donnée meta %2$s de l’utilisateur %1$s mise à jour de %3$s à %2$s"
+msgstr "La donnée meta %2$s du compte %1$s a été mise à jour avec la valeur %3$s. La valeur précédente était %3$s."
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:820
 msgid "User meta %2$s added to %1$s with the value %3$s"
-msgstr "Donnée utilisateur %2$s ajoutée à %1$s avec la valeur %3$s"
+msgstr "Donnée méta %2$s ajoutée à %1$s avec la valeur %3$s"
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:819
 msgid "New user %s created."
-msgstr "Nouvel utilisateur %s créé."
+msgstr "Nouveau compte %s créé."
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:818
 msgid "%1$s's user data changed from: %2$s To: %3$s"
-msgstr "Données de l’utilisateur %1$s modifiées de %2$s à %3$s"
+msgstr "Données du compte %1$s modifiées de %2$s à %3$s"
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:817
 msgid "User deleted: %1$s. Posts assigned to: %2$s."
-msgstr "Utilisateur supprimé : %1$s. Articles assignés à : %2$s."
+msgstr "Compte supprimé : %1$s. Articles assignés à %2$s."
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:816
 msgid "Administrator %s logged in."
-msgstr "L’administrateur %s s’est connecté."
+msgstr "L’admin %s s’est connecté."
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:815
 msgid "Theme activated: %s."
@@ -2223,7 +2232,7 @@ msgstr "%1$s a empêché une requête de %2$s depuis l’adresse IP %3$s. Block 
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:798
 msgid "New user added (or not) using the following data: %s"
-msgstr "Nouvel utilisateur ajouté (ou pas) avec les données suivantes : %s"
+msgstr "Nouveau compte ajouté (ou pas) avec les données suivantes : %s"
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:786
 msgid "Network option %1$s updated from the value %3$s to %2$s"
@@ -2286,35 +2295,35 @@ msgstr "Blog %s supprimé"
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:669
 msgid "Blog %1$s created with %2$s as Administrator"
-msgstr "Blog %1$s créé avec l’utilisateur %2$s en administrateur"
+msgstr "Blog %1$s créé avec le compte %2$s chargé de son administration"
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:668
 msgid "User meta %2$s deleted for %1$s"
-msgstr "Donnée meta %2$s supprimée pour l’utilisateur %1$s"
+msgstr "Donnée meta %2$s supprimée pour le compte %1$s"
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:667
 msgid "User meta %2$s updated for %1$s"
-msgstr "Donnée meta %2$s mise à jour pour l’utilisateur %1$s"
+msgstr "Donnée meta %2$s mise à jour pour le compte %1$s"
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:666
 msgid "User meta %2$s added to %1$s"
-msgstr "Donnée meta %2$s ajoutée pour l’utilisateur %1$s"
+msgstr "Donnée meta %2$s ajoutée pour le compte %1$s"
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:665
 msgid "New user %s created"
-msgstr "Nouvel utilisateur %s créé"
+msgstr "Nouveau compte %s créé"
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:664
 msgid "%s's user data changed"
-msgstr "Les données de l’utilisateur %s ont changé"
+msgstr "Les données du compte %s ont changé"
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:663
 msgid "User deleted: %s"
-msgstr "Utilisateur supprimé : %s"
+msgstr "Compte supprimé : %s"
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:662
 msgid "Administrator %s logged in"
-msgstr "L’administrateur %s s’est connecté"
+msgstr "L’admin %s s’est connecté"
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:661
 msgid "Theme activated: %s"
@@ -2330,7 +2339,7 @@ msgstr "%1$s a empêché une requête depuis %2$s"
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:644
 msgid "New user added (or not)"
-msgstr "Nouvel utilisateur ajouté (ou pas)"
+msgstr "Nouveau compte ajouté (ou pas)"
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:632
 msgid "Network option %s updated"
@@ -2384,7 +2393,7 @@ msgstr "Extension(s) activée(s)"
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:431
 msgid "All Users"
-msgstr "Tous les utilisateurs"
+msgstr "Tous les comptes"
 
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:305
 msgid "Nobody"
@@ -2684,11 +2693,11 @@ msgstr "Beaucoup d’extensions de fichiers sont connues pour être des virus ou
 
 #: inc/modules/discloses/tools.php:21
 msgid "<strong>ERROR</strong>: The password you entered for the username %s is incorrect."
-msgstr "<strong>ERREUR</strong> : Le mot de passe entré pour l’utilisateur %s est incorrect."
+msgstr "<strong>ERREUR :</strong> le mot de passe saisi pour le compte %s est incorrect."
 
 #: inc/modules/discloses/tools.php:20
 msgid "<strong>ERROR</strong>: The password you entered for the username <strong>%1$s</strong> is incorrect. <a href=\"%2$s\">Lost your password?</a>"
-msgstr "<strong>ERREUR</strong> : Le mot de passe entré pour l’utilisateur <strong>%1$s</strong> est incorrect. <a href=\"%2$s\">Mot de passe perdu ?</a>"
+msgstr "<strong>ERREUR :</strong> le mot de passe saisi pour le compte <strong>%1$s</strong> est incorrect. <a href=\"%2$s\">Mot de passe oublié ?</a>"
 
 #: inc/modules/discloses/tools.php:19 inc/modules/discloses/tools.php:21
 msgid "Lost your password?"
@@ -2696,23 +2705,23 @@ msgstr "Mot de passe perdu ?"
 
 #: inc/modules/discloses/tools.php:19
 msgid "<strong>ERROR</strong>: Invalid username."
-msgstr "<strong>ERREUR</strong> : Nom d’utilisateur invalide."
+msgstr "<strong>ERREUR :</strong> identifiant non valide."
 
 #: inc/modules/discloses/tools.php:18
 msgid "<strong>ERROR</strong>: Invalid username. <a href=\"%s\">Lost your password?</a>"
-msgstr "<strong>ERREUR</strong> : Nom d’utilisateur invalide. <a href=\"%s\">Mot de passe perdu ?</a>"
+msgstr "<strong>ERREUR :</strong> identifiant non valide. <a href=\"%s\">Mot de passe oublié ?</a>"
 
 #: inc/modules/discloses/tools.php:17
 msgid "<strong>ERROR</strong>: Invalid username or email."
-msgstr "<strong>ERREUR</strong> : Nom d’utilisateur ou email incorrect."
+msgstr "<strong>ERREUR :</strong> identifiant ou e-mail non valide."
 
 #: inc/modules/discloses/tools.php:16
 msgid "<strong>ERROR</strong>: Invalid username or e-mail."
-msgstr "<strong>ERREUR</strong> : Nom d’utilisateur ou email non valide."
+msgstr "<strong>ERREUR :</strong> identifiant ou e-mail non valide."
 
 #: inc/modules/discloses/tools.php:15
 msgid "<strong>ERROR</strong>: There is no user registered with that email address."
-msgstr "<strong>ERREUR</strong> : Il n’existe aucun utilisateur enregistré avec cette adresse email."
+msgstr "<strong>ERREUR :</strong> il n’existe aucun compte enregistré avec cette adresse e-mail."
 
 #: inc/modules/backups/tools.php:17
 msgid "Local"
@@ -2854,7 +2863,7 @@ msgstr "Seulement <strong>marquer comme spam</strong>"
 
 #: inc/modules/antispam/settings/antispam.php:37
 msgid "An anti identity spoof system will also be activated: registered users will be able to comment using their username and email only if they are logged in."
-msgstr "Un système d’anti usurpation sera aussi activé : les utilisateurs enregistrés ne pourront commenter avec leur nom d’utilisateur ou email que s’ils sont connectés."
+msgstr "Un système anti usurpation sera aussi activé : les comptes enregistrés ne pourront commenter avec leur identifiant ou e-mail que s’ils sont connectés."
 
 #: inc/modules/antispam/settings/antispam.php:31
 msgid "I <strong>do not need comments</strong> on my website, remove all the comment features."
@@ -2876,10 +2885,11 @@ msgstr "SI vous n’activez pas cet anti spam ou ne retirez pas la fonctionnalit
 msgid "Anti Spam Rules"
 msgstr "Règles Anti Spam"
 
-#: inc/modules/schedules/settings/schedules-scan.php:44
+#: inc/modules/alerts/tools.php:14
 #: inc/modules/schedules/settings/schedules-file-monitoring.php:44
 #: inc/modules/schedules/settings/schedules-backups.php:45
-#: inc/modules/alerts/tools.php:14 inc/admin/ajax-post-callbacks.php:764
+#: inc/modules/schedules/settings/schedules-scan.php:44
+#: inc/admin/ajax-post-callbacks.php:764
 msgid "Email"
 msgstr "Email"
 
@@ -3045,15 +3055,15 @@ msgstr "Extensions & Thèmes"
 
 #: inc/functions/modules.php:39
 msgid "The best and easiest way to make sure that users' data will be protected, and their accounts not compromised."
-msgstr "Les meilleurs et plus simples moyens pour s’assurer que les données de vos utilisateurs sont protégées et leur compte non compromis."
+msgstr "Les meilleurs et plus simples moyens pour s’assurer que les données de vos utilisateurs et utilisatrices soient protégées et leur compte non compromis."
 
 #: inc/functions/modules.php:38
 msgid "Protect your users"
-msgstr "Protège vos utilisateurs"
+msgstr "Protège vos utilisateurs et utilisatrices"
 
 #: inc/functions/modules.php:34
 msgid "Users &amp; Login"
-msgstr "Utilisateurs & Connexion"
+msgstr "Comptes & Connexion"
 
 #: inc/functions/ip.php:902
 msgid "Your IP address %1$s has been banned for %2$s minute, please do not retry until then."
@@ -3180,8 +3190,8 @@ msgstr "<strong>Erreur</strong> : L’adresse email %s n’est pas valide."
 msgid "<strong>Error</strong>: the email field is empty."
 msgstr "<strong>Erreur</strong> : Le champ email est vide."
 
-#: inc/common.php:124 inc/common.php:125
-#: inc/modules/users-login/plugins/blacklist-logins.php:46
+#: inc/modules/users-login/plugins/blacklist-logins.php:46 inc/common.php:124
+#: inc/common.php:125
 msgid "Cheatin&#8217; uh?"
 msgstr "Vous trichez ?"
 
@@ -3189,9 +3199,9 @@ msgstr "Vous trichez ?"
 msgid "Save All Changes"
 msgstr "Tout sauver"
 
-#: inc/classes/settings/class-secupress-settings.php:983
 #: inc/modules/backups/settings/backups-storage.php:75
 #: inc/modules/backups/settings/backups-storage.php:77
+#: inc/classes/settings/class-secupress-settings.php:983
 msgid "Warning: "
 msgstr "Attention : "
 
@@ -3230,7 +3240,7 @@ msgstr "Aucune sauvegarde trouvée, en faire une ?"
 
 #: inc/classes/settings/class-secupress-settings-modules.php:683
 msgid "Post creation or update will not be logged, but rather password and profile update, email changes, new administrator user, admin has logged in..."
-msgstr "La création ou la mise à jour d’un article ne sera pas gardée, mais plutôt la mise à jour des mots de passe, modification des adresses email, un administrateur qui se connecte…"
+msgstr "La création ou la mise à jour d’un article ne sera pas journalisée, mais plutôt la mise à jour des mots de passe, modification des adresses e-mail, un administrateur ou une administratrice qui se connecte…"
 
 #: inc/classes/settings/class-secupress-settings-modules.php:551
 msgid "Banishing..."
@@ -3246,13 +3256,13 @@ msgstr "Vider toutes les adresses IP"
 msgid "Clearing..."
 msgstr "Suppression&hellip;"
 
-#: inc/classes/settings/class-secupress-settings-modules.php:527
 #: inc/admin/ajax-post-callbacks.php:477
+#: inc/classes/settings/class-secupress-settings-modules.php:527
 msgid "G:i"
 msgstr "G:i"
 
-#: inc/classes/settings/class-secupress-settings-modules.php:527
 #: inc/admin/ajax-post-callbacks.php:477
+#: inc/classes/settings/class-secupress-settings-modules.php:527
 msgid "M jS Y"
 msgstr "j M Y"
 
@@ -3329,10 +3339,10 @@ msgstr "Avant de téléverser votre fichier d’import, vous devez corriger l’
 msgid "Overall plugin settings and fine-tuning"
 msgstr "Réglages généraux et personnalisation"
 
+#: inc/functions/files.php:502
 #: inc/classes/scanners/class-secupress-scan.php:1131
 #: inc/classes/scanners/class-secupress-scan.php:1137
 #: inc/classes/scanners/class-secupress-scan.php:1143
-#: inc/functions/files.php:502
 msgid "The temporary directory could not be created."
 msgstr "Le dossier temporaire n&rsquo;a pu être créé."
 
@@ -3516,11 +3526,11 @@ msgstr "Si les inscriptions sont ouvertes, le rôle par défaut devrait être %s
 
 #: inc/classes/scanners/class-secupress-scan-subscription.php:67
 msgid "If the default user role is not %1$s in some of your websites, administrators will be asked to set the default user role to %1$s."
-msgstr "Si le rôle par défaut n’est pas %1$s sur certains de vos sites, il sera demandé demandé aux administrateurs de mettre le rôle %1$s par défaut."
+msgstr "Si le rôle par défaut n’est pas %1$s sur certains de vos sites, il sera demandé aux administrateurs et administratrices de mettre le rôle %1$s par défaut."
 
+#: inc/modules/users-login/settings/double-auth.php:51
 #: inc/classes/scanners/class-secupress-scan-subscription.php:62
 #: inc/classes/scanners/class-secupress-scan-subscription.php:89
-#: inc/modules/users-login/settings/double-auth.php:51
 msgid "Use a Captcha for everyone"
 msgstr "Utiliser un captcha pour tout le monde"
 
@@ -3544,9 +3554,9 @@ msgstr "Impossible de déterminer si votre page d’accueil bloque les injection
 msgid "You are currently blocking simple SQL Injection."
 msgstr "Vous bloquez actuellement les injections SQL de base."
 
+#: inc/modules/firewall/settings/bbq-url-content.php:12
 #: inc/classes/scanners/class-secupress-scan-sqli.php:45
 #: inc/classes/scanners/class-secupress-scan-sqli.php:63
-#: inc/modules/firewall/settings/bbq-url-content.php:12
 msgid "Block bad content"
 msgstr "Bloquer les mauvais contenus"
 
@@ -3679,11 +3689,11 @@ msgstr "Les règles interdisant l’accès à votre fichier %1$s ont été ajout
 msgid "The %s files are protected from revealing sensitive information."
 msgstr "Les fichiers %s sont protégés et ne divulguent pas d’informations sensibles."
 
-#: inc/classes/scanners/class-secupress-scan-readme-discloses.php:48
-#: inc/classes/scanners/class-secupress-scan-readme-discloses.php:74
 #: inc/modules/discloses/plugins/readmes.php:45
 #: inc/modules/discloses/plugins/readmes.php:57
 #: inc/modules/sensitive-data/settings/content-protect.php:385
+#: inc/classes/scanners/class-secupress-scan-readme-discloses.php:48
+#: inc/classes/scanners/class-secupress-scan-readme-discloses.php:74
 msgid "Protect readme files"
 msgstr "Protège les fichiers readme"
 
@@ -3772,11 +3782,11 @@ msgstr "Les règles interdisant l’accès au <strong>PHP Easter Egg</strong> on
 msgid "Your site does not reveal the PHP modules."
 msgstr "Votre site ne révèle pas les modules PHP."
 
-#: inc/classes/scanners/class-secupress-scan-php-disclosure.php:47
-#: inc/classes/scanners/class-secupress-scan-php-disclosure.php:72
 #: inc/modules/sensitive-data/plugins/php-easter-egg.php:45
 #: inc/modules/sensitive-data/plugins/php-easter-egg.php:57
 #: inc/functions/modules.php:105
+#: inc/classes/scanners/class-secupress-scan-php-disclosure.php:47
+#: inc/classes/scanners/class-secupress-scan-php-disclosure.php:72
 msgid "PHP Disclosure"
 msgstr "Divulgation PHP"
 
@@ -3954,7 +3964,7 @@ msgstr "Votre système de connexion <strong>n’est pas assez fort</strong>, vou
 
 #: inc/classes/scanners/class-secupress-scan-easy-login.php:71
 msgid "The <strong>PasswordLess Double Authentication</strong> module has been activated for every role. Users will receive an email to log-in now."
-msgstr "Le module <strong>Double Authentification PasswordLess</strong> a été activé pour tous les rôles. Les utilisateurs recevront maintenant un mail pour se connecter."
+msgstr "Le module <strong>Double authentification sans mot de passe</strong> a été activé pour tous les rôles. Les comptes recevront maintenant un e-mail pour se connecter."
 
 #: inc/classes/scanners/class-secupress-scan-easy-login.php:52
 msgid "PasswordLess Double Authentication"
@@ -3980,9 +3990,9 @@ msgstr "La <strong>version de WordPress</strong> devrait maintenant être suppri
 msgid "The <strong>WordPress version</strong> should now be removed from your styles URLs."
 msgstr "La <strong>version de WordPress</strong> devrait maintenant être supprimée des URLs de vos styles."
 
-#: inc/classes/scanners/class-secupress-scan-discloses.php:113
 #: inc/classes/scanners/class-secupress-scan-wpml-discloses.php:81
 #: inc/classes/scanners/class-secupress-scan-woocommerce-discloses.php:81
+#: inc/classes/scanners/class-secupress-scan-discloses.php:113
 msgid "The generator meta tag should not be displayed anymore."
 msgstr "La balise meta \"generator\" ne devrait plus s’afficher désormais."
 
@@ -4042,20 +4052,20 @@ msgstr "Votre site ne révèle pas la <strong>version de WordPress</strong> ni <
 msgid "But you can activate the %1$s protection and the %2$s protection from the module %3$s."
 msgstr "Mais vous pouvez activer la protection %1$s et la protection %2$s du module %3$s."
 
-#: inc/classes/scanners/class-secupress-scan-discloses.php:49
-#: inc/classes/scanners/class-secupress-scan-discloses.php:75
 #: inc/modules/discloses/plugins/no-x-powered-by.php:59
 #: inc/modules/discloses/plugins/no-x-powered-by.php:71
 #: inc/functions/modules.php:106
+#: inc/classes/scanners/class-secupress-scan-discloses.php:49
+#: inc/classes/scanners/class-secupress-scan-discloses.php:75
 msgid "PHP Version Disclosure"
 msgstr "Divulgation de la version de PHP"
 
+#: inc/modules/discloses/plugins/wp-version.php:46
+#: inc/modules/discloses/plugins/wp-version.php:58
 #: inc/classes/scanners/class-secupress-scan-discloses.php:48
 #: inc/classes/scanners/class-secupress-scan-discloses.php:74
 #: inc/classes/scanners/class-secupress-scan-discloses.php:80
 #: inc/classes/scanners/class-secupress-scan-discloses.php:81
-#: inc/modules/discloses/plugins/wp-version.php:46
-#: inc/modules/discloses/plugins/wp-version.php:58
 msgid "WordPress Version Disclosure"
 msgstr "Divulgation de la version de WordPress"
 
@@ -4091,12 +4101,12 @@ msgstr "Les règles interdisant l’affichage des fichiers dans les répertoires
 msgid "Your site does not reveal the files list."
 msgstr "Votre site ne révèle pas la liste des fichiers."
 
-#: inc/classes/scanners/class-secupress-scan-directory-listing.php:47
-#: inc/classes/scanners/class-secupress-scan-directory-listing.php:73
 #: inc/modules/sensitive-data/plugins/directory-listing.php:46
 #: inc/modules/sensitive-data/plugins/directory-listing.php:81
 #: inc/modules/sensitive-data/settings/content-protect.php:98
 #: inc/functions/modules.php:104
+#: inc/classes/scanners/class-secupress-scan-directory-listing.php:47
+#: inc/classes/scanners/class-secupress-scan-directory-listing.php:73
 msgid "Directory Listing"
 msgstr "Affichage du contenu des répertoires"
 
@@ -4135,16 +4145,16 @@ msgstr "Trop de tables trouvées dans la base de données, lesquelles renommer 
 
 #: inc/classes/scanners/class-secupress-scan-db-prefix.php:65
 msgid "The database user seems to have to correct rights, but the database tables prefix could still not be changed."
-msgstr "L’utilisateur de la base de données semble avoir les droits, mais le préfixe des tables de la base de données ne peut tout de même pas être modifié."
+msgstr "L’identifiant associé à la base de données semble avoir les droits, mais le préfixe des tables de la base de données ne peut tout de même pas être modifié."
 
-#: inc/classes/scanners/class-secupress-scan-wp-config.php:132
 #: inc/modules/wordpress-core/settings/wp-config.php:12
+#: inc/classes/scanners/class-secupress-scan-wp-config.php:132
 msgid "The <code>wp-config.php</code> file is not writable, the constants could not be changed."
 msgstr "Le fichier <code>wp-config.php</code> ne semble pas être en écriture, les constantes ne peuvent être changées."
 
 #: inc/classes/scanners/class-secupress-scan-db-prefix.php:63
 msgid "The database user cannot alter tables and so the database tables prefix could not be changed."
-msgstr "L’utilisateur de la base de données ne peut pas altérer les tables donc le préfixe n’a pas pu être modifié."
+msgstr "L’identifiant associé à la base de données ne peut pas altérer les tables donc le préfixe n’a pas pu être modifié."
 
 #: inc/classes/scanners/class-secupress-scan-db-prefix.php:61
 msgid "The database tables prefix should not be %s. Choose something else besides <code>wp_</code> or <code>wordpress_</code>, they are too easy to guess."
@@ -4225,7 +4235,7 @@ msgstr "CHMOD est une façon de donner les droits en lecture/écriture/exécutio
 
 #: inc/classes/scanners/class-secupress-scan-chmods.php:70
 msgid "Check if your files and folders have the correct write permissions (chmod)."
-msgstr "Vérifie si vos fichiers et dossiers ont les droits corracts (chmod)."
+msgstr "Vérifie si vos fichiers et dossiers ont les droits corrects (chmod)."
 
 #: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:97
 msgid "Your installation contains some plugins known to be vulnerable. The PRO version will be more accurate."
@@ -4276,41 +4286,41 @@ msgstr "Vérifie si vos extensions sont connues pour être vulnérables."
 
 #: inc/classes/scanners/class-secupress-scan-bad-usernames.php:68
 msgid "The module is already activated. Let's give your users some time to change their username."
-msgstr "Le module est déjà activé. Laissons du temps à vos utilisateurs de changer leur nom."
+msgstr "Le module est déjà activé. Laissons le temps à vos utilisateurs et utilisatrices de changer leur identifiant."
 
 #: inc/classes/scanners/class-secupress-scan-bad-usernames.php:66
 msgid "<strong>%1$s user</strong> has a forbidden username: %2$s"
 msgid_plural "<strong>%1$s users</strong> have a forbidden username: %2$s"
-msgstr[0] "<strong>%1$s</strong> utilisateur a un nom interdit : %2$s"
-msgstr[1] "<strong>%1$s</strong> utilisateurs ont un nom interdit : %2$s"
+msgstr[0] "<strong>%1$s</strong> compte utilise un identifiant interdit : %2$s"
+msgstr[1] "<strong>%1$s</strong> comptes utilisent un identifiant interdit : %2$s"
 
 #: inc/classes/scanners/class-secupress-scan-bad-usernames.php:64
 msgid "Module activated: the users with a blacklisted username will be asked to change it."
-msgstr "Module activé : Les utilisateurs avec un nom en liste de blocage devront en changer."
+msgstr "Module activé : les comptes avec un identifiant en liste de blocage devront en changer."
 
 #: inc/classes/scanners/class-secupress-scan-bad-usernames.php:63
 msgid "All the usernames are correct."
-msgstr "Tous les noms d’utilisateurs sont corrects."
+msgstr "Tous les identifiants sont corrects."
 
 #: inc/classes/scanners/class-secupress-scan-subscription.php:63
 #: inc/classes/scanners/class-secupress-scan-subscription.php:90
-#: inc/classes/scanners/class-secupress-scan-easy-login.php:53
 #: inc/classes/scanners/class-secupress-scan-bad-usernames.php:46
+#: inc/classes/scanners/class-secupress-scan-easy-login.php:53
 msgid "Users & Login"
-msgstr "Utilisateurs & Connexion"
+msgstr "Comptes & Connexion"
 
-#: inc/classes/scanners/class-secupress-scan-bad-usernames.php:45
 #: inc/modules/users-login/settings/blacklist-logins.php:10
+#: inc/classes/scanners/class-secupress-scan-bad-usernames.php:45
 msgid "Forbid usernames"
-msgstr "Noms d’utilisateur interdits"
+msgstr "Identifiants interdits"
 
 #: inc/classes/scanners/class-secupress-scan-bad-usernames.php:42
 msgid "Some usernames are known to be used for malicious usage, or created by bots."
-msgstr "Certains noms d’utilisateur sont connus pour des usages malicieux, ou créés par des robots."
+msgstr "Certains identifiants sont connus pour des usages malicieux, ou créés par des robots."
 
 #: inc/classes/scanners/class-secupress-scan-bad-usernames.php:41
 msgid "Check if your usernames are blacklisted."
-msgstr "Vérifie si vos noms d’utilisateurs sont bloqués."
+msgstr "Vérifie si vos identifiants sont bloqués."
 
 #: inc/classes/scanners/class-secupress-scan-bad-user-agent.php:74
 msgid "Your website should block <code>HTTP</code> requests for <strong>bad User Agents</strong>."
@@ -4359,39 +4369,39 @@ msgstr "Les règles pour éviter que le chemin de votre site ne soit divulgué o
 msgid "Your site does not reveal your site's internal path."
 msgstr "Votre site ne divulgue pas le chemin de votre site."
 
-#: inc/classes/scanners/class-secupress-scan-discloses.php:50
-#: inc/classes/scanners/class-secupress-scan-discloses.php:76
-#: inc/classes/scanners/class-secupress-scan-wpml-discloses.php:49
-#: inc/classes/scanners/class-secupress-scan-wpml-discloses.php:67
-#: inc/classes/scanners/class-secupress-scan-directory-listing.php:48
-#: inc/classes/scanners/class-secupress-scan-directory-listing.php:74
-#: inc/classes/scanners/class-secupress-scan-php-disclosure.php:48
-#: inc/classes/scanners/class-secupress-scan-php-disclosure.php:73
+#: inc/functions/modules.php:93
 #: inc/classes/scanners/class-secupress-scan-readme-discloses.php:49
 #: inc/classes/scanners/class-secupress-scan-readme-discloses.php:75
+#: inc/classes/scanners/class-secupress-scan-wpml-discloses.php:49
+#: inc/classes/scanners/class-secupress-scan-wpml-discloses.php:67
+#: inc/classes/scanners/class-secupress-scan-php-disclosure.php:48
+#: inc/classes/scanners/class-secupress-scan-php-disclosure.php:73
 #: inc/classes/scanners/class-secupress-scan-woocommerce-discloses.php:49
 #: inc/classes/scanners/class-secupress-scan-woocommerce-discloses.php:67
+#: inc/classes/scanners/class-secupress-scan-discloses.php:50
+#: inc/classes/scanners/class-secupress-scan-discloses.php:76
+#: inc/classes/scanners/class-secupress-scan-directory-listing.php:48
+#: inc/classes/scanners/class-secupress-scan-directory-listing.php:74
 #: inc/classes/scanners/class-secupress-scan-bad-url-access.php:48
 #: inc/classes/scanners/class-secupress-scan-bad-url-access.php:89
-#: inc/functions/modules.php:93
 msgid "Sensitive Data"
 msgstr "Données sensibles"
 
-#: inc/classes/scanners/class-secupress-scan-bad-url-access.php:47
-#: inc/classes/scanners/class-secupress-scan-bad-url-access.php:88
 #: inc/modules/sensitive-data/plugins/bad-url-access.php:49
 #: inc/modules/sensitive-data/plugins/bad-url-access.php:62
 #: inc/modules/sensitive-data/plugins/bad-url-access.php:133
 #: inc/modules/sensitive-data/plugins/bad-url-access.php:153
 #: inc/modules/sensitive-data/settings/content-protect.php:328
 #: inc/functions/modules.php:108
+#: inc/classes/scanners/class-secupress-scan-bad-url-access.php:47
+#: inc/classes/scanners/class-secupress-scan-bad-url-access.php:88
 msgid "Bad URL Access"
 msgstr "Accès aux mauvaises URLs"
 
-#: inc/classes/scanners/class-secupress-scan-discloses.php:45
-#: inc/classes/scanners/class-secupress-scan-wpml-discloses.php:43
 #: inc/classes/scanners/class-secupress-scan-readme-discloses.php:45
+#: inc/classes/scanners/class-secupress-scan-wpml-discloses.php:43
 #: inc/classes/scanners/class-secupress-scan-woocommerce-discloses.php:43
+#: inc/classes/scanners/class-secupress-scan-discloses.php:45
 #: inc/classes/scanners/class-secupress-scan-bad-url-access.php:44
 msgid "When an attacker wants to hack into a WordPress site, (s)he will search for all available informations. The goal is to find something useful that will help him penetrate your site. Don't let them easily find any informations."
 msgstr "Quand un attaquant veut pirater un site WordPress, il cherchera un maximum d’informations. Son but est de trouver quelque chose d’utile qui pourrait lui permettre de s’introduire dans le site. Ne le laissez pas trouver ces informations facilement."
@@ -4416,10 +4426,10 @@ msgstr[1] "Impossible de déterminer l’état de votre page d’accueil pour le
 msgid "You are currently blocking bad request methods."
 msgstr "Vous bloquez actuellement les mauvaises méthodes de requêtes."
 
-#: inc/classes/scanners/class-secupress-scan-bad-request-methods.php:45
-#: inc/classes/scanners/class-secupress-scan-bad-request-methods.php:70
 #: inc/modules/firewall/settings/bbq-headers.php:44
 #: inc/functions/modules.php:122
+#: inc/classes/scanners/class-secupress-scan-bad-request-methods.php:45
+#: inc/classes/scanners/class-secupress-scan-bad-request-methods.php:70
 msgid "Block Bad Request Methods"
 msgstr "Bloquer les mauvaises méthodes de requête"
 
@@ -4434,84 +4444,84 @@ msgstr "Vérifie si les mauvaises méthodes de requêtes peuvent joindre votre s
 #: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:555
 msgid "The following plugin is activated in some of your sites and must be deactivated first. Administrators will be asked to do so."
 msgid_plural "The following plugins are activated in some of your sites and must be deactivated first. Administrators will be asked to do so."
-msgstr[0] "L’extension suivante est active sur certains de vos sites et doit être désactivée en premier. Les administrateurs de ces sites auront cette tâche."
-msgstr[1] "Les extensions suivantes sont actives sur certains de vos sites et doivent être désactivées en premier. Il sera demandé aux administrateurs de ces sites de le faire."
+msgstr[0] "L’extension suivante est active sur certains de vos sites et doit être désactivée en premier. Cela sera demandé aux personnes chargées de l’administration de ces sites."
+msgstr[1] "Les extensions suivantes sont actives sur certains de vos sites et doivent être désactivées en premier. Cela sera demandé aux personnes chargées de l’administration de ces sites."
 
 #: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:554
 msgid "Checked plugins will be deactivated by Administrators:"
-msgstr "Les extensions cochées seront désactivées par un administrateur :"
+msgstr "Les extensions cochées seront désactivées par les administrateur et administratrices :"
 
 #: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:552
 msgid "Checked plugins will be deactivated:"
 msgstr "Les extensions cochées seront désactivées :"
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:539
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:567
 #: inc/classes/scanners/class-secupress-scan-inactive-plugins-themes.php:468
 #: inc/classes/scanners/class-secupress-scan-inactive-plugins-themes.php:504
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:539
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:567
 msgid "symlinked"
 msgstr "en lien symbolique"
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:529
 #: inc/classes/scanners/class-secupress-scan-inactive-plugins-themes.php:458
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:529
 msgid "Checked plugins will be deleted:"
 msgstr "Les extensions cochées seront supprimées :"
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:102
-#: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:106
 #: inc/classes/scanners/class-secupress-scan-inactive-plugins-themes.php:63
+#: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:106
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:102
 msgid "No plugins selected."
 msgstr "Aucune extension sélectionnée."
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:101
 #: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:105
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:101
 msgid "A new %s menu item has been activated in the relevant site's administration area to let Administrators know which plugins to deactivate."
-msgstr "Un nouveau menu %s a été activé dans l’administration des sites applicables pour tenir au courant les administrateurs des extensions à désactiver."
+msgstr "Un nouveau menu %s a été activé dans l’administration des sites applicables pour informer les personnes administrant le site des extensions à désactiver."
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:99
-#: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:103
 #: inc/classes/scanners/class-secupress-scan-inactive-plugins-themes.php:79
+#: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:103
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:99
 msgid "Unable to locate WordPress Plugin directory."
 msgstr "Impossible de joindre le dépôt des extensions de WordPress."
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:98
 #: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:102
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:98
 msgid "<strong>%d</strong> plugin can be <strong>deactivated</strong>."
 msgid_plural "<strong>%d</strong> plugins can be <strong>deactivated</strong>."
 msgstr[0] "<strong>%d</strong> extension peut être <strong>désactivée</strong>."
 msgstr[1] "<strong>%d</strong> extensions peuvent être <strong>désactivées</strong>."
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:96
 #: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:100
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:96
 msgid "<strong>%d</strong> plugin can be <strong>deleted</strong>."
 msgid_plural "<strong>%d</strong> plugins can be <strong>deleted</strong>."
 msgstr[0] "<strong>%d</strong> extension peut être <strong>supprimée</strong>."
 msgstr[1] "<strong>%d</strong> extensions peuvent être <strong>supprimées</strong>."
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:93
 #: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:96
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:93
 msgid "Sorry, this plugin could not be deactivated."
 msgid_plural "Sorry, those plugins could not be deactivated."
 msgstr[0] "Désolé, cette extension ne peut pas être désactivée."
 msgstr[1] "Désolé, ces extensions ne peuvent pas être désactivées."
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:92
 #: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:95
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:92
 msgid "The following plugin should be deactivated if you don't need it: %s."
 msgid_plural "The following plugins should be deactivated if you don't need them: %s."
 msgstr[0] "L’extension suivante devrait être désactivée si vous n’en avez plus besoin : %s."
 msgstr[1] "Les extensions suivantes devraient être désactivées si vous n’en avez plus besoin : %s."
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:91
-#: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:94
 #: inc/classes/scanners/class-secupress-scan-inactive-plugins-themes.php:74
+#: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:94
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:91
 msgid "Sorry, this plugin could not be deleted."
 msgid_plural "Sorry, those plugins could not be deleted."
 msgstr[0] "Désole, cette extension ne peut être supprimée."
 msgstr[1] "Désole, ces extensions ne peuvent être supprimées."
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:90
 #: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:93
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:90
 msgid "You should delete the plugin %s."
 msgstr "Vous devriez supprimer l’extension %s."
 
@@ -4527,53 +4537,53 @@ msgid_plural "<strong>%1$d plugins</strong> are no longer in the WordPress direc
 msgstr[0] "<strong>%1$d extension</strong> n'est plus dans le dépôt de WordPress : %2$s."
 msgstr[1] "<strong>%1$d extensions</strong> ne sont plus dans le dépôt de WordPress : %2$s."
 
+#: inc/classes/scanners/class-secupress-scan-inactive-plugins-themes.php:70
 #: inc/classes/scanners/class-secupress-scan-subscription.php:101
 #: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:83
-#: inc/classes/scanners/class-secupress-scan-inactive-plugins-themes.php:70
 msgid "You have a big network, %s must work on some data before being able to perform this scan."
 msgstr "Vous avez un grand réseau, %s doit d’abord travailler sur quelques données avant de pouvoir réaliser ce scan."
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:81
 #: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:88
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:81
 msgid "Sorry, the following plugin could not be deactivated: %s."
 msgid_plural "Sorry, the following plugins could not be deactivated: %s."
 msgstr[0] "Désolé, l’extension suivante n’a pas pu être désactivée : %s."
 msgstr[1] "Désolé, les extensions suivantes n’ont pas pu être désactivées : %s."
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:80
 #: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:87
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:80
 msgid "Selected plugin has been deactivated (but some are still there)."
 msgid_plural "All selected plugins have been deactivated (but some are still there)."
 msgstr[0] "L’extension sélectionnée a été désactivée (mais certaines sont encore là)."
 msgstr[1] "Les extensions sélectionnées ont été désactivées (mais certaines sont encore là)."
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:79
 #: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:86
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:79
 msgid "No plugins selected for deactivation."
 msgstr "Aucune extension sélectionnée pour la désactivation."
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:78
-#: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:85
 #: inc/classes/scanners/class-secupress-scan-inactive-plugins-themes.php:65
+#: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:85
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:78
 msgid "Sorry, the following plugin could not be deleted: %s."
 msgid_plural "Sorry, the following plugins could not be deleted: %s."
 msgstr[0] "Désolé, l’extension suivante n’a pas pu être supprimée : %s."
 msgstr[1] "Désolé, les extensions suivantes n’ont pas pu être supprimées : %s."
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:77
 #: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:84
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:77
 msgid "Selected plugin has been deleted (but some are still there)."
 msgid_plural "All selected plugins have been deleted (but some are still there)."
 msgstr[0] "L’extension sélectionnée a été supprimée (mais certaines sont encore là)."
 msgstr[1] "Les extensions sélectionnées ont été supprimées (mais certaines sont encore là)."
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:76
 #: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:83
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:76
 msgid "No plugins selected for deletion."
 msgstr "Aucune extension sélectionnée pour la suppression."
 
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:75
 #: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:82
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:75
 msgid "Error, could not read %s."
 msgstr "Erreur, impossible de lire %s."
 
@@ -4677,41 +4687,41 @@ msgstr "Les règles interdisant l’accès aux fichiers aux mauvaises extensions
 msgid "Files that use bad extensions are protected."
 msgstr "Les fichiers avec de mauvaises extensions sont protégés."
 
-#: inc/classes/scanners/class-secupress-scan-shellshock.php:65
-#: inc/classes/scanners/class-secupress-scan-subscription.php:88
+#: inc/classes/scanners/class-secupress-scan-readme-discloses.php:73
+#: inc/classes/scanners/class-secupress-scan-wpml-discloses.php:65
+#: inc/classes/scanners/class-secupress-scan-php-disclosure.php:71
+#: inc/classes/scanners/class-secupress-scan-php-404.php:62
 #: inc/classes/scanners/class-secupress-scan-bad-request-methods.php:69
-#: inc/classes/scanners/class-secupress-scan-sqli.php:62
-#: inc/classes/scanners/class-secupress-scan-bad-user-agent.php:62
+#: inc/classes/scanners/class-secupress-scan-woocommerce-discloses.php:65
+#: inc/classes/scanners/class-secupress-scan-subscription.php:88
 #: inc/classes/scanners/class-secupress-scan-bad-file-extensions.php:94
 #: inc/classes/scanners/class-secupress-scan-discloses.php:79
+#: inc/classes/scanners/class-secupress-scan-sqli.php:62
 #: inc/classes/scanners/class-secupress-scan-anti-scanner.php:62
-#: inc/classes/scanners/class-secupress-scan-wpml-discloses.php:65
+#: inc/classes/scanners/class-secupress-scan-bad-user-agent.php:62
 #: inc/classes/scanners/class-secupress-scan-directory-listing.php:72
-#: inc/classes/scanners/class-secupress-scan-php-disclosure.php:71
-#: inc/classes/scanners/class-secupress-scan-readme-discloses.php:73
-#: inc/classes/scanners/class-secupress-scan-woocommerce-discloses.php:65
-#: inc/classes/scanners/class-secupress-scan-php-404.php:62
 #: inc/classes/scanners/class-secupress-scan-bad-url-access.php:87
+#: inc/classes/scanners/class-secupress-scan-shellshock.php:65
 msgid "But you can activate the %1$s protection from the module %2$s."
 msgstr "Mais vous pouvez activer la protection %1$s du module %2$s."
 
+#: inc/functions/modules.php:164
 #: inc/classes/scanners/class-secupress-scan-bad-file-extensions.php:69
 #: inc/classes/scanners/class-secupress-scan-bad-file-extensions.php:96
-#: inc/functions/modules.php:164
 msgid "Malware Scan"
 msgstr "Scanner de virus"
 
-#: inc/classes/scanners/class-secupress-scan-bad-file-extensions.php:68
-#: inc/classes/scanners/class-secupress-scan-bad-file-extensions.php:95
 #: inc/modules/file-system/settings/bad-file-extensions.php:13
 #: inc/functions/modules.php:176
+#: inc/classes/scanners/class-secupress-scan-bad-file-extensions.php:68
+#: inc/classes/scanners/class-secupress-scan-bad-file-extensions.php:95
 msgid "Bad File Extensions"
 msgstr "Mauvaises extensions de fichiers"
 
+#: inc/classes/scanners/class-secupress-scan-readme-discloses.php:47
+#: inc/classes/scanners/class-secupress-scan-php-disclosure.php:46
 #: inc/classes/scanners/class-secupress-scan-bad-file-extensions.php:67
 #: inc/classes/scanners/class-secupress-scan-directory-listing.php:46
-#: inc/classes/scanners/class-secupress-scan-php-disclosure.php:46
-#: inc/classes/scanners/class-secupress-scan-readme-discloses.php:47
 #: inc/classes/scanners/class-secupress-scan-bad-url-access.php:46
 msgid "Activate the %1$s protection from the module %2$s."
 msgstr "Active la protection %1$s du module %2$s."
@@ -4798,12 +4808,12 @@ msgstr "<code>DISALLOW_FILE_MODS</code> devrait être configurée sur <code>FALS
 msgid "Your installation <strong>cannot auto-update</strong> itself."
 msgstr "Votre installation <strong>ne peut pas se mettre à jour</strong> elle même."
 
-#: inc/classes/scanners/class-secupress-scan-login-errors-disclose.php:60
+#: inc/classes/scanners/class-secupress-scan-php-404.php:70
 #: inc/classes/scanners/class-secupress-scan-bad-request-methods.php:64
 #: inc/classes/scanners/class-secupress-scan-sqli.php:70
 #: inc/classes/scanners/class-secupress-scan-bad-user-agent.php:70
 #: inc/classes/scanners/class-secupress-scan-auto-update.php:64
-#: inc/classes/scanners/class-secupress-scan-php-404.php:70
+#: inc/classes/scanners/class-secupress-scan-login-errors-disclose.php:60
 msgid "Protection activated"
 msgstr "Protection activée"
 
@@ -4811,8 +4821,8 @@ msgstr "Protection activée"
 msgid "Your installation <strong>can auto-update</strong> itself."
 msgstr "Votre installation <strong>peut se mettre à jour</strong> elle même."
 
-#: inc/classes/scanners/class-secupress-scan-auto-update.php:46
 #: inc/functions/modules.php:78
+#: inc/classes/scanners/class-secupress-scan-auto-update.php:46
 msgid "WordPress Core"
 msgstr "Cœur de WordPress"
 
@@ -4844,22 +4854,22 @@ msgstr "Protection activée contre les <strong>scanners automatiques</strong>"
 msgid "You are currently blocking <strong>automated scanning</strong>."
 msgstr "Vous bloquez actuellement les <strong>scanners automatiques</strong>."
 
-#: inc/classes/scanners/class-secupress-scan-anti-scanner.php:45
-#: inc/classes/scanners/class-secupress-scan-anti-scanner.php:63
 #: inc/modules/firewall/settings/bbq-url-content.php:44
 #: inc/functions/modules.php:125
+#: inc/classes/scanners/class-secupress-scan-anti-scanner.php:45
+#: inc/classes/scanners/class-secupress-scan-anti-scanner.php:63
 msgid "Block SQLi Scan Attempts"
 msgstr "Bloquer les tentatives de scan SQLi"
 
-#: inc/classes/scanners/class-secupress-scan-shellshock.php:47
-#: inc/classes/scanners/class-secupress-scan-subscription.php:61
-#: inc/classes/scanners/class-secupress-scan-bad-request-methods.php:44
-#: inc/classes/scanners/class-secupress-scan-sqli.php:44
-#: inc/classes/scanners/class-secupress-scan-bad-user-agent.php:44
-#: inc/classes/scanners/class-secupress-scan-bad-usernames.php:44
-#: inc/classes/scanners/class-secupress-scan-anti-scanner.php:44
-#: inc/classes/scanners/class-secupress-scan-auto-update.php:44
 #: inc/classes/scanners/class-secupress-scan-php-404.php:44
+#: inc/classes/scanners/class-secupress-scan-bad-request-methods.php:44
+#: inc/classes/scanners/class-secupress-scan-subscription.php:61
+#: inc/classes/scanners/class-secupress-scan-sqli.php:44
+#: inc/classes/scanners/class-secupress-scan-anti-scanner.php:44
+#: inc/classes/scanners/class-secupress-scan-bad-user-agent.php:44
+#: inc/classes/scanners/class-secupress-scan-auto-update.php:44
+#: inc/classes/scanners/class-secupress-scan-bad-usernames.php:44
+#: inc/classes/scanners/class-secupress-scan-shellshock.php:47
 msgid "Activate the option %1$s in the %2$s module."
 msgstr "Active l’option %1$s du module %2$s."
 
@@ -4875,14 +4885,14 @@ msgstr "Vérifie si les scanners automatiques de failles peuvent cibler votre si
 msgid "Activate the <strong>%1$s</strong> from the module %2$s."
 msgstr "Active <strong>%1$s</strong> du module %2$s."
 
-#: inc/classes/scanners/class-secupress-scan-admin-user.php:316
 #: inc/modules/users-login/plugins/blacklist-logins.php:236
+#: inc/classes/scanners/class-secupress-scan-admin-user.php:316
 msgid "Allowed characters: %s."
 msgstr "Caractères autorisés : %s."
 
 #: inc/classes/scanners/class-secupress-scan-admin-user.php:314
 msgid "Your username will be renamed on the next page load."
-msgstr "Votre nom d’utilisateur sera renommé au prochaine chargement de page."
+msgstr "Votre identifiant sera renommé au prochaine chargement de page."
 
 #: inc/classes/scanners/class-secupress-scan-admin-user.php:313
 msgid "Choose a new login for your account:"
@@ -4902,19 +4912,19 @@ msgstr "Désolé, le rôle ne peut être supprimé du compte %s. Vous devriez es
 
 #: inc/classes/scanners/class-secupress-scan-admin-user.php:76
 msgid "The username %1$s is invalid because it uses illegal characters. Spot the differences: %2$s."
-msgstr "The nom d’utilisateur %1$s n’est pas valide car il contient des caractères illégaux. Remarquez les différences : %2$s."
+msgstr "L’identifiant %1$s n’est pas valide car il contient des caractères illégaux. Voici les différences : %2$s."
 
 #: inc/classes/scanners/class-secupress-scan-admin-user.php:75
 msgid "Sorry, the username %s already exists!"
-msgstr "Désolé, le nom d’utilisateur %s existe déjà !"
+msgstr "Désolé, l’identifiant %s existe déjà !"
 
 #: inc/classes/scanners/class-secupress-scan-admin-user.php:74
 msgid "Cannot create a user with an empty login name!"
-msgstr "Impossible de créer un utilisateur avec un nom vide !"
+msgstr "Impossible de créer un compte avec un identifiant vide !"
 
 #: inc/classes/scanners/class-secupress-scan-admin-user.php:73
 msgid "Sorry, the username %s is forbidden!"
-msgstr "Désolé, le nom d’utilisateur %s est interdit !"
+msgstr "Désolé, l’identifiant %s est interdit !"
 
 #: inc/classes/scanners/class-secupress-scan-admin-user.php:72
 msgid "Because user registrations are open, the %s account should exist (with no role) to prevent someone from registering it."
@@ -4924,9 +4934,9 @@ msgstr "Puisque les inscriptions sont ouvertes, le compte %s devrait exister (sa
 msgid "The %s account should have no role at all."
 msgstr "Le compte %s ne devrait pas avoir de rôle du tout."
 
+#: inc/classes/scanners/class-secupress-scan-admin-user.php:69
 #: inc/classes/scanners/class-secupress-scan-salt-keys.php:61
 #: inc/classes/scanners/class-secupress-scan-wp-config.php:85
-#: inc/classes/scanners/class-secupress-scan-admin-user.php:69
 msgid "This fix is <strong>pending</strong>, please reload the page to apply it now."
 msgstr "Ce correctif est <strong>en attente</strong>, merci de recharger la page pour l’appliquer maintenant."
 
@@ -4944,7 +4954,7 @@ msgstr "Supprime tous les rôles et capacités du compte <em>admin</em> s’il e
 
 #: inc/classes/scanners/class-secupress-scan-admin-user.php:47
 msgid "You will be asked for a new username and your account will be renamed."
-msgstr "Il vous sera demandé un nouveau nom d’utilisateur, puis votre compte sera renommé."
+msgstr "Il vous sera demandé un nouvel identifiant, puis votre compte sera renommé."
 
 #: inc/classes/scanners/class-secupress-scan-admin-user.php:44
 msgid "It is important to protect the famous <em>admin</em> account to prevent simple brute-force attacks on it. This account is usually the first one created when you install WordPress, and it is well known by attackers."
@@ -5070,8 +5080,8 @@ msgstr "Modifier le journal"
 msgid "Add New Log"
 msgstr "Ajouter un nouveau journal"
 
-#: inc/classes/common/class-secupress-logs.php:488
 #: inc/modules/logs/plugins/inc/php/404-logs/class-secupress-404-logs.php:43
+#: inc/classes/common/class-secupress-logs.php:488
 msgctxt "secupress_log"
 msgid "Add New"
 msgstr "Ajouter"
@@ -5085,12 +5095,12 @@ msgctxt "post type singular name"
 msgid "Log"
 msgstr "Journal"
 
+#: inc/modules/logs/settings/logs.php:7
 #: inc/classes/common/class-secupress-logs.php:484
 #: inc/classes/common/class-secupress-logs.php:486
 #: inc/classes/common/class-secupress-logs.php:493
 #: inc/classes/common/class-secupress-logs.php:667
-#: inc/classes/common/class-secupress-logs.php:668
-#: inc/modules/logs/settings/logs.php:7 inc/admin-bar.php:118
+#: inc/classes/common/class-secupress-logs.php:668 inc/admin-bar.php:118
 msgctxt "post type general name"
 msgid "Logs"
 msgstr "Journaux"
@@ -5105,11 +5115,11 @@ msgstr "Bannir cette adresse IP"
 
 #: inc/classes/common/class-secupress-logs-list.php:277
 msgid "Delete logs without user ID"
-msgstr "Supprimer les journaux sans ID d’utilisateur"
+msgstr "Supprimer les journaux sans ID de compte"
 
 #: inc/classes/common/class-secupress-logs-list.php:277
 msgid "Delete logs for this user"
-msgstr "Supprimer les journaux pour cet utilisateur"
+msgstr "Supprimer les journaux de ce compte"
 
 #: inc/classes/common/class-secupress-logs-list.php:271
 msgid "Delete log"
@@ -5124,8 +5134,8 @@ msgstr "Détails du journal"
 msgid "No logs selected"
 msgstr "Aucun journal sélectionné"
 
-#: inc/classes/common/class-secupress-logs-list.php:150
 #: inc/functions/modules.php:151
+#: inc/classes/common/class-secupress-logs-list.php:150
 msgid "Monitor everything"
 msgstr "Surveillez tout"
 
@@ -5186,7 +5196,6 @@ msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] "Tout <span class=\"count\">(%s)</span>"
 msgstr[1] "Tous <span class=\"count\">(%s)</span>"
 
-#: inc/classes/common/class-secupress-log.php:450
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:562
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:563
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:603
@@ -5195,6 +5204,7 @@ msgstr[1] "Tous <span class=\"count\">(%s)</span>"
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:717
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:757
 #: inc/modules/logs/plugins/inc/php/action-logs/class-secupress-action-log.php:758
+#: inc/classes/common/class-secupress-log.php:450
 msgid "empty string"
 msgstr "chaine vide"
 
@@ -5234,20 +5244,20 @@ msgstr "Priorité normale"
 msgid "High priority"
 msgstr "Priorité haute"
 
-#: inc/classes/common/class-secupress-log.php:285
 #: inc/classes/common/class-secupress-logs.php:1388
+#: inc/classes/common/class-secupress-log.php:285
 msgid "Login"
 msgstr "Identifiant"
 
-#: inc/classes/common/class-secupress-log.php:284
 #: inc/classes/common/class-secupress-logs.php:1387
+#: inc/classes/common/class-secupress-log.php:284
 msgid "ID"
 msgstr "ID"
 
-#: inc/classes/common/class-secupress-log.php:283
-#: inc/classes/common/class-secupress-log.php:294
 #: inc/classes/common/class-secupress-logs.php:1386
 #: inc/classes/common/class-secupress-logs.php:1395
+#: inc/classes/common/class-secupress-log.php:283
+#: inc/classes/common/class-secupress-log.php:294
 msgid "IP"
 msgstr "IP"
 
@@ -5261,7 +5271,7 @@ msgstr "Filtrer les journaux avec l’identifiant \"%s\""
 
 #: inc/classes/common/class-secupress-log.php:248
 msgid "Filter logs with the user ID %d"
-msgstr "Filtrer les journaux avec l’utilisateur ID %d"
+msgstr "Filtrer les journaux avec l’ID de compte %d"
 
 #: inc/classes/common/class-secupress-log.php:243
 msgid "Filter logs with the IP address %s"
@@ -5275,23 +5285,23 @@ msgstr "d/m/Y G:i:s"
 msgid "Every %d Minutes"
 msgstr "Toutes les %d minutes"
 
-#: inc/classes/admin/class-secupress-admin-support.php:596
 #: inc/functions/deprecated.php:254
+#: inc/classes/admin/class-secupress-admin-support.php:596
 msgid "drop-in"
 msgstr "drop-in"
 
-#: inc/classes/admin/class-secupress-admin-support.php:586
 #: inc/functions/deprecated.php:244
+#: inc/classes/admin/class-secupress-admin-support.php:586
 msgid "Must-Use plugin"
 msgstr "Extension indispensable (must-use)"
 
-#: inc/classes/admin/class-secupress-admin-support.php:566
 #: inc/functions/deprecated.php:224
+#: inc/classes/admin/class-secupress-admin-support.php:566
 msgid "main site"
 msgstr "site principal"
 
-#: inc/classes/admin/class-secupress-admin-support.php:541
 #: inc/functions/deprecated.php:199
+#: inc/classes/admin/class-secupress-admin-support.php:541
 msgid "network"
 msgstr "réseau"
 
@@ -5347,13 +5357,13 @@ msgstr "Version de SecuPress Pro : %s"
 msgid "Site URL: %s"
 msgstr "URL du site : %s"
 
-#: inc/classes/admin/class-secupress-admin-support.php:175
 #: inc/functions/deprecated.php:52
+#: inc/classes/admin/class-secupress-admin-support.php:175
 msgid "License key: %s"
 msgstr "Clé de licence : %s"
 
-#: inc/classes/admin/class-secupress-admin-support.php:174
 #: inc/functions/deprecated.php:51
+#: inc/classes/admin/class-secupress-admin-support.php:174
 msgid "License email: %s"
 msgstr "Email de la licence : %s"
 
@@ -5564,14 +5574,15 @@ msgstr "%1$s / %2$s points"
 msgid "Currently scanning"
 msgstr "Scanner en cours"
 
+#: inc/admin/settings.php:309
 #: inc/classes/settings/class-secupress-settings-modules.php:209
-#: inc/admin/settings.php:309 inc/admin-bar.php:77
+#: inc/admin-bar.php:77
 msgid "Modules"
 msgstr "Modules"
 
+#: inc/admin/settings.php:278
 #: inc/classes/settings/class-secupress-settings-global.php:85
 #: inc/classes/settings/class-secupress-settings-global.php:88
-#: inc/admin/settings.php:278
 msgid "Settings"
 msgstr "Réglages"
 
@@ -5579,14 +5590,13 @@ msgstr "Réglages"
 msgid "Docs"
 msgstr "Docs"
 
-#: inc/classes/scanners/class-secupress-scan.php:229
+#: inc/admin/settings.php:275 inc/classes/scanners/class-secupress-scan.php:229
 #: inc/classes/settings/class-secupress-settings.php:1503
-#: inc/admin/settings.php:275
 msgid "http://docs.secupress.me/"
 msgstr "http://fr.docs.secupress.me/"
 
-#: inc/classes/settings/class-secupress-settings.php:1511
 #: inc/admin/settings.php:273
+#: inc/classes/settings/class-secupress-settings.php:1511
 msgid "Support"
 msgstr "Support"
 
@@ -5667,9 +5677,9 @@ msgstr "Voir les résultats de la recherche ci-dessous."
 msgid "IP removed."
 msgstr "Adresse IP supprimée."
 
+#: inc/admin/settings.php:141
 #: inc/classes/settings/class-secupress-settings-modules.php:496
 #: inc/classes/settings/class-secupress-settings-modules.php:592
-#: inc/admin/settings.php:141
 msgid "IP not found."
 msgstr "IP non trouvée."
 
@@ -5741,8 +5751,8 @@ msgstr "Erreur inconnue."
 msgid "Are you sure?"
 msgstr "Êtes-vous sûr(e) ?"
 
-#: inc/classes/settings/class-secupress-settings.php:302
 #: inc/admin/settings.php:113
+#: inc/classes/settings/class-secupress-settings.php:302
 msgid "Select 1 role minimum"
 msgstr "Sélectionnez 1 rôle au minimum"
 
@@ -5869,18 +5879,18 @@ msgstr "Ignorer"
 msgid "Ask for support"
 msgstr "Demander au support"
 
-#: inc/admin/scanner-step-3.php:269 inc/admin/functions/site-health.php:259
+#: inc/admin/functions/site-health.php:259 inc/admin/scanner-step-3.php:269
 msgid "Read the documentation"
 msgstr "Lire la documentation"
 
+#: inc/modules/welcome/callbacks.php:381 inc/modules/welcome/callbacks.php:382
+#: inc/modules/welcome/callbacks.php:536 inc/admin/settings.php:522
+#: inc/admin/settings.php:528 inc/admin/settings.php:904
+#: inc/admin/settings.php:907 inc/admin/scanner-step-3.php:265
+#: inc/admin/scanner-step-3.php:288
 #: inc/classes/admin/class-secupress-admin-pro-upgrade.php:157
 #: inc/classes/admin/class-secupress-admin-pro-upgrade.php:178
 #: inc/classes/admin/class-secupress-admin-support.php:408
-#: inc/modules/welcome/callbacks.php:381 inc/modules/welcome/callbacks.php:382
-#: inc/modules/welcome/callbacks.php:536 inc/admin/scanner-step-3.php:265
-#: inc/admin/scanner-step-3.php:288 inc/admin/settings.php:522
-#: inc/admin/settings.php:528 inc/admin/settings.php:904
-#: inc/admin/settings.php:907
 msgid "Open in a new window."
 msgstr "Ouvrir dans une nouvelle fenêtre."
 
@@ -5935,13 +5945,13 @@ msgstr "Ignorer cette étape"
 msgid "Fix it"
 msgstr "Corriger"
 
-#: inc/admin/scanner-step-3.php:99 inc/admin/scanner-step-2.php:52
+#: inc/admin/scanner-step-2.php:52 inc/admin/scanner-step-3.php:99
 msgid "Nothing to do here"
 msgstr "Rien à faire ici"
 
-#: inc/classes/settings/class-secupress-settings.php:1581
 #: inc/admin/scanner-step-4.php:277 inc/admin/scanner-step-1.php:114
 #: inc/admin/scanner-step-3.php:189
+#: inc/classes/settings/class-secupress-settings.php:1581
 msgid "Available in <a href=\"%s\" target=\"_blank\">Pro Version</a>"
 msgstr "Disponible dans la <a href=\"%s\" target=\"_blank\">version Pro</a>"
 
@@ -5959,8 +5969,8 @@ msgid "Export this report as PDF file."
 msgstr "Exporter ce rapport dans un fichier PDF."
 
 #: inc/admin/scanner-step-1.php:73 inc/admin/scanner-step-1.php:123
-#: inc/admin/scanner-step-3.php:105 inc/admin/scanner-step-2.php:58
-#: inc/admin/scanner-step-2.php:85 inc/admin/scanner-step-2.php:105
+#: inc/admin/scanner-step-2.php:58 inc/admin/scanner-step-2.php:85
+#: inc/admin/scanner-step-2.php:105 inc/admin/scanner-step-3.php:105
 msgid "Next step"
 msgstr "Prochaine étape"
 
@@ -5988,11 +5998,11 @@ msgstr "Ces nouveaux éléments ont besoin d’être vérifiés : vous aurez be
 msgid "%sNew Items"
 msgstr "%sNouveaux éléments"
 
-#: inc/admin/scanner-step-1-new.php:87 inc/admin/scanner-step-1-all.php:89
+#: inc/admin/scanner-step-1-all.php:89 inc/admin/scanner-step-1-new.php:87
 msgid "Learn more"
 msgstr "En savoir plus"
 
-#: inc/admin/scanner-step-1-new.php:69 inc/admin/scanner-step-1-all.php:71
+#: inc/admin/scanner-step-1-all.php:71 inc/admin/scanner-step-1-new.php:69
 #: inc/admin/settings.php:201
 msgctxt "verb"
 msgid "Scan"
@@ -6018,15 +6028,15 @@ msgstr "la page des réglages de l’extension"
 msgid "Your Pro license is not valid or is not set yet. If you want to activate all the Pro features, premium support and updates, take a look at %s."
 msgstr "Votre licence Pro n’est pas valide ou pas encore renseignée. Si vous souhaitez activer toutes les fonctionnalités Pro, le support premium et les mises à jour, regardez dans %s."
 
+#: inc/admin/notices.php:274 inc/admin/scanner-step-1-all.php:95
+#: inc/admin/scanner-step-1-new.php:93 inc/admin/settings.php:82
+#: inc/admin/settings.php:154
 #: inc/classes/common/class-secupress-logs-list.php:312
-#: inc/admin/scanner-step-1-new.php:93 inc/admin/scanner-step-1-all.php:95
-#: inc/admin/settings.php:82 inc/admin/settings.php:154
-#: inc/admin/notices.php:274
 msgid "Close"
 msgstr "Fermer"
 
-#: inc/admin/settings.php:149 inc/admin/settings.php:699
-#: inc/admin/notices.php:269
+#: inc/admin/notices.php:269 inc/admin/settings.php:149
+#: inc/admin/settings.php:699
 msgid "Scan my website"
 msgstr "Scanner mon site"
 
@@ -6038,9 +6048,9 @@ msgstr "Scanner tous les points de sécurité pour la première fois dans votre 
 msgid "%s is activated, let's improve the security of your website!"
 msgstr "%s est activé, améliorons la sécurité de votre site !"
 
+#: inc/common.php:229
 #: inc/classes/settings/class-secupress-settings-modules.php:685
 #: inc/classes/settings/class-secupress-settings-modules.php:721
-#: inc/common.php:229
 msgid "Submit"
 msgstr "Envoyer"
 
@@ -6092,7 +6102,7 @@ msgstr "%s: Les requêtes HTTP sont bloquées !"
 msgid "Back to the Dashboard"
 msgstr "Retour sur le Tableau de bord"
 
-#: inc/admin/multisite/settings.php:249 inc/functions/modules.php:18
+#: inc/functions/modules.php:18 inc/admin/multisite/settings.php:249
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
@@ -6101,9 +6111,8 @@ msgid "Since there are no other fixes to be done, this page does not exist anymo
 msgstr "Puisqu’il n’y a plus rien à corriger, cette page n’existe plus.<br/>Vous pouvez retourner sur le %s."
 
 #: inc/modules/schedules/settings/schedules-scan.php:6
-#: inc/admin/multisite/settings.php:217 inc/admin/settings.php:308
-#: inc/admin/settings.php:424 inc/admin-bar.php:36
-#: inc/functions/modules.php:225
+#: inc/functions/modules.php:225 inc/admin/multisite/settings.php:217
+#: inc/admin/settings.php:308 inc/admin/settings.php:424 inc/admin-bar.php:36
 msgid "Scanners"
 msgstr "Scanners"
 
@@ -6203,17 +6212,17 @@ msgstr "Il semble que votre serveur n’utilise pas <strong>Apache</strong>, ni 
 msgid "Your server runs <strong>Nginx</strong>. You have to edit the configuration file manually. Please add the following code to your %1$s file: %2$s"
 msgstr "Votre serveur utilise le système <strong>Ngnix</strong>. Vous devrez éditer votre fichier de configuration manuellement. Merci d’ajouter le code suivant dans le fichier %1$s : %2$s"
 
+#: inc/functions/modules.php:701
+#: inc/classes/scanners/class-secupress-scan-readme-discloses.php:98
+#: inc/classes/scanners/class-secupress-scan-php-disclosure.php:93
 #: inc/classes/scanners/class-secupress-scan-bad-file-extensions.php:116
 #: inc/classes/scanners/class-secupress-scan-discloses.php:104
-#: inc/classes/scanners/class-secupress-scan-php-disclosure.php:93
-#: inc/classes/scanners/class-secupress-scan-readme-discloses.php:98
 #: inc/classes/scanners/class-secupress-scan-bad-url-access.php:101
-#: inc/functions/modules.php:701
 msgid "Your %1$s file is not writable. Please add the following lines inside the tags hierarchy %2$s (create it if does not exist): %3$s"
 msgstr "Votre fichier %1$s n’est pas en écriture. Merci d’ajouter ce qui suit dans la hiérarchie des balises %2$s (créez la si elle n’existe pas) : %3$s"
 
-#: inc/classes/scanners/class-secupress-scan-directory-listing.php:95
 #: inc/functions/modules.php:692
+#: inc/classes/scanners/class-secupress-scan-directory-listing.php:95
 msgid "Your %1$s file is not writable. Please remove any previous %2$s tag and add the following lines inside the tags hierarchy %3$s (create it if does not exist): %4$s"
 msgstr "Votre fichier %1$s n’est pas en écriture. Merci de supprimer toute balise %2$s précédente et d’ajouter les lignes suivantes dans la hiérarchie des balises %3$s (créez la si elle n’existe pas) : %4$s"
 
@@ -6225,42 +6234,42 @@ msgstr "Votre fichier %1$s n’est pas en écriture, vous devrez l’éditer man
 msgid "Your %1$s file is not writable, you have to edit it manually. Please remove the rules between %2$s and %3$s from the %1$s file."
 msgstr "Votre fichier %1$s n’est pas en écriture, vous devrez l’éditer manuellement. Merci de supprimer les règles entre %2$s et %3$s du fichier %1$s."
 
-#: inc/classes/scanners/class-secupress-scan-shellshock.php:85
-#: inc/classes/scanners/class-secupress-scan-subscription.php:112
-#: inc/classes/scanners/class-secupress-scan-login-errors-disclose.php:66
-#: inc/classes/scanners/class-secupress-scan-bad-request-methods.php:78
-#: inc/classes/scanners/class-secupress-scan-sqli.php:78
-#: inc/classes/scanners/class-secupress-scan-bad-user-agent.php:78
-#: inc/classes/scanners/class-secupress-scan-bad-file-extensions.php:120
-#: inc/classes/scanners/class-secupress-scan-discloses.php:120
-#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:106
-#: inc/classes/scanners/class-secupress-scan-easy-login.php:78
-#: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:110
+#: inc/classes/scanners/class-secupress-scan-bad-old-files.php:68
 #: inc/classes/scanners/class-secupress-scan-db-prefix.php:70
-#: inc/classes/scanners/class-secupress-scan-salt-keys.php:76
-#: inc/classes/scanners/class-secupress-scan-wp-config.php:145
-#: inc/classes/scanners/class-secupress-scan-bad-usernames.php:72
-#: inc/classes/scanners/class-secupress-scan-anti-scanner.php:78
-#: inc/classes/scanners/class-secupress-scan-wpml-discloses.php:89
-#: inc/classes/scanners/class-secupress-scan-directory-listing.php:99
-#: inc/classes/scanners/class-secupress-scan-https.php:74
-#: inc/classes/scanners/class-secupress-scan-php-disclosure.php:97
-#: inc/classes/scanners/class-secupress-scan-core-update.php:77
-#: inc/classes/scanners/class-secupress-scan-admin-user.php:84
-#: inc/classes/scanners/class-secupress-scan-inactive-plugins-themes.php:85
-#: inc/classes/scanners/class-secupress-scan-wporg.php:82
-#: inc/classes/scanners/class-secupress-scan-phpversion.php:78
 #: inc/classes/scanners/class-secupress-scan-themes-update.php:77
 #: inc/classes/scanners/class-secupress-scan-readme-discloses.php:102
-#: inc/classes/scanners/class-secupress-scan-bad-config-files.php:70
-#: inc/classes/scanners/class-secupress-scan-auto-update.php:110
+#: inc/classes/scanners/class-secupress-scan-inactive-plugins-themes.php:85
+#: inc/classes/scanners/class-secupress-scan-wpml-discloses.php:89
+#: inc/classes/scanners/class-secupress-scan-phpversion.php:78
 #: inc/classes/scanners/class-secupress-scan-passwords-strength.php:89
-#: inc/classes/scanners/class-secupress-scan-woocommerce-discloses.php:89
-#: inc/classes/scanners/class-secupress-scan-chmods.php:116
-#: inc/classes/scanners/class-secupress-scan-plugins-update.php:77
-#: inc/classes/scanners/class-secupress-scan-bad-old-files.php:68
+#: inc/classes/scanners/class-secupress-scan-php-disclosure.php:97
+#: inc/classes/scanners/class-secupress-scan-https.php:74
 #: inc/classes/scanners/class-secupress-scan-php-404.php:78
+#: inc/classes/scanners/class-secupress-scan-plugins-update.php:77
+#: inc/classes/scanners/class-secupress-scan-chmods.php:116
+#: inc/classes/scanners/class-secupress-scan-bad-request-methods.php:78
+#: inc/classes/scanners/class-secupress-scan-woocommerce-discloses.php:89
+#: inc/classes/scanners/class-secupress-scan-subscription.php:112
+#: inc/classes/scanners/class-secupress-scan-bad-file-extensions.php:120
+#: inc/classes/scanners/class-secupress-scan-admin-user.php:84
+#: inc/classes/scanners/class-secupress-scan-bad-vuln-plugins.php:110
+#: inc/classes/scanners/class-secupress-scan-bad-old-plugins.php:106
+#: inc/classes/scanners/class-secupress-scan-discloses.php:120
+#: inc/classes/scanners/class-secupress-scan-core-update.php:77
+#: inc/classes/scanners/class-secupress-scan-sqli.php:78
+#: inc/classes/scanners/class-secupress-scan-salt-keys.php:76
+#: inc/classes/scanners/class-secupress-scan-anti-scanner.php:78
+#: inc/classes/scanners/class-secupress-scan-bad-user-agent.php:78
+#: inc/classes/scanners/class-secupress-scan-auto-update.php:110
+#: inc/classes/scanners/class-secupress-scan-wporg.php:82
+#: inc/classes/scanners/class-secupress-scan-bad-config-files.php:70
+#: inc/classes/scanners/class-secupress-scan-bad-usernames.php:72
+#: inc/classes/scanners/class-secupress-scan-login-errors-disclose.php:66
+#: inc/classes/scanners/class-secupress-scan-wp-config.php:145
+#: inc/classes/scanners/class-secupress-scan-directory-listing.php:99
+#: inc/classes/scanners/class-secupress-scan-easy-login.php:78
 #: inc/classes/scanners/class-secupress-scan-bad-url-access.php:105
+#: inc/classes/scanners/class-secupress-scan-shellshock.php:85
 msgid "Unknown message"
 msgstr "Message inconnu"
 
@@ -6276,19 +6285,19 @@ msgstr "Journaux"
 msgid "Other features of the firewall add an additional level of protection from Internet attacks."
 msgstr "D’autres fonctionnalités du pare-feu ajoutent un niveau additionnel de protection contre les attaques Internet."
 
-#: inc/classes/scanners/class-secupress-scan-shellshock.php:49
-#: inc/classes/scanners/class-secupress-scan-shellshock.php:67
+#: inc/functions/modules.php:113 inc/admin/functions/admin.php:272
+#: inc/classes/scanners/class-secupress-scan-php-404.php:46
+#: inc/classes/scanners/class-secupress-scan-php-404.php:64
 #: inc/classes/scanners/class-secupress-scan-bad-request-methods.php:46
 #: inc/classes/scanners/class-secupress-scan-bad-request-methods.php:71
 #: inc/classes/scanners/class-secupress-scan-sqli.php:46
 #: inc/classes/scanners/class-secupress-scan-sqli.php:64
-#: inc/classes/scanners/class-secupress-scan-bad-user-agent.php:46
-#: inc/classes/scanners/class-secupress-scan-bad-user-agent.php:64
 #: inc/classes/scanners/class-secupress-scan-anti-scanner.php:46
 #: inc/classes/scanners/class-secupress-scan-anti-scanner.php:64
-#: inc/classes/scanners/class-secupress-scan-php-404.php:46
-#: inc/classes/scanners/class-secupress-scan-php-404.php:64
-#: inc/admin/functions/admin.php:272 inc/functions/modules.php:113
+#: inc/classes/scanners/class-secupress-scan-bad-user-agent.php:46
+#: inc/classes/scanners/class-secupress-scan-bad-user-agent.php:64
+#: inc/classes/scanners/class-secupress-scan-shellshock.php:49
+#: inc/classes/scanners/class-secupress-scan-shellshock.php:67
 msgid "Firewall"
 msgstr "Pare-feu"
 
@@ -6296,16 +6305,16 @@ msgstr "Pare-feu"
 msgid "Get alerts via SMS, mobile notifications, or even by social networks in addition to email."
 msgstr "Soyez alertés en recevant des SMS, des notifications mobiles, ou même par réseau social en plus des alertes par emails."
 
-#: inc/admin/functions/admin.php:263 inc/functions/modules.php:198
+#: inc/functions/modules.php:198 inc/admin/functions/admin.php:263
 msgid "Alerts"
 msgstr "Alertes"
 
-#: inc/admin/functions/admin.php:255 inc/functions/modules.php:136
+#: inc/functions/modules.php:136 inc/admin/functions/admin.php:255
 msgid "Traffic done by bot represents about 60% of the internet. Spams are done by these bots. Don't let them do that!"
 msgstr "Le trafic réalisé par les bots représente environ 60% d’Internet. Les spams sont fait par ces bots. Ne les laissez pas faire ça !"
 
-#: inc/modules/antispam/settings/antispam.php:21
-#: inc/admin/functions/admin.php:254 inc/functions/modules.php:131
+#: inc/modules/antispam/settings/antispam.php:21 inc/functions/modules.php:131
+#: inc/admin/functions/admin.php:254
 msgid "Anti Spam"
 msgstr "Anti Spam"
 
@@ -6325,7 +6334,7 @@ msgstr "Fichier original"
 msgid "File Differences"
 msgstr "Différences entre les fichiers"
 
-#: inc/admin/settings.php:405 inc/admin/functions/admin.php:127
+#: inc/admin/functions/admin.php:127 inc/admin/settings.php:405
 msgctxt "Latest scans"
 msgid "M dS, Y \\a\\t h:ia"
 msgstr "l j F Y \\à G:i:s"
@@ -6334,9 +6343,9 @@ msgstr "l j F Y \\à G:i:s"
 msgid "%s ago"
 msgstr "Il y a %s"
 
+#: inc/modules/welcome/callbacks.php:536
 #: inc/classes/admin/class-secupress-admin-pro-upgrade.php:157
 #: inc/classes/admin/class-secupress-admin-pro-upgrade.php:178
-#: inc/modules/welcome/callbacks.php:536
 msgid "SecuPress account"
 msgstr "Compte SecuPress"
 
@@ -6436,7 +6445,7 @@ msgstr[1] "%d problèmes"
 msgid "OK, got it!"
 msgstr "Ok j’ai compris !"
 
-#: inc/activation.php:408 inc/functions/modules.php:610
+#: inc/functions/modules.php:610 inc/activation.php:408
 msgid "Your server runs <strong>Nginx</strong>. You have to edit the configuration file manually. Please remove all rules between %1$s and %2$s from the %3$s file."
 msgstr "Votre serveur utilise le système <strong>Ngnix</strong>. Vous devrez alors éditer votre fichier de configuration manuellement. Merci de supprimer les règles entre %1$s et %2$s dans le fichier %3$s."
 
@@ -6448,27 +6457,27 @@ msgstr "Il semble que votre fichier %1$s n’est pas en écriture, vous devrez l
 msgid "It seems your %1$s file is not writable, you have to edit it manually. Please remove all rules between %2$s and %3$s."
 msgstr "Il semble que votre fichier %1$s n’est pas en écriture, vous devrez l’éditer manuellement. Merci de supprimer toutes les règles entre %2$s et %3$s."
 
-#: inc/classes/common/class-secupress-log.php:289
-#: inc/classes/common/class-secupress-log.php:294
-#: inc/classes/common/class-secupress-logs.php:1391
-#: inc/classes/common/class-secupress-logs.php:1395
-#: inc/classes/admin/class-secupress-admin-offer-migration.php:548
-#: inc/classes/admin/class-secupress-admin-offer-migration.php:568
-#: inc/activation.php:330 inc/activation.php:375 inc/activation.php:405
 #: inc/modules/logs/plugins/inc/php/404-logs/class-secupress-404-log.php:65
 #: inc/modules/logs/plugins/inc/php/404-logs/class-secupress-404-log.php:66
-#: inc/modules/sensitive-data/plugins/bad-url-access.php:133
-#: inc/modules/sensitive-data/plugins/bad-url-access.php:153
+#: inc/modules/users-login/plugins/ask-old-password.php:79
 #: inc/modules/users-login/callbacks.php:295
 #: inc/modules/users-login/callbacks.php:301
 #: inc/modules/users-login/callbacks.php:307
-#: inc/modules/users-login/plugins/ask-old-password.php:79
+#: inc/modules/sensitive-data/plugins/bad-url-access.php:133
+#: inc/modules/sensitive-data/plugins/bad-url-access.php:153
+#: inc/functions/modules.php:580 inc/functions/modules.php:594
+#: inc/functions/modules.php:607 inc/functions/modules.php:659
+#: inc/functions/modules.php:687 inc/functions/modules.php:717
+#: inc/functions/modules.php:731 inc/functions/deprecated.php:125
 #: inc/admin/notices.php:150 inc/admin/notices.php:182
 #: inc/admin/notices.php:206 inc/admin/notices.php:215
-#: inc/functions/deprecated.php:125 inc/functions/modules.php:580
-#: inc/functions/modules.php:594 inc/functions/modules.php:607
-#: inc/functions/modules.php:659 inc/functions/modules.php:687
-#: inc/functions/modules.php:717 inc/functions/modules.php:731
+#: inc/classes/common/class-secupress-logs.php:1391
+#: inc/classes/common/class-secupress-logs.php:1395
+#: inc/classes/common/class-secupress-log.php:289
+#: inc/classes/common/class-secupress-log.php:294
+#: inc/classes/admin/class-secupress-admin-offer-migration.php:548
+#: inc/classes/admin/class-secupress-admin-offer-migration.php:568
+#: inc/activation.php:330 inc/activation.php:375 inc/activation.php:405
 msgid "%s:"
 msgstr "%s :"
 
@@ -6492,12 +6501,13 @@ msgstr "Supprimer toutes les balises %s."
 msgid "In %s:"
 msgstr "Dans %s :"
 
+#: inc/functions/modules.php:662
+#: inc/classes/scanners/class-secupress-scan-readme-discloses.php:96
+#: inc/classes/scanners/class-secupress-scan-php-disclosure.php:91
 #: inc/classes/scanners/class-secupress-scan-bad-file-extensions.php:114
 #: inc/classes/scanners/class-secupress-scan-discloses.php:102
 #: inc/classes/scanners/class-secupress-scan-directory-listing.php:93
-#: inc/classes/scanners/class-secupress-scan-php-disclosure.php:91
-#: inc/classes/scanners/class-secupress-scan-readme-discloses.php:96
 #: inc/classes/scanners/class-secupress-scan-bad-url-access.php:99
-#: inc/activation.php:139 inc/functions/modules.php:662
+#: inc/activation.php:139
 msgid "Your %1$s file is not writable. Please add the following lines at the beginning of the file: %2$s"
 msgstr "Votre fichier %1$s n’est pas en écriture. Merci d’ajouter ce qui suit au début du fichier : %2$s"
