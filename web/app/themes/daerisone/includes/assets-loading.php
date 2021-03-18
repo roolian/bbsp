@@ -46,12 +46,12 @@ function add_custom_script()
     }
 
     global $wp_query;
-    $args = array(
+    $args = [
         'url'   => admin_url('admin-ajax.php'),
         'query' => $wp_query->query,
-    );
+    ];
 
-    wp_localize_script('app-js', 'ajaxParam', $args);
+    //wp_localize_script('app-js', 'ajaxParam', $args);
 }
 
 

@@ -210,7 +210,7 @@ class API {
 
 			$info_data = self::remote_post( $body_args );
 
-			self::set_transient( $cache_key, $info_data, 12 * HOUR_IN_SECONDS );
+			self::set_transient( $cache_key, $info_data );
 		}
 
 		return $info_data;
