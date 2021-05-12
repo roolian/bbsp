@@ -47,7 +47,8 @@
     "wpackagist-plugin/the-plus-addons-for-elementor-page-builder": "2.0.8",
     "wpackagist-plugin/leadin": "^8.0.1",
     "wpackagist-plugin/user-role-editor": "^4.52",
-    "wpackagist-plugin/wp-migrate-db": "^2.0.1"
+    "wpackagist-plugin/wp-migrate-db": "^2.0.1",
+    "wpackagist-plugin/easy-wp-smtp": "^1.4"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
