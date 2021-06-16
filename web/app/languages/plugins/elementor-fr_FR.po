@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-05-03 19:35:55+0000\n"
+"PO-Revision-Date: 2021-06-12 17:22:23+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -165,7 +165,7 @@ msgstr "Concevez des sites plus rapidement avec un kit de modèles qui contient 
 
 #: core/experiments/manager.php:255
 msgid "Import Export Template Kit"
-msgstr "Kit de modèles d’importation et d’exportation"
+msgstr "Kit de modèles pour importation et exportation"
 
 #: core/breakpoints/manager.php:179
 msgid "Widescreen"
@@ -759,7 +759,7 @@ msgstr "Attention, veuillez sauvegarder avant de mettre à niveau !"
 
 #: core/settings/editor-preferences/model.php:38 assets/js/editor.js:24874
 msgid "User Preferences"
-msgstr "Préférences de l’utilisateur/utilisatrice"
+msgstr "Préférences de compte"
 
 #: core/kits/manager.php:315 assets/js/editor.js:35555
 #: assets/js/editor.js:35559 assets/js/editor.js:35569
@@ -2274,7 +2274,7 @@ msgstr "Rôle exclu"
 
 #: core/role-manager/role-manager.php:89
 msgid "Manage What Your Users Can Edit In Elementor"
-msgstr "Gérez ce que vos utilisateurs/utilisatrices peuvent modifier dans Elementor"
+msgstr "Gérez ce que vos utilisateurs et utilisatrices peuvent modifier dans Elementor"
 
 #: core/common/modules/finder/categories/general.php:57
 #: core/role-manager/role-manager.php:31
