@@ -44,7 +44,7 @@
     "wpackagist-plugin/elementor": "^3",
     "wpackagist-plugin/classic-editor": "^1.5",
     "wpackagist-plugin/secupress": "^2.0",
-    "wpackagist-plugin/the-plus-addons-for-elementor-page-builder": "2.0.8",
+    "wpackagist-plugin/the-plus-addons-for-elementor-page-builder": "^5.0.0",
     "wpackagist-plugin/leadin": "^8.0.1",
     "wpackagist-plugin/user-role-editor": "^4.52",
     "wpackagist-plugin/wp-migrate-db": "^2.0.1",
