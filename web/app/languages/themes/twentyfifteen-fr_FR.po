@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Fifteen package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-05-04 10:21:42+0000\n"
+"PO-Revision-Date: 2021-07-25 17:38:48+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,45 +11,166 @@ msgstr ""
 "Language: fr\n"
 "Project-Id-Version: Themes - Twenty Fifteen\n"
 
-#: functions.php:245
+#. Description of the theme
+msgid "Our 2015 default theme is clean, blog-focused, and designed for clarity. Twenty Fifteen's simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages. We designed it using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer."
+msgstr "Notre thème par défaut pour 2015 est pur, centré sur le blog et conçu pour être clair. Le typographie simple et directe de Twenty Fifteen est lisible sur une grand variété de tailles d’écrans, et adaptée à de nombreuses langues. Nous l’avons conçu avec la méthode « mobile avant tout », ce qui signifie que votre contenu a une place centrale, qu’importe si la personne qui visite votre site utilise un téléphone, une tablette, un ordinateur portable ou un ordinateur de bureau."
+
+#. Theme Name of the theme
+#: inc/block-patterns.php:20
+msgid "Twenty Fifteen"
+msgstr "Twenty Fifteen"
+
+#: inc/block-patterns.php:65
+msgid "Snacks"
+msgstr "Snacks"
+
+#: inc/block-patterns.php:65
+msgid "Swimsuit"
+msgstr "Maillot de bain"
+
+#: inc/block-patterns.php:65
+msgid "Water Bottle"
+msgstr "Bouteille d‘eau"
+
+#: inc/block-patterns.php:65
+msgid "Camera"
+msgstr "Appareil photo"
+
+#: inc/block-patterns.php:65
+msgid "Towels"
+msgstr "Serviettes"
+
+#: inc/block-patterns.php:65
+msgid "As I watched, the planet seemed to grow larger and smaller and to advance and recede, but that was simply that my eye was tired. Forty millions of miles it was from us — more than forty millions of miles of void. Few people realize the immensity of vacancy in which the dust of the material universe swims."
+msgstr "Alors que je regardais, la planète semblait grossir et rapetisser, avancer et reculer, mais c‘était simplement parce que mon œil était fatigué. Elle était à 40 millions de kilomètres de nous - plus de 40 millions de kilomètres de vide. Peu de gens réalisent l‘immensité du vide dans lequel nage la poussière de l‘univers matériel."
+
+#: inc/block-patterns.php:65
+msgid "You don’t need a lot, trust us!"
+msgstr "Vous n‘avez pas besoin de grand chose, faites-nous confiance !"
+
+#: inc/block-patterns.php:65
+msgid "What to pack for the beach"
+msgstr "Que faut-il emporter pour la plage ?"
+
+#: inc/block-patterns.php:63
+msgid "Columns with a List"
+msgstr "Colonnes avec une liste"
+
+#: inc/block-patterns.php:55
+msgid "A boatload of people putting back came leaping out as I rushed past. The stones under my feet were muddy and slippery, and the river was so low."
+msgstr "Un bateau rempli de personnes en train de se mettre à l‘abri est sorti d‘un bond alors que je passais en trombe. Les pierres sous mes pieds étaient boueuses et glissantes, et la rivière était si basse."
+
+#: inc/block-patterns.php:55
+msgid "Travels"
+msgstr "Voyages"
+
+#: inc/block-patterns.php:55
+msgid "I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water. Others did the same."
+msgstr "Je me suis à nouveau retourné et je me suis précipité vers le Martien qui s‘approchait, j‘ai dévalé la plage de galets et j‘ai plongé tête baissée dans l‘eau. D‘autres ont fait de même."
+
+#: inc/block-patterns.php:55
+msgid "Adventure"
+msgstr "Aventure"
+
+#: inc/block-patterns.php:53
+msgid "Two Columns with Images"
+msgstr "Deux colonnes avec images"
+
+#: inc/block-patterns.php:45
+msgid "City, State, 00000"
+msgstr "Ville, région, 00000"
+
+#: inc/block-patterns.php:45
+msgid "123 Main Street"
+msgstr "123, rue de la République"
+
+#: inc/block-patterns.php:45
+msgid "Address"
+msgstr "Adresse"
+
+#: inc/block-patterns.php:45
+msgid "(123) 555-5555"
+msgstr "(+33) 04 75 01 99 00"
+
+#: inc/block-patterns.php:45
+msgid "Phone"
+msgstr "Téléphone"
+
+#: inc/block-patterns.php:45
+msgid "Follow us"
+msgstr "Suivez-nous"
+
+#: inc/block-patterns.php:45
+msgid "example@example.com"
+msgstr "example@example.com"
+
+#: inc/block-patterns.php:45
+msgid "Email"
+msgstr "E-mail"
+
+#: inc/block-patterns.php:43
+msgid "Contact area"
+msgstr "Zone de contact"
+
+#: inc/block-patterns.php:35
+msgid "Our default 2015 theme is clean, blog-focused, and designed for clarity. Twenty Fifteen’s simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages."
+msgstr "Notre thème par défaut pour 2015 est pur, centré sur le blog et conçu pour être clair. Le typographie simple et directe de Twenty Fifteen est lisible sur une grand variété de tailles d’écrans, et adaptée à de nombreuses langues."
+
+#: inc/block-patterns.php:35
+msgid "A pier at sunset"
+msgstr "Une jetée au coucher du soleil"
+
+#: inc/block-patterns.php:35 inc/block-patterns.php:55
+msgid "A pier with seagulls."
+msgstr "Une jetée avec des mouettes."
+
+#: inc/block-patterns.php:35 inc/block-patterns.php:55
+msgid "A pier with a seagull."
+msgstr "Une jetée avec une mouette."
+
+#: inc/block-patterns.php:33
+msgid "Gallery and Description"
+msgstr "Galerie et description"
+
+#: functions.php:246
 msgid "Light Blue"
 msgstr "Bleu clair"
 
-#: functions.php:240
+#: functions.php:241
 msgid "Bright Blue"
 msgstr "Bleu brillant"
 
-#: functions.php:195
-msgid "Light Gray"
-msgstr "Gris clair"
-
-#: functions.php:190
-msgid "Dark Gray"
-msgstr "Gris foncé"
-
-#: functions.php:210
-msgid "Dark Brown"
-msgstr "Marron foncé"
-
-#: functions.php:200
-msgid "White"
-msgstr "Blanc"
-
-#: functions.php:220
-msgid "Light Pink"
-msgstr "Rose clair"
-
-#: functions.php:215
-msgid "Medium Pink"
-msgstr "Rose moyen"
-
-#: functions.php:235
+#: functions.php:236
 msgid "Blue Gray"
 msgstr "Gris bleu"
 
-#: functions.php:225
+#: functions.php:226
 msgid "Dark Purple"
 msgstr "Violet foncé"
+
+#: functions.php:221
+msgid "Light Pink"
+msgstr "Rose clair"
+
+#: functions.php:216
+msgid "Medium Pink"
+msgstr "Rose moyen"
+
+#: functions.php:211
+msgid "Dark Brown"
+msgstr "Marron foncé"
+
+#: functions.php:201
+msgid "White"
+msgstr "Blanc"
+
+#: functions.php:196
+msgid "Light Gray"
+msgstr "Gris clair"
+
+#: functions.php:191
+msgid "Dark Gray"
+msgstr "Gris foncé"
 
 #. translators: %s: Post title.
 #: comments.php:31
@@ -138,7 +259,7 @@ msgstr "Navigation des commentaires"
 msgid "Blue"
 msgstr "Bleu"
 
-#: functions.php:230 inc/customizer.php:228
+#: functions.php:231 inc/customizer.php:228
 msgid "Purple"
 msgstr "Violet"
 
@@ -146,7 +267,7 @@ msgstr "Violet"
 msgid "Pink"
 msgstr "Rose"
 
-#: functions.php:205 inc/customizer.php:206
+#: functions.php:206 inc/customizer.php:206
 msgid "Yellow"
 msgstr "Jaune"
 
@@ -160,24 +281,26 @@ msgstr "Valeur par défaut"
 
 #: inc/customizer.php:103
 msgid "Header and Sidebar Background Color"
-msgstr "Couleur de fond de l'en-tête et de la barre latérale"
+msgstr "Couleur d‘arrière-plan de l’en-tête et de la colonne latérale"
 
 #: inc/customizer.php:79 inc/customizer.php:104 inc/customizer.php:111
 msgid "Applied to the header on small screens and the sidebar on wide screens."
-msgstr "Appliqué à l'en-tête sur les petits écrans, et à la barre latérale sur les grands écrans."
+msgstr "Appliqué à l’en-tête sur les petits écrans, et à la colonne latérale sur les grands écrans."
 
 #: inc/customizer.php:78
 msgid "Header and Sidebar Text Color"
-msgstr "Couleur du texte de l'en-tête et le barre latérale"
+msgstr "Couleur du texte de l’en-tête et de la colonne latérale"
 
 #: inc/customizer.php:55
 msgid "Base Color Scheme"
 msgstr "Jeu de couleurs de base"
 
 #. translators: %s: WordPress version.
-#: inc/back-compat.php:38 inc/back-compat.php:50 inc/back-compat.php:67
+#. translators: %s: WordPress version.
+#. translators: %s: WordPress version.
+#: inc/back-compat.php:41 inc/back-compat.php:56 inc/back-compat.php:77
 msgid "Twenty Fifteen requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again."
-msgstr "Twenty Fifteen ne fonctionne qu'à partir de WordPress 4.1. Vous utilisez la version %s. Veuillez mettre à jour et réessayer."
+msgstr "Twenty Fifteen ne fonctionne qu’à partir de WordPress 4.1. Vous utilisez la version %s. Veuillez mettre à jour et réessayer."
 
 #: image.php:88
 msgctxt "Parent post link"
@@ -200,39 +323,51 @@ msgstr "Menu et widgets"
 msgid "Skip to content"
 msgstr "Aller au contenu"
 
-#: functions.php:402
+#: functions.php:403
 msgid "collapse child menu"
 msgstr "fermer le sous-menu"
 
-#: functions.php:401
+#: functions.php:402
 msgid "expand child menu"
 msgstr "ouvrir le sous-menu"
 
-#: functions.php:321
+#. translators: To add an additional character subset specific to your
+#. language, translate this to 'greek', 'cyrillic', 'devanagari' or
+#. 'vietnamese'. Do not translate into your own language.
+#: functions.php:322
 msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr "no-subset"
 
-#: functions.php:313
+#. translators: If there are characters in your language that are not supported
+#. by Inconsolata, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:314
 msgctxt "Inconsolata font: on or off"
 msgid "on"
 msgstr "on"
 
-#: functions.php:305
+#. translators: If there are characters in your language that are not supported
+#. by Noto Serif, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:306
 msgctxt "Noto Serif font: on or off"
 msgid "on"
 msgstr "on"
 
-#: functions.php:297
+#. translators: If there are characters in your language that are not supported
+#. by Noto Sans, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:298
 msgctxt "Noto Sans font: on or off"
 msgid "on"
 msgstr "on"
 
-#: functions.php:270
+#: functions.php:271
 msgid "Add widgets here to appear in your sidebar."
-msgstr "Ajoutez des widgets ici afin qu'ils apparaissent dans votre barre latérale."
+msgstr "Ajoutez des widgets ici afin qu’ils apparaissent dans votre colonne latérale."
 
-#: functions.php:268
+#: functions.php:269
 msgid "Widget Area"
 msgstr "Zone de widgets"
 
@@ -266,15 +401,17 @@ msgstr "Prêt·e à publier votre premier article ? <a href=\"%s\">Lancez-vous i
 msgid "Nothing Found"
 msgstr "Rien de trouvé"
 
-#: content-link.php:60 content.php:61 image.php:74 content-search.php:28
-#: content-search.php:33 content-page.php:37
+#: content-link.php:60 content-page.php:37 content-search.php:28
+#: content-search.php:33 content.php:61 image.php:74
 msgid "Edit"
 msgstr "Modifier"
 
-#: content-link.php:39 content.php:41 image.php:61 content-page.php:26
+#: content-link.php:39 content-page.php:26 content.php:41 image.php:61
 msgid "Pages:"
 msgstr "Pages&nbsp;:"
 
+#. translators: %s: Post title.
+#. translators: %s: Post title.
 #. translators: %s: Post title.
 #: content-link.php:32 content.php:34 inc/template-tags.php:252
 msgid "Continue reading %s"
@@ -301,16 +438,16 @@ msgstr "Afficher tous les articles par %s"
 msgid "Published by"
 msgstr "Publié par"
 
-#: content-link.php:43 index.php:50 content.php:45 archive.php:53 search.php:48
-#: image.php:65 content-page.php:30
+#: archive.php:53 content-link.php:43 content-page.php:30 content.php:45
+#: image.php:65 index.php:50 search.php:48
 msgid "Page"
 msgstr "Page"
 
-#: index.php:49 archive.php:52 search.php:47
+#: archive.php:52 index.php:49 search.php:47
 msgid "Next page"
 msgstr "Page suivante"
 
-#: index.php:48 archive.php:51 search.php:46
+#: archive.php:51 index.php:48 search.php:46
 msgid "Previous page"
 msgstr "Page précédente"
 
@@ -321,6 +458,14 @@ msgstr "Apparemment, rien n&rsquo;a été trouvé à cette adresse. Essayez avec
 #: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Oups&nbsp;! Cette page est introuvable."
+
+#. Author of the theme
+msgid "the WordPress team"
+msgstr "L&rsquo;équipe WordPress"
+
+#. Theme URI of the theme
+msgid "https://wordpress.org/themes/twentyfifteen/"
+msgstr "https://wordpress.org/themes/twentyfifteen/"
 
 #. Author URI of the theme
 #: footer.php:30

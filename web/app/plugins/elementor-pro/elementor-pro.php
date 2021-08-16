@@ -4,8 +4,8 @@
  * Description: Elevate your designs and unlock the full power of Elementor. Gain access to dozens of Pro widgets and kits, Theme Builder, Pop Ups, Forms and WooCommerce building capabilities.
  * Plugin URI: https://elementor.com/
  * Author: Elementor.com
- * Version: 3.3.2
- * Elementor tested up to: 3.3.0
+ * Version: 3.3.7
+ * Elementor tested up to: 3.4.0
  * Author URI: https://elementor.com/
  *
  * Text Domain: elementor-pro
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-define( 'ELEMENTOR_PRO_VERSION', '3.3.2' );
+define( 'ELEMENTOR_PRO_VERSION', '3.3.7' );
 
 define( 'ELEMENTOR_PRO__FILE__', __FILE__ );
 define( 'ELEMENTOR_PRO_PLUGIN_BASE', plugin_basename( ELEMENTOR_PRO__FILE__ ) );

@@ -1,4 +1,4 @@
-/*! elementor-pro - v3.3.2 - 11-07-2021 */
+/*! elementor-pro - v3.3.7 - 15-08-2021 */
 (self["webpackChunkelementor_pro"] = self["webpackChunkelementor_pro"] || []).push([["share-buttons"],{
 
 /***/ "../modules/share-buttons/assets/js/frontend/handlers/share-buttons.js":
