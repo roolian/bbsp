@@ -43,7 +43,7 @@
     "wpackagist-plugin/wordpress-seo": "^17.3",
     "wpackagist-plugin/elementor": "^3",
     "wpackagist-plugin/classic-editor": "^1.5",
-    "wpackagist-plugin/secupress": "2.0.3",
+    "wpackagist-plugin/secupress": "^2.0.3",
     "wpackagist-plugin/the-plus-addons-for-elementor-page-builder": "^5.0.0",
     "wpackagist-plugin/leadin": "^8.0.1",
     "wpackagist-plugin/user-role-editor": "^4.52",
