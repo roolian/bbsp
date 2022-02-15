@@ -1,4 +1,4 @@
-/*! elementor-pro - v3.5.2 - 28-11-2021 */
+/*! elementor-pro - v3.6.2 - 14-02-2022 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -360,6 +360,82 @@ function _createClass(Constructor, protoProps, staticProps) {
 }
 
 module.exports = _createClass;
+module.exports.default = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "../node_modules/@babel/runtime-corejs2/helpers/createForOfIteratorHelper.js":
+/*!***********************************************************************************!*\
+  !*** ../node_modules/@babel/runtime-corejs2/helpers/createForOfIteratorHelper.js ***!
+  \***********************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var _Symbol = __webpack_require__(/*! @babel/runtime-corejs2/core-js/symbol */ "../node_modules/@babel/runtime-corejs2/core-js/symbol.js");
+
+var _Symbol$iterator = __webpack_require__(/*! @babel/runtime-corejs2/core-js/symbol/iterator */ "../node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js");
+
+var _Array$isArray = __webpack_require__(/*! @babel/runtime-corejs2/core-js/array/is-array */ "../node_modules/@babel/runtime-corejs2/core-js/array/is-array.js");
+
+var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray.js */ "../node_modules/@babel/runtime-corejs2/helpers/unsupportedIterableToArray.js");
+
+function _createForOfIteratorHelper(o, allowArrayLike) {
+  var it = typeof _Symbol !== "undefined" && o[_Symbol$iterator] || o["@@iterator"];
+
+  if (!it) {
+    if (_Array$isArray(o) || (it = unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+      if (it) o = it;
+      var i = 0;
+
+      var F = function F() {};
+
+      return {
+        s: F,
+        n: function n() {
+          if (i >= o.length) return {
+            done: true
+          };
+          return {
+            done: false,
+            value: o[i++]
+          };
+        },
+        e: function e(_e) {
+          throw _e;
+        },
+        f: F
+      };
+    }
+
+    throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  var normalCompletion = true,
+      didErr = false,
+      err;
+  return {
+    s: function s() {
+      it = it.call(o);
+    },
+    n: function n() {
+      var step = it.next();
+      normalCompletion = step.done;
+      return step;
+    },
+    e: function e(_e2) {
+      didErr = true;
+      err = _e2;
+    },
+    f: function f() {
+      try {
+        if (!normalCompletion && it["return"] != null) it["return"]();
+      } finally {
+        if (didErr) throw err;
+      }
+    }
+  };
+}
+
+module.exports = _createForOfIteratorHelper;
 module.exports.default = module.exports, module.exports.__esModule = true;
 
 /***/ }),
@@ -1567,6 +1643,7 @@ module.exports = elementorModules.Module.extend({
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
@@ -1632,7 +1709,7 @@ var _default = /*#__PURE__*/function (_elementorModules$edi) {
       elementor.navigator.indicators.customCSS = {
         icon: 'code-bold',
         settingKeys: ['custom_css'],
-        title: elementorPro.translate('custom_css'),
+        title: __('Custom CSS', 'elementor-pro'),
         section: 'section_custom_css'
       };
     }
@@ -1750,6 +1827,7 @@ exports.default = Component;
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 __webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/core-js/modules/es6.array.find.js");
@@ -1785,7 +1863,7 @@ module.exports = elementor.modules.controls.Repeater.extend({
     self.children.each(function (view) {
       var localFieldsControl = view.children.last(),
           options = {
-        '': '- ' + elementor.translate('None') + ' -'
+        '': '- ' + __('None', 'elementor') + ' -'
       },
           label = view.model.get('remote_label');
 
@@ -2863,6 +2941,7 @@ var _formFieldsUpdateShortcode = __webpack_require__(/*! ./form-fields-update-sh
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var BaseIntegrationModule = __webpack_require__(/*! ./base */ "../modules/forms/assets/js/editor/integrations/base.js");
@@ -2917,27 +2996,27 @@ module.exports = BaseIntegrationModule.extend({
     }
 
     var remoteFields = [{
-      remote_label: elementor.translate('Email'),
+      remote_label: __('Email', 'elementor'),
       remote_type: 'email',
       remote_id: 'email',
       remote_required: true
     }, {
-      remote_label: elementor.translate('First Name'),
+      remote_label: __('First Name', 'elementor'),
       remote_type: 'text',
       remote_id: 'first_name',
       remote_required: false
     }, {
-      remote_label: elementor.translate('Last Name'),
+      remote_label: __('Last Name', 'elementor'),
       remote_type: 'text',
       remote_id: 'last_name',
       remote_required: false
     }, {
-      remote_label: elementor.translate('Phone'),
+      remote_label: __('Phone', 'elementor'),
       remote_type: 'text',
       remote_id: 'phone',
       remote_required: false
     }, {
-      remote_label: elementor.translate('Organization name'),
+      remote_label: __('Organization name', 'elementor'),
       remote_type: 'text',
       remote_id: 'orgname',
       remote_required: false
@@ -3040,6 +3119,7 @@ module.exports = ElementEditorModule.extend({
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var BaseIntegrationModule = __webpack_require__(/*! ./base */ "../modules/forms/assets/js/editor/integrations/base.js");
@@ -3092,12 +3172,12 @@ module.exports = BaseIntegrationModule.extend({
     }
 
     var remoteFields = [{
-      remote_label: elementor.translate('Email'),
+      remote_label: __('Email', 'elementor'),
       remote_type: 'email',
       remote_id: 'email',
       remote_required: true
     }, {
-      remote_label: elementor.translate('First Name'),
+      remote_label: __('First Name', 'elementor'),
       remote_type: 'text',
       remote_id: 'first_name',
       remote_required: false
@@ -3130,6 +3210,7 @@ module.exports = BaseIntegrationModule.extend({
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var BaseIntegrationModule = __webpack_require__(/*! ./base */ "../modules/forms/assets/js/editor/integrations/base.js");
@@ -3181,7 +3262,7 @@ module.exports = BaseIntegrationModule.extend({
     }
 
     var remoteFields = {
-      remote_label: elementor.translate('Email'),
+      remote_label: __('Email', 'elementor'),
       remote_type: 'email',
       remote_id: 'email',
       remote_required: true
@@ -3439,6 +3520,7 @@ module.exports = BaseIntegrationModule.extend({
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var BaseIntegrationModule = __webpack_require__(/*! ./base */ "../modules/forms/assets/js/editor/integrations/base.js");
@@ -3489,47 +3571,47 @@ module.exports = BaseIntegrationModule.extend({
     }
 
     var remoteFields = [{
-      remote_label: elementor.translate('Email'),
+      remote_label: __('Email', 'elementor'),
       remote_type: 'email',
       remote_id: 'email',
       remote_required: true
     }, {
-      remote_label: elementor.translate('Name'),
+      remote_label: __('Name', 'elementor'),
       remote_type: 'text',
       remote_id: 'name',
       remote_required: false
     }, {
-      remote_label: elementor.translate('Last Name'),
+      remote_label: __('Last Name', 'elementor'),
       remote_type: 'text',
       remote_id: 'last_name',
       remote_required: false
     }, {
-      remote_label: elementor.translate('Company'),
+      remote_label: __('Company', 'elementor'),
       remote_type: 'text',
       remote_id: 'company',
       remote_required: false
     }, {
-      remote_label: elementor.translate('Phone'),
+      remote_label: __('Phone', 'elementor'),
       remote_type: 'text',
       remote_id: 'phone',
       remote_required: false
     }, {
-      remote_label: elementor.translate('Country'),
+      remote_label: __('Country', 'elementor'),
       remote_type: 'text',
       remote_id: 'country',
       remote_required: false
     }, {
-      remote_label: elementor.translate('State'),
+      remote_label: __('State', 'elementor'),
       remote_type: 'text',
       remote_id: 'state',
       remote_required: false
     }, {
-      remote_label: elementor.translate('City'),
+      remote_label: __('City', 'elementor'),
       remote_type: 'text',
       remote_id: 'city',
       remote_required: false
     }, {
-      remote_label: elementor.translate('Zip'),
+      remote_label: __('Zip', 'elementor'),
       remote_type: 'text',
       remote_id: 'zip',
       remote_required: false
@@ -3727,6 +3809,8 @@ module.exports = elementorModules.editor.utils.Module.extend({
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var sprintf = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["sprintf"];
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 __webpack_require__(/*! core-js/modules/es6.array.map.js */ "../node_modules/core-js/modules/es6.array.map.js");
@@ -3764,7 +3848,7 @@ module.exports = function () {
     emailFields = _.map(emailModels, function (model) {
       return {
         id: model.get('custom_id'),
-        label: elementorPro.translate('x_field', [model.get('field_label')])
+        label: sprintf(__('%s Field', 'elementor-pro'), model.get('field_label'))
       };
     });
     replyToControl.set('options', {
@@ -4132,6 +4216,7 @@ var _unlink = __webpack_require__(/*! ./unlink */ "../modules/global-widget/asse
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
@@ -4184,7 +4269,7 @@ var Link = /*#__PURE__*/function (_$e$modules$document$) {
       return {
         title: elementor.widgetsCache[data.widgetType].title,
         subTitle: data.title,
-        type: elementorPro.translate('linked_to_global')
+        type: __('Linked to Global', 'elementor-pro')
       };
     }
   }, {
@@ -4241,6 +4326,7 @@ exports.default = _default;
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
@@ -4290,7 +4376,7 @@ var Unlink = /*#__PURE__*/function (_$e$modules$document$) {
       return {
         title: elementor.helpers.getModelLabel(containers[0].model),
         // TODO: add support multi containers.
-        type: elementorPro.translate('unlink_widget')
+        type: __('Unlink Widget', 'elementor-pro')
       };
     }
   }, {
@@ -4535,10 +4621,10 @@ exports.default = Component;
 
 /***/ }),
 
-/***/ "../modules/global-widget/assets/js/editor/hooks/data/document/elements/set-settings/global-widget-prepare-update.js":
-/*!***************************************************************************************************************************!*\
-  !*** ../modules/global-widget/assets/js/editor/hooks/data/document/elements/set-settings/global-widget-prepare-update.js ***!
-  \***************************************************************************************************************************/
+/***/ "../modules/global-widget/assets/js/editor/hooks/data/base-global-widget-prepare-update.js":
+/*!*************************************************************************************************!*\
+  !*** ../modules/global-widget/assets/js/editor/hooks/data/base-global-widget-prepare-update.js ***!
+  \*************************************************************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -4552,7 +4638,7 @@ _Object$defineProperty(exports, "__esModule", {
   value: true
 });
 
-exports.default = exports.GlobalWidgetPrepareUpdate = void 0;
+exports.default = exports.BaseGlobalWidgetPrepareUpdate = void 0;
 
 __webpack_require__(/*! core-js/modules/es6.array.map.js */ "../node_modules/core-js/modules/es6.array.map.js");
 
@@ -4568,33 +4654,25 @@ var _createSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtim
  * Hook is responsible for saving last changed global widget and update
  * which containers are needed for updating the template.
  */
-var GlobalWidgetPrepareUpdate = /*#__PURE__*/function (_$e$modules$hookData$) {
-  (0, _inherits2.default)(GlobalWidgetPrepareUpdate, _$e$modules$hookData$);
+var BaseGlobalWidgetPrepareUpdate = /*#__PURE__*/function (_$e$modules$hookData$) {
+  (0, _inherits2.default)(BaseGlobalWidgetPrepareUpdate, _$e$modules$hookData$);
 
-  var _super = (0, _createSuper2.default)(GlobalWidgetPrepareUpdate);
+  var _super = (0, _createSuper2.default)(BaseGlobalWidgetPrepareUpdate);
 
-  function GlobalWidgetPrepareUpdate() {
-    (0, _classCallCheck2.default)(this, GlobalWidgetPrepareUpdate);
+  function BaseGlobalWidgetPrepareUpdate() {
+    (0, _classCallCheck2.default)(this, BaseGlobalWidgetPrepareUpdate);
     return _super.apply(this, arguments);
   }
 
-  (0, _createClass2.default)(GlobalWidgetPrepareUpdate, [{
-    key: "getCommand",
-    value: function getCommand() {
-      return 'document/elements/set-settings';
-    }
-  }, {
-    key: "getId",
-    value: function getId() {
-      return 'elementor-pro-global-widget-prepare-update';
-    }
-  }, {
+  (0, _createClass2.default)(BaseGlobalWidgetPrepareUpdate, [{
     key: "getConditions",
     value: function getConditions(args) {
       var _args$containers = args.containers,
           containers = _args$containers === void 0 ? [args.container] : _args$containers;
       return containers.some(function (container) {
-        return container.renderer.model.get('templateID');
+        var _container$renderer, _container$renderer$m;
+
+        return (_container$renderer = container.renderer) === null || _container$renderer === void 0 ? void 0 : (_container$renderer$m = _container$renderer.model) === null || _container$renderer$m === void 0 ? void 0 : _container$renderer$m.get('templateID');
       });
     }
   }, {
@@ -4611,11 +4689,74 @@ var GlobalWidgetPrepareUpdate = /*#__PURE__*/function (_$e$modules$hookData$) {
       });
     }
   }]);
-  return GlobalWidgetPrepareUpdate;
+  return BaseGlobalWidgetPrepareUpdate;
 }($e.modules.hookData.After);
 
-exports.GlobalWidgetPrepareUpdate = GlobalWidgetPrepareUpdate;
-var _default = GlobalWidgetPrepareUpdate;
+exports.BaseGlobalWidgetPrepareUpdate = BaseGlobalWidgetPrepareUpdate;
+var _default = BaseGlobalWidgetPrepareUpdate;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "../modules/global-widget/assets/js/editor/hooks/data/document/elements/set-settings/global-widget-prepare-update-element-set-settings.js":
+/*!************************************************************************************************************************************************!*\
+  !*** ../modules/global-widget/assets/js/editor/hooks/data/document/elements/set-settings/global-widget-prepare-update-element-set-settings.js ***!
+  \************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
+
+_Object$defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = exports.GlobalWidgetPrepareUpdateElementSetSettings = void 0;
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createClass */ "../node_modules/@babel/runtime-corejs2/helpers/createClass.js"));
+
+var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/inherits */ "../node_modules/@babel/runtime-corejs2/helpers/inherits.js"));
+
+var _createSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createSuper */ "../node_modules/@babel/runtime-corejs2/helpers/createSuper.js"));
+
+var _baseGlobalWidgetPrepareUpdate = __webpack_require__(/*! ../../../base-global-widget-prepare-update */ "../modules/global-widget/assets/js/editor/hooks/data/base-global-widget-prepare-update.js");
+
+/**
+ * Hook is responsible for saving last changed global widget and update
+ * which containers are needed for updating the template.
+ */
+var GlobalWidgetPrepareUpdateElementSetSettings = /*#__PURE__*/function (_BaseGlobalWidgetPrep) {
+  (0, _inherits2.default)(GlobalWidgetPrepareUpdateElementSetSettings, _BaseGlobalWidgetPrep);
+
+  var _super = (0, _createSuper2.default)(GlobalWidgetPrepareUpdateElementSetSettings);
+
+  function GlobalWidgetPrepareUpdateElementSetSettings() {
+    (0, _classCallCheck2.default)(this, GlobalWidgetPrepareUpdateElementSetSettings);
+    return _super.apply(this, arguments);
+  }
+
+  (0, _createClass2.default)(GlobalWidgetPrepareUpdateElementSetSettings, [{
+    key: "getCommand",
+    value: function getCommand() {
+      return 'document/elements/set-settings';
+    }
+  }, {
+    key: "getId",
+    value: function getId() {
+      return 'elementor-pro-global-widget-prepare-update-element-set-settings';
+    }
+  }]);
+  return GlobalWidgetPrepareUpdateElementSetSettings;
+}(_baseGlobalWidgetPrepareUpdate.BaseGlobalWidgetPrepareUpdate);
+
+exports.GlobalWidgetPrepareUpdateElementSetSettings = GlobalWidgetPrepareUpdateElementSetSettings;
+var _default = GlobalWidgetPrepareUpdateElementSetSettings;
 exports.default = _default;
 
 /***/ }),
@@ -4692,6 +4833,132 @@ var GlobalWidgetDoUpdate = /*#__PURE__*/function (_$e$modules$hookData$) {
 
 exports.GlobalWidgetDoUpdate = GlobalWidgetDoUpdate;
 var _default = GlobalWidgetDoUpdate;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "../modules/global-widget/assets/js/editor/hooks/data/document/repeater/insert/global-widget-prepare-update-repeater-insert.js":
+/*!*************************************************************************************************************************************!*\
+  !*** ../modules/global-widget/assets/js/editor/hooks/data/document/repeater/insert/global-widget-prepare-update-repeater-insert.js ***!
+  \*************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
+
+_Object$defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = exports.GlobalWidgetPrepareUpdateRepeaterInsert = void 0;
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createClass */ "../node_modules/@babel/runtime-corejs2/helpers/createClass.js"));
+
+var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/inherits */ "../node_modules/@babel/runtime-corejs2/helpers/inherits.js"));
+
+var _createSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createSuper */ "../node_modules/@babel/runtime-corejs2/helpers/createSuper.js"));
+
+var _baseGlobalWidgetPrepareUpdate = _interopRequireDefault(__webpack_require__(/*! ../../../base-global-widget-prepare-update */ "../modules/global-widget/assets/js/editor/hooks/data/base-global-widget-prepare-update.js"));
+
+/**
+ * Hook is responsible for saving last changed global widget and update
+ * which containers are needed for updating the template.
+ */
+var GlobalWidgetPrepareUpdateRepeaterInsert = /*#__PURE__*/function (_BaseGlobalWidgetPrep) {
+  (0, _inherits2.default)(GlobalWidgetPrepareUpdateRepeaterInsert, _BaseGlobalWidgetPrep);
+
+  var _super = (0, _createSuper2.default)(GlobalWidgetPrepareUpdateRepeaterInsert);
+
+  function GlobalWidgetPrepareUpdateRepeaterInsert() {
+    (0, _classCallCheck2.default)(this, GlobalWidgetPrepareUpdateRepeaterInsert);
+    return _super.apply(this, arguments);
+  }
+
+  (0, _createClass2.default)(GlobalWidgetPrepareUpdateRepeaterInsert, [{
+    key: "getCommand",
+    value: function getCommand() {
+      return 'document/repeater/insert';
+    }
+  }, {
+    key: "getId",
+    value: function getId() {
+      return 'elementor-pro-global-widget-prepare-update-repeater-insert';
+    }
+  }]);
+  return GlobalWidgetPrepareUpdateRepeaterInsert;
+}(_baseGlobalWidgetPrepareUpdate.default);
+
+exports.GlobalWidgetPrepareUpdateRepeaterInsert = GlobalWidgetPrepareUpdateRepeaterInsert;
+var _default = GlobalWidgetPrepareUpdateRepeaterInsert;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "../modules/global-widget/assets/js/editor/hooks/data/document/repeater/remove/global-widget-prepare-update-repeater-remove.js":
+/*!*************************************************************************************************************************************!*\
+  !*** ../modules/global-widget/assets/js/editor/hooks/data/document/repeater/remove/global-widget-prepare-update-repeater-remove.js ***!
+  \*************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
+
+_Object$defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = exports.GlobalWidgetPrepareUpdateRepeaterRemove = void 0;
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createClass */ "../node_modules/@babel/runtime-corejs2/helpers/createClass.js"));
+
+var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/inherits */ "../node_modules/@babel/runtime-corejs2/helpers/inherits.js"));
+
+var _createSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createSuper */ "../node_modules/@babel/runtime-corejs2/helpers/createSuper.js"));
+
+var _baseGlobalWidgetPrepareUpdate = __webpack_require__(/*! ../../../base-global-widget-prepare-update */ "../modules/global-widget/assets/js/editor/hooks/data/base-global-widget-prepare-update.js");
+
+/**
+ * Hook is responsible for saving last changed global widget and update
+ * which containers are needed for updating the template.
+ */
+var GlobalWidgetPrepareUpdateRepeaterRemove = /*#__PURE__*/function (_BaseGlobalWidgetPrep) {
+  (0, _inherits2.default)(GlobalWidgetPrepareUpdateRepeaterRemove, _BaseGlobalWidgetPrep);
+
+  var _super = (0, _createSuper2.default)(GlobalWidgetPrepareUpdateRepeaterRemove);
+
+  function GlobalWidgetPrepareUpdateRepeaterRemove() {
+    (0, _classCallCheck2.default)(this, GlobalWidgetPrepareUpdateRepeaterRemove);
+    return _super.apply(this, arguments);
+  }
+
+  (0, _createClass2.default)(GlobalWidgetPrepareUpdateRepeaterRemove, [{
+    key: "getCommand",
+    value: function getCommand() {
+      return 'document/repeater/remove';
+    }
+  }, {
+    key: "getId",
+    value: function getId() {
+      return 'elementor-pro-global-widget-prepare-update-repeater-remove';
+    }
+  }]);
+  return GlobalWidgetPrepareUpdateRepeaterRemove;
+}(_baseGlobalWidgetPrepareUpdate.BaseGlobalWidgetPrepareUpdate);
+
+exports.GlobalWidgetPrepareUpdateRepeaterRemove = GlobalWidgetPrepareUpdateRepeaterRemove;
+var _default = GlobalWidgetPrepareUpdateRepeaterRemove;
 exports.default = _default;
 
 /***/ }),
@@ -4920,10 +5187,24 @@ _Object$defineProperty(exports, "__esModule", {
   value: true
 });
 
-_Object$defineProperty(exports, "GlobalWidgetPrepareUpdate", {
+_Object$defineProperty(exports, "GlobalWidgetPrepareUpdateElementSetSettings", {
   enumerable: true,
   get: function get() {
-    return _globalWidgetPrepareUpdate.GlobalWidgetPrepareUpdate;
+    return _globalWidgetPrepareUpdateElementSetSettings.GlobalWidgetPrepareUpdateElementSetSettings;
+  }
+});
+
+_Object$defineProperty(exports, "GlobalWidgetPrepareUpdateRepeaterInsert", {
+  enumerable: true,
+  get: function get() {
+    return _globalWidgetPrepareUpdateRepeaterInsert.GlobalWidgetPrepareUpdateRepeaterInsert;
+  }
+});
+
+_Object$defineProperty(exports, "GlobalWidgetPrepareUpdateRepeaterRemove", {
+  enumerable: true,
+  get: function get() {
+    return _globalWidgetPrepareUpdateRepeaterRemove.GlobalWidgetPrepareUpdateRepeaterRemove;
   }
 });
 
@@ -4948,7 +5229,11 @@ _Object$defineProperty(exports, "GlobalWidgetLoadTemplates", {
   }
 });
 
-var _globalWidgetPrepareUpdate = __webpack_require__(/*! ./document/elements/set-settings/global-widget-prepare-update */ "../modules/global-widget/assets/js/editor/hooks/data/document/elements/set-settings/global-widget-prepare-update.js");
+var _globalWidgetPrepareUpdateElementSetSettings = __webpack_require__(/*! ./document/elements/set-settings/global-widget-prepare-update-element-set-settings */ "../modules/global-widget/assets/js/editor/hooks/data/document/elements/set-settings/global-widget-prepare-update-element-set-settings.js");
+
+var _globalWidgetPrepareUpdateRepeaterInsert = __webpack_require__(/*! ./document/repeater/insert/global-widget-prepare-update-repeater-insert */ "../modules/global-widget/assets/js/editor/hooks/data/document/repeater/insert/global-widget-prepare-update-repeater-insert.js");
+
+var _globalWidgetPrepareUpdateRepeaterRemove = __webpack_require__(/*! ./document/repeater/remove/global-widget-prepare-update-repeater-remove */ "../modules/global-widget/assets/js/editor/hooks/data/document/repeater/remove/global-widget-prepare-update-repeater-remove.js");
 
 var _globalWidgetDoUpdate = __webpack_require__(/*! ./document/history/end-log/global-widget-do-update */ "../modules/global-widget/assets/js/editor/hooks/data/document/history/end-log/global-widget-do-update.js");
 
@@ -5122,6 +5407,7 @@ var _globalWidgetHistoryUpdate = __webpack_require__(/*! ./document/elements/set
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
@@ -5214,8 +5500,8 @@ var Module = /*#__PURE__*/function (_elementorModules$edi) {
       elementor.templates.registerTemplateType('widget', {
         showInLibrary: false,
         saveDialog: {
-          title: elementorPro.translate('global_widget_save_title'),
-          description: elementorPro.translate('global_widget_save_description')
+          title: __('Save your widget as a global widget', 'elementor-pro'),
+          description: __('You\'ll be able to add this global widget to multiple areas on your site, and edit it from one single place.', 'elementor-pro')
         },
         prepareSavedData: function prepareSavedData(data) {
           data.widgetType = data.content[0].widgetType;
@@ -5382,9 +5668,10 @@ module.exports = GlobalWidgetsView.extend({
 /*!*********************************************************************!*\
   !*** ../modules/global-widget/assets/js/editor/views/panel-page.js ***!
   \*********************************************************************/
-/***/ ((module) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 module.exports = Marionette.ItemView.extend({
@@ -5406,15 +5693,15 @@ module.exports = Marionette.ItemView.extend({
     var self = this;
     return elementorCommon.dialogsManager.createWidget('confirm', {
       id: 'elementor-global-widget-unlink-dialog',
-      headerMessage: elementorPro.translate('unlink_widget'),
-      message: elementorPro.translate('dialog_confirm_unlink'),
+      headerMessage: __('Unlink Widget', 'elementor-pro'),
+      message: __('This will make the widget stop being global. It\'ll be reverted into being just a regular widget.', 'elementor-pro'),
       position: {
         my: 'center center',
         at: 'center center'
       },
       strings: {
-        confirm: elementorPro.translate('unlink'),
-        cancel: elementorPro.translate('cancel')
+        confirm: __('Unlink', 'elementor-pro'),
+        cancel: __('Cancel', 'elementor-pro')
       },
       onConfirm: function onConfirm() {
         self.getOption('editedView').unlink();
@@ -5680,6 +5967,7 @@ module.exports = elementorModules.editor.utils.Module.extend({
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 __webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/core-js/modules/es6.array.find.js");
@@ -5715,7 +6003,7 @@ module.exports = function () {
         target: '_blank',
         class: 'elementor-button elementor-button-default elementor-edit-template',
         href: editUrl,
-        html: '<i class="eicon-pencil" /> ' + elementorPro.config.i18n.edit_template
+        html: '<i class="eicon-pencil" /> ' + __('Edit Template', 'elementor-pro')
       });
       self.templateIdView.$el.find('.elementor-control-input-wrapper').after($editButton);
     }
@@ -5737,6 +6025,7 @@ module.exports = function () {
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
@@ -5777,7 +6066,7 @@ var _default = /*#__PURE__*/function (_elementorModules$edi) {
     value: function onNavigatorInit() {
       elementor.navigator.indicators.motionFX = {
         icon: 'flash',
-        title: elementorPro.translate('motion_effects'),
+        title: __('Motion Effects', 'elementor-pro'),
         settingKeys: ['motion_fx_motion_fx_scrolling', 'motion_fx_motion_fx_mouse', 'background_motion_fx_motion_fx_scrolling', 'background_motion_fx_motion_fx_mouse'],
         section: 'section_effects'
       };
@@ -6442,6 +6731,7 @@ exports.default = _default;
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
@@ -6512,8 +6802,8 @@ var PopupAddInstructions = /*#__PURE__*/function (_BaseHookPopupAfter) {
         introductionKey: 'popupSettings',
         dialogOptions: {
           id: 'elementor-popup-settings-introduction',
-          headerMessage: '<i class="eicon-info"></i>' + elementorPro.translate('popup_settings_introduction_title'),
-          message: elementorPro.translate('popup_settings_introduction_message'),
+          headerMessage: '<i class="eicon-info"></i>' + __('Please Note', 'elementor-pro'),
+          message: __('Popup settings are accessed via the settings icon in the bottom menu', 'elementor-pro'),
           closeButton: true,
           closeButtonClass: 'eicon-close',
           position: {
@@ -6544,6 +6834,7 @@ exports.default = _default;
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
@@ -6594,7 +6885,7 @@ var PopupAddLibraryTab = /*#__PURE__*/function (_$e$modules$hookUI$Af) {
     key: "apply",
     value: function apply() {
       $e.components.get('library').addTab('templates/popups', {
-        title: elementorPro.translate('popups'),
+        title: __('Popups', 'elementor-pro'),
         filter: {
           source: 'remote',
           type: 'popup'
@@ -6707,8 +6998,8 @@ var PopupAddTriggers = /*#__PURE__*/function (_$e$modules$hookUI$Af) {
             controls: data.model.controls
           },
           name: type,
-          title: elementorPro.translate(type),
-          description: elementorPro.translate("popup_publish_screen_".concat(type, "_description")),
+          title: data.title,
+          description: data.publishScreenDescription,
           image: elementorPro.config.urls.modules + "popup/assets/images/".concat(type, "-tab.svg")
         });
       });
@@ -6723,7 +7014,7 @@ var PopupAddTriggers = /*#__PURE__*/function (_$e$modules$hookUI$Af) {
           before: 'save-template',
           name: type,
           icon: data.icon,
-          title: elementorPro.translate(type),
+          title: data.title,
           callback: function callback() {
             return $e.route(component.getTabRoute(type));
           }
@@ -6818,6 +7109,7 @@ var _removeTriggers = __webpack_require__(/*! ./editor/documents/close/remove-tr
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
@@ -6849,10 +7141,14 @@ var PopupModule = /*#__PURE__*/function (_elementorModules$edi) {
     _this = _super.call.apply(_super, [this].concat(args));
     _this.displaySettingsTypes = {
       triggers: {
-        icon: 'eicon-click'
+        icon: 'eicon-click',
+        title: __('Triggers', 'elementor-pro'),
+        publishScreenDescription: __('What action the user needs to do for the popup to open.', 'elementor-pro')
       },
       timing: {
-        icon: 'eicon-cog'
+        icon: 'eicon-cog',
+        title: __('Advanced Rules', 'elementor-pro'),
+        publishScreenDescription: __('Requirements that have to be met for the popup to open.', 'elementor-pro')
       }
     };
     return _this;
@@ -6897,6 +7193,7 @@ module.exports = elementorModules.editor.utils.Module.extend({
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 __webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/core-js/modules/es6.array.find.js");
@@ -6907,7 +7204,7 @@ module.exports = elementor.modules.controls.Select2.extend({
   getSelect2Placeholder: function getSelect2Placeholder() {
     return {
       id: '',
-      text: elementorPro.translate('all')
+      text: __('All', 'elementor-pro')
     };
   },
   getControlValueByName: function getControlValueByName(controlName) {
@@ -7701,6 +7998,7 @@ module.exports = elementor.modules.controls.RepeaterRow.extend({
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
@@ -7745,7 +8043,7 @@ module.exports = elementor.modules.controls.Repeater.extend({
     }
   },
   onRender: function onRender() {
-    this.ui.btnAddRow.text(elementorPro.translate('add_condition'));
+    this.ui.btnAddRow.text(__('Add Condition', 'elementor-pro'));
   }
 });
 
@@ -8495,6 +8793,7 @@ exports.default = _default;
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
@@ -8576,14 +8875,14 @@ var ThemeBuilderAddEditorUI = /*#__PURE__*/function (_$e$modules$hookUI$Af) {
         controls: themeBuilderModuleConfig.template_conditions.controls
       });
       component.addTab('conditions', {
-        title: elementorPro.translate('conditions'),
+        title: __('Conditions', 'elementor-pro'),
         View: _view.default,
         viewOptions: {
           model: component.manager.conditionsModel,
           controls: component.manager.conditionsModel.controls
         },
         name: 'conditions',
-        description: elementorPro.translate('conditions_publish_screen_description'),
+        description: __('Apply current template to these pages.', 'elementor-pro'),
         image: elementorPro.config.urls.modules + 'theme-builder/assets/images/conditions-tab.svg'
       });
     }
@@ -8597,7 +8896,7 @@ var ThemeBuilderAddEditorUI = /*#__PURE__*/function (_$e$modules$hookUI$Af) {
         before: 'save-template',
         name: 'conditions',
         icon: 'eicon-flow',
-        title: elementorPro.translate('display_conditions'),
+        title: __('Display Conditions', 'elementor-pro'),
         callback: function callback() {
           return $e.route('theme-builder-publish/conditions');
         }
@@ -8675,6 +8974,7 @@ var _after = __webpack_require__(/*! ./save/after */ "../modules/theme-builder/a
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
@@ -8741,13 +9041,13 @@ var ThemeBuilderFooterSaverAfterSave = /*#__PURE__*/function (_$e$modules$hookUI
         message: elementor.config.document.panel.messages.publish_notification,
         buttons: [{
           name: 'open_site_editor',
-          text: '<i class="eicon-external-link-square"></i><span class="e-theme-builder-toaster-button-text">' + elementorPro.translate('open_site_editor') + '</span>',
+          text: '<i class="eicon-external-link-square"></i><span class="e-theme-builder-toaster-button-text">' + __('Open Site Editor', 'elementor-pro') + '</span>',
           callback: function callback() {
             $e.run('app/open');
           }
         }, {
           name: 'view_live_site',
-          text: '<i class="eicon-preview-medium"></i><span class="e-theme-builder-toaster-button-text">' + elementorPro.translate('view_live_site') + '</span>',
+          text: '<i class="eicon-preview-medium"></i><span class="e-theme-builder-toaster-button-text">' + __('View Live Site', 'elementor-pro') + '</span>',
           callback: function callback() {
             open(elementor.config.document.urls.permalink);
           }
@@ -9163,6 +9463,7 @@ exports.default = _default;
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
@@ -9211,7 +9512,7 @@ var _default = /*#__PURE__*/function (_elementorModules$com) {
     key: "getLogoOptions",
     value: function getLogoOptions() {
       return {
-        title: elementorPro.translate('publish_settings')
+        title: __('Publish Settings', 'elementor-pro')
       };
     }
   }, {
@@ -9220,14 +9521,14 @@ var _default = /*#__PURE__*/function (_elementorModules$com) {
       (0, _get2.default)((0, _getPrototypeOf2.default)(_default.prototype), "initModal", this).call(this);
       this.modal.addButton({
         name: 'publish',
-        text: elementorPro.translate('save_and_close'),
+        text: __('Save & Close', 'elementor-pro'),
         callback: function callback() {
           return $e.run('theme-builder-publish/save');
         }
       });
       this.modal.addButton({
         name: 'next',
-        text: elementorPro.translate('next'),
+        text: __('Next', 'elementor-pro'),
         callback: function callback() {
           return $e.run('theme-builder-publish/next');
         }
@@ -9770,11 +10071,88 @@ _Object$defineProperty(exports, "WoocommerceDeleteWidgetDeactivateSettingsModal"
   }
 });
 
+_Object$defineProperty(exports, "WoocommerceNotices", {
+  enumerable: true,
+  get: function get() {
+    return _notices.WoocommerceNotices;
+  }
+});
+
 var _saveShowModal = __webpack_require__(/*! ./save-show-modal */ "../modules/woocommerce/assets/js/editor/hooks/data/save-show-modal.js");
 
 var _createWidgetActivateSettingsModal = __webpack_require__(/*! ./create-widget-activate-settings-modal */ "../modules/woocommerce/assets/js/editor/hooks/data/create-widget-activate-settings-modal.js");
 
 var _deleteWidgetDeactivateSettingsModal = __webpack_require__(/*! ./delete-widget-deactivate-settings-modal */ "../modules/woocommerce/assets/js/editor/hooks/data/delete-widget-deactivate-settings-modal.js");
+
+var _notices = __webpack_require__(/*! ./notices */ "../modules/woocommerce/assets/js/editor/hooks/data/notices.js");
+
+/***/ }),
+
+/***/ "../modules/woocommerce/assets/js/editor/hooks/data/notices.js":
+/*!*********************************************************************!*\
+  !*** ../modules/woocommerce/assets/js/editor/hooks/data/notices.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
+
+_Object$defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.WoocommerceNotices = void 0;
+
+var _isArray = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/array/is-array */ "../node_modules/@babel/runtime-corejs2/core-js/array/is-array.js"));
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createClass */ "../node_modules/@babel/runtime-corejs2/helpers/createClass.js"));
+
+var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/inherits */ "../node_modules/@babel/runtime-corejs2/helpers/inherits.js"));
+
+var _createSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createSuper */ "../node_modules/@babel/runtime-corejs2/helpers/createSuper.js"));
+
+var WoocommerceNotices = /*#__PURE__*/function (_$e$modules$hookData$) {
+  (0, _inherits2.default)(WoocommerceNotices, _$e$modules$hookData$);
+
+  var _super = (0, _createSuper2.default)(WoocommerceNotices);
+
+  function WoocommerceNotices() {
+    (0, _classCallCheck2.default)(this, WoocommerceNotices);
+    return _super.apply(this, arguments);
+  }
+
+  (0, _createClass2.default)(WoocommerceNotices, [{
+    key: "getCommand",
+    value: function getCommand() {
+      return 'document/elements/settings';
+    }
+  }, {
+    key: "getId",
+    value: function getId() {
+      return 'woocommerce-notices';
+    }
+  }, {
+    key: "getConditions",
+    value: function getConditions(args) {
+      return 'kit' === elementor.documents.getCurrent().config.type && (0, _isArray.default)(args.settings.woocommerce_notices_elements);
+    }
+  }, {
+    key: "apply",
+    value: function apply(args) {
+      var woocommerce = elementorPro.modules.woocommerce;
+      woocommerce.renderMockNotices(args.settings.woocommerce_notices_elements);
+    }
+  }]);
+  return WoocommerceNotices;
+}($e.modules.hookData.After);
+
+exports.WoocommerceNotices = WoocommerceNotices;
 
 /***/ }),
 
@@ -9890,6 +10268,12 @@ var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/help
 
 var _keys = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "../node_modules/@babel/runtime-corejs2/core-js/object/keys.js"));
 
+__webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/core-js/modules/es6.array.find.js");
+
+__webpack_require__(/*! core-js/modules/es6.regexp.replace.js */ "../node_modules/core-js/modules/es6.regexp.replace.js");
+
+var _createForOfIteratorHelper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createForOfIteratorHelper */ "../node_modules/@babel/runtime-corejs2/helpers/createForOfIteratorHelper.js"));
+
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createClass */ "../node_modules/@babel/runtime-corejs2/helpers/createClass.js"));
@@ -9942,6 +10326,15 @@ var WoocommerceModule = /*#__PURE__*/function (_elementorModules$edi) {
         failedMessage: __('<h3>Sorry, something went wrong.</h3><br>To define a my account page for your site, head over to Site Settings.', 'elementor-pro'),
         optionName: 'woocommerce_myaccount_page_id',
         woocommercePageName: 'myaccount'
+      },
+      'woocommerce-purchase-summary': {
+        headerMessage: __('Want to save this as your purchase summary page?', 'elementor-pro'),
+        message: __('Changes you make here will override your WooCommerce default purchase summary page.', 'elementor-pro'),
+        confirmMessage: __('You\'ve updated your summary page.', 'elementor-pro'),
+        cancelMessage: __('<h3>Set up a purchase summary page</h3><br>This page shows payment and order details. To set one up, go to Site Settings.', 'elementor-pro'),
+        failedMessage: __('<h3>Sorry, something went wrong.</h3><br>To define a purchase summary page for your site, head over to Site Settings.', 'elementor-pro'),
+        optionName: 'elementor_woocommerce_purchase_summary_page_id',
+        woocommercePageName: 'summary'
       }
     };
     _this.createdPageSettingsWidgets = [];
@@ -9951,9 +10344,63 @@ var WoocommerceModule = /*#__PURE__*/function (_elementorModules$edi) {
   (0, _createClass2.default)(WoocommerceModule, [{
     key: "onElementorLoaded",
     value: function onElementorLoaded() {
+      var _this2 = this;
+
       this.component = $e.components.register(new _component.default({
         manager: this
       }));
+      var noticeSections = ['section_woocommerce_notices', 'woocommerce_message_notices', 'woocommerce_info_notices', 'woocommerce_error_notices'];
+
+      for (var _i = 0, _noticeSections = noticeSections; _i < _noticeSections.length; _i++) {
+        var section = _noticeSections[_i];
+        elementor.channels.editor.on('kit_settings:' + section + ':activated', function () {
+          _this2.renderMockNotices(elementor.documents.getCurrent().container.settings.get('woocommerce_notices_elements'));
+        });
+      }
+    }
+  }, {
+    key: "renderMockNotices",
+    value: function renderMockNotices(noticeElements) {
+      var noticesWrapper = elementor.$previewContents.find('.woocommerce-notices-wrapper');
+
+      if (noticeElements.length <= 0) {
+        noticesWrapper.remove();
+        return;
+      }
+
+      var noticesClass = '';
+
+      var _iterator = (0, _createForOfIteratorHelper2.default)(noticeElements),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var notice = _step.value;
+          var className = notice.replace('_', '-');
+          noticesClass += 'e-' + className + '-notice ';
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      elementorFrontend.elements.$body.addClass(noticesClass.trim());
+      noticesWrapper.addClass('elementor-loading'); // Wait for the Ajax call to finish before the select2 can be changed again.
+
+      jQuery('.elementor-select2').attr('disabled', 'disabled');
+      elementorPro.ajax.addRequest('woocommerce_mock_notices', {
+        data: {
+          notice_elements: noticeElements
+        },
+        success: function success(data) {
+          noticesWrapper.remove();
+          elementor.$previewContents.find('.elementor-editor-preview').prepend(data);
+          noticesWrapper.removeClass('elementor-loading'); // Enable the select2 again.
+
+          jQuery('.elementor-select2').removeAttr('disabled');
+        }
+      });
     }
   }, {
     key: "onCreateWidget",
@@ -9979,7 +10426,7 @@ var WoocommerceModule = /*#__PURE__*/function (_elementorModules$edi) {
   }, {
     key: "onUpdateDocument",
     value: function onUpdateDocument() {
-      var _this2 = this;
+      var _this3 = this;
 
       var saveWoocommercePageSettingKeys = (0, _keys.default)(this.createdPageSettingsWidgets),
           lastWidgetCreated = saveWoocommercePageSettingKeys[saveWoocommercePageSettingKeys.length - 1],
@@ -9991,7 +10438,7 @@ var WoocommerceModule = /*#__PURE__*/function (_elementorModules$edi) {
 
       var lastWidgetCreatedOptions = this.pageSettingsWidgets[lastWidgetCreated]; // Bail if this page is already set as the corresponding WC page.
 
-      if (postId === elementorPro.config.woocommercePages[lastWidgetCreatedOptions.woocommercePageName]) {
+      if (postId === elementorPro.config.woocommerce.woocommercePages[lastWidgetCreatedOptions.woocommercePageName]) {
         return;
       }
 
@@ -10009,10 +10456,10 @@ var WoocommerceModule = /*#__PURE__*/function (_elementorModules$edi) {
           cancel: __('No thanks', 'elementor-pro')
         },
         onConfirm: function onConfirm() {
-          return _this2.onConfirmModal(lastWidgetCreatedOptions);
+          return _this3.onConfirmModal(lastWidgetCreatedOptions);
         },
         onCancel: function onCancel() {
-          return _this2.onCancelModal(lastWidgetCreatedOptions);
+          return _this3.onCancelModal(lastWidgetCreatedOptions);
         }
       }).show();
       this.createdPageSettingsWidgets = [];
@@ -10020,7 +10467,7 @@ var WoocommerceModule = /*#__PURE__*/function (_elementorModules$edi) {
   }, {
     key: "onConfirmModal",
     value: function onConfirmModal(lastWidgetCreatedOptions) {
-      var _this3 = this;
+      var _this4 = this;
 
       elementorPro.ajax.addRequest('woocommerce_update_page_option', {
         data: {
@@ -10032,7 +10479,7 @@ var WoocommerceModule = /*#__PURE__*/function (_elementorModules$edi) {
           });
         },
         error: function error() {
-          return _this3.showPagesSettingsToast(lastWidgetCreatedOptions.failedMessage);
+          return _this4.showPagesSettingsToast(lastWidgetCreatedOptions.failedMessage);
         }
       });
     }
@@ -10044,21 +10491,28 @@ var WoocommerceModule = /*#__PURE__*/function (_elementorModules$edi) {
   }, {
     key: "showPagesSettingsToast",
     value: function showPagesSettingsToast(message) {
+      var _this5 = this;
+
       var buttons = [];
       elementor.notifications.initToast();
       buttons.push({
         name: 'take_me_there',
         text: __('Take me there', 'elementor'),
-        callback: this.openWoocommercePagesSettings
+        callback: function callback() {
+          return _this5.openSiteSettingsTab('settings-woocommerce');
+        }
       });
       elementor.notifications.showToast({
         message: message,
         buttons: buttons
       });
-    }
+    } // TODO: Add this as a reusable core function - to be able to open any settings tab.
+
   }, {
-    key: "openWoocommercePagesSettings",
-    value: function openWoocommercePagesSettings() {
+    key: "openSiteSettingsTab",
+    value: function openSiteSettingsTab() {
+      var tabId = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+      var sectionId = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
       var isWPPreviewMode = elementorCommon.elements.$body.hasClass('elementor-editor-preview');
 
       if (isWPPreviewMode) {
@@ -10070,14 +10524,24 @@ var WoocommerceModule = /*#__PURE__*/function (_elementorModules$edi) {
       if (isInSettingsPanelActive) {
         $e.run('panel/global/close');
         return;
-      } // TODO: Open Settings Panel for Global/WooCommerce/WooCommerce_Pages When Site Settings is merged with the Checkout Widget.
-
+      }
 
       $e.run('editor/documents/switch', {
         id: elementor.config.kit_id,
         mode: 'autosave'
       }).then(function () {
-        return $e.route('panel/global/settings-woocommerce');
+        if (tabId) {
+          $e.route('panel/global/' + tabId);
+        }
+      }) // TODO: Replace with a standard routing solution once one is available
+      .then(function () {
+        if (sectionId) {
+          var sectionElement = jQuery('.elementor-control-' + sectionId);
+
+          if (sectionElement.length) {
+            sectionElement.trigger('click');
+          }
+        }
       });
     }
   }]);
@@ -16573,6 +17037,258 @@ module.exports = wp.i18n;
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/create fake namespace object */
+/******/ 	(() => {
+/******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
+/******/ 		var leafPrototypes;
+/******/ 		// create a fake namespace object
+/******/ 		// mode & 1: value is a module id, require it
+/******/ 		// mode & 2: merge all properties of value into the ns
+/******/ 		// mode & 4: return value when already ns object
+/******/ 		// mode & 16: return value when it's Promise-like
+/******/ 		// mode & 8|1: behave like require
+/******/ 		__webpack_require__.t = function(value, mode) {
+/******/ 			if(mode & 1) value = this(value);
+/******/ 			if(mode & 8) return value;
+/******/ 			if(typeof value === 'object' && value) {
+/******/ 				if((mode & 4) && value.__esModule) return value;
+/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
+/******/ 			}
+/******/ 			var ns = Object.create(null);
+/******/ 			__webpack_require__.r(ns);
+/******/ 			var def = {};
+/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
+/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
+/******/ 				Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
+/******/ 			}
+/******/ 			def['default'] = () => (value);
+/******/ 			__webpack_require__.d(ns, def);
+/******/ 			return ns;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/ensure chunk */
+/******/ 	(() => {
+/******/ 		__webpack_require__.f = {};
+/******/ 		// This file contains only the entry chunk.
+/******/ 		// The chunk loading function for additional chunks
+/******/ 		__webpack_require__.e = (chunkId) => {
+/******/ 			return Promise.all(Object.keys(__webpack_require__.f).reduce((promises, key) => {
+/******/ 				__webpack_require__.f[key](chunkId, promises);
+/******/ 				return promises;
+/******/ 			}, []));
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get javascript chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference async chunks
+/******/ 		__webpack_require__.u = (chunkId) => {
+/******/ 			// return url for filenames not based on template
+/******/ 			if (chunkId === "page-transitions-editor") return "" + chunkId + ".9f1c10f4ee6182546559.bundle.js";
+/******/ 			// return url for filenames based on template
+/******/ 			return undefined;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/load script */
+/******/ 	(() => {
+/******/ 		var inProgress = {};
+/******/ 		var dataWebpackPrefix = "elementor-pro:";
+/******/ 		// loadScript function to load a script via script tag
+/******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
+/******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
+/******/ 			var script, needAttach;
+/******/ 			if(key !== undefined) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				for(var i = 0; i < scripts.length; i++) {
+/******/ 					var s = scripts[i];
+/******/ 					if(s.getAttribute("src") == url || s.getAttribute("data-webpack") == dataWebpackPrefix + key) { script = s; break; }
+/******/ 				}
+/******/ 			}
+/******/ 			if(!script) {
+/******/ 				needAttach = true;
+/******/ 				script = document.createElement('script');
+/******/ 		
+/******/ 				script.charset = 'utf-8';
+/******/ 				script.timeout = 120;
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				script.setAttribute("data-webpack", dataWebpackPrefix + key);
+/******/ 				script.src = url;
+/******/ 			}
+/******/ 			inProgress[url] = [done];
+/******/ 			var onScriptComplete = (prev, event) => {
+/******/ 				// avoid mem leaks in IE.
+/******/ 				script.onerror = script.onload = null;
+/******/ 				clearTimeout(timeout);
+/******/ 				var doneFns = inProgress[url];
+/******/ 				delete inProgress[url];
+/******/ 				script.parentNode && script.parentNode.removeChild(script);
+/******/ 				doneFns && doneFns.forEach((fn) => (fn(event)));
+/******/ 				if(prev) return prev(event);
+/******/ 			}
+/******/ 			;
+/******/ 			var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
+/******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
+/******/ 			script.onload = onScriptComplete.bind(null, script.onload);
+/******/ 			needAttach && document.head.appendChild(script);
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"editor": 0
+/******/ 		};
+/******/ 		
+/******/ 		__webpack_require__.f.j = (chunkId, promises) => {
+/******/ 				// JSONP chunk loading for javascript
+/******/ 				var installedChunkData = __webpack_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
+/******/ 				if(installedChunkData !== 0) { // 0 means "already installed".
+/******/ 		
+/******/ 					// a Promise means "currently loading".
+/******/ 					if(installedChunkData) {
+/******/ 						promises.push(installedChunkData[2]);
+/******/ 					} else {
+/******/ 						if(true) { // all chunks have JS
+/******/ 							// setup Promise in chunk cache
+/******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
+/******/ 							promises.push(installedChunkData[2] = promise);
+/******/ 		
+/******/ 							// start chunk loading
+/******/ 							var url = __webpack_require__.p + __webpack_require__.u(chunkId);
+/******/ 							// create error before stack unwound to get useful stacktrace later
+/******/ 							var error = new Error();
+/******/ 							var loadingEnded = (event) => {
+/******/ 								if(__webpack_require__.o(installedChunks, chunkId)) {
+/******/ 									installedChunkData = installedChunks[chunkId];
+/******/ 									if(installedChunkData !== 0) installedChunks[chunkId] = undefined;
+/******/ 									if(installedChunkData) {
+/******/ 										var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 										var realSrc = event && event.target && event.target.src;
+/******/ 										error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 										error.name = 'ChunkLoadError';
+/******/ 										error.type = errorType;
+/******/ 										error.request = realSrc;
+/******/ 										installedChunkData[1](error);
+/******/ 									}
+/******/ 								}
+/******/ 							};
+/******/ 							__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
+/******/ 						} else installedChunks[chunkId] = 0;
+/******/ 					}
+/******/ 				}
+/******/ 		};
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			for(moduleId in moreModules) {
+/******/ 				if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 					__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 				}
+/******/ 			}
+/******/ 			if(runtime) var result = runtime(__webpack_require__);
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkIds[i]] = 0;
+/******/ 			}
+/******/ 		
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunkelementor_pro"] = self["webpackChunkelementor_pro"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
@@ -16581,6 +17297,7 @@ var __webpack_exports__ = {};
 /*!*****************************************!*\
   !*** ../assets/dev/js/editor/editor.js ***!
   \*****************************************/
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
@@ -16613,6 +17330,8 @@ var ElementorPro = Marionette.Application.extend({
   config: {},
   modules: {},
   initModules: function initModules() {
+    var _this = this;
+
     var QueryControl = __webpack_require__(/*! modules/query-control/assets/js/editor */ "../modules/query-control/assets/js/editor.js"),
         Library = __webpack_require__(/*! modules/library/assets/js/editor */ "../modules/library/assets/js/editor.js"),
         FlipBox = __webpack_require__(/*! modules/flip-box/assets/js/editor/editor */ "../modules/flip-box/assets/js/editor/editor.js"),
@@ -16639,7 +17358,14 @@ var ElementorPro = Marionette.Application.extend({
       popup: new _module.default(),
       videoPlaylistModule: new _module6.default(),
       ScrollSnapModule: new _module8.default()
-    };
+    }; // Import the Page Transitions editor module dynamically.
+
+    if (elementorCommon.config.experimentalFeatures['page-transitions']) {
+      __webpack_require__.e(/*! import() | page-transitions-editor */ "page-transitions-editor").then(__webpack_require__.t.bind(__webpack_require__, /*! modules/page-transitions/assets/js/editor/module */ "../modules/page-transitions/assets/js/editor/module.js", 23)).then(function (_ref) {
+        var PageTransitions = _ref.default;
+        _this.modules.pageTransitions = new PageTransitions();
+      });
+    }
   },
   ajax: {
     prepareArgs: function prepareArgs(args) {
@@ -16657,19 +17383,19 @@ var ElementorPro = Marionette.Application.extend({
     return elementorCommon.translate(stringKey, null, templateArgs, this.config.i18n);
   },
   onStart: function onStart() {
-    var _this = this;
+    var _this2 = this;
 
     this.config = elementorProEditorConfig;
     this.initModules();
     jQuery(window).on('elementor:init', function () {
-      return _this.onElementorInit();
+      return _this2.onElementorInit();
     }).on('elementor/connect/success/editor-pro-activate', this.onActivateSuccess);
   },
   onElementorInit: function onElementorInit() {
-    var _this2 = this;
+    var _this3 = this;
 
     elementor.on('preview:loaded', function () {
-      return _this2.onElementorPreviewLoaded();
+      return _this3.onElementorPreviewLoaded();
     });
     elementorPro.libraryRemoveGetProButtons();
     elementorCommon.debug.addURLToWatch('elementor-pro/assets');
@@ -16710,7 +17436,7 @@ var ElementorPro = Marionette.Application.extend({
 
     elementorPro.config.isActive = true;
     elementor.notifications.showToast({
-      message: elementor.translate('connected_successfully')
+      message: __('Connected Successfully', 'elementor')
     });
   },
   // TODO: Move to core

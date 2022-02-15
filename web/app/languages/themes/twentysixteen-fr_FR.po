@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Sixteen package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-12-09 22:13:14+0000\n"
+"PO-Revision-Date: 2022-01-26 00:03:02+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,47 +16,55 @@ msgid "Twenty Sixteen is a modernized take on an ever-popular WordPress layout �
 msgstr "Twenty Sixteen revisite en la modernisant une mise en page WordPress toujours aussi populaire : l’entête horizontal avec une barre latérale facultative, qui fonctionne tout aussi bien pour les blogs que pour les sites. Il dispose d’options de couleurs avec de superbes jeux de couleurs par défaut, une composition en grille fluide et harmonieuse utilisant l’approche « mobile-first », et un soin apporté jusque dans les moindres détails. Twenty Sixteen vous donnera un site WordPress magnifique dans toutes les situations."
 
 #. Theme Name of the theme
-#: inc/block-patterns.php:16 inc/block-patterns.php:56
+#: inc/block-patterns.php:17 inc/block-patterns.php:57
 msgid "Twenty Sixteen"
 msgstr "Twenty Sixteen"
 
-#: inc/block-patterns.php:139
+#: inc/block-patterns.php:140
 msgid "Pre-Order Now"
 msgstr "Pré-commander maintenant"
 
-#: inc/block-patterns.php:132
+#: inc/block-patterns.php:133
 msgid "My new book “Twenty Sixteen” is available for pre-order."
 msgstr "Mon nouveau livre « Twenty Sixteen » est disponible en précommande."
 
-#: inc/block-patterns.php:121
+#: inc/block-patterns.php:122
 msgid "Call to Action"
 msgstr "Appel à l’action"
 
-#: inc/block-patterns.php:101
+#: inc/block-patterns.php:102
 msgid "— Takashi Irie"
 msgstr "— Takashi Irie"
 
-#: inc/block-patterns.php:97
+#: inc/block-patterns.php:98
 msgid "Twenty Sixteen will make your WordPress look beautiful everywhere."
 msgstr "Twenty Sixteen rendra votre WordPress magnifique partout."
 
-#: inc/block-patterns.php:86
+#: inc/block-patterns.php:87
 msgid "Large Blockquote"
 msgstr "Grande citation"
 
-#: inc/block-patterns.php:66
+#: inc/block-patterns.php:73
+msgid "The theme features a harmonious fluid grid using a mobile-first approach. The layout is a modern take on the horizontal masthead with an optional right sidebar."
+msgstr "Le thème présente une fonctionnalité fluide harmonieuse utilisant une approche axée sur le mobile. La mise en page est une version moderne de la barre d’administration horizontale avec une colonne latérale droite facultative."
+
+#: inc/block-patterns.php:67
 msgid "Twenty Sixteen will make your WordPress website look beautiful everywhere. Take advantage of its custom color options and beautiful default color schemes."
 msgstr "Twenty Sixteen rendra votre site WordPress magnifique partout. Profitez de ses options de couleurs personnalisées et de ses magnifiques jeux de couleurs par défaut."
 
-#: inc/block-patterns.php:49
+#: inc/block-patterns.php:50
 msgid "Big Title with Two Columns Text"
 msgstr "Grand titre avec texte à deux colonnes"
 
-#: inc/block-patterns.php:37
+#: inc/block-patterns.php:38
 msgid "Twenty Sixteen will make your WordPress website look beautiful everywhere. Take advantage of custom color options, beautiful default color schemes, a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail."
 msgstr "Twenty Sixteen rendra votre site WordPress magnifique partout. Bénéficiez d’options de couleurs personnalisées, de superbes palettes de couleurs par défaut, d’une grille fluide harmonieuse utilisant une approche prioritaire pour appareils mobile et d’un polissage impeccable dans les moindres détails."
 
-#: inc/block-patterns.php:27
+#: inc/block-patterns.php:35
+msgid "Twenty Sixteen is a modern take on the horizontal masthead with an optional right sidebar. It works perfectly for WordPress websites and blogs."
+msgstr "Twenty Sixteen est une version moderne de la barre d’administration horizontale avec une colonne latérale droite facultative. Cela fonctionne parfaitement pour les sites et les blogs WordPress."
+
+#: inc/block-patterns.php:28
 msgid "Large heading with short description"
 msgstr "Grand titre avec brève description"
 
@@ -105,14 +113,14 @@ msgid "Dark Gray"
 msgstr "Gris foncé"
 
 #. translators: %s: Post title.
-#: template-parts/content.php:29 inc/template-tags.php:195
+#: inc/template-tags.php:195 template-parts/content.php:29
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "Continuer la lecture<span class=\"screen-reader-text\"> de &laquo;&nbsp;%s&nbsp;&raquo;</span>"
 
 #. translators: %s: Post title.
 #: image.php:88 template-parts/content-page.php:39
-#: template-parts/content.php:53 template-parts/content-search.php:28
-#: template-parts/content-search.php:43 template-parts/content-single.php:47
+#: template-parts/content-search.php:28 template-parts/content-search.php:43
+#: template-parts/content-single.php:47 template-parts/content.php:53
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "Modifier<span class=\"screen-reader-text\"> \"%s\"</span>"
 
@@ -168,7 +176,7 @@ msgstr "Désolé, mais rien ne correspond à votre recherche. Veuillez réessaye
 #. translators: %s: Post editor URL.
 #: template-parts/content-none.php:22
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "Prêt(e) à publier votre premier article&nbsp;? <a href=\"%1$s\">Lancez-vous ici</a>."
+msgstr "Prêt·e à publier votre premier article ? <a href=\"%1$s\">Lancez-vous ici</a>."
 
 #: template-parts/content-none.php:13
 msgid "Nothing Found"
@@ -276,11 +284,11 @@ msgid "Base Color Scheme"
 msgstr "Jeu de couleurs de base"
 
 #. translators: %s: The current WordPress version.
-#: inc/back-compat.php:42 inc/back-compat.php:56 inc/back-compat.php:75
+#: inc/back-compat.php:45 inc/back-compat.php:62 inc/back-compat.php:85
 msgid "Twenty Sixteen requires at least WordPress version 4.4. You are running version %s. Please upgrade and try again."
 msgstr "Twenty Sixteen ne fonctionne qu’à partir de WordPress 4.4. Vous utilisez la version %s. Veuillez mettre à jour et réessayer. "
 
-#: single.php:31 image.php:107
+#: image.php:107 single.php:31
 msgctxt "Parent post link"
 msgid "<span class=\"meta-nav\">Published in</span><span class=\"post-title\">%title</span>"
 msgstr "<span class=\"meta-nav\">Publié dans</span><span class=\"post-title\">%title</span>"
@@ -291,7 +299,7 @@ msgid "Full size"
 msgstr "Taille réelle"
 
 #: image.php:58 template-parts/content-page.php:24
-#: template-parts/content.php:36 template-parts/content-single.php:26
+#: template-parts/content-single.php:26 template-parts/content.php:36
 msgid "Pages:"
 msgstr "Pages :"
 
@@ -319,16 +327,25 @@ msgstr "fermer le sous-menu"
 msgid "expand child menu"
 msgstr "ouvrir le sous-menu"
 
+#. translators: If there are characters in your language that are not supported
+#. by Inconsolata, translate this to 'off'. Do not translate into your own
+#. language.
 #: functions.php:342
 msgctxt "Inconsolata font: on or off"
 msgid "on"
 msgstr "on"
 
+#. translators: If there are characters in your language that are not supported
+#. by Montserrat, translate this to 'off'. Do not translate into your own
+#. language.
 #: functions.php:334
 msgctxt "Montserrat font: on or off"
 msgid "on"
 msgstr "on"
 
+#. translators: If there are characters in your language that are not supported
+#. by Merriweather, translate this to 'off'. Do not translate into your own
+#. language.
 #: functions.php:326
 msgctxt "Merriweather font: on or off"
 msgid "on"
@@ -375,17 +392,17 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "%1$s réflexion sur « %2$s  »"
 msgstr[1] "%1$s réflexions sur « %2$s »"
 
-#: image.php:62 template-parts/content-page.php:28
-#: template-parts/content.php:40 template-parts/content-single.php:30
-#: search.php:46 archive.php:54 index.php:51
+#: archive.php:54 image.php:62 index.php:51 search.php:46
+#: template-parts/content-page.php:28 template-parts/content-single.php:30
+#: template-parts/content.php:40
 msgid "Page"
 msgstr "Page"
 
-#: search.php:45 archive.php:53 index.php:50
+#: archive.php:53 index.php:50 search.php:45
 msgid "Next page"
 msgstr "Page suivante"
 
-#: search.php:44 archive.php:52 index.php:49
+#: archive.php:52 index.php:49 search.php:44
 msgid "Previous page"
 msgstr "Page précédente"
 
