@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2bc9dd7df854b0130221061f5dea6648",
+    "content-hash": "21d68f121400776d08ed37f4dfeebdb2",
     "packages": [
         {
             "name": "composer/installers",
@@ -689,6 +689,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/classic-editor/"
+        },
+        {
+            "name": "wpackagist-plugin/connect-polylang-elementor",
+            "version": "2.0.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/connect-polylang-elementor/",
+                "reference": "tags/2.0.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/connect-polylang-elementor.2.0.6.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/connect-polylang-elementor/"
         },
         {
             "name": "wpackagist-plugin/easy-wp-smtp",
