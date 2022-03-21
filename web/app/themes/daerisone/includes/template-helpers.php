@@ -20,6 +20,18 @@ function reduce_text_lenght($text, $limit){
 }
 
 
+/*======================================================*/
+/*========================Test language==========================*/
+/*======================================================*/
+function is_current_language($locale){
+    $current_locale = function_exists('pll_current_language')? pll_current_language() : substr(get_locale(),0,2);
+    
+    //echo $current_locale;
+
+    return $current_locale === $locale;
+}
+
+
 /**
  * Archive Navigation
  *
@@ -28,7 +40,7 @@ function reduce_text_lenght($text, $limit){
  *
  */
 function daerisone_archive_navigation() {
-  $settings = array(
+    $settings = array(
     'count' => 6,
     'prev_text' => '<span aria-hidden="true">&laquo;</span>',
     'next_text' => '<span aria-hidden="true">&raquo;</span>'

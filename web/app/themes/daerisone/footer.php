@@ -25,7 +25,12 @@ if (!function_exists('elementor_theme_do_location') || !elementor_theme_do_locat
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <?php
-                echo do_shortcode('[hubspot type=form portal=6068051 id=a2c77b2e-0823-44ae-82b1-44f88d092742]');
+                if(is_current_language('fr')) {
+                    echo do_shortcode('[hubspot type=form portal=6068051 id=59324868-5f68-4c34-bb5e-cd43665db95c]');
+                }else {
+                    echo do_shortcode('[hubspot type=form portal=6068051 id=a2c77b2e-0823-44ae-82b1-44f88d092742]');
+                }
+                
                 ?>
             </div>
         </div>
@@ -42,8 +47,14 @@ if (!function_exists('elementor_theme_do_location') || !elementor_theme_do_locat
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <?php
-                echo do_shortcode('[hubspot type=form portal=6068051 id=58205762-79a0-4dab-beaa-cd3172047931]');
+                    if(is_current_language('fr')) {
+                        echo do_shortcode('[hubspot type=form portal=6068051 id=13813a21-39f1-4b41-9f06-23b131484451]');
+                    }else {
+                        echo do_shortcode('[hubspot type=form portal=6068051 id=58205762-79a0-4dab-beaa-cd3172047931]');
+                    }
+                
                 ?>
+
             </div>
         </div>
     </div>
