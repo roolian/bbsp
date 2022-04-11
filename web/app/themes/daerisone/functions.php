@@ -20,6 +20,7 @@ include_once THEME_LIB_DIR . '/acf-actions.php';
 include_once THEME_LIB_DIR . '/template-helpers.php';
 include_once THEME_LIB_DIR . '/assets-loading.php';
 include_once THEME_LIB_DIR . '/polylang.php';
+include_once THEME_LIB_DIR . '/yoast.php';
 
 
 
