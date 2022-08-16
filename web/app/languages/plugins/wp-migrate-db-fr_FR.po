@@ -1,39 +1,46 @@
-# Translation of Plugins - WP Migrate DB &#8211; WordPress Migration Made Easy - Stable (latest release) in French (France)
-# This file is distributed under the same license as the Plugins - WP Migrate DB &#8211; WordPress Migration Made Easy - Stable (latest release) package.
+# Translation of Plugins - WP Migrate Lite &#8211; WordPress Migration Made Easy - Stable (latest release) in French (France)
+# This file is distributed under the same license as the Plugins - WP Migrate Lite &#8211; WordPress Migration Made Easy - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-12-05 15:35:59+0000\n"
+"PO-Revision-Date: 2022-08-05 09:15:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"X-Generator: GlotPress/4.0.0-alpha.1\n"
 "Language: fr\n"
-"Project-Id-Version: Plugins - WP Migrate DB &#8211; WordPress Migration Made Easy - Stable (latest release)\n"
+"Project-Id-Version: Plugins - WP Migrate Lite &#8211; WordPress Migration Made Easy - Stable (latest release)\n"
+
+#: class/Common/Plugin/Menu.php:95 class/Common/Plugin/Menu.php:134
+#: class/Common/Plugin/PluginManagerBase.php:374 php-checker.php:37
+#: php-checker.php:66
+msgid "WP Migrate"
+msgstr "WP Migrate"
+
+#. Plugin Name of the plugin
+#: php-checker.php:33 php-checker.php:66
+msgid "WP Migrate Lite"
+msgstr "WP Migrate Lite"
 
 #: class/Free/Plugin/PluginManager.php:80
 msgid "Migrate"
 msgstr "Migrer"
 
-#: class/Common/Cli/Cli.php:827 class/Common/Cli/Cli.php:843
+#: class/Common/Cli/Cli.php:837 class/Common/Cli/Cli.php:853
 msgid "Missing case sensitive find and replace values."
 msgstr "Les valeurs de recherche et de remplacement ne sont pas sensibles à la casse."
 
-#: class/Common/Cli/Cli.php:809 class/Common/Cli/Cli.php:819
+#: class/Common/Cli/Cli.php:819 class/Common/Cli/Cli.php:829
 msgid "Missing Regex find and replace values."
 msgstr "Valeurs de recherche et de remplacement Regex manquantes."
 
-#: class/Common/Cli/Cli.php:805
+#: class/Common/Cli/Cli.php:815
 msgid "Please make sure Regular Expression find & replace pattern is valid"
 msgstr "Veuillez vous assurer que la composition de recherche et de remplacement par expression régulière est valide."
 
 #. Author URI of the plugin
 msgid "https://deliciousbrains.com/?utm_campaign=WP%2BMigrate%2BDB%2BPro%2BUpgrade&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting"
 msgstr "https://deliciousbrains.com/?utm_campaign=WP%2BMigrate%2BDB%2BPro%2BUpgrade&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting"
-
-#: template/options-page-outdated-wp.php:13
-msgid "This version of %1$s requires WordPress %2$s+. We recommend updating WordPress, but if that's not an option you can download version 1.9.x of WP Migrate DB Pro from <a href=\"%3$s\">My Account</a>."
-msgstr "Cette version de %1$s nécessite WordPress %2$s+. Nous recommandons de mettre à jour WordPress, mais si vous ne le pouvez pas, vous pouvez télécharger la version 1.9.x de WP Migrate DB Pro depuis <a href=\"%3$s\">Mon compte</a>."
 
 #: class/Common/Http/WPMDBRestAPIServer.php:26
 msgid "Only authenticated users can access endpoint."
@@ -46,10 +53,6 @@ msgstr "Requête non valide. Avez-vous transmis le bon nonce ?"
 #: class/Common/Http/Http.php:90
 msgid "An error occurred - JSON response: %s"
 msgstr "Une erreur s’est produite - Réponse JSON : %s"
-
-#: class/Common/Profile/ProfileManager.php:661
-msgid "Profile saved as invalid JSON."
-msgstr "Profil enregistré comme JSON non valide."
 
 #: class/Common/Profile/ProfileManager.php:510
 msgid "Failed to %s profile, state data is empty."
@@ -67,9 +70,8 @@ msgstr "Profil supprimé"
 #: class/Common/Profile/ProfileManager.php:380
 #: class/Common/Profile/ProfileManager.php:413
 #: class/Common/Profile/ProfileManager.php:447
-#: class/Common/Profile/ProfileManager.php:654
-#: class/Common/Profile/ProfileManager.php:680
-#: class/Common/Profile/ProfileManager.php:692
+#: class/Common/Profile/ProfileManager.php:658
+#: class/Common/Profile/ProfileManager.php:670
 msgid "Profile not found."
 msgstr "Profil non trouvé."
 
@@ -139,25 +141,25 @@ msgstr "Impossible de finaliser la migration, état de la migration vide."
 msgid " Remote URL: %s "
 msgstr " URL distante : %s "
 
-#: class/WPMDBDI_Config.php:35
+#: class/WPMDBDI_Config.php:38
 msgid "Classmap could not be generated."
 msgstr "Classmap n’a pas pu être généré."
 
-#: class/Common/Sanitize.php:48
+#: class/Common/Sanitize.php:49
 msgid "Sanitization Error: `%1$s` method was expecting %2$s for the `%3$s` field, but got something else: \"%4$s\""
 msgstr "Erreur d’assainissement : La méthode « %1$s » attendait %2$s pour le champ « %3$s », mais a obtenu autre chose : « %4$s »."
 
-#: class/Common/Cli/Cli.php:781
+#: class/Free/Plugin/PluginManager.php:84
+msgid "Upgrade"
+msgstr "Mettre à niveau"
+
+#: class/Common/Cli/Cli.php:791
 msgid "--"
 msgstr "--"
 
-#: php-checker.php:68
+#: php-checker.php:67
 msgid "requires PHP version %s or higher to run and has been deactivated. You are currently running version %s. <a href=\"%s\">Learn More »</a>"
 msgstr "nécessite PHP version %s ou plus pour fonctionner et a été désactivé. Vous exécutez actuellement la version %s. <a href=\"%s\">En savoir plus »</a>"
-
-#: php-checker.php:37 php-checker.php:67
-msgid "WP Migrate DB Pro"
-msgstr "WP Migrate DB Pro"
 
 #: php-checker.php:26
 msgid "%s requires PHP version %s or higher and cannot be activated. You are currently running version %s. <a href=\"%s\">Learn&nbsp;More&nbsp;»</a>"
@@ -167,21 +169,9 @@ msgstr "%s nécessite PHP version %s ou plus et ne peut être activé. Vous exé
 msgid "Setting does not exist"
 msgstr "Le réglage n’existe pas "
 
-#: class/Common/Cli/Cli.php:421
+#: class/Common/Cli/Cli.php:427
 msgid "Performing backup"
 msgstr "Effectuer une sauvegarde"
-
-#: class/Free/Plugin/PluginManager.php:84
-msgid "Upgrade to Pro"
-msgstr "Mettre à niveau vers Pro"
-
-#: class/Common/Replace.php:661
-msgid ""
-"WP Migrate DB - Failed to instantiate object for replacement. If the serialized object's class is defined by a plugin, you should enable that plugin for migration requests. \n"
-"Class Name: %s"
-msgstr ""
-"WP Migrate DB - Échec de l'instanciation de l’objet pour le remplacement. Si la classe de l’objet sérialisé est définie par une extension, vous devez activer cette extension pour les demandes de migration. \n"
-"Nom de la classe : %s"
 
 #: template/common/muplugin-failed-update-warning.php:4
 msgid "We could not update the Compatibility Mode plugin because the mu-plugins folder is not writable. Please update the permissions of the mu-plugins folder to enable Compatibility Mode. "
@@ -207,13 +197,9 @@ msgstr "Veuillez sélectionner un fichier d’exportation SQL ci-dessus pour con
 msgid "The selected file does not have a recognized file type. Please upload a valid SQL file to continue."
 msgstr "Le fichier sélectionné n’est pas un type de fichier reconnu. Veuillez téléverser un fichier SQL valide pour continuer."
 
-#: class/Common/Sql/Table.php:1138
+#: class/Common/Sql/Table.php:1139
 msgid "The table `%1s` contains characters which are invalid in the target database. See&nbsp;<a href=\"%2s\" target=\"_blank\">our documentation</a> for more information."
 msgstr "La table « %1s » contient des caractères qui sont non valides dans la base de données cible. Voir : <a href=\"%2s\">notre documentation</a> pour plus d’information."
-
-#: class/Common/Sql/Table.php:1135
-msgid "The imported table `%1s` contains characters which are invalid in the target schema.<br><br>If this is a WP Migrate DB Pro export file, ensure that the `Compatible with older versions of MySQL` setting under `Advanced Options` is unchecked and try exporting again.<br><br> See&nbsp;<a href=\"%2s\">our documentation</a> for more information."
-msgstr "La table importée « %1s » contient des caractères qui ne sont pas valides dans le schéma cible.<br><br>S’il s’agit d’un fichier d’exportation de WP Migrate DB pro, assurez-vous que l’option « Compatible avec les anciennes versions de MySQL » sous « Options avancées » n’est pas cochée et essayez d’exporter à nouveau. <br><br> Voir : ;<a href=\"%2s\">notrer documentation</a> pour plus d’information."
 
 #: class/Common/Compatibility/CompatibilityManager.php:230
 msgid "The compatibility plugin could not be deactivated because your mu-plugin directory is currently not writable.  Please update the permissions of the mu-plugins folder: %s"
@@ -223,19 +209,19 @@ msgstr "La compatibilité extensions ne peut pas être désactivée car votre r�
 msgid "The compatibility plugin could not be activated because your mu-plugin directory is currently not writable.  Please update the permissions of the mu-plugins folder:  %s"
 msgstr "La compatibilité extensions ne peut pas être activée car votre répertoire mu-plugin est actuellement non accessible en écriture. Veuillez mettre à jour les droits pour le dossier mu-plugins : %s"
 
-#: class/Common/Cli/Cli.php:863
+#: class/Common/Cli/Cli.php:873
 msgid "Replace value is required."
 msgstr "La valeur de remplacement est nécessaire."
 
-#: class/Common/Cli/Cli.php:856
+#: class/Common/Cli/Cli.php:866
 msgid "Find value is required."
 msgstr "La valeur de recherche est nécessaire"
 
-#: class/Common/Cli/Cli.php:199
+#: class/Common/Cli/Cli.php:201
 msgid "Missing path to import file. Use --import-file=/path/to/import.sql.gz"
 msgstr "Chemin manquant pour importer le fichier. Utilisez --import-file=/path/to/import.sql.gz"
 
-#: class/Common/Http/RemotePost.php:315
+#: class/Common/Http/RemotePost.php:325
 msgid "Unable to connect to the remote server, the remote server responded with: %s %s (scope: %s)"
 msgstr "Impossible de se connecter au serveur distant, le serveur distant répond avec : %1$s %2$s (portée : %3$s)"
 
@@ -251,7 +237,7 @@ msgstr "Erreur WPMDB : les données ne peuvent pas être désérialisées. %s"
 msgid "%1$s only runs at the Network Admin level. As there is no Tools menu in the Network Admin, the %2$s menu item is located under Settings."
 msgstr "%1$s fonctionne uniquement au niveau administrateur de réseau. Comme il n’y a pas de menu Outils en administrateur réseau, l’élément de menu %2$s est situé sous Réglages."
 
-#: class/Common/Sql/Table.php:802
+#: class/Common/Sql/Table.php:803
 msgid "Error creating temporary table. Table \"%s\" does not exist."
 msgstr "Erreur lors de la création de la table temporaire. La table « %s » n’existe pas."
 
@@ -259,23 +245,23 @@ msgstr "Erreur lors de la création de la table temporaire. La table « %s » 
 msgid "Scope: %s()."
 msgstr "Portée : %s()."
 
-#: class/Common/Cli/Command.php:215
+#: class/Common/Cli/Command.php:216
 msgid "Find & Replace complete"
 msgstr "Chercher &amp; remplacer terminé"
 
-#: class/Common/Cli/Cli.php:853
+#: class/Common/Cli/Cli.php:863
 msgid "Missing find and replace values."
 msgstr "Valeurs manquantes pour le chercher et remplacer."
 
-#: class/Common/Cli/Cli.php:418
+#: class/Common/Cli/Cli.php:424
 msgid "Running find & replace"
 msgstr "Exécution de chercher &amp; remplacer"
 
-#: class/Common/Http/RemotePost.php:302
+#: class/Common/Http/RemotePost.php:312
 msgid "<strong>HTTPS Connection Error:</strong>  (#121 - scope: %s) This typically means that the version of OpenSSL that your local site is using to connect to the remote is incompatible or, more likely, being rejected by the remote server because it's insecure. <a href=\"%s\" target=\"_blank\">See our documentation</a> for possible solutions."
 msgstr "<strong>Erreur de connexion HTTPS : </strong> (#121 - portée : %s) Cela signifie généralement que la version d’OpenSSL que votre site local utilise pour se connecter au site distant est incompatible ou, plus probablement rejetée par le serveur distant parce que non sécurisée. <a href=\"%s\" target=\"_blank\">Voir notre documentation</a> pour trouver des solutions possibles."
 
-#: class/Common/Http/RemotePost.php:296
+#: class/Common/Http/RemotePost.php:306
 msgid "Couldn't connect over HTTPS. You might want to try regular HTTP instead. (#121 - scope: %s)"
 msgstr "Impossible de se connecter par HTTPS. Vous pourriez essayer le HTTP à la place. (#121 - portée : %s)"
 
@@ -284,7 +270,7 @@ msgid "Hey, this is the first time activating your license, nice! Your migration
 msgstr "Hé, c’est la première fois que vous activez votre licence, bravo ! Vos migrations sont sur le point de devenir géniales ! Si vous ne l avez pas encore fait, vous devriez consulter nos <a href=\"%1$s\" target=\"_blank\">Guide de démarrage rapide</a> et <a href=\"%2$s\" target=\"_blank\">Vidéos</a>. Si vous rencontrez le moindre problème, utilisez l’onglet <strong>Aide</strong> ci-dessus pour envoyer une demande de support."
 
 #: class/Common/Plugin/Assets.php:78
-msgid "Welcome to WP Migrate DB Pro! &#127881;"
+msgid "Welcome to WP Migrate! &#127881;"
 msgstr "Bienvenue sur WP Migrate DB Pro !"
 
 #: class/Common/Plugin/Assets.php:77
@@ -296,19 +282,15 @@ msgctxt "Plugin extensions"
 msgid "Addons"
 msgstr "Add-ons"
 
-#: class/Common/Cli/Cli.php:773
-msgid "Please make sure that you have activated the appropriate addons for WP Migrate DB Pro."
-msgstr "Veuillez vous assurer que vous avez activé les add-ons appropriés pour WP Migrate DB Pro."
-
-#: class/Common/Cli/Cli.php:766
+#: class/Common/Cli/Cli.php:782
 msgid "unknown %s parameter"
 msgstr "paramètre %s inconnu"
 
-#: class/Common/Cli/Cli.php:764
+#: class/Common/Cli/Cli.php:780
 msgid "Parameter errors: "
 msgstr "Erreurs de paramètre :"
 
-#: class/Common/Cli/Cli.php:172
+#: class/Common/Cli/Cli.php:174
 msgid "Profile not found or unable to be generated from params."
 msgstr "Profile non trouvé ou impossible à générer à partir des paramètres."
 
@@ -323,11 +305,6 @@ msgstr "Exporte votre base de données comme une sauvegarde de données MySQL (u
 #. Plugin URI of the plugin
 msgid "https://wordpress.org/plugins/wp-migrate-db/"
 msgstr "http://wordpress.org/plugins/wp-migrate-db/"
-
-#. Plugin Name of the plugin
-#: php-checker.php:33 php-checker.php:67
-msgid "WP Migrate DB"
-msgstr "WP Migrate DB"
 
 #: template/options.php:12
 msgid "<strong>PHP Function Disabled</strong> &mdash; The <code>set_time_limit()</code> function is currently disabled on your server. We use this function to ensure that the migration doesn't time out. We haven't disabled the plugin however, so you're free to cross your fingers and hope for the best. You may want to contact your web host to enable this function."
@@ -360,14 +337,6 @@ msgstr "Avertissement : casse mixte dans les noms de tables"
 #: class/Common/Sql/TableHelper.php:140
 msgid "The source site supports utf8mb4 data but the target does not, aborting migration to avoid possible data corruption. Please see %1$s for more information. (#148)"
 msgstr "Le site source supporte les données utf8mb4 mais le site cible non, interrompre la migration pour éviter une corruption possible des données. Veuillez consulter %1$s pour plus d’information. (#148)"
-
-#: class/Common/Plugin/PluginManagerBase.php:266
-msgid "WP Migrate DB and WP Migrate DB Pro cannot both be active. We've automatically deactivated WP Migrate DB Pro."
-msgstr "WP Migrate DB et WP Migrate DB Pro ne peuvent être actives ensemble. Nous avons automatiquement désactivé WP Migrate DB Pro."
-
-#: class/Common/Plugin/PluginManagerBase.php:264
-msgid "WP Migrate DB and WP Migrate DB Pro cannot both be active. We've automatically deactivated WP Migrate DB."
-msgstr "WP Migrate DB et WP Migrate DB Pro ne peuvent être actives ensemble. Nous avons automatiquement désactivé WP Migrate DB."
 
 #: class/Common/BackupExport.php:91
 msgid "Could not delete the MySQL export file."
@@ -406,61 +375,51 @@ msgstr "L’URL de la première ligne semble être non valide, veuillez la véri
 msgid "The connection information appears to be missing, please enter it to continue."
 msgstr "Les informations de connexion semblent manquer, veuillez les saisir pour continuer."
 
-#: class/Common/Plugin/Menu.php:95 class/Common/Plugin/Menu.php:134
-#: class/Common/Plugin/PluginManagerBase.php:374
-msgid "Migrate DB"
-msgstr "Migrate DB"
-
-#: class/Common/Plugin/Menu.php:95 class/Common/Plugin/Menu.php:134
-#: class/Common/Plugin/PluginManagerBase.php:374
-msgid "Migrate DB Pro"
-msgstr "Migrate DB Pro"
-
-#: class/Common/Sql/Table.php:1063
+#: class/Common/Sql/Table.php:1064
 msgid "Failed to write the SQL data to the file. (#128)"
 msgstr "Impossible d’écrire les données SQL dans le fichier. (#128)"
 
-#: class/Common/Sql/Table.php:1056
+#: class/Common/Sql/Table.php:1057
 msgid "Failed to write the gzipped SQL data to the file. (#127)"
 msgstr "Impossible d’écrire les données SQL zippées dans le fichier. (#127)"
 
-#: class/Common/Sql/Table.php:1905
+#: class/Common/Sql/Table.php:1906
 msgid "Database: %s"
 msgstr "Base de données : %s"
 
-#: class/Common/Sql/Table.php:1904
+#: class/Common/Sql/Table.php:1905
 msgid "Hostname: %s"
 msgstr "Nom d’hôte : %s"
 
-#: class/Common/Sql/Table.php:1903
+#: class/Common/Sql/Table.php:1904
 msgid "Generated: %s"
 msgstr "Généré : %s"
 
-#: class/Common/Sql/Table.php:1901
+#: class/Common/Sql/Table.php:1902
 msgid "WordPress MySQL database migration"
 msgstr "Migration de base de données MySQL WordPress"
 
-#: class/Common/Sql/Table.php:1776
+#: class/Common/Sql/Table.php:1777
 msgid "End of data contents of table %s"
 msgstr "Fin du contenu des données de la table %s"
 
-#: class/Common/Sql/Table.php:930
+#: class/Common/Sql/Table.php:931
 msgid "Data contents of table %s"
 msgstr "Données de la table %s"
 
-#: class/Common/Sql/Table.php:872
+#: class/Common/Sql/Table.php:873
 msgid "Failed to generate the create table query, please ensure your database is online. (#126)"
 msgstr "Échec de génération de la requête de création de table, veuillez vous assurer que votre base de données est en ligne. (#126)"
 
-#: class/Common/Sql/Table.php:864
+#: class/Common/Sql/Table.php:865
 msgid "Table structure of table %s"
 msgstr "Structure de la table %s"
 
-#: class/Common/Sql/Table.php:853
+#: class/Common/Sql/Table.php:854
 msgid "Delete any existing table %s"
 msgstr "Supprimer toute table existante %s"
 
-#: class/Common/Sql/Table.php:729
+#: class/Common/Sql/Table.php:730
 msgid "Failed to retrieve table structure for table '%s', please ensure your database is online. (#125)"
 msgstr "Échec de la récupération de la structure de la table « %s ». Veuillez vous assurer que votre base de données est en ligne. (#125)"
 
@@ -474,59 +433,55 @@ msgctxt "Configure a migration or export"
 msgid "Migrate"
 msgstr "Migrer"
 
-#: class/Common/Sanitize.php:71
+#: class/Common/Sanitize.php:72
 msgid "%1$s was not expecting data to be an array."
 msgstr "%1$s ne s’attendait pas à ce que les données soient un tableau."
 
-#: class/Common/Cli/Command.php:212
+#: class/Common/Cli/Command.php:213
 msgid "Export saved to: %s"
 msgstr "Export enregistré sur : %s"
 
-#: class/Common/Cli/Command.php:204
-msgid "WP Migrate DB CLI class not available."
-msgstr "Classe WP Migrate DB CLI non disponible."
-
-#: class/Common/Cli/Cli.php:914
+#: class/Common/Cli/Cli.php:924
 msgid "Cannot write to file \"%1$s\". Please ensure that the specified directory exists and is writable."
 msgstr "Impossible d’écrire dans le fichier « %1$s ». Veuillez vous assurer que le répertoire spécifié existe et est accessible en écriture."
 
-#: class/Common/Cli/Cli.php:868
+#: class/Common/Cli/Cli.php:878
 msgid "%1$s and %2$s must contain the same number of values"
 msgstr "%1$s et %2$s doivent contenir le même nombre de valeurs"
 
-#: class/Common/Cli/Cli.php:786
+#: class/Common/Cli/Cli.php:796
 msgid "Missing action parameter"
 msgstr "Paramètre d’action manquant"
 
-#: class/Common/Cli/Command.php:80
+#: class/Common/Cli/Command.php:81
 msgid "You must provide a destination filename."
 msgstr "Vous devez fournir un nom de fichier de destination."
 
-#: class/Common/Cli/Cli.php:695
+#: class/Common/Cli/Cli.php:710
 msgid "Unable to move exported file."
 msgstr "Impossible de déplacer le fichier exporté."
 
-#: class/Common/Cli/Cli.php:602
+#: class/Common/Cli/Cli.php:613
 msgid "Cleaning up..."
 msgstr "Nettoyage&hellip;"
 
-#: class/Common/Cli/Cli.php:500
+#: class/Common/Cli/Cli.php:506
 msgid "No tables selected for migration."
 msgstr "Aucune table sélectionnée pour la migration."
 
-#: class/Common/Cli/Cli.php:415
+#: class/Common/Cli/Cli.php:421
 msgid "Exporting tables"
 msgstr "Exporter les tables"
 
-#: class/Common/Cli/Cli.php:363
+#: class/Common/Cli/Cli.php:365
 msgid "Initiating migration..."
 msgstr "Lancement de la migration&hellip;"
 
-#: class/Common/Cli/Cli.php:304
+#: class/Common/Cli/Cli.php:306
 msgid "We were expecting a JSON response, instead we received: %2$s (function name: %1$s)"
 msgstr "Nous attendions une réponse JSON, mais nous avons reçu : %2$s (nom de la fonction : %1$s)"
 
-#: class/Common/Cli/Cli.php:236
+#: class/Common/Cli/Cli.php:238
 msgid "The following table(s) do not exist in the %1$s database: %2$s"
 msgstr "La ou les table(s) suivante(s) n’existe(nt) pas dans la base de données %1$s : %2$s"
 
@@ -551,34 +506,30 @@ msgctxt "Plugin configuration and preferences"
 msgid "Settings"
 msgstr "Réglages"
 
-#: class/Common/Http/RemotePost.php:330 class/Common/Sql/TableHelper.php:140
+#: class/Common/Http/RemotePost.php:340 class/Common/Sql/TableHelper.php:140
 msgid "our documentation"
 msgstr "notre documentation"
 
-#: class/Common/Http/RemotePost.php:330
+#: class/Common/Http/RemotePost.php:340
 msgid "A response was expected from the remote, instead we got nothing. (#146 - scope: %1$s) Please review %2$s for possible solutions."
 msgstr "Une réponse était attendue de l’instance distante, mais nous n’avons rien obtenu. (#146 - portée : %1$s) Veuillez évaluer %2$s pour des solutions possibles."
 
-#: class/Common/Http/RemotePost.php:325
-msgid "WP Migrate DB Pro does not seem to be installed or active on the remote site. (#131 - scope: %s)"
-msgstr "WP Migrate DB Pro ne semble pas être installé ou actif sur le site distant. (#131 - portée : %s)"
-
-#: class/Common/Http/RemotePost.php:320
+#: class/Common/Http/RemotePost.php:330
 msgid "Unable to connect to the remote server, please check the connection details - %1$s %2$s (#129 - scope: %3$s)"
 msgstr "Impossible de se connecter au serveur distant, veuillez vérifier les détails de la connexion - %1$s %2$s (#129 - portée : %3$s)"
 
-#: class/Common/Http/RemotePost.php:310
+#: class/Common/Http/RemotePost.php:320
 msgid "The remote site is protected with Basic Authentication. Please enter the username and password above to continue. (401 Unauthorized)"
 msgstr "Le site distant est protégé avec Basic Authentication. Veuillez saisir le nom d’utilisateur et le mot de passe ci-dessu pour continuer. (401 Non autorisé)"
 
-#: class/Common/Http/RemotePost.php:283
+#: class/Common/Http/RemotePost.php:293
 msgid "The connection failed, an unexpected error occurred, please contact support. (#121 - scope: %s)"
 msgstr "Connexion impossible, une erreur inattendue est survenue, veuillez contacter le support. (#121 - étendue : %s)"
 
-#: class/Common/Http/RemotePost.php:494
+#: class/Common/Http/RemotePost.php:504
 msgid "We could not find: %s. Are you sure this is the correct URL?"
 msgstr "Nous n’avons pas trouvé : %s. Confirmez-vous que c’est l’URL correcte ?"
 
-#: class/Common/Http/RemotePost.php:288
+#: class/Common/Http/RemotePost.php:298
 msgid "The connection to the remote server has timed out, no changes have been committed. (#134 - scope: %s)"
 msgstr "La connexion au serveur distant a expirée, aucune modifications n’a été engagée. (#134 - scope: %s)"

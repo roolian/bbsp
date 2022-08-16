@@ -2,26 +2,26 @@
 # This file is distributed under the same license as the Plugins - Polylang Connect for Elementor &#8211; Templates Translation &amp; Language Switcher - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-02-24 14:04:01+0000\n"
+"PO-Revision-Date: 2022-06-23 10:37:45+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"X-Generator: GlotPress/4.0.0-alpha.1\n"
 "Language: fr\n"
 "Project-Id-Version: Plugins - Polylang Connect for Elementor &#8211; Templates Translation &amp; Language Switcher - Stable (latest release)\n"
 
-#: includes/connect-plugins.php:553
+#: includes/connect-plugins.php:600
 msgid "(from %s)"
 msgstr "(à partir de %s)"
 
-#: includes/connect-plugins.php:547
+#: includes/connect-plugins.php:594
 msgid "No instances"
 msgstr "Pas d’instances"
 
 #. Description of the plugin
 msgid "Connect Polylang with Elementor. Display templates in the correct language, language switcher widget, language visibility conditions and dynamic tags."
-msgstr "Connectez Polylang avec Elementor. Affichez les modèles dans la langue demandée, le widget sélecteur de langue, les conditions d’affichage basées sur la langue et les étiquettes dynamique."
+msgstr "Connectez Polylang avec Elementor. Affichez les modèles dans la langue demandée, le widget sélecteur de langue, les conditions d’affichage basées sur la langue et les étiquettes dynamiques."
 
 #: includes/widgets/polylang-language-switcher.php:650
 msgid "After"
@@ -141,7 +141,7 @@ msgstr "Toutes les langues de votre site web."
 #: includes/finder/polylang-category.php:66
 msgctxt "Tags in Elementor Finder"
 msgid "polylang,languages,setup,flags,country,countries"
-msgstr "polylang,langues, réglages, drapeaux, pays"
+msgstr "polylang, langues, réglages, drapeaux, pays"
 
 #: includes/dynamic-tags/manager.php:36
 #: includes/finder/polylang-category.php:29
@@ -163,11 +163,11 @@ msgstr "Langue"
 msgid "Current Language"
 msgstr "Langue actuelle"
 
-#: includes/connect-plugins.php:504
+#: includes/connect-plugins.php:551
 msgid "This item is in %s"
 msgstr "Cet élément est dans %s"
 
-#: includes/connect-plugins.php:494
+#: includes/connect-plugins.php:541
 msgid "Add a translation in %s"
 msgstr "Ajouter une traduction dans %s"
 

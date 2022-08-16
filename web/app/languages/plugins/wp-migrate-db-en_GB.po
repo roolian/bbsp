@@ -2,14 +2,165 @@
 # This file is distributed under the same license as the Plugins - WP Migrate Lite &#8211; WordPress Migration Made Easy - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-04-01 11:13:11+0000\n"
+"PO-Revision-Date: 2022-07-05 10:43:35+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"X-Generator: GlotPress/4.0.0-alpha.1\n"
 "Language: en_GB\n"
 "Project-Id-Version: Plugins - WP Migrate Lite &#8211; WordPress Migration Made Easy - Stable (latest release)\n"
+
+#: class/Common/Plugin/Menu.php:95 class/Common/Plugin/Menu.php:134
+#: class/Common/Plugin/PluginManagerBase.php:374 php-checker.php:37
+#: php-checker.php:66
+msgid "WP Migrate"
+msgstr "WP Migrate"
+
+#. Plugin Name of the plugin
+#: php-checker.php:33 php-checker.php:66
+msgid "WP Migrate Lite"
+msgstr "WP Migrate Lite"
+
+#: class/Free/Plugin/PluginManager.php:80
+msgid "Migrate"
+msgstr "Migrate"
+
+#: class/Common/Cli/Cli.php:834 class/Common/Cli/Cli.php:850
+msgid "Missing case sensitive find and replace values."
+msgstr "Missing case sensitive find and replace values."
+
+#: class/Common/Cli/Cli.php:816 class/Common/Cli/Cli.php:826
+msgid "Missing Regex find and replace values."
+msgstr "Missing Regex find and replace values."
+
+#: class/Common/Cli/Cli.php:812
+msgid "Please make sure Regular Expression find & replace pattern is valid"
+msgstr "Please make sure Regular Expression find & replace pattern is valid"
+
+#. Author URI of the plugin
+msgid "https://deliciousbrains.com/?utm_campaign=WP%2BMigrate%2BDB%2BPro%2BUpgrade&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting"
+msgstr "https://deliciousbrains.com/?utm_campaign=WP%2BMigrate%2BDB%2BPro%2BUpgrade&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting"
+
+#: template/options-page-outdated-wp.php:13
+msgid "This version of %1$s requires WordPress %2$s+. We recommend updating WordPress, but if that's not an option you can download version 1.9.x of WP Migrate from <a href=\"%3$s\">My Account</a>."
+msgstr "This version of %1$s requires WordPress %2$s+. We recommend updating WordPress, but if that's not an option you can download version 1.9.x of WP Migrate from <a href=\"%3$s\">My Account</a>."
+
+#: class/Common/Http/WPMDBRestAPIServer.php:26
+msgid "Only authenticated users can access endpoint."
+msgstr "Only authenticated users can access endpoint."
+
+#: class/Common/Http/Helper.php:106
+msgid "Invalid Request. Did you pass the correct nonce?"
+msgstr "Invalid Request. Did you pass the correct nonce?"
+
+#: class/Common/Http/Http.php:90
+msgid "An error occurred - JSON response: %s"
+msgstr "An error occurred - JSON response: %s"
+
+#: class/Common/Profile/ProfileManager.php:661
+msgid "Profile saved as invalid JSON."
+msgstr "Profile saved as invalid JSON."
+
+#: class/Common/Profile/ProfileManager.php:510
+msgid "Failed to %s profile, state data is empty."
+msgstr "Failed to %s profile, state data is empty."
+
+#: class/Common/Profile/ProfileManager.php:427
+#: class/Common/Profile/ProfileManager.php:468
+msgid "Profile saved"
+msgstr "Profile saved"
+
+#: class/Common/Profile/ProfileManager.php:393
+msgid "Profile removed"
+msgstr "Profile removed"
+
+#: class/Common/Profile/ProfileManager.php:380
+#: class/Common/Profile/ProfileManager.php:413
+#: class/Common/Profile/ProfileManager.php:447
+#: class/Common/Profile/ProfileManager.php:654
+#: class/Common/Profile/ProfileManager.php:680
+#: class/Common/Profile/ProfileManager.php:692
+msgid "Profile not found."
+msgstr "Profile not found."
+
+#: class/Common/Profile/ProfileManager.php:354
+msgid "No recent migrations"
+msgstr "No recent migrations"
+
+#: class/Common/Plugin/PluginManagerBase.php:355
+msgid "AJAX request failed"
+msgstr "Ajax request failed"
+
+#: class/Common/Plugin/PluginManagerBase.php:176
+msgid "<strong>Uploads directory not writable</strong> &mdash; the following directory is not writable: <code>%s</code>. Update the file permissions for this folder to enable backups and export migrations. <a href=\"https://deliciousbrains.com/wp-migrate-db-pro/doc/uploads-folder-permissions/\" target=\"_blank\">More information</a>.<br><br>"
+msgstr "<strong>Uploads directory not writable</strong> &mdash; the following directory is not writable: <code>%s</code>. Update the file permissions for this folder to enable backups and export migrations. <a href=\"https://deliciousbrains.com/wp-migrate-db-pro/doc/uploads-folder-permissions/\" target=\"_blank\">More information</a>.<br><br>"
+
+#: class/Common/Multisite/Multisite.php:209
+msgid "Multisite Tools Addon Needed"
+msgstr "Multisite Tools Add-on Needed"
+
+#: class/Common/Multisite/Multisite.php:198
+msgid "It looks like the remote site is a %s install and this install is a %s. To run this type of migration you'll need the %s. %s"
+msgstr "It looks like the remote site is a %s install and this install is a %s. To run this type of migration you'll need the %s. %s"
+
+#: class/Common/Multisite/Multisite.php:192
+msgid "Upgrade your license"
+msgstr "Upgrade your licence"
+
+#: class/Common/Multisite/Multisite.php:189
+msgid "Install"
+msgstr "Install"
+
+#: class/Common/Multisite/Multisite.php:175
+msgid "It looks like the remote site is a %s install and this install is a %s. To run this type of migration you'll need the %s activated on the <strong>remote</strong> site."
+msgstr "It looks like the remote site is a %s install and this install is a %s. To run this type of migration you'll need the %s activated on the <strong>remote</strong> site."
+
+#: class/Common/Multisite/Multisite.php:173
+msgid "Activate"
+msgstr "Activate"
+
+#: class/Common/Multisite/Multisite.php:165
+msgid "It looks like the file you are trying to import is from a single site install and this install is a multisite. This type of migration isn't currently supported. <a href=\"%s\" target=\"_blank\">Learn more »</a>"
+msgstr "It looks like the file you are trying to import is from a single site install and this install is a multisite. This type of migration isn't currently supported. <a href=\"%s\" target=\"_blank\">Learn more »</a>"
+
+#: class/Common/Multisite/Multisite.php:157
+msgid "It looks like the file you are trying to import is from a multisite install and this install is a single site. To run this type of import you'll need to use the %s to export a subsite as a single site. <a href=\"%s\" target=\"_blank\">Learn more »</a>"
+msgstr "It looks like the file you are trying to import is from a multisite install and this install is a single site. To run this type of import you'll need to use the %s to export a subsite as a single site. <a href=\"%s\" target=\"_blank\">Learn more »</a>"
+
+#: class/Common/Multisite/Multisite.php:155
+msgid "Multisite tools addon"
+msgstr "Multisite tools add-on"
+
+#: class/Common/Multisite/Multisite.php:148
+#: class/Common/Multisite/Multisite.php:163
+msgid "multisite"
+msgstr "multisite"
+
+#: class/Common/Multisite/Multisite.php:147
+#: class/Common/Multisite/Multisite.php:164
+msgid "single site"
+msgstr "single site"
+
+#: class/Common/Migration/FinalizeMigration.php:108
+msgid "Unable to finalize the migration, migration state empty."
+msgstr "Unable to finalise the migration, migration state empty."
+
+#: class/Common/Properties/Properties.php:70
+msgid " Remote URL: %s "
+msgstr " Remote URL: %s "
+
+#: class/WPMDBDI_Config.php:38
+msgid "Classmap could not be generated."
+msgstr "Classmap could not be generated."
+
+#: class/Common/Sanitize.php:48
+msgid "Sanitization Error: `%1$s` method was expecting %2$s for the `%3$s` field, but got something else: \"%4$s\""
+msgstr "Sanitisation Error: `%1$s` method was expecting %2$s for the `%3$s` field, but got something else: \"%4$s\""
+
+#: class/Free/Plugin/PluginManager.php:84
+msgid "Upgrade"
+msgstr "Upgrade"
 
 #: class/Common/Cli/Cli.php:788
 msgid "--"
@@ -63,6 +214,10 @@ msgstr "Please select an SQL export file above to continue."
 msgid "The selected file does not have a recognized file type. Please upload a valid SQL file to continue."
 msgstr "The selected file does not have a recognised file type. Please upload a valid SQL file to continue."
 
+#: class/Common/Sql/Table.php:1139
+msgid "The table `%1s` contains characters which are invalid in the target database. See&nbsp;<a href=\"%2s\" target=\"_blank\">our documentation</a> for more information."
+msgstr "The table `%1s` contains characters which are invalid in the target database. See&nbsp;<a href=\"%2s\" target=\"_blank\">our documentation</a> for more information."
+
 #: class/Common/Sql/Table.php:1136
 msgid "The imported table `%1s` contains characters which are invalid in the target schema.<br><br>If this is a WP Migrate export file, ensure that the `Compatible with older versions of MySQL` setting under `Advanced Options` is unchecked and try exporting again.<br><br> See&nbsp;<a href=\"%2s\">our documentation</a> for more information."
 msgstr "The imported table `%1s` contains characters which are invalid in the target schema.<br><br>If this is a WP Migrate export file, ensure that the `Compatible with older versions of MySQL` setting under `Advanced Options` is unchecked and try exporting again.<br><br> See&nbsp;<a href=\"%2s\">our documentation</a> for more information."
@@ -86,6 +241,10 @@ msgstr "Find value is required."
 #: class/Common/Cli/Cli.php:201
 msgid "Missing path to import file. Use --import-file=/path/to/import.sql.gz"
 msgstr "Missing path to import file. Use --import-file=/path/to/import.sql.gz"
+
+#: class/Common/Http/RemotePost.php:315
+msgid "Unable to connect to the remote server, the remote server responded with: %s %s (scope: %s)"
+msgstr "Unable to connect to the remote server, the remote server responded with: %s %s (scope: %s)"
 
 #: class/Common/Migration/InitiateMigration.php:316
 msgid "<p><strong>Export Failed</strong> — We can't save your export to the following folder:<br><strong>%s</strong></p><p>Please adjust the permissions on this folder. <a href=\"%s\" target=\"_blank\">See our documentation for more information »</a></p>"
@@ -126,6 +285,10 @@ msgstr "<strong>HTTPS Connection Error:</strong>  (#121 - scope: %s) This typica
 #: class/Common/Http/RemotePost.php:296
 msgid "Couldn't connect over HTTPS. You might want to try regular HTTP instead. (#121 - scope: %s)"
 msgstr "Couldn't connect over HTTPS. You might want to try regular HTTP instead. (#121 - scope: %s)"
+
+#: class/Common/Plugin/Assets.php:79
+msgid "Hey, this is the first time activating your license, nice! Your migrations are about to get awesome! If you haven’t already, you should check out our <a href=\"%1$s\" target=\"_blank\">Quick Start Guide</a> and <a href=\"%2$s\" target=\"_blank\">Videos</a>. If you run into any trouble at all, use the <strong>Help tab</strong> above to submit a support request."
+msgstr "Hey, this is the first time activating your licence, nice! Your migrations are about to get awesome! If you haven’t already, you should check out our <a href=\"%1$s\" target=\"_blank\">Quick Start Guide</a> and <a href=\"%2$s\" target=\"_blank\">Videos</a>. If you run into any trouble at all, use the <strong>Help tab</strong> above to submit a support request."
 
 #: class/Common/Plugin/Assets.php:78
 msgid "Welcome to WP Migrate! &#127881;"
@@ -195,6 +358,10 @@ msgstr "Warning: Mixed Case Table Names"
 #: class/Common/Sql/TableHelper.php:140
 msgid "The source site supports utf8mb4 data but the target does not, aborting migration to avoid possible data corruption. Please see %1$s for more information. (#148)"
 msgstr "The source site supports utf8mb4 data but the target does not, aborting migration to avoid possible data corruption. Please see %1$s for more information. (#148)"
+
+#: class/Common/Plugin/PluginManagerBase.php:264
+msgid "WP Migrate Lite and WP Migrate cannot both be active. We've automatically deactivated WP Migrate Lite."
+msgstr "WP Migrate Lite and WP Migrate cannot both be active. We've automatically deactivated WP Migrate Lite."
 
 #: class/Common/Plugin/PluginManagerBase.php:266
 msgid "WP Migrate Lite and WP Migrate cannot both be active. We've automatically deactivated WP Migrate."
