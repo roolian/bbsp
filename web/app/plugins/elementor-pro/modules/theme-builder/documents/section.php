@@ -14,20 +14,29 @@ class Section extends Theme_Section_Document {
 		return 'section';
 	}
 
+	public static function get_type() {
+		return 'section';
+	}
+
 	public static function get_title() {
-		return __( 'Section', 'elementor-pro' );
+		return esc_html__( 'Section', 'elementor-pro' );
+	}
+
+	public static function get_plural_title() {
+		return esc_html__( 'Sections', 'elementor-pro' );
 	}
 
 	public static function get_properties() {
 		$properties = parent::get_properties();
 
 		$properties['admin_tab_group'] = 'library';
+		$properties['support_site_editor'] = false;
 
 		return $properties;
 	}
 
-	protected function _register_controls() {
-		parent::_register_controls();
+	protected function register_controls() {
+		parent::register_controls();
 
 		Module::instance()->get_locations_manager()->register_locations();
 
@@ -42,13 +51,13 @@ class Section extends Theme_Section_Document {
 		$this->start_controls_section(
 			'location_settings',
 			[
-				'label' => __( 'Location Settings', 'elementor-pro' ),
+				'label' => esc_html__( 'Location Settings', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_SETTINGS,
 			]
 		);
 
 		$options = [
-			'' => __( 'Select', 'elementor-pro' ),
+			'' => esc_html__( 'Select', 'elementor-pro' ),
 		];
 
 		foreach ( $locations as $location => $settings ) {
@@ -58,7 +67,7 @@ class Section extends Theme_Section_Document {
 		$this->add_control(
 			'location',
 			[
-				'label' => __( 'Location', 'elementor-pro' ),
+				'label' => esc_html__( 'Location', 'elementor-pro' ),
 				'label_block' => true,
 				'type' => Controls_Manager::SELECT,
 				'default' => $this->get_location(),
@@ -72,13 +81,21 @@ class Section extends Theme_Section_Document {
 			[
 				'type' => Controls_Manager::BUTTON,
 				'label' => '',
-				'text' => __( 'Apply', 'elementor-pro' ),
+				'text' => esc_html__( 'Apply', 'elementor-pro' ),
 				'separator' => 'none',
 				'event' => 'elementorThemeBuilder:ApplyPreview',
 			]
 		);
 
 		$this->end_controls_section();
+	}
+
+	public function get_export_data() {
+		$data = parent::get_export_data();
+
+		$data['location'] = $this->get_location();
+
+		return $data;
 	}
 
 	public function save_settings( $settings ) {

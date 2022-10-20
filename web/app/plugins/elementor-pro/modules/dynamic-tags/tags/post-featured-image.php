@@ -2,7 +2,7 @@
 namespace ElementorPro\Modules\DynamicTags\Tags;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\DynamicTags\Data_Tag;
+use ElementorPro\Modules\DynamicTags\Tags\Base\Data_Tag;
 use ElementorPro\Modules\DynamicTags\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,7 +24,7 @@ class Post_Featured_Image extends Data_Tag {
 	}
 
 	public function get_title() {
-		return __( 'Featured Image', 'elementor-pro' );
+		return esc_html__( 'Featured Image', 'elementor-pro' );
 	}
 
 	public function get_value( array $options = [] ) {
@@ -42,11 +42,11 @@ class Post_Featured_Image extends Data_Tag {
 		return $image_data;
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->add_control(
 			'fallback',
 			[
-				'label' => __( 'Fallback', 'elementor-pro' ),
+				'label' => esc_html__( 'Fallback', 'elementor-pro' ),
 				'type' => Controls_Manager::MEDIA,
 			]
 		);

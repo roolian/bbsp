@@ -2,14 +2,14 @@
 namespace ElementorPro\Modules\Social\Widgets;
 
 use Elementor\Controls_Manager;
-use Elementor\Widget_Base;
+use ElementorPro\Base\Base_Widget;
 use ElementorPro\Modules\Social\Classes\Facebook_SDK_Manager;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Facebook_Page extends Widget_Base {
+class Facebook_Page extends Base_Widget {
 
 	public function get_name() {
 		return 'facebook-page';
@@ -23,19 +23,15 @@ class Facebook_Page extends Widget_Base {
 		return 'eicon-fb-feed';
 	}
 
-	public function get_categories() {
-		return [ 'pro-elements' ];
-	}
-
 	public function get_keywords() {
 		return [ 'facebook', 'social', 'embed', 'page' ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->start_controls_section(
 			'section_content',
 			[
-				'label' => __( 'Page', 'elementor-pro' ),
+				'label' => esc_html__( 'Page', 'elementor-pro' ),
 			]
 		);
 
@@ -44,18 +40,18 @@ class Facebook_Page extends Widget_Base {
 		$this->add_control(
 			'url',
 			[
-				'label' => __( 'Link', 'elementor-pro' ),
+				'label' => esc_html__( 'Link', 'elementor-pro' ),
 				'placeholder' => 'https://www.facebook.com/your-page/',
 				'default' => 'https://www.facebook.com/elemntor/',
 				'label_block' => true,
-				'description' => __( 'Paste the URL of the Facebook page.', 'elementor-pro' ),
+				'description' => esc_html__( 'Paste the URL of the Facebook page.', 'elementor-pro' ),
 			]
 		);
 
 		$this->add_control(
 			'tabs',
 			[
-				'label' => __( 'Layout', 'elementor-pro' ),
+				'label' => esc_html__( 'Layout', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT2,
 				'multiple' => true,
 				'label_block' => true,
@@ -63,9 +59,9 @@ class Facebook_Page extends Widget_Base {
 					'timeline',
 				],
 				'options' => [
-					'timeline' => __( 'Timeline', 'elementor-pro' ),
-					'events' => __( 'Events', 'elementor-pro' ),
-					'messages' => __( 'Messages', 'elementor-pro' ),
+					'timeline' => esc_html__( 'Timeline', 'elementor-pro' ),
+					'events' => esc_html__( 'Events', 'elementor-pro' ),
+					'messages' => esc_html__( 'Messages', 'elementor-pro' ),
 				],
 			]
 		);
@@ -73,7 +69,7 @@ class Facebook_Page extends Widget_Base {
 		$this->add_control(
 			'small_header',
 			[
-				'label' => __( 'Small Header', 'elementor-pro' ),
+				'label' => esc_html__( 'Small Header', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => '',
 			]
@@ -82,7 +78,7 @@ class Facebook_Page extends Widget_Base {
 		$this->add_control(
 			'show_cover',
 			[
-				'label' => __( 'Cover Photo', 'elementor-pro' ),
+				'label' => esc_html__( 'Cover Photo', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 			]
@@ -91,7 +87,7 @@ class Facebook_Page extends Widget_Base {
 		$this->add_control(
 			'show_facepile',
 			[
-				'label' => __( 'Profile Photos', 'elementor-pro' ),
+				'label' => esc_html__( 'Profile Photos', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 			]
@@ -100,7 +96,7 @@ class Facebook_Page extends Widget_Base {
 		$this->add_control(
 			'show_cta',
 			[
-				'label' => __( 'Custom CTA Button', 'elementor-pro' ),
+				'label' => esc_html__( 'Custom CTA Button', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 			]
@@ -109,7 +105,7 @@ class Facebook_Page extends Widget_Base {
 		$this->add_control(
 			'height',
 			[
-				'label' => __( 'Height', 'elementor-pro' ),
+				'label' => esc_html__( 'Height', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'unit' => 'px',
@@ -129,7 +125,7 @@ class Facebook_Page extends Widget_Base {
 	}
 
 	public function render() {
-		$settings = $this->get_settings();
+		$settings = $this->get_settings_for_display();
 
 		if ( empty( $settings['url'] ) ) {
 			echo $this->get_title() . ': ' . esc_html__( 'Please enter a valid URL', 'elementor-pro' ); // XSS ok.
@@ -144,11 +140,11 @@ class Facebook_Page extends Widget_Base {
 			'data-href' => $settings['url'],
 			'data-tabs' => implode( ',', $settings['tabs'] ),
 			'data-height' => $height,
+			'data-width' => '500px', // Try the max possible width
 			'data-small-header' => $settings['small_header'] ? 'true' : 'false',
 			'data-hide-cover' => $settings['show_cover'] ? 'false' : 'true', // if `show` - don't hide.
 			'data-show-facepile' => $settings['show_facepile'] ? 'true' : 'false',
 			'data-hide-cta' => $settings['show_cta'] ? 'false' : 'true', // if `show` - don't hide.
-			'data-adapt-container-width' => 'true', // try to adapt width (min 180px max 500px)
 			// The style prevent's the `widget.handleEmptyWidget` to set it as an empty widget.
 			'style' => 'min-height: 1px;height:' . $height,
 		];
@@ -159,4 +155,8 @@ class Facebook_Page extends Widget_Base {
 	}
 
 	public function render_plain_content() {}
+
+	public function get_group_name() {
+		return 'social';
+	}
 }

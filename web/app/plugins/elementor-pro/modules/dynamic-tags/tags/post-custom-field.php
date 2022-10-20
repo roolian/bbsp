@@ -2,7 +2,7 @@
 namespace ElementorPro\Modules\DynamicTags\Tags;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\DynamicTags\Tag;
+use ElementorPro\Modules\DynamicTags\Tags\Base\Tag;
 use ElementorPro\Modules\DynamicTags\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,7 +16,7 @@ class Post_Custom_Field extends Tag {
 	}
 
 	public function get_title() {
-		return __( 'Post Custom Field', 'elementor-pro' );
+		return esc_html__( 'Post Custom Field', 'elementor-pro' );
 	}
 
 	public function get_group() {
@@ -28,6 +28,7 @@ class Post_Custom_Field extends Tag {
 			Module::TEXT_CATEGORY,
 			Module::URL_CATEGORY,
 			Module::POST_META_CATEGORY,
+			Module::COLOR_CATEGORY,
 		];
 	}
 
@@ -39,11 +40,11 @@ class Post_Custom_Field extends Tag {
 		return true;
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->add_control(
 			'key',
 			[
-				'label' => __( 'Key', 'elementor-pro' ),
+				'label' => esc_html__( 'Key', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => $this->get_custom_keys_array(),
 			]
@@ -52,9 +53,8 @@ class Post_Custom_Field extends Tag {
 		$this->add_control(
 			'custom_key',
 			[
-				'label' => __( 'Custom Key', 'elementor-pro' ),
+				'label' => esc_html__( 'Custom Key', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
-				'label_block' => false,
 				'placeholder' => 'key',
 				'condition' => [
 					'key' => '',
@@ -83,7 +83,7 @@ class Post_Custom_Field extends Tag {
 	private function get_custom_keys_array() {
 		$custom_keys = get_post_custom_keys();
 		$options = [
-			'' => __( 'Select...', 'elementor-pro' ),
+			'' => esc_html__( 'Select...', 'elementor-pro' ),
 		];
 
 		if ( ! empty( $custom_keys ) ) {

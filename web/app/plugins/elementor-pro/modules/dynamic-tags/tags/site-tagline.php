@@ -1,7 +1,7 @@
 <?php
 namespace ElementorPro\Modules\DynamicTags\Tags;
 
-use Elementor\Core\DynamicTags\Tag;
+use ElementorPro\Modules\DynamicTags\Tags\Base\Tag;
 use ElementorPro\Modules\DynamicTags\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,7 +14,7 @@ class Site_Tagline extends Tag {
 	}
 
 	public function get_title() {
-		return __( 'Site Tagline', 'elementor-pro' );
+		return esc_html__( 'Site Tagline', 'elementor-pro' );
 	}
 
 	public function get_group() {

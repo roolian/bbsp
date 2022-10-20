@@ -2,9 +2,10 @@
 namespace ElementorPro\Modules\DynamicTags\Tags;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\DynamicTags\Tag;
-use ElementorPro\Classes\Utils;
+use ElementorPro\Modules\DynamicTags\Tags\Base\Tag;
+use ElementorPro\Core\Utils;
 use ElementorPro\Modules\DynamicTags\Module;
+use ElementorPro\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -16,7 +17,7 @@ class Page_Title extends Tag {
 	}
 
 	public function get_title() {
-		return __( 'Page Title', 'elementor-pro' );
+		return esc_html__( 'Page Title', 'elementor-pro' );
 	}
 
 	public function get_group() {
@@ -32,6 +33,20 @@ class Page_Title extends Tag {
 			return;
 		}
 
+		if ( Plugin::elementor()->common ) {
+			$current_action_data = Plugin::elementor()->common->get_component( 'ajax' )->get_current_action_data();
+
+			if ( $current_action_data && 'render_tags' === $current_action_data['action'] ) {
+				// Override the global $post for the render.
+				query_posts(
+					[
+						'p' => get_the_ID(),
+						'post_type' => 'any',
+					]
+				);
+			}
+		}
+
 		$include_context = 'yes' === $this->get_settings( 'include_context' );
 
 		$title = Utils::get_page_title( $include_context );
@@ -39,11 +54,11 @@ class Page_Title extends Tag {
 		echo wp_kses_post( $title );
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->add_control(
 			'include_context',
 			[
-				'label' => __( 'Include Context', 'elementor-pro' ),
+				'label' => esc_html__( 'Include Context', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 			]
 		);
@@ -51,7 +66,7 @@ class Page_Title extends Tag {
 		$this->add_control(
 			'show_home_title',
 			[
-				'label' => __( 'Show Home Title', 'elementor-pro' ),
+				'label' => esc_html__( 'Show Home Title', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 			]
 		);

@@ -4,6 +4,7 @@ namespace ElementorPro\Modules\CustomAttributes;
 use Elementor\Controls_Stack;
 use Elementor\Controls_Manager;
 use Elementor\Element_Base;
+use Elementor\Utils;
 use ElementorPro\Base\Module_Base;
 use ElementorPro\Plugin;
 
@@ -13,18 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Module extends Module_Base {
 
-	// TODO: Remove this flag on version 2.9.0
-	private $controls_already_registered;
-
 	public function __construct() {
 		parent::__construct();
-
-		// TODO: Remove this flag on version 2.9.0
-		$this->controls_already_registered = [
-			'section' => false,
-			'column' => false,
-			'common' => false,
-		];
 
 		$this->add_actions();
 	}
@@ -37,15 +28,16 @@ class Module extends Module_Base {
 		static $black_list = null;
 
 		if ( null === $black_list ) {
-			$black_list = [ 'id', 'class', 'data-id', 'data-settings', 'data-element_type', 'data-widget_type', 'data-model-cid', 'onload', 'onclick', 'onfocus', 'onblur', 'onchange', 'onresize', 'onmouseover', 'onmouseout', 'onkeydown', 'onkeyup', 'onerror' ];
+			$black_list = [ 'id', 'class', 'data-id', 'data-settings', 'data-element_type', 'data-widget_type', 'data-model-cid' ];
 
 			/**
 			 * Elementor attributes black list.
 			 *
 			 * Filters the attributes that won't be rendered in the wrapper element.
 			 *
-			 * By default Elementor don't render some attributes to prevent things
-			 * from breaking down. But this list of attributes can be changed.
+			 * By default Elementor doesn't render some attributes to prevent things
+			 * from breaking down. This hook allows developers to alter this list of
+			 * attributes.
 			 *
 			 * @since 2.2.0
 			 *
@@ -69,15 +61,10 @@ class Module extends Module_Base {
 	public function register_custom_attributes_controls( Element_Base $element ) {
 		$element_name = $element->get_name();
 
-		// TODO: Remove this check when on version 2.9.0
-		if ( $this->controls_already_registered[ $element_name ] ) {
-			return;
-		}
-
 		$element->start_controls_section(
 			'_section_attributes',
 			[
-				'label' => __( 'Attributes', 'elementor-pro' ),
+				'label' => esc_html__( 'Attributes', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_ADVANCED,
 			]
 		);
@@ -85,21 +72,18 @@ class Module extends Module_Base {
 		$element->add_control(
 			'_attributes',
 			[
-				'label' => __( 'Custom Attributes', 'elementor-pro' ),
+				'label' => esc_html__( 'Custom Attributes', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXTAREA,
 				'dynamic' => [
 					'active' => true,
 				],
-				'placeholder' => __( 'key|value', 'elementor-pro' ),
-				'description' => sprintf( __( 'Set custom attributes for the wrapper element. Each attribute in a separate line. Separate attribute key from the value using %s character.', 'elementor-pro' ), '<code>|</code>' ),
+				'placeholder' => esc_html__( 'key|value', 'elementor-pro' ),
+				'description' => sprintf( esc_html__( 'Set custom attributes for the wrapper element. Each attribute in a separate line. Separate attribute key from the value using %s character.', 'elementor-pro' ), '<code>|</code>' ),
 				'classes' => 'elementor-control-direction-ltr',
 			]
 		);
 
 		$element->end_controls_section();
-
-		// TODO: Remove this flag on version 2.9.0
-		$this->controls_already_registered[ $element_name ] = true;
 	}
 
 	/**
@@ -115,11 +99,6 @@ class Module extends Module_Base {
 		if ( 'section_custom_attributes_pro' === $section_id ) {
 			$this->replace_go_pro_custom_attributes_controls( $element );
 		}
-
-		// TODO: Remove this when on version 2.9.0
-		if ( '_section_responsive' === $section_id ) {
-			$this->register_custom_attributes_controls( $element );
-		}
 	}
 
 	/**
@@ -129,20 +108,13 @@ class Module extends Module_Base {
 		$settings = $element->get_settings_for_display();
 
 		if ( ! empty( $settings['_attributes'] ) ) {
-			$attributes = explode( "\n", $settings['_attributes'] );
+			$attributes = Utils::parse_custom_attributes( $settings['_attributes'], "\n" );
 
 			$black_list = $this->get_black_list_attributes();
 
-			foreach ( $attributes as $attribute ) {
-				if ( ! empty( $attribute ) ) {
-					$attr = explode( '|', $attribute, 2 );
-					if ( ! isset( $attr[1] ) ) {
-						$attr[1] = '';
-					}
-
-					if ( ! in_array( strtolower( $attr[0] ), $black_list ) ) {
-						$element->add_render_attribute( '_wrapper', trim( $attr[0] ), trim( $attr[1] ) );
-					}
+			foreach ( $attributes as $attribute => $value ) {
+				if ( ! in_array( $attribute, $black_list, true ) ) {
+					$element->add_render_attribute( '_wrapper', $attribute, $value );
 				}
 			}
 		}

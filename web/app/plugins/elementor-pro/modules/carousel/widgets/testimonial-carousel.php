@@ -2,8 +2,10 @@
 namespace ElementorPro\Modules\Carousel\Widgets;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\Schemes;
+use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Typography;
+use Elementor\Group_Control_Text_Stroke;
 use Elementor\Repeater;
 use Elementor\Utils;
 
@@ -18,7 +20,7 @@ class Testimonial_Carousel extends Base {
 	}
 
 	public function get_title() {
-		return __( 'Testimonial Carousel', 'elementor-pro' );
+		return esc_html__( 'Testimonial Carousel', 'elementor-pro' );
 	}
 
 	public function get_icon() {
@@ -29,8 +31,8 @@ class Testimonial_Carousel extends Base {
 		return [ 'testimonial', 'carousel', 'image' ];
 	}
 
-	protected function _register_controls() {
-		parent::_register_controls();
+	protected function register_controls() {
+		parent::register_controls();
 
 		$this->start_injection( [
 			'of' => 'slides',
@@ -39,12 +41,12 @@ class Testimonial_Carousel extends Base {
 		$this->add_control(
 			'skin',
 			[
-				'label' => __( 'Skin', 'elementor-pro' ),
+				'label' => esc_html__( 'Skin', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'default',
 				'options' => [
-					'default' => __( 'Default', 'elementor-pro' ),
-					'bubble' => __( 'Bubble', 'elementor-pro' ),
+					'default' => esc_html__( 'Default', 'elementor-pro' ),
+					'bubble' => esc_html__( 'Bubble', 'elementor-pro' ),
 				],
 				'prefix_class' => 'elementor-testimonial--skin-',
 				'render_type' => 'template',
@@ -54,43 +56,42 @@ class Testimonial_Carousel extends Base {
 		$this->add_control(
 			'layout',
 			[
-				'label' => __( 'Layout', 'elementor-pro' ),
+				'label' => esc_html__( 'Layout', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'image_inline',
 				'options' => [
-					'image_inline' => __( 'Image Inline', 'elementor-pro' ),
-					'image_stacked' => __( 'Image Stacked', 'elementor-pro' ),
-					'image_above' => __( 'Image Above', 'elementor-pro' ),
-					'image_left' => __( 'Image Left', 'elementor-pro' ),
-					'image_right' => __( 'Image Right', 'elementor-pro' ),
+					'image_inline' => esc_html__( 'Image Inline', 'elementor-pro' ),
+					'image_stacked' => esc_html__( 'Image Stacked', 'elementor-pro' ),
+					'image_above' => esc_html__( 'Image Above', 'elementor-pro' ),
+					'image_left' => esc_html__( 'Image Left', 'elementor-pro' ),
+					'image_right' => esc_html__( 'Image Right', 'elementor-pro' ),
 				],
 				'prefix_class' => 'elementor-testimonial--layout-',
 				'render_type' => 'template',
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'elementor-pro' ),
+				'label' => esc_html__( 'Alignment', 'elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'default' => 'center',
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'elementor-pro' ),
+						'title' => esc_html__( 'Left', 'elementor-pro' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'elementor-pro' ),
+						'title' => esc_html__( 'Center', 'elementor-pro' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'elementor-pro' ),
+						'title' => esc_html__( 'Right', 'elementor-pro' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
-				'prefix_class' => 'elementor-testimonial--align-',
+				'prefix_class' => 'elementor-testimonial-%s-align-',
 			]
 		);
 
@@ -99,7 +100,7 @@ class Testimonial_Carousel extends Base {
 		$this->start_controls_section(
 			'section_skin_style',
 			[
-				'label' => __( 'Bubble', 'elementor-pro' ),
+				'label' => esc_html__( 'Bubble', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'skin' => 'bubble',
@@ -110,7 +111,7 @@ class Testimonial_Carousel extends Base {
 		$this->add_control(
 			'background_color',
 			[
-				'label' => __( 'Background Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Background Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'alpha' => false,
 				'selectors' => [
@@ -122,7 +123,7 @@ class Testimonial_Carousel extends Base {
 		$this->add_responsive_control(
 			'text_padding',
 			[
-				'label' => __( 'Padding', 'elementor-pro' ),
+				'label' => esc_html__( 'Padding', 'elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default' => [
@@ -146,7 +147,7 @@ class Testimonial_Carousel extends Base {
 		$this->add_responsive_control(
 			'border_radius',
 			[
-				'label' => __( 'Border Radius', 'elementor-pro' ),
+				'label' => esc_html__( 'Border Radius', 'elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -158,7 +159,7 @@ class Testimonial_Carousel extends Base {
 		$this->add_control(
 			'border',
 			[
-				'label' => __( 'Border', 'elementor-pro' ),
+				'label' => esc_html__( 'Border', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-testimonial__content, {{WRAPPER}} .elementor-testimonial__content:after' => 'border-style: solid',
@@ -169,7 +170,7 @@ class Testimonial_Carousel extends Base {
 		$this->add_control(
 			'border_color',
 			[
-				'label' => __( 'Border Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Border Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#000',
 				'selectors' => [
@@ -185,7 +186,7 @@ class Testimonial_Carousel extends Base {
 		$this->add_responsive_control(
 			'border_width',
 			[
-				'label' => __( 'Border Width', 'elementor-pro' ),
+				'label' => esc_html__( 'Border Width', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -215,7 +216,7 @@ class Testimonial_Carousel extends Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => __( 'Content', 'elementor-pro' ),
+				'label' => esc_html__( 'Content', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -223,7 +224,7 @@ class Testimonial_Carousel extends Base {
 		$this->add_responsive_control(
 			'content_gap',
 			[
-				'label' => __( 'Gap', 'elementor-pro' ),
+				'label' => esc_html__( 'Gap', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -244,14 +245,13 @@ class Testimonial_Carousel extends Base {
 		$this->add_control(
 			'content_color',
 			[
-				'label' => __( 'Text Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Text Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-testimonial__text' => 'color: {{VALUE}}',
 				],
-				'scheme' => [
-					'type' => Schemes\Color::get_type(),
-					'value' => Schemes\Color::COLOR_3,
+				'global' => [
+					'default' => Global_Colors::COLOR_TEXT,
 				],
 			]
 		);
@@ -261,14 +261,24 @@ class Testimonial_Carousel extends Base {
 			[
 				'name' => 'content_typography',
 				'selector' => '{{WRAPPER}} .elementor-testimonial__text',
-				'scheme' => Schemes\Typography::TYPOGRAPHY_3,
+				'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_TEXT,
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Text_Stroke::get_type(),
+			[
+				'name' => 'text_stroke',
+				'selector' => '{{WRAPPER}} .elementor-testimonial__text',
 			]
 		);
 
 		$this->add_control(
 			'name_title_style',
 			[
-				'label' => __( 'Name', 'elementor-pro' ),
+				'label' => esc_html__( 'Name', 'elementor-pro' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -277,14 +287,13 @@ class Testimonial_Carousel extends Base {
 		$this->add_control(
 			'name_color',
 			[
-				'label' => __( 'Text Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Text Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-testimonial__name' => 'color: {{VALUE}}',
 				],
-				'scheme' => [
-					'type' => Schemes\Color::get_type(),
-					'value' => Schemes\Color::COLOR_3,
+				'global' => [
+					'default' => Global_Colors::COLOR_TEXT,
 				],
 			]
 		);
@@ -294,14 +303,16 @@ class Testimonial_Carousel extends Base {
 			[
 				'name' => 'name_typography',
 				'selector' => '{{WRAPPER}} .elementor-testimonial__name',
-				'scheme' => Schemes\Typography::TYPOGRAPHY_1,
+				'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
 			]
 		);
 
 		$this->add_control(
 			'heading_title_style',
 			[
-				'label' => __( 'Title', 'elementor-pro' ),
+				'label' => esc_html__( 'Title', 'elementor-pro' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -310,14 +321,13 @@ class Testimonial_Carousel extends Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Text Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Text Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-testimonial__title' => 'color: {{VALUE}}',
 				],
-				'scheme' => [
-					'type' => Schemes\Color::get_type(),
-					'value' => Schemes\Color::COLOR_1,
+				'global' => [
+					'default' => Global_Colors::COLOR_PRIMARY,
 				],
 			]
 		);
@@ -327,7 +337,9 @@ class Testimonial_Carousel extends Base {
 			[
 				'name' => 'title_typography',
 				'selector' => '{{WRAPPER}} .elementor-testimonial__title',
-				'scheme' => Schemes\Typography::TYPOGRAPHY_2,
+				'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_SECONDARY,
+				],
 			]
 		);
 
@@ -336,7 +348,7 @@ class Testimonial_Carousel extends Base {
 		$this->start_controls_section(
 			'section_image_style',
 			[
-				'label' => __( 'Image', 'elementor-pro' ),
+				'label' => esc_html__( 'Image', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -344,7 +356,7 @@ class Testimonial_Carousel extends Base {
 		$this->add_responsive_control(
 			'image_size',
 			[
-				'label' => __( 'Size', 'elementor-pro' ),
+				'label' => esc_html__( 'Size', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -379,7 +391,7 @@ class Testimonial_Carousel extends Base {
 		$this->add_responsive_control(
 			'image_gap',
 			[
-				'label' => __( 'Gap', 'elementor-pro' ),
+				'label' => esc_html__( 'Gap', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -388,17 +400,17 @@ class Testimonial_Carousel extends Base {
 					],
 				],
 				'selectors' => [
-					'body.rtl {{WRAPPER}}.elementor-testimonial--layout-image_inline.elementor-testimonial--align-left .elementor-testimonial__image + cite, 
+					'body.rtl {{WRAPPER}}.elementor-testimonial--layout-image_inline.elementor-testimonial--align-left .elementor-testimonial__image + cite,
 					 body.rtl {{WRAPPER}}.elementor-testimonial--layout-image_above.elementor-testimonial--align-left .elementor-testimonial__image + cite,
-					 body:not(.rtl) {{WRAPPER}}.elementor-testimonial--layout-image_inline .elementor-testimonial__image + cite, 
+					 body:not(.rtl) {{WRAPPER}}.elementor-testimonial--layout-image_inline .elementor-testimonial__image + cite,
 					 body:not(.rtl) {{WRAPPER}}.elementor-testimonial--layout-image_above .elementor-testimonial__image + cite' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: 0;',
 
-					'body:not(.rtl) {{WRAPPER}}.elementor-testimonial--layout-image_inline.elementor-testimonial--align-right .elementor-testimonial__image + cite, 
+					'body:not(.rtl) {{WRAPPER}}.elementor-testimonial--layout-image_inline.elementor-testimonial--align-right .elementor-testimonial__image + cite,
 					 body:not(.rtl) {{WRAPPER}}.elementor-testimonial--layout-image_above.elementor-testimonial--align-right .elementor-testimonial__image + cite,
 					 body.rtl {{WRAPPER}}.elementor-testimonial--layout-image_inline .elementor-testimonial__image + cite,
 					 body.rtl {{WRAPPER}}.elementor-testimonial--layout-image_above .elementor-testimonial__image + cite' => 'margin-right: {{SIZE}}{{UNIT}}; margin-left:0;',
 
-					'{{WRAPPER}}.elementor-testimonial--layout-image_stacked .elementor-testimonial__image + cite, 
+					'{{WRAPPER}}.elementor-testimonial--layout-image_stacked .elementor-testimonial__image + cite,
 					 {{WRAPPER}}.elementor-testimonial--layout-image_left .elementor-testimonial__image + cite,
 					 {{WRAPPER}}.elementor-testimonial--layout-image_right .elementor-testimonial__image + cite' => 'margin-top: {{SIZE}}{{UNIT}}',
 				],
@@ -408,7 +420,7 @@ class Testimonial_Carousel extends Base {
 		$this->add_control(
 			'image_border',
 			[
-				'label' => __( 'Border', 'elementor-pro' ),
+				'label' => esc_html__( 'Border', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-testimonial__image img' => 'border-style: solid',
@@ -419,7 +431,7 @@ class Testimonial_Carousel extends Base {
 		$this->add_control(
 			'image_border_color',
 			[
-				'label' => __( 'Border Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Border Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#000',
 				'selectors' => [
@@ -434,7 +446,7 @@ class Testimonial_Carousel extends Base {
 		$this->add_responsive_control(
 			'image_border_width',
 			[
-				'label' => __( 'Border Width', 'elementor-pro' ),
+				'label' => esc_html__( 'Border Width', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -454,7 +466,7 @@ class Testimonial_Carousel extends Base {
 		$this->add_control(
 			'image_border_radius',
 			[
-				'label' => __( 'Border Radius', 'elementor-pro' ),
+				'label' => esc_html__( 'Border Radius', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-testimonial__image img' => 'border-radius: {{SIZE}}{{UNIT}}',
@@ -483,7 +495,7 @@ class Testimonial_Carousel extends Base {
 			]
 		);
 
-		$this->update_control(
+		$this->update_responsive_control(
 			'slides_to_scroll',
 			[
 				'condition' => null,
@@ -499,34 +511,46 @@ class Testimonial_Carousel extends Base {
 		$repeater->add_control(
 			'content',
 			[
-				'label' => __( 'Content', 'elementor-pro' ),
+				'label' => esc_html__( 'Content', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXTAREA,
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
 		$repeater->add_control(
 			'image',
 			[
-				'label' => __( 'Image', 'elementor-pro' ),
+				'label' => esc_html__( 'Image', 'elementor-pro' ),
 				'type' => Controls_Manager::MEDIA,
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
 		$repeater->add_control(
 			'name',
 			[
-				'label' => __( 'Name', 'elementor-pro' ),
+				'label' => esc_html__( 'Name', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'John Doe', 'elementor-pro' ),
+				'default' => esc_html__( 'John Doe', 'elementor-pro' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
 		$repeater->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'elementor-pro' ),
+				'label' => esc_html__( 'Title', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'CEO', 'elementor-pro' ),
+				'default' => esc_html__( 'CEO', 'elementor-pro' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 	}
@@ -536,25 +560,25 @@ class Testimonial_Carousel extends Base {
 
 		return [
 			[
-				'content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor-pro' ),
-				'name' => __( 'John Doe', 'elementor-pro' ),
-				'title' => __( 'CEO', 'elementor-pro' ),
+				'content' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor-pro' ),
+				'name' => esc_html__( 'John Doe', 'elementor-pro' ),
+				'title' => esc_html__( 'CEO', 'elementor-pro' ),
 				'image' => [
 					'url' => $placeholder_image_src,
 				],
 			],
 			[
-				'content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor-pro' ),
-				'name' => __( 'John Doe', 'elementor-pro' ),
-				'title' => __( 'CEO', 'elementor-pro' ),
+				'content' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor-pro' ),
+				'name' => esc_html__( 'John Doe', 'elementor-pro' ),
+				'title' => esc_html__( 'CEO', 'elementor-pro' ),
 				'image' => [
 					'url' => $placeholder_image_src,
 				],
 			],
 			[
-				'content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor-pro' ),
-				'name' => __( 'John Doe', 'elementor-pro' ),
-				'title' => __( 'CEO', 'elementor-pro' ),
+				'content' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor-pro' ),
+				'name' => esc_html__( 'John Doe', 'elementor-pro' ),
+				'title' => esc_html__( 'CEO', 'elementor-pro' ),
 				'image' => [
 					'url' => $placeholder_image_src,
 				],
@@ -587,38 +611,53 @@ class Testimonial_Carousel extends Base {
 			$html .= '</cite>';
 		}
 
-		return $html;
+		// PHPCS - the main text of a widget should not be escaped.
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	protected function print_slide( array $slide, array $settings, $element_key ) {
+		$lazyload = 'yes' === $this->get_settings( 'lazyload' );
+
 		$this->add_render_attribute( $element_key . '-testimonial', [
 			'class' => 'elementor-testimonial',
 		] );
 
 		if ( ! empty( $slide['image']['url'] ) ) {
-			$this->add_render_attribute( $element_key . '-image', [
-				'src' => $this->get_slide_image_url( $slide, $settings ),
-				'alt' => ! empty( $slide['name'] ) ? $slide['name'] : '',
-			] );
+			$img_src = $this->get_slide_image_url( $slide, $settings );
+
+			if ( $lazyload ) {
+				$img_attribute['class'] = 'swiper-lazy';
+				$img_attribute['data-src'] = $img_src;
+			} else {
+				$img_attribute['src'] = $img_src;
+			}
+
+			$img_attribute['alt'] = $this->get_slide_image_alt_attribute( $slide );
+
+			$this->add_render_attribute( $element_key . '-image', $img_attribute );
 		}
 
 		?>
-		<div <?php echo $this->get_render_attribute_string( $element_key . '-testimonial' ); ?>>
+		<div <?php $this->print_render_attribute_string( $element_key . '-testimonial' ); ?>>
 			<?php if ( $slide['content'] ) : ?>
 				<div class="elementor-testimonial__content">
 					<div class="elementor-testimonial__text">
-						<?php echo $slide['content']; ?>
+						<?php // PHPCS - the main text of a widget should not be escaped.
+						echo $slide['content']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</div>
-					<?php echo $this->print_cite( $slide, 'outside' ); ?>
+					<?php $this->print_cite( $slide, 'outside' ); ?>
 				</div>
 			<?php endif; ?>
 			<div class="elementor-testimonial__footer">
 				<?php if ( $slide['image']['url'] ) : ?>
 					<div class="elementor-testimonial__image">
-						<img <?php echo $this->get_render_attribute_string( $element_key . '-image' ); ?>>
+						<img <?php $this->print_render_attribute_string( $element_key . '-image' ); ?>>
+						<?php if ( $lazyload ) : ?>
+							<div class="swiper-lazy-preloader"></div>
+						<?php endif; ?>
 					</div>
 				<?php endif; ?>
-				<?php echo $this->print_cite( $slide, 'inside' ); ?>
+				<?php $this->print_cite( $slide, 'inside' ); ?>
 			</div>
 		</div>
 		<?php
@@ -626,5 +665,9 @@ class Testimonial_Carousel extends Base {
 
 	protected function render() {
 		$this->print_slider();
+	}
+
+	public function get_group_name() {
+		return 'carousel';
 	}
 }

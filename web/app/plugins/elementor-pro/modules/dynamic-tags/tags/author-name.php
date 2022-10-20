@@ -1,7 +1,7 @@
 <?php
 namespace ElementorPro\Modules\DynamicTags\Tags;
 
-use Elementor\Core\DynamicTags\Tag;
+use ElementorPro\Modules\DynamicTags\Tags\Base\Tag;
 use ElementorPro\Modules\DynamicTags\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,7 +15,7 @@ class Author_Name extends Tag {
 	}
 
 	public function get_title() {
-		return __( 'Author Name', 'elementor-pro' );
+		return esc_html__( 'Author Name', 'elementor-pro' );
 	}
 
 	public function get_group() {

@@ -2,19 +2,20 @@
 namespace ElementorPro\Modules\Blockquote\Widgets;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\Schemes;
+use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
 use Elementor\Icons_Manager;
-use Elementor\Widget_Base;
 use Elementor\Modules\DynamicTags\Module as TagsModule;
+use ElementorPro\Plugin;
+use ElementorPro\Base\Base_Widget;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Blockquote extends Widget_Base {
+class Blockquote extends Base_Widget {
 
 	public function get_style_depends() {
 		if ( Icons_Manager::is_migration_allowed() ) {
@@ -29,39 +30,35 @@ class Blockquote extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Blockquote', 'elementor-pro' );
+		return esc_html__( 'Blockquote', 'elementor-pro' );
 	}
 
 	public function get_icon() {
 		return 'eicon-blockquote';
 	}
 
-	public function get_categories() {
-		return [ 'pro-elements' ];
-	}
-
 	public function get_keywords() {
 		return [ 'blockquote', 'quote', 'paragraph', 'testimonial', 'text', 'twitter', 'tweet' ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->start_controls_section(
 			'section_blockquote_content',
 			[
-				'label' => __( 'Blockquote', 'elementor-pro' ),
+				'label' => esc_html__( 'Blockquote', 'elementor-pro' ),
 			]
 		);
 
 		$this->add_control(
 			'blockquote_skin',
 			[
-				'label' => __( 'Skin', 'elementor-pro' ),
+				'label' => esc_html__( 'Skin', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'border' => __( 'Border', 'elementor-pro' ),
-					'quotation' => __( 'Quotation', 'elementor-pro' ),
-					'boxed' => __( 'Boxed', 'elementor-pro' ),
-					'clean' => __( 'Clean', 'elementor-pro' ),
+					'border' => esc_html__( 'Border', 'elementor-pro' ),
+					'quotation' => esc_html__( 'Quotation', 'elementor-pro' ),
+					'boxed' => esc_html__( 'Boxed', 'elementor-pro' ),
+					'clean' => esc_html__( 'Clean', 'elementor-pro' ),
 				],
 				'default' => 'border',
 				'prefix_class' => 'elementor-blockquote--skin-',
@@ -71,19 +68,19 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'elementor-pro' ),
+				'label' => esc_html__( 'Alignment', 'elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'elementor-pro' ),
+						'title' => esc_html__( 'Left', 'elementor-pro' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'elementor-pro' ),
+						'title' => esc_html__( 'Center', 'elementor-pro' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'elementor-pro' ),
+						'title' => esc_html__( 'Right', 'elementor-pro' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -98,13 +95,13 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'blockquote_content',
 			[
-				'label' => __( 'Content', 'elementor-pro' ),
+				'label' => esc_html__( 'Content', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXTAREA,
 				'dynamic' => [
 					'active' => true,
 				],
-				'default' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor-pro' ) . __( 'Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
-				'placeholder' => __( 'Enter your quote', 'elementor-pro' ),
+				'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor-pro' ) . esc_html__( 'Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
+				'placeholder' => esc_html__( 'Enter your quote', 'elementor-pro' ),
 				'rows' => 10,
 			]
 		);
@@ -112,13 +109,12 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'author_name',
 			[
-				'label' => __( 'Author', 'elementor-pro' ),
+				'label' => esc_html__( 'Author', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
 				],
-				'default' => __( 'John Doe', 'elementor-pro' ),
-				'label_block' => false,
+				'default' => esc_html__( 'John Doe', 'elementor-pro' ),
 				'separator' => 'after',
 			]
 		);
@@ -126,10 +122,10 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'tweet_button',
 			[
-				'label' => __( 'Tweet Button', 'elementor-pro' ),
+				'label' => esc_html__( 'Tweet Button', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'elementor-pro' ),
-				'label_off' => __( 'Off', 'elementor-pro' ),
+				'label_on' => esc_html__( 'On', 'elementor-pro' ),
+				'label_off' => esc_html__( 'Off', 'elementor-pro' ),
 				'default' => 'yes',
 			]
 		);
@@ -137,9 +133,8 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'tweet_button_view',
 			[
-				'label' => __( 'View', 'elementor-pro' ),
+				'label' => esc_html__( 'View', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
-				'label_block' => false,
 				'options' => [
 					'icon-text' => 'Icon & Text',
 					'icon' => 'Icon',
@@ -157,9 +152,8 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'tweet_button_skin',
 			[
-				'label' => __( 'Skin', 'elementor-pro' ),
+				'label' => esc_html__( 'Skin', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
-				'label_block' => false,
 				'options' => [
 					'classic' => 'Classic',
 					'bubble' => 'Bubble',
@@ -176,13 +170,15 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'tweet_button_label',
 			[
-				'label' => __( 'Label', 'elementor-pro' ),
+				'label' => esc_html__( 'Label', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Tweet', 'elementor-pro' ),
-				'label_block' => false,
+				'default' => esc_html__( 'Tweet', 'elementor-pro' ),
 				'condition' => [
 					'tweet_button' => 'yes',
 					'tweet_button_view!' => 'icon',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);
@@ -190,12 +186,14 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'user_name',
 			[
-				'label' => __( 'Username', 'elementor-pro' ),
+				'label' => esc_html__( 'Username', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
-				'label_block' => false,
 				'placeholder' => '@username',
 				'condition' => [
 					'tweet_button' => 'yes',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);
@@ -203,12 +201,12 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'url_type',
 			[
-				'label' => __( 'Target URL', 'elementor-pro' ),
+				'label' => esc_html__( 'Target URL', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'current_page' => __( 'Current Page', 'elementor-pro' ),
-					'none' => __( 'None', 'elementor-pro' ),
-					'custom' => __( 'Custom', 'elementor-pro' ),
+					'current_page' => esc_html__( 'Current Page', 'elementor-pro' ),
+					'none' => esc_html__( 'None', 'elementor-pro' ),
+					'custom' => esc_html__( 'Custom', 'elementor-pro' ),
 				],
 				'default' => 'current_page',
 				'condition' => [
@@ -220,7 +218,7 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'url',
 			[
-				'label' => __( 'Link', 'elementor-pro' ),
+				'label' => esc_html__( 'Link', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'input_type' => 'url',
 				'dynamic' => [
@@ -230,7 +228,7 @@ class Blockquote extends Widget_Base {
 						TagsModule::URL_CATEGORY,
 					],
 				],
-				'placeholder' => __( 'https://your-link.com', 'elementor-pro' ),
+				'placeholder' => esc_html__( 'https://your-link.com', 'elementor-pro' ),
 				'label_block' => true,
 				'condition' => [
 					'url_type' => 'custom',
@@ -243,7 +241,7 @@ class Blockquote extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => __( 'Content', 'elementor-pro' ),
+				'label' => esc_html__( 'Content', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -251,11 +249,10 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'content_text_color',
 			[
-				'label' => __( 'Text Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Text Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Schemes\Color::get_type(),
-					'value' => Schemes\Color::COLOR_3,
+				'global' => [
+					'default' => Global_Colors::COLOR_TEXT,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote__content' => 'color: {{VALUE}}',
@@ -274,7 +271,7 @@ class Blockquote extends Widget_Base {
 		$this->add_responsive_control(
 			'content_gap',
 			[
-				'label' => __( 'Gap', 'elementor-pro' ),
+				'label' => esc_html__( 'Gap', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote__content +footer' => 'margin-top: {{SIZE}}{{UNIT}}',
@@ -286,7 +283,7 @@ class Blockquote extends Widget_Base {
 			'heading_author_style',
 			[
 				'type' => Controls_Manager::HEADING,
-				'label' => __( 'Author', 'elementor-pro' ),
+				'label' => esc_html__( 'Author', 'elementor-pro' ),
 				'separator' => 'before',
 			]
 		);
@@ -294,11 +291,10 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'author_text_color',
 			[
-				'label' => __( 'Text Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Text Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Schemes\Color::get_type(),
-					'value' => Schemes\Color::COLOR_2,
+				'global' => [
+					'default' => Global_Colors::COLOR_SECONDARY,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote__author' => 'color: {{VALUE}}',
@@ -317,7 +313,7 @@ class Blockquote extends Widget_Base {
 		$this->add_responsive_control(
 			'author_gap',
 			[
-				'label' => __( 'Gap', 'elementor-pro' ),
+				'label' => esc_html__( 'Gap', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 20,
@@ -337,7 +333,7 @@ class Blockquote extends Widget_Base {
 		$this->start_controls_section(
 			'section_button_style',
 			[
-				'label' => __( 'Button', 'elementor-pro' ),
+				'label' => esc_html__( 'Button', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -345,7 +341,7 @@ class Blockquote extends Widget_Base {
 		$this->add_responsive_control(
 			'button_size',
 			[
-				'label' => __( 'Size', 'elementor-pro' ),
+				'label' => esc_html__( 'Size', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -363,7 +359,7 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'button_border_radius',
 			[
-				'label' => __( 'Border Radius', 'elementor-pro' ),
+				'label' => esc_html__( 'Border Radius', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote__tweet-button' => 'border-radius: {{SIZE}}{{UNIT}}',
@@ -397,11 +393,11 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'button_color_source',
 			[
-				'label' => __( 'Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Color', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'official' => __( 'Official', 'elementor-pro' ),
-					'custom' => __( 'Custom', 'elementor-pro' ),
+					'official' => esc_html__( 'Official', 'elementor-pro' ),
+					'custom' => esc_html__( 'Custom', 'elementor-pro' ),
 				],
 				'default' => 'official',
 				'prefix_class' => 'elementor-blockquote--button-color-',
@@ -413,7 +409,7 @@ class Blockquote extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_normal',
 			[
-				'label' => __( 'Normal', 'elementor-pro' ),
+				'label' => esc_html__( 'Normal', 'elementor-pro' ),
 				'condition' => [
 					'button_color_source' => 'custom',
 				],
@@ -423,7 +419,7 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'button_background_color',
 			[
-				'label' => __( 'Background Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Background Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote__tweet-button' => 'background-color: {{VALUE}}',
@@ -440,13 +436,11 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'button_text_color',
 			[
-				'label' => __( 'Text Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Text Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote__tweet-button' => 'color: {{VALUE}}',
-				],
-				'condition' => [
-					'button_color_source' => 'custom',
+					'{{WRAPPER}} .elementor-blockquote__tweet-button svg' => 'fill: {{VALUE}}',
 				],
 			]
 		);
@@ -456,7 +450,7 @@ class Blockquote extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_hover',
 			[
-				'label' => __( 'Hover', 'elementor-pro' ),
+				'label' => esc_html__( 'Hover', 'elementor-pro' ),
 				'condition' => [
 					'button_color_source' => 'custom',
 				],
@@ -466,7 +460,7 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'button_background_color_hover',
 			[
-				'label' => __( 'Background Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Background Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote__tweet-button:hover' => 'background-color: {{VALUE}}',
@@ -485,13 +479,11 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'button_text_color_hover',
 			[
-				'label' => __( 'Text Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Text Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote__tweet-button:hover' => 'color: {{VALUE}}',
-				],
-				'condition' => [
-					'button_color_source' => 'custom',
+					'{{WRAPPER}} .elementor-blockquote__tweet-button:hover svg' => 'fill: {{VALUE}}',
 				],
 			]
 		);
@@ -500,12 +492,25 @@ class Blockquote extends Widget_Base {
 
 		$this->end_controls_tabs();
 
+		$default_fonts = Plugin::elementor()->kits_manager->get_current_settings( 'default_generic_fonts' );
+
+		if ( $default_fonts ) {
+			$default_fonts = ', ' . $default_fonts;
+		}
+
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'button_typography',
 				'selector' => '{{WRAPPER}} .elementor-blockquote__tweet-button span, {{WRAPPER}} .elementor-blockquote__tweet-button i',
 				'separator' => 'before',
+				'fields_options' => [
+					'font_family' => [
+						'selectors' => [
+							'{{WRAPPER}} .elementor-blockquote__tweet-button' => 'font-family: "{{VALUE}}"' . $default_fonts . ';',
+						],
+					],
+				],
 			]
 		);
 
@@ -514,7 +519,7 @@ class Blockquote extends Widget_Base {
 		$this->start_controls_section(
 			'section_border_style',
 			[
-				'label' => __( 'Border', 'elementor-pro' ),
+				'label' => esc_html__( 'Border', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'blockquote_skin' => 'border',
@@ -527,14 +532,14 @@ class Blockquote extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_border_normal',
 			[
-				'label' => __( 'Normal', 'elementor-pro' ),
+				'label' => esc_html__( 'Normal', 'elementor-pro' ),
 			]
 		);
 
 		$this->add_control(
 			'border_color',
 			[
-				'label' => __( 'Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote' => 'border-color: {{VALUE}}',
@@ -545,7 +550,7 @@ class Blockquote extends Widget_Base {
 		$this->add_responsive_control(
 			'border_width',
 			[
-				'label' => __( 'Width', 'elementor-pro' ),
+				'label' => esc_html__( 'Width', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'body:not(.rtl) {{WRAPPER}} .elementor-blockquote' => 'border-left-width: {{SIZE}}{{UNIT}}',
@@ -557,7 +562,7 @@ class Blockquote extends Widget_Base {
 		$this->add_responsive_control(
 			'border_gap',
 			[
-				'label' => __( 'Gap', 'elementor-pro' ),
+				'label' => esc_html__( 'Gap', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'body:not(.rtl) {{WRAPPER}} .elementor-blockquote' => 'padding-left: {{SIZE}}{{UNIT}}',
@@ -571,14 +576,14 @@ class Blockquote extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_border_hover',
 			[
-				'label' => __( 'Hover', 'elementor-pro' ),
+				'label' => esc_html__( 'Hover', 'elementor-pro' ),
 			]
 		);
 
 		$this->add_control(
 			'border_color_hover',
 			[
-				'label' => __( 'Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote:hover' => 'border-color: {{VALUE}}',
@@ -589,7 +594,7 @@ class Blockquote extends Widget_Base {
 		$this->add_responsive_control(
 			'border_width_hover',
 			[
-				'label' => __( 'Width', 'elementor-pro' ),
+				'label' => esc_html__( 'Width', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'body:not(.rtl) {{WRAPPER}} .elementor-blockquote:hover' => 'border-left-width: {{SIZE}}{{UNIT}}',
@@ -601,7 +606,7 @@ class Blockquote extends Widget_Base {
 		$this->add_responsive_control(
 			'border_gap_hover',
 			[
-				'label' => __( 'Gap', 'elementor-pro' ),
+				'label' => esc_html__( 'Gap', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'body:not(.rtl) {{WRAPPER}} .elementor-blockquote:hover' => 'padding-left: {{SIZE}}{{UNIT}}',
@@ -617,7 +622,7 @@ class Blockquote extends Widget_Base {
 		$this->add_responsive_control(
 			'border_vertical_padding',
 			[
-				'label' => __( 'Vertical Padding', 'elementor-pro' ),
+				'label' => esc_html__( 'Vertical Padding', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote' => 'padding-top: {{SIZE}}{{UNIT}}; padding-bottom: {{SIZE}}{{UNIT}}',
@@ -634,7 +639,7 @@ class Blockquote extends Widget_Base {
 		$this->start_controls_section(
 			'section_box_style',
 			[
-				'label' => __( 'Box', 'elementor-pro' ),
+				'label' => esc_html__( 'Box', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'blockquote_skin' => 'boxed',
@@ -645,7 +650,7 @@ class Blockquote extends Widget_Base {
 		$this->add_responsive_control(
 			'box_padding',
 			[
-				'label' => __( 'Padding', 'elementor-pro' ),
+				'label' => esc_html__( 'Padding', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote' => 'padding: {{SIZE}}{{UNIT}}',
@@ -658,14 +663,14 @@ class Blockquote extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_box_normal',
 			[
-				'label' => __( 'Normal', 'elementor-pro' ),
+				'label' => esc_html__( 'Normal', 'elementor-pro' ),
 			]
 		);
 
 		$this->add_control(
 			'box_background_color',
 			[
-				'label' => __( 'Background Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Background Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote' => 'background-color: {{VALUE}}',
@@ -684,7 +689,7 @@ class Blockquote extends Widget_Base {
 		$this->add_responsive_control(
 			'box_border_radius',
 			[
-				'label' => __( 'Border Radius', 'elementor-pro' ),
+				'label' => esc_html__( 'Border Radius', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote' => 'border-radius: {{SIZE}}{{UNIT}}',
@@ -708,14 +713,14 @@ class Blockquote extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_box_hover',
 			[
-				'label' => __( 'Hover', 'elementor-pro' ),
+				'label' => esc_html__( 'Hover', 'elementor-pro' ),
 			]
 		);
 
 		$this->add_control(
 			'box_background_color_hover',
 			[
-				'label' => __( 'Background Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Background Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote:hover' => 'background-color: {{VALUE}}',
@@ -734,7 +739,7 @@ class Blockquote extends Widget_Base {
 		$this->add_responsive_control(
 			'box_border_radius_hover',
 			[
-				'label' => __( 'Border Radius', 'elementor-pro' ),
+				'label' => esc_html__( 'Border Radius', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote:hover' => 'border-radius: {{SIZE}}{{UNIT}}',
@@ -762,7 +767,7 @@ class Blockquote extends Widget_Base {
 		$this->start_controls_section(
 			'section_quote_style',
 			[
-				'label' => __( 'Quote', 'elementor-pro' ),
+				'label' => esc_html__( 'Quote', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'blockquote_skin' => 'quotation',
@@ -773,7 +778,7 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'quote_text_color',
 			[
-				'label' => __( 'Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote:before' => 'color: {{VALUE}}',
@@ -784,7 +789,7 @@ class Blockquote extends Widget_Base {
 		$this->add_responsive_control(
 			'quote_size',
 			[
-				'label' => __( 'Size', 'elementor-pro' ),
+				'label' => esc_html__( 'Size', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -805,7 +810,7 @@ class Blockquote extends Widget_Base {
 		$this->add_responsive_control(
 			'quote_gap',
 			[
-				'label' => __( 'Gap', 'elementor-pro' ),
+				'label' => esc_html__( 'Gap', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote__content' => 'margin-top: {{SIZE}}{{UNIT}}',
@@ -855,13 +860,15 @@ class Blockquote extends Widget_Base {
 		$this->add_inline_editing_attributes( 'tweet_button_label', 'none' );
 		?>
 		<blockquote class="elementor-blockquote">
-			<p <?php echo $this->get_render_attribute_string( 'blockquote_content' ); ?>>
-				<?php echo $settings['blockquote_content']; ?>
+			<p <?php $this->print_render_attribute_string( 'blockquote_content' ); ?>>
+				<?php $this->print_unescaped_setting( 'blockquote_content' ); ?>
 			</p>
 			<?php if ( ! empty( $settings['author_name'] ) || 'yes' === $settings['tweet_button'] ) : ?>
 				<footer>
 					<?php if ( ! empty( $settings['author_name'] ) ) : ?>
-						<cite <?php echo $this->get_render_attribute_string( 'author_name' ); ?>><?php echo $settings['author_name']; ?></cite>
+						<cite <?php $this->print_render_attribute_string( 'author_name' ); ?>><?php
+							$this->print_unescaped_setting( 'author_name' );
+						?></cite>
 					<?php endif ?>
 					<?php if ( 'yes' === $settings['tweet_button'] ) : ?>
 						<a href="<?php echo esc_attr( $share_link ); ?>" class="elementor-blockquote__tweet-button" target="_blank">
@@ -879,7 +886,9 @@ class Blockquote extends Widget_Base {
 								<?php endif; ?>
 							<?php endif; ?>
 							<?php if ( 'icon-text' === $tweet_button_view || 'text' === $tweet_button_view ) : ?>
-								<span <?php echo $this->get_render_attribute_string( 'tweet_button_label' ); ?>><?php echo $settings['tweet_button_label']; ?></span>
+								<span <?php $this->print_render_attribute_string( 'tweet_button_label' ); ?>><?php
+									$this->print_unescaped_setting( 'tweet_button_label' );
+								?></span>
 							<?php endif; ?>
 						</a>
 					<?php endif ?>
@@ -889,7 +898,15 @@ class Blockquote extends Widget_Base {
 		<?php
 	}
 
-	protected function _content_template() {
+	/**
+	 * Render Blockquote widget output in the editor.
+	 *
+	 * Written as a Backbone JavaScript template and used to generate the live preview.
+	 *
+	 * @since 2.9.0
+	 * @access protected
+	 */
+	protected function content_template() {
 		?>
 		<#
 			var tweetButtonView = settings.tweet_button_view;
@@ -905,8 +922,16 @@ class Blockquote extends Widget_Base {
 						<# } #>
 						<# if ( 'yes' === settings.tweet_button ) { #>
 							<a href="#" class="elementor-blockquote__tweet-button">
-								<# if ( 'text' !== tweetButtonView ) { #>
-									<i class="fa fa-twitter" aria-hidden="true"></i><span class="elementor-screen-only"><?php esc_html_e( 'Tweet', 'elementor-pro' ); ?></span>
+								<# if ( 'text' !== tweetButtonView ) {
+									// If FontAwesome migration has been done, load the FA5 version, otherwise load FA4
+									if ( ! elementor.config.icons_update_needed ) { #>
+										<i class="fab fa-twitter" aria-hidden="true"></i>
+									<# } else { #>
+										<i class="fa fa-twitter" aria-hidden="true"></i>
+									<# } #>
+									<# if ( 'icon-text' !== tweetButtonView ) { #>
+										<span class="elementor-screen-only"><?php esc_html_e( 'Tweet', 'elementor-pro' ); ?></span>
+									<# } #>
 								<# } #>
 								<# if ( 'icon-text' === tweetButtonView || 'text' === tweetButtonView ) { #>
 									<span class="elementor-inline-editing elementor-blockquote__tweet-label" data-elementor-setting-key="tweet_button_label" data-elementor-inline-editing-toolbar="none">{{{ settings.tweet_button_label }}}</span>

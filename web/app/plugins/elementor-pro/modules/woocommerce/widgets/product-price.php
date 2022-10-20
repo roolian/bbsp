@@ -2,21 +2,22 @@
 namespace ElementorPro\Modules\Woocommerce\Widgets;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\Schemes;
+use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Typography;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Product_Price extends Widget_Base {
+class Product_Price extends Base_Widget {
 
 	public function get_name() {
 		return 'woocommerce-product-price';
 	}
 
 	public function get_title() {
-		return __( 'Product Price', 'elementor-pro' );
+		return esc_html__( 'Product Price', 'elementor-pro' );
 	}
 
 	public function get_icon() {
@@ -27,12 +28,12 @@ class Product_Price extends Widget_Base {
 		return [ 'woocommerce', 'shop', 'store', 'price', 'product', 'sale' ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 
 		$this->start_controls_section(
 			'section_price_style',
 			[
-				'label' => __( 'Price', 'elementor-pro' ),
+				'label' => esc_html__( 'Price', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -41,7 +42,7 @@ class Product_Price extends Widget_Base {
 			'wc_style_warning',
 			[
 				'type' => Controls_Manager::RAW_HTML,
-				'raw' => __( 'The style of this widget is often affected by your theme and plugins. If you experience any such issue, try to switch to a basic theme and deactivate related plugins.', 'elementor-pro' ),
+				'raw' => esc_html__( 'The style of this widget is often affected by your theme and plugins. If you experience any such issue, try to switch to a basic theme and deactivate related plugins.', 'elementor-pro' ),
 				'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
 			]
 		);
@@ -49,19 +50,19 @@ class Product_Price extends Widget_Base {
 		$this->add_responsive_control(
 			'text_align',
 			[
-				'label' => __( 'Alignment', 'elementor-pro' ),
+				'label' => esc_html__( 'Alignment', 'elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'elementor-pro' ),
+						'title' => esc_html__( 'Left', 'elementor-pro' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'elementor-pro' ),
+						'title' => esc_html__( 'Center', 'elementor-pro' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'elementor-pro' ),
+						'title' => esc_html__( 'Right', 'elementor-pro' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -74,11 +75,10 @@ class Product_Price extends Widget_Base {
 		$this->add_control(
 			'price_color',
 			[
-				'label' => __( 'Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Schemes\Color::get_type(),
-					'value' => Schemes\Color::COLOR_1,
+				'global' => [
+					'default' => Global_Colors::COLOR_PRIMARY,
 				],
 				'selectors' => [
 					'.woocommerce {{WRAPPER}} .price' => 'color: {{VALUE}}',
@@ -90,7 +90,9 @@ class Product_Price extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'typography',
-				'scheme' => Schemes\Typography::TYPOGRAPHY_1,
+				'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
 				'selector' => '.woocommerce {{WRAPPER}} .price',
 			]
 		);
@@ -98,7 +100,7 @@ class Product_Price extends Widget_Base {
 		$this->add_control(
 			'sale_heading',
 			[
-				'label' => __( 'Sale Price', 'elementor-pro' ),
+				'label' => esc_html__( 'Sale Price', 'elementor-pro' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -107,7 +109,7 @@ class Product_Price extends Widget_Base {
 		$this->add_control(
 			'sale_price_color',
 			[
-				'label' => __( 'Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'.woocommerce {{WRAPPER}} .price ins' => 'color: {{VALUE}};',
@@ -126,7 +128,7 @@ class Product_Price extends Widget_Base {
 		$this->add_control(
 			'price_block',
 			[
-				'label' => __( 'Stacked', 'elementor-pro' ),
+				'label' => esc_html__( 'Stacked', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'prefix_class' => 'elementor-product-price-block-',
@@ -136,7 +138,7 @@ class Product_Price extends Widget_Base {
 		$this->add_responsive_control(
 			'sale_price_spacing',
 			[
-				'label' => __( 'Spacing', 'elementor-pro' ),
+				'label' => esc_html__( 'Spacing', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range' => [
@@ -169,4 +171,8 @@ class Product_Price extends Widget_Base {
 	}
 
 	public function render_plain_content() {}
+
+	public function get_group_name() {
+		return 'woocommerce';
+	}
 }

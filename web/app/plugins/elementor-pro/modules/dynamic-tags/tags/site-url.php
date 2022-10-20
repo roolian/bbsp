@@ -1,7 +1,7 @@
 <?php
 namespace ElementorPro\Modules\DynamicTags\Tags;
 
-use Elementor\Core\DynamicTags\Data_Tag;
+use ElementorPro\Modules\DynamicTags\Tags\Base\Data_Tag;
 use ElementorPro\Modules\DynamicTags\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,7 +15,7 @@ class Site_URL extends Data_Tag {
 	}
 
 	public function get_title() {
-		return __( 'Site URL', 'elementor-pro' );
+		return esc_html__( 'Site URL', 'elementor-pro' );
 	}
 
 	public function get_group() {

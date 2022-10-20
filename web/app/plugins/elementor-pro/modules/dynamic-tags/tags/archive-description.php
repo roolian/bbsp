@@ -1,7 +1,7 @@
 <?php
 namespace ElementorPro\Modules\DynamicTags\Tags;
 
-use Elementor\Core\DynamicTags\Tag;
+use ElementorPro\Modules\DynamicTags\Tags\Base\Tag;
 use ElementorPro\Modules\DynamicTags\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,7 +15,7 @@ class Archive_Description extends Tag {
 	}
 
 	public function get_title() {
-		return __( 'Archive Description', 'elementor-pro' );
+		return esc_html__( 'Archive Description', 'elementor-pro' );
 	}
 
 	public function get_group() {

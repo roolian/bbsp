@@ -2,7 +2,8 @@
 namespace ElementorPro\Modules\Woocommerce\Widgets;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\Schemes;
+use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Typography;
 use ElementorPro\Modules\Woocommerce\Classes\Products_Renderer;
 
@@ -17,7 +18,11 @@ class Archive_Products extends Products {
 	}
 
 	public function get_title() {
-		return __( 'Archive Products', 'elementor-pro' );
+		return esc_html__( 'Archive Products', 'elementor-pro' );
+	}
+
+	public function get_keywords() {
+		return [ 'woocommerce', 'shop', 'store', 'product', 'archive' ];
 	}
 
 	public function get_categories() {
@@ -26,8 +31,8 @@ class Archive_Products extends Products {
 		];
 	}
 
-	protected function _register_controls() {
-		parent::_register_controls();
+	protected function register_controls() {
+		parent::register_controls();
 
 		$this->remove_responsive_control( 'columns' );
 		$this->remove_responsive_control( 'rows' );
@@ -67,7 +72,7 @@ class Archive_Products extends Products {
 				'wc_notice_wc_not_supported',
 				[
 					'type' => Controls_Manager::RAW_HTML,
-					'raw' => __( 'Looks like you are using WooCommerce, while your theme does not support it. Please consider switching themes.', 'elementor-pro' ),
+					'raw' => esc_html__( 'Looks like you are using WooCommerce, while your theme does not support it. Please consider switching themes.', 'elementor-pro' ),
 					'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
 				]
 			);
@@ -77,7 +82,7 @@ class Archive_Products extends Products {
 			'wc_notice_use_customizer',
 			[
 				'type' => Controls_Manager::RAW_HTML,
-				'raw' => __( 'To change the Products Archive’s layout, go to Appearance > Customize.', 'elementor-pro' ),
+				'raw' => esc_html__( 'To change the Products Archive’s layout, go to Appearance > Customize.', 'elementor-pro' ),
 				'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
 			]
 		);
@@ -86,8 +91,8 @@ class Archive_Products extends Products {
 			'wc_notice_wrong_data',
 			[
 				'type' => Controls_Manager::RAW_HTML,
-				'raw' => __( 'The editor preview might look different from the live site. Please make sure to check the frontend.', 'elementor-pro' ),
-				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
+				'raw' => esc_html__( 'The editor preview might look different from the live site. Please make sure to check the frontend.', 'elementor-pro' ),
+				'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
 			]
 		);
 
@@ -117,16 +122,19 @@ class Archive_Products extends Products {
 		$this->start_controls_section(
 			'section_advanced',
 			[
-				'label' => __( 'Advanced', 'elementor-pro' ),
+				'label' => esc_html__( 'Advanced', 'elementor-pro' ),
 			]
 		);
 
 		$this->add_control(
 			'nothing_found_message',
 			[
-				'label' => __( 'Nothing Found Message', 'elementor-pro' ),
+				'label' => esc_html__( 'Nothing Found Message', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXTAREA,
-				'default' => __( 'It seems we can\'t find what you\'re looking for.', 'elementor-pro' ),
+				'default' => esc_html__( 'It seems we can\'t find what you\'re looking for.', 'elementor-pro' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
@@ -136,7 +144,7 @@ class Archive_Products extends Products {
 			'section_nothing_found_style',
 			[
 				'tab' => Controls_Manager::TAB_STYLE,
-				'label' => __( 'Nothing Found Message', 'elementor-pro' ),
+				'label' => esc_html__( 'Nothing Found Message', 'elementor-pro' ),
 				'condition' => [
 					'nothing_found_message!' => '',
 				],
@@ -146,11 +154,10 @@ class Archive_Products extends Products {
 		$this->add_control(
 			'nothing_found_color',
 			[
-				'label' => __( 'Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Schemes\Color::get_type(),
-					'value' => Schemes\Color::COLOR_3,
+				'global' => [
+					'default' => Global_Colors::COLOR_TEXT,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-products-nothing-found' => 'color: {{VALUE}};',
@@ -162,11 +169,17 @@ class Archive_Products extends Products {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'nothing_found_typography',
-				'scheme' => Schemes\Typography::TYPOGRAPHY_3,
+				'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_TEXT,
+				],
 				'selector' => '{{WRAPPER}} .elementor-products-nothing-found',
 			]
 		);
 
 		$this->end_controls_section();
+	}
+
+	public function get_group_name() {
+		return 'woocommerce';
 	}
 }

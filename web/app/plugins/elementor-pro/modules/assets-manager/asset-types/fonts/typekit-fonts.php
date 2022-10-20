@@ -31,7 +31,7 @@ class Typekit_Fonts extends Font_Base {
 	}
 
 	public function get_name() {
-		return __( 'TypeKit Web Fonts by Adobe', 'elementor-pro' );
+		return esc_html__( 'Adobe Fonts (TypeKit)', 'elementor-pro' );
 	}
 
 	public function get_type() {
@@ -57,7 +57,7 @@ class Typekit_Fonts extends Font_Base {
 		if ( 200 !== $response_code ) {
 			switch ( $response_code ) {
 				case 404:
-					$this->error = __( 'Project not found.', 'elementor-pro' );
+					$this->error = esc_html__( 'Project not found.', 'elementor-pro' );
 					break;
 				default:
 					$this->error = $response_code;
@@ -71,7 +71,7 @@ class Typekit_Fonts extends Font_Base {
 		}
 
 		if ( ! $response_body ) {
-			$this->error = __( 'No project data was returned.', 'elementor-pro' );
+			$this->error = esc_html__( 'No project data was returned.', 'elementor-pro' );
 
 			return false;
 		}
@@ -131,11 +131,11 @@ class Typekit_Fonts extends Font_Base {
 		$typekit_fonts = $this->get_kit_fonts();
 
 		if ( ! $typekit_fonts || ! is_array( $typekit_fonts ) ) {
-			throw new \Exception( __( 'Error with TypeKit fonts', 'elementor-pro' ) );
+			throw new \Exception( esc_html__( 'Error with TypeKit fonts', 'elementor-pro' ) );
 		}
 
 		if ( ! in_array( $font_family, array_keys( $typekit_fonts ) ) ) {
-			throw new \Exception( __( 'Font missing in Project', 'elementor-pro' ) );
+			throw new \Exception( esc_html__( 'Font missing in Project', 'elementor-pro' ) );
 		}
 
 		$kit_id = $this->get_typekit_kit_id();
@@ -153,22 +153,27 @@ class Typekit_Fonts extends Font_Base {
 
 	public function register_admin_fields( Settings $settings ) {
 		$fonts = $this->get_typekit_fonts();
-		$button_label = __( 'Get Project ID', 'elementor-pro' );
-		$found_label = '<span class="elementor-pro-typekit-count">{{count}}</span> ' . __( 'Fonts Families Found in project. Please note that typekit takes a few minutes to sync once you publish or update a project.', 'elementor-pro' );
+		$button_label = esc_html__( 'Get Project ID', 'elementor-pro' );
+		$found_label = '<span class="elementor-pro-typekit-count">{{count}}</span> ' . esc_html__( 'Fonts Families Found in project. Please note that typekit takes a few minutes to sync once you publish or update a project.', 'elementor-pro' );
 		if ( $fonts && is_array( $fonts ) ) {
-			$button_label = __( 'Sync Project', 'elementor-pro' );
+			$button_label = esc_html__( 'Sync Project', 'elementor-pro' );
 		}
 		$settings->add_section( Settings::TAB_INTEGRATIONS, 'typekit', [
 			'callback' => function() {
-				echo '<hr><h2>' . esc_html__( 'TypeKit Web Fonts by Adobe', 'elementor-pro' ) . '</h2>';
+				echo '<hr><h2>' . esc_html__( 'Adobe Fonts (TypeKit)', 'elementor-pro' ) . '</h2>';
 				esc_html_e( 'TypeKit partners with the world’s leading type foundries to bring thousands of beautiful fonts to designers every day.', 'elementor-pro' );
 			},
 			'fields' => [
 				self::TYPEKIT_KIT_ID_OPTION_NAME => [
-					'label' => __( 'Project ID', 'elementor-pro' ),
+					'label' => esc_html__( 'Project ID', 'elementor-pro' ),
 					'field_args' => [
 						'type' => 'text',
-						'desc' => sprintf( __( 'Enter Your <a href="%s" target="_blank">TypeKit Project ID</a>.', 'elementor-pro' ), 'https://fonts.adobe.com/typekit' ),
+						'desc' => sprintf(
+							/* translators: 1: Link open tag, 2: Link closing tag. */
+							esc_html__( 'Enter Your %1$sTypeKit Project ID%2$s.', 'elementor-pro' ),
+							'<a href="https://fonts.adobe.com/typekit" target="_blank">',
+							'</a>'
+						),
 					],
 					'setting_args' => [
 						'sanitize_callback' => [ $this, 'sanitize_kit_id_settings' ],
@@ -204,7 +209,7 @@ class Typekit_Fonts extends Font_Base {
 		}
 		if ( $this->is_font_in_kit( $font ) ) {
 			$kit_url = sprintf( self::TYPEKIT_FONTS_LINK, $this->get_typekit_kit_id() );
-			echo '<link rel="stylesheet" type="text/css" href="' . $kit_url . '">';
+			echo '<link rel="stylesheet" type="text/css" href="' . esc_url( $kit_url ) . '">';
 			$this->kit_enqueued = true;
 		}
 	}

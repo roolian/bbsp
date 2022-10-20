@@ -2,7 +2,8 @@
 namespace ElementorPro\Modules\ThemeElements\Widgets;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\Schemes;
+use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Typography;
 use Elementor\Icons_Manager;
 use Elementor\Repeater;
@@ -18,7 +19,7 @@ class Post_Info extends Base {
 	}
 
 	public function get_title() {
-		return __( 'Post Info', 'elementor-pro' );
+		return esc_html__( 'Post Info', 'elementor-pro' );
 	}
 
 	public function get_icon() {
@@ -33,33 +34,52 @@ class Post_Info extends Base {
 		return [ 'post', 'info', 'date', 'time', 'author', 'taxonomy', 'comments', 'terms', 'avatar' ];
 	}
 
-	protected function _register_controls() {
+	public function get_style_depends() {
+		if ( Icons_Manager::is_migration_allowed() ) {
+			return [
+				'elementor-icons-fa-regular',
+				'elementor-icons-fa-solid',
+			];
+		}
+
+		return [];
+	}
+
+	public function get_inline_css_depends() {
+		return [
+			[
+				'name' => 'icon-list',
+				'is_core_dependency' => true,
+			],
+		];
+	}
+
+	protected function register_controls() {
 		$this->start_controls_section(
 			'section_icon',
 			[
-				'label' => __( 'Meta Data', 'elementor-pro' ),
+				'label' => esc_html__( 'Meta Data', 'elementor-pro' ),
 			]
 		);
 
 		$this->add_control(
 			'view',
 			[
-				'label' => __( 'Layout', 'elementor-pro' ),
+				'label' => esc_html__( 'Layout', 'elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
 				'default' => 'inline',
 				'options' => [
 					'traditional' => [
-						'title' => __( 'Default', 'elementor-pro' ),
+						'title' => esc_html__( 'Default', 'elementor-pro' ),
 						'icon' => 'eicon-editor-list-ul',
 					],
 					'inline' => [
-						'title' => __( 'Inline', 'elementor-pro' ),
+						'title' => esc_html__( 'Inline', 'elementor-pro' ),
 						'icon' => 'eicon-ellipsis-h',
 					],
 				],
 				'render_type' => 'template',
 				'classes' => 'elementor-control-start-end',
-				'label_block' => false,
 			]
 		);
 
@@ -68,16 +88,16 @@ class Post_Info extends Base {
 		$repeater->add_control(
 			'type',
 			[
-				'label' => __( 'Type', 'elementor-pro' ),
+				'label' => esc_html__( 'Type', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'date',
 				'options' => [
-					'author' => __( 'Author', 'elementor-pro' ),
-					'date' => __( 'Date', 'elementor-pro' ),
-					'time' => __( 'Time', 'elementor-pro' ),
-					'comments' => __( 'Comments', 'elementor-pro' ),
-					'terms' => __( 'Terms', 'elementor-pro' ),
-					'custom' => __( 'Custom', 'elementor-pro' ),
+					'author' => esc_html__( 'Author', 'elementor-pro' ),
+					'date' => esc_html__( 'Date', 'elementor-pro' ),
+					'time' => esc_html__( 'Time', 'elementor-pro' ),
+					'comments' => esc_html__( 'Comments', 'elementor-pro' ),
+					'terms' => esc_html__( 'Terms', 'elementor-pro' ),
+					'custom' => esc_html__( 'Custom', 'elementor-pro' ),
 				],
 			]
 		);
@@ -85,9 +105,8 @@ class Post_Info extends Base {
 		$repeater->add_control(
 			'date_format',
 			[
-				'label' => __( 'Date Format', 'elementor-pro' ),
+				'label' => esc_html__( 'Date Format', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
-				'label_block' => false,
 				'default' => 'default',
 				'options' => [
 					'default' => 'Default',
@@ -95,7 +114,7 @@ class Post_Info extends Base {
 					'1' => '2018-03-06 (Y-m-d)',
 					'2' => '03/06/2018 (m/d/Y)',
 					'3' => '06/03/2018 (d/m/Y)',
-					'custom' => __( 'Custom', 'elementor-pro' ),
+					'custom' => esc_html__( 'Custom', 'elementor-pro' ),
 				],
 				'condition' => [
 					'type' => 'date',
@@ -106,10 +125,9 @@ class Post_Info extends Base {
 		$repeater->add_control(
 			'custom_date_format',
 			[
-				'label' => __( 'Custom Date Format', 'elementor-pro' ),
+				'label' => esc_html__( 'Custom Date Format', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => 'F j, Y',
-				'label_block' => false,
 				'condition' => [
 					'type' => 'date',
 					'date_format' => 'custom',
@@ -125,16 +143,15 @@ class Post_Info extends Base {
 		$repeater->add_control(
 			'time_format',
 			[
-				'label' => __( 'Time Format', 'elementor-pro' ),
+				'label' => esc_html__( 'Time Format', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
-				'label_block' => false,
 				'default' => 'default',
 				'options' => [
 					'default' => 'Default',
 					'0' => '3:31 pm (g:i a)',
 					'1' => '3:31 PM (g:i A)',
 					'2' => '15:31 (H:i)',
-					'custom' => __( 'Custom', 'elementor-pro' ),
+					'custom' => esc_html__( 'Custom', 'elementor-pro' ),
 				],
 				'condition' => [
 					'type' => 'time',
@@ -144,11 +161,10 @@ class Post_Info extends Base {
 		$repeater->add_control(
 			'custom_time_format',
 			[
-				'label' => __( 'Custom Time Format', 'elementor-pro' ),
+				'label' => esc_html__( 'Custom Time Format', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => 'g:i a',
 				'placeholder' => 'g:i a',
-				'label_block' => false,
 				'condition' => [
 					'type' => 'time',
 					'time_format' => 'custom',
@@ -164,7 +180,7 @@ class Post_Info extends Base {
 		$repeater->add_control(
 			'taxonomy',
 			[
-				'label' => __( 'Taxonomy', 'elementor-pro' ),
+				'label' => esc_html__( 'Taxonomy', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT2,
 				'label_block' => true,
 				'default' => [],
@@ -178,11 +194,13 @@ class Post_Info extends Base {
 		$repeater->add_control(
 			'text_prefix',
 			[
-				'label' => __( 'Before', 'elementor-pro' ),
+				'label' => esc_html__( 'Before', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
-				'label_block' => false,
 				'condition' => [
 					'type!' => 'custom',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);
@@ -190,7 +208,7 @@ class Post_Info extends Base {
 		$repeater->add_control(
 			'show_avatar',
 			[
-				'label' => __( 'Avatar', 'elementor-pro' ),
+				'label' => esc_html__( 'Avatar', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'condition' => [
 					'type' => 'author',
@@ -201,7 +219,7 @@ class Post_Info extends Base {
 		$repeater->add_responsive_control(
 			'avatar_size',
 			[
-				'label' => __( 'Size', 'elementor-pro' ),
+				'label' => esc_html__( 'Size', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'{{WRAPPER}} {{CURRENT_ITEM}} .elementor-icon-list-icon' => 'width: {{SIZE}}{{UNIT}}',
@@ -215,7 +233,7 @@ class Post_Info extends Base {
 		$repeater->add_control(
 			'comments_custom_strings',
 			[
-				'label' => __( 'Custom Format', 'elementor-pro' ),
+				'label' => esc_html__( 'Custom Format', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => false,
 				'condition' => [
@@ -227,10 +245,9 @@ class Post_Info extends Base {
 		$repeater->add_control(
 			'string_no_comments',
 			[
-				'label' => __( 'No Comments', 'elementor-pro' ),
+				'label' => esc_html__( 'No Comments', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
-				'label_block' => false,
-				'placeholder' => __( 'No Comments', 'elementor-pro' ),
+				'placeholder' => esc_html__( 'No Comments', 'elementor-pro' ),
 				'condition' => [
 					'comments_custom_strings' => 'yes',
 					'type' => 'comments',
@@ -241,10 +258,9 @@ class Post_Info extends Base {
 		$repeater->add_control(
 			'string_one_comment',
 			[
-				'label' => __( 'One Comment', 'elementor-pro' ),
+				'label' => esc_html__( 'One Comment', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
-				'label_block' => false,
-				'placeholder' => __( 'One Comment', 'elementor-pro' ),
+				'placeholder' => esc_html__( 'One Comment', 'elementor-pro' ),
 				'condition' => [
 					'comments_custom_strings' => 'yes',
 					'type' => 'comments',
@@ -255,10 +271,9 @@ class Post_Info extends Base {
 		$repeater->add_control(
 			'string_comments',
 			[
-				'label' => __( 'Comments', 'elementor-pro' ),
+				'label' => esc_html__( 'Comments', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
-				'label_block' => false,
-				'placeholder' => __( '%s Comments', 'elementor-pro' ),
+				'placeholder' => esc_html__( '%s Comments', 'elementor-pro' ),
 				'condition' => [
 					'comments_custom_strings' => 'yes',
 					'type' => 'comments',
@@ -269,7 +284,7 @@ class Post_Info extends Base {
 		$repeater->add_control(
 			'custom_text',
 			[
-				'label' => __( 'Custom', 'elementor-pro' ),
+				'label' => esc_html__( 'Custom', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
@@ -284,7 +299,7 @@ class Post_Info extends Base {
 		$repeater->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'elementor-pro' ),
+				'label' => esc_html__( 'Link', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 				'condition' => [
@@ -296,7 +311,7 @@ class Post_Info extends Base {
 		$repeater->add_control(
 			'custom_url',
 			[
-				'label' => __( 'Custom URL', 'elementor-pro' ),
+				'label' => esc_html__( 'Custom URL', 'elementor-pro' ),
 				'type' => Controls_Manager::URL,
 				'dynamic' => [
 					'active' => true,
@@ -310,12 +325,12 @@ class Post_Info extends Base {
 		$repeater->add_control(
 			'show_icon',
 			[
-				'label' => __( 'Icon', 'elementor-pro' ),
+				'label' => esc_html__( 'Icon', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'none' => __( 'None', 'elementor-pro' ),
-					'default' => __( 'Default', 'elementor-pro' ),
-					'custom' => __( 'Custom', 'elementor-pro' ),
+					'none' => esc_html__( 'None', 'elementor-pro' ),
+					'default' => esc_html__( 'Default', 'elementor-pro' ),
+					'custom' => esc_html__( 'Custom', 'elementor-pro' ),
 				],
 				'default' => 'default',
 				'condition' => [
@@ -327,7 +342,7 @@ class Post_Info extends Base {
 		$repeater->add_control(
 			'selected_icon',
 			[
-				'label' => __( 'Choose Icon', 'elementor-pro' ),
+				'label' => esc_html__( 'Choose Icon', 'elementor-pro' ),
 				'type' => Controls_Manager::ICONS,
 				'fa4compatibility' => 'icon',
 				'condition' => [
@@ -382,7 +397,7 @@ class Post_Info extends Base {
 		$this->start_controls_section(
 			'section_icon_list',
 			[
-				'label' => __( 'List', 'elementor-pro' ),
+				'label' => esc_html__( 'List', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -390,7 +405,7 @@ class Post_Info extends Base {
 		$this->add_responsive_control(
 			'space_between',
 			[
-				'label' => __( 'Space Between', 'elementor-pro' ),
+				'label' => esc_html__( 'Space Between', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -411,19 +426,19 @@ class Post_Info extends Base {
 		$this->add_responsive_control(
 			'icon_align',
 			[
-				'label' => __( 'Alignment', 'elementor-pro' ),
+				'label' => esc_html__( 'Alignment', 'elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Start', 'elementor-pro' ),
+						'title' => esc_html__( 'Start', 'elementor-pro' ),
 						'icon' => 'eicon-h-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'elementor-pro' ),
+						'title' => esc_html__( 'Center', 'elementor-pro' ),
 						'icon' => 'eicon-h-align-center',
 					],
 					'right' => [
-						'title' => __( 'End', 'elementor-pro' ),
+						'title' => esc_html__( 'End', 'elementor-pro' ),
 						'icon' => 'eicon-h-align-right',
 					],
 				],
@@ -434,10 +449,10 @@ class Post_Info extends Base {
 		$this->add_control(
 			'divider',
 			[
-				'label' => __( 'Divider', 'elementor-pro' ),
+				'label' => esc_html__( 'Divider', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Off', 'elementor-pro' ),
-				'label_on' => __( 'On', 'elementor-pro' ),
+				'label_off' => esc_html__( 'Off', 'elementor-pro' ),
+				'label_on' => esc_html__( 'On', 'elementor-pro' ),
 				'selectors' => [
 					'{{WRAPPER}} .elementor-icon-list-item:not(:last-child):after' => 'content: ""',
 				],
@@ -448,13 +463,13 @@ class Post_Info extends Base {
 		$this->add_control(
 			'divider_style',
 			[
-				'label' => __( 'Style', 'elementor-pro' ),
+				'label' => esc_html__( 'Style', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'solid' => __( 'Solid', 'elementor-pro' ),
-					'double' => __( 'Double', 'elementor-pro' ),
-					'dotted' => __( 'Dotted', 'elementor-pro' ),
-					'dashed' => __( 'Dashed', 'elementor-pro' ),
+					'solid' => esc_html__( 'Solid', 'elementor-pro' ),
+					'double' => esc_html__( 'Double', 'elementor-pro' ),
+					'dotted' => esc_html__( 'Dotted', 'elementor-pro' ),
+					'dashed' => esc_html__( 'Dashed', 'elementor-pro' ),
 				],
 				'default' => 'solid',
 				'condition' => [
@@ -470,7 +485,7 @@ class Post_Info extends Base {
 		$this->add_control(
 			'divider_weight',
 			[
-				'label' => __( 'Weight', 'elementor-pro' ),
+				'label' => esc_html__( 'Weight', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 1,
@@ -494,7 +509,7 @@ class Post_Info extends Base {
 		$this->add_control(
 			'divider_width',
 			[
-				'label' => __( 'Width', 'elementor-pro' ),
+				'label' => esc_html__( 'Width', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%', 'px' ],
 				'default' => [
@@ -523,7 +538,7 @@ class Post_Info extends Base {
 		$this->add_control(
 			'divider_height',
 			[
-				'label' => __( 'Height', 'elementor-pro' ),
+				'label' => esc_html__( 'Height', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%', 'px' ],
 				'default' => [
@@ -552,12 +567,11 @@ class Post_Info extends Base {
 		$this->add_control(
 			'divider_color',
 			[
-				'label' => __( 'Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#ddd',
-				'scheme' => [
-					'type' => Schemes\Color::get_type(),
-					'value' => Schemes\Color::COLOR_3,
+				'global' => [
+					'default' => Global_Colors::COLOR_TEXT,
 				],
 				'condition' => [
 					'divider' => 'yes',
@@ -573,7 +587,7 @@ class Post_Info extends Base {
 		$this->start_controls_section(
 			'section_icon_style',
 			[
-				'label' => __( 'Icon', 'elementor-pro' ),
+				'label' => esc_html__( 'Icon', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -581,16 +595,15 @@ class Post_Info extends Base {
 		$this->add_control(
 			'icon_color',
 			[
-				'label' => __( 'Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .elementor-icon-list-icon i' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .elementor-icon-list-icon svg' => 'fill: {{VALUE}};',
 				],
-				'scheme' => [
-					'type' => Schemes\Color::get_type(),
-					'value' => Schemes\Color::COLOR_1,
+				'global' => [
+					'default' => Global_Colors::COLOR_PRIMARY,
 				],
 			]
 		);
@@ -598,7 +611,7 @@ class Post_Info extends Base {
 		$this->add_responsive_control(
 			'icon_size',
 			[
-				'label' => __( 'Size', 'elementor-pro' ),
+				'label' => esc_html__( 'Size', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 14,
@@ -611,7 +624,7 @@ class Post_Info extends Base {
 				'selectors' => [
 					'{{WRAPPER}} .elementor-icon-list-icon' => 'width: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .elementor-icon-list-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .elementor-icon-list-icon svg' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .elementor-icon-list-icon svg' => '--e-icon-list-icon-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -621,7 +634,7 @@ class Post_Info extends Base {
 		$this->start_controls_section(
 			'section_text_style',
 			[
-				'label' => __( 'Text', 'elementor-pro' ),
+				'label' => esc_html__( 'Text', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -629,7 +642,7 @@ class Post_Info extends Base {
 		$this->add_control(
 			'text_indent',
 			[
-				'label' => __( 'Indent', 'elementor-pro' ),
+				'label' => esc_html__( 'Indent', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -646,15 +659,14 @@ class Post_Info extends Base {
 		$this->add_control(
 			'text_color',
 			[
-				'label' => __( 'Text Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Text Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .elementor-icon-list-text, {{WRAPPER}} .elementor-icon-list-text a' => 'color: {{VALUE}}',
 				],
-				'scheme' => [
-					'type' => Schemes\Color::get_type(),
-					'value' => Schemes\Color::COLOR_2,
+				'global' => [
+					'default' => Global_Colors::COLOR_SECONDARY,
 				],
 			]
 		);
@@ -664,7 +676,9 @@ class Post_Info extends Base {
 			[
 				'name' => 'icon_typography',
 				'selector' => '{{WRAPPER}} .elementor-icon-list-item',
-				'scheme' => Schemes\Typography::TYPOGRAPHY_3,
+				'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_TEXT,
+				],
 			]
 		);
 
@@ -677,7 +691,7 @@ class Post_Info extends Base {
 		], 'objects' );
 
 		$options = [
-			'' => __( 'Choose', 'elementor-pro' ),
+			'' => esc_html__( 'Choose', 'elementor-pro' ),
 		];
 
 		foreach ( $taxonomies as $taxonomy ) {
@@ -760,9 +774,9 @@ class Post_Info extends Base {
 			case 'comments':
 				if ( comments_open() ) {
 					$default_strings = [
-						'string_no_comments' => __( 'No Comments', 'elementor-pro' ),
-						'string_one_comment' => __( 'One Comment', 'elementor-pro' ),
-						'string_comments' => __( '%s Comments', 'elementor-pro' ),
+						'string_no_comments' => esc_html__( 'No Comments', 'elementor-pro' ),
+						'string_one_comment' => esc_html__( 'One Comment', 'elementor-pro' ),
+						'string_comments' => esc_html__( '%s Comments', 'elementor-pro' ),
 					];
 
 					if ( 'yes' === $repeater_item['comments_custom_strings'] ) {
@@ -871,16 +885,7 @@ class Post_Info extends Base {
 		if ( ! empty( $item_data['url']['url'] ) ) {
 			$has_link = true;
 
-			$url = $item_data['url'];
-			$this->add_render_attribute( $link_key, 'href', $url['url'] );
-
-			if ( ! empty( $url['is_external'] ) ) {
-				$this->add_render_attribute( $link_key, 'target', '_blank' );
-			}
-
-			if ( ! empty( $url['nofollow'] ) ) {
-				$this->add_render_attribute( $link_key, 'rel', 'nofollow' );
-			}
+			$this->add_link_attributes( $link_key, $item_data['url'] );
 		}
 
 		if ( ! empty( $item_data['itemprop'] ) ) {
@@ -888,9 +893,9 @@ class Post_Info extends Base {
 		}
 
 		?>
-		<li <?php echo $this->get_render_attribute_string( $item_key ); ?>>
+		<li <?php $this->print_render_attribute_string( $item_key ); ?>>
 			<?php if ( $has_link ) : ?>
-			<a <?php echo $this->get_render_attribute_string( $link_key ); ?>>
+			<a <?php $this->print_render_attribute_string( $link_key ); ?>>
 				<?php endif; ?>
 				<?php $this->render_item_icon_or_image( $item_data, $repeater_item, $repeater_index ); ?>
 				<?php $this->render_item_text( $item_data, $repeater_index ); ?>
@@ -935,7 +940,7 @@ class Post_Info extends Base {
 				$this->add_render_attribute( $image_data, 'src', $item_data['image'] );
 				$this->add_render_attribute( $image_data, 'alt', $item_data['text'] );
 				?>
-					<img class="elementor-avatar" <?php echo $this->get_render_attribute_string( $image_data ); ?>>
+					<img class="elementor-avatar" <?php $this->print_render_attribute_string( $image_data ); ?>>
 				<?php elseif ( $show_icon ) : ?>
 					<?php if ( $is_new || $migrated ) :
 						Icons_Manager::render_icon( $item_data['selected_icon'], [ 'aria-hidden' => 'true' ] );
@@ -957,7 +962,7 @@ class Post_Info extends Base {
 		}
 
 		?>
-		<span <?php echo $this->get_render_attribute_string( $repeater_setting_key ); ?>>
+		<span <?php $this->print_render_attribute_string( $repeater_setting_key ); ?>>
 			<?php if ( ! empty( $item_data['text_prefix'] ) ) : ?>
 				<span class="elementor-post-info__item-prefix"><?php echo esc_html( $item_data['text_prefix'] ); ?></span>
 			<?php endif; ?>
@@ -976,7 +981,8 @@ class Post_Info extends Base {
 					endif;
 				endforeach;
 
-				echo implode( ', ', $terms_list );
+				// PHPCS - the variable $terms_list is safe.
+				echo implode( ', ', $terms_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				?>
 				</span>
 			<?php else : ?>
@@ -1015,9 +1021,14 @@ class Post_Info extends Base {
 
 		$this->add_render_attribute( 'icon_list', 'class', [ 'elementor-icon-list-items', 'elementor-post-info' ] );
 		?>
-		<ul <?php echo $this->get_render_attribute_string( 'icon_list' ); ?>>
-			<?php echo $items_html; ?>
+		<ul <?php $this->print_render_attribute_string( 'icon_list' ); ?>>
+			<?php // PHPCS - the variable $terms_list is safe. ?>
+			<?php echo $items_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		</ul>
 		<?php
+	}
+
+	public function get_group_name() {
+		return 'theme-elements';
 	}
 }

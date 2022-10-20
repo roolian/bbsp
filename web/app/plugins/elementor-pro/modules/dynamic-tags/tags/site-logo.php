@@ -1,7 +1,7 @@
 <?php
 namespace ElementorPro\Modules\DynamicTags\Tags;
 
-use Elementor\Core\DynamicTags\Data_Tag;
+use ElementorPro\Modules\DynamicTags\Tags\Base\Data_Tag;
 use Elementor\Utils;
 use ElementorPro\Modules\DynamicTags\Module;
 
@@ -15,7 +15,7 @@ class Site_Logo extends Data_Tag {
 	}
 
 	public function get_title() {
-		return __( 'Site Logo', 'elementor-pro' );
+		return esc_html__( 'Site Logo', 'elementor-pro' );
 	}
 
 	public function get_group() {

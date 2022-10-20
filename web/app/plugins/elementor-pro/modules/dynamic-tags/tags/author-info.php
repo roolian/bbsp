@@ -2,7 +2,7 @@
 namespace ElementorPro\Modules\DynamicTags\Tags;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\DynamicTags\Tag;
+use ElementorPro\Modules\DynamicTags\Tags\Base\Tag;
 use ElementorPro\Modules\DynamicTags\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,7 +16,7 @@ class Author_Info extends Tag {
 	}
 
 	public function get_title() {
-		return __( 'Author Info', 'elementor-pro' );
+		return esc_html__( 'Author Info', 'elementor-pro' );
 	}
 
 	public function get_group() {
@@ -43,17 +43,17 @@ class Author_Info extends Tag {
 		return 'key';
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->add_control(
 			'key',
 			[
-				'label' => __( 'Field', 'elementor-pro' ),
+				'label' => esc_html__( 'Field', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'description',
 				'options' => [
-					'description' => __( 'Bio', 'elementor-pro' ),
-					'email' => __( 'Email', 'elementor-pro' ),
-					'url' => __( 'Website', 'elementor-pro' ),
+					'description' => esc_html__( 'Bio', 'elementor-pro' ),
+					'email' => esc_html__( 'Email', 'elementor-pro' ),
+					'url' => esc_html__( 'Website', 'elementor-pro' ),
 				],
 			]
 		);

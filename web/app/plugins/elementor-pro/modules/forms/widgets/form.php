@@ -2,14 +2,16 @@
 namespace ElementorPro\Modules\Forms\Widgets;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\Schemes;
+use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
 use Elementor\Icons_Manager;
 use Elementor\Repeater;
-use ElementorPro\Classes\Utils;
+use ElementorPro\Core\Utils;
 use ElementorPro\Modules\Forms\Classes\Ajax_Handler;
 use ElementorPro\Modules\Forms\Classes\Form_Base;
+use ElementorPro\Modules\Forms\Controls\Fields_Repeater;
 use ElementorPro\Modules\Forms\Module;
 use ElementorPro\Plugin;
 
@@ -24,7 +26,7 @@ class Form extends Form_Base {
 	}
 
 	public function get_title() {
-		return __( 'Form', 'elementor-pro' );
+		return esc_html__( 'Form', 'elementor-pro' );
 	}
 
 	public function get_icon() {
@@ -35,32 +37,36 @@ class Form extends Form_Base {
 		return [ 'form', 'forms', 'field', 'button', 'mailchimp', 'drip', 'mailpoet', 'convertkit', 'getresponse', 'recaptcha', 'zapier', 'webhook', 'activecampaign', 'slack', 'discord', 'mailerlite' ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		$repeater = new Repeater();
 
 		$field_types = [
-			'text' => __( 'Text', 'elementor-pro' ),
-			'email' => __( 'Email', 'elementor-pro' ),
-			'textarea' => __( 'Textarea', 'elementor-pro' ),
-			'url' => __( 'URL', 'elementor-pro' ),
-			'tel' => __( 'Tel', 'elementor-pro' ),
-			'radio' => __( 'Radio', 'elementor-pro' ),
-			'select' => __( 'Select', 'elementor-pro' ),
-			'checkbox' => __( 'Checkbox', 'elementor-pro' ),
-			'acceptance' => __( 'Acceptance', 'elementor-pro' ),
-			'number' => __( 'Number', 'elementor-pro' ),
-			'date' => __( 'Date', 'elementor-pro' ),
-			'time' => __( 'Time', 'elementor-pro' ),
-			'upload' => __( 'File Upload', 'elementor-pro' ),
-			'password' => __( 'Password', 'elementor-pro' ),
-			'html' => __( 'HTML', 'elementor-pro' ),
-			'hidden' => __( 'Hidden', 'elementor-pro' ),
+			'text' => esc_html__( 'Text', 'elementor-pro' ),
+			'email' => esc_html__( 'Email', 'elementor-pro' ),
+			'textarea' => esc_html__( 'Textarea', 'elementor-pro' ),
+			'url' => esc_html__( 'URL', 'elementor-pro' ),
+			'tel' => esc_html__( 'Tel', 'elementor-pro' ),
+			'radio' => esc_html__( 'Radio', 'elementor-pro' ),
+			'select' => esc_html__( 'Select', 'elementor-pro' ),
+			'checkbox' => esc_html__( 'Checkbox', 'elementor-pro' ),
+			'acceptance' => esc_html__( 'Acceptance', 'elementor-pro' ),
+			'number' => esc_html__( 'Number', 'elementor-pro' ),
+			'date' => esc_html__( 'Date', 'elementor-pro' ),
+			'time' => esc_html__( 'Time', 'elementor-pro' ),
+			'upload' => esc_html__( 'File Upload', 'elementor-pro' ),
+			'password' => esc_html__( 'Password', 'elementor-pro' ),
+			'html' => esc_html__( 'HTML', 'elementor-pro' ),
+			'hidden' => esc_html__( 'Hidden', 'elementor-pro' ),
 		];
 
 		/**
 		 * Forms field types.
 		 *
 		 * Filters the list of field types displayed in the form `field_type` control.
+		 *
+		 * This hook allows developers to alter the list of displayed field types. For
+		 * example, removing the 'upload' field type from the list of fields types will
+		 * prevent uploading files using Elementor forms.
 		 *
 		 * @since 1.0.0
 		 *
@@ -71,13 +77,13 @@ class Form extends Form_Base {
 		$repeater->start_controls_tabs( 'form_fields_tabs' );
 
 		$repeater->start_controls_tab( 'form_fields_content_tab', [
-			'label' => __( 'Content', 'elementor-pro' ),
+			'label' => esc_html__( 'Content', 'elementor-pro' ),
 		] );
 
 		$repeater->add_control(
 			'field_type',
 			[
-				'label' => __( 'Type', 'elementor-pro' ),
+				'label' => esc_html__( 'Type', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => $field_types,
 				'default' => 'text',
@@ -87,16 +93,19 @@ class Form extends Form_Base {
 		$repeater->add_control(
 			'field_label',
 			[
-				'label' => __( 'Label', 'elementor-pro' ),
+				'label' => esc_html__( 'Label', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => '',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
 		$repeater->add_control(
 			'placeholder',
 			[
-				'label' => __( 'Placeholder', 'elementor-pro' ),
+				'label' => esc_html__( 'Placeholder', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => '',
 				'conditions' => [
@@ -116,13 +125,16 @@ class Form extends Form_Base {
 						],
 					],
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
 		$repeater->add_control(
 			'required',
 			[
-				'label' => __( 'Required', 'elementor-pro' ),
+				'label' => esc_html__( 'Required', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'return_value' => 'true',
 				'default' => '',
@@ -137,6 +149,7 @@ class Form extends Form_Base {
 								'recaptcha_v3',
 								'hidden',
 								'html',
+								'step',
 							],
 						],
 					],
@@ -147,10 +160,10 @@ class Form extends Form_Base {
 		$repeater->add_control(
 			'field_options',
 			[
-				'label' => __( 'Options', 'elementor-pro' ),
+				'label' => esc_html__( 'Options', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXTAREA,
 				'default' => '',
-				'description' => __( 'Enter each option in a separate line. To differentiate between label and value, separate them with a pipe char ("|"). For example: First Name|f_name', 'elementor-pro' ),
+				'description' => esc_html__( 'Enter each option in a separate line. To differentiate between label and value, separate them with a pipe char ("|"). For example: First Name|f_name', 'elementor-pro' ),
 				'conditions' => [
 					'terms' => [
 						[
@@ -170,7 +183,7 @@ class Form extends Form_Base {
 		$repeater->add_control(
 			'allow_multiple',
 			[
-				'label' => __( 'Multiple Selection', 'elementor-pro' ),
+				'label' => esc_html__( 'Multiple Selection', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'return_value' => 'true',
 				'conditions' => [
@@ -187,7 +200,7 @@ class Form extends Form_Base {
 		$repeater->add_control(
 			'select_size',
 			[
-				'label' => __( 'Rows', 'elementor-pro' ),
+				'label' => esc_html__( 'Rows', 'elementor-pro' ),
 				'type' => Controls_Manager::NUMBER,
 				'min' => 2,
 				'step' => 1,
@@ -209,7 +222,7 @@ class Form extends Form_Base {
 		$repeater->add_control(
 			'inline_list',
 			[
-				'label' => __( 'Inline List', 'elementor-pro' ),
+				'label' => esc_html__( 'Inline List', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'return_value' => 'elementor-subgroup-inline',
 				'default' => '',
@@ -231,7 +244,7 @@ class Form extends Form_Base {
 		$repeater->add_control(
 			'field_html',
 			[
-				'label' => __( 'HTML', 'elementor-pro' ),
+				'label' => esc_html__( 'HTML', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXTAREA,
 				'dynamic' => [
 					'active' => true,
@@ -250,18 +263,20 @@ class Form extends Form_Base {
 		$repeater->add_responsive_control(
 			'width',
 			[
-				'label' => __( 'Column Width', 'elementor-pro' ),
+				'label' => esc_html__( 'Column Width', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'' => __( 'Default', 'elementor-pro' ),
+					'' => esc_html__( 'Default', 'elementor-pro' ),
 					'100' => '100%',
 					'80' => '80%',
 					'75' => '75%',
+					'70' => '70%',
 					'66' => '66%',
 					'60' => '60%',
 					'50' => '50%',
 					'40' => '40%',
 					'33' => '33%',
+					'30' => '30%',
 					'25' => '25%',
 					'20' => '20%',
 				],
@@ -275,6 +290,7 @@ class Form extends Form_Base {
 								'hidden',
 								'recaptcha',
 								'recaptcha_v3',
+								'step',
 							],
 						],
 					],
@@ -285,7 +301,7 @@ class Form extends Form_Base {
 		$repeater->add_control(
 			'rows',
 			[
-				'label' => __( 'Rows', 'elementor-pro' ),
+				'label' => esc_html__( 'Rows', 'elementor-pro' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 4,
 				'conditions' => [
@@ -301,12 +317,12 @@ class Form extends Form_Base {
 
 		$repeater->add_control(
 			'recaptcha_size', [
-				'label' => __( 'Size', 'elementor-pro' ),
+				'label' => esc_html__( 'Size', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'normal',
 				'options' => [
-					'normal' => __( 'Normal', 'elementor-pro' ),
-					'compact' => __( 'Compact', 'elementor-pro' ),
+					'normal' => esc_html__( 'Normal', 'elementor-pro' ),
+					'compact' => esc_html__( 'Compact', 'elementor-pro' ),
 				],
 				'conditions' => [
 					'terms' => [
@@ -322,12 +338,12 @@ class Form extends Form_Base {
 		$repeater->add_control(
 			'recaptcha_style',
 			[
-				'label' => __( 'Style', 'elementor-pro' ),
+				'label' => esc_html__( 'Style', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'light',
 				'options' => [
-					'light' => __( 'Light', 'elementor-pro' ),
-					'dark' => __( 'Dark', 'elementor-pro' ),
+					'light' => esc_html__( 'Light', 'elementor-pro' ),
+					'dark' => esc_html__( 'Dark', 'elementor-pro' ),
 				],
 				'conditions' => [
 					'terms' => [
@@ -342,15 +358,15 @@ class Form extends Form_Base {
 
 		$repeater->add_control(
 			'recaptcha_badge', [
-				'label' => __( 'Badge', 'elementor-pro' ),
+				'label' => esc_html__( 'Badge', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'bottomright',
 				'options' => [
-					'bottomright' => __( 'Bottom Right', 'elementor-pro' ),
-					'bottomleft' => __( 'Bottom Left', 'elementor-pro' ),
-					'inline' => __( 'Inline', 'elementor-pro' ),
+					'bottomright' => esc_html__( 'Bottom Right', 'elementor-pro' ),
+					'bottomleft' => esc_html__( 'Bottom Left', 'elementor-pro' ),
+					'inline' => esc_html__( 'Inline', 'elementor-pro' ),
 				],
-				'description' => __( 'To view the validation badge, switch to preview mode', 'elementor-pro' ),
+				'description' => esc_html__( 'To view the validation badge, switch to preview mode', 'elementor-pro' ),
 				'conditions' => [
 					'terms' => [
 						[
@@ -365,10 +381,10 @@ class Form extends Form_Base {
 		$repeater->add_control(
 			'css_classes',
 			[
-				'label' => __( 'CSS Classes', 'elementor-pro' ),
+				'label' => esc_html__( 'CSS Classes', 'elementor-pro' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => '',
-				'title' => __( 'Add your custom class WITHOUT the dot. e.g: my-class', 'elementor-pro' ),
+				'title' => esc_html__( 'Add your custom class WITHOUT the dot. e.g: my-class', 'elementor-pro' ),
 			]
 		);
 
@@ -377,7 +393,7 @@ class Form extends Form_Base {
 		$repeater->start_controls_tab(
 			'form_fields_advanced_tab',
 			[
-				'label' => __( 'Advanced', 'elementor-pro' ),
+				'label' => esc_html__( 'Advanced', 'elementor-pro' ),
 				'condition' => [
 					'field_type!' => 'html',
 				],
@@ -387,7 +403,7 @@ class Form extends Form_Base {
 		$repeater->add_control(
 			'field_value',
 			[
-				'label' => __( 'Default Value', 'elementor-pro' ),
+				'label' => esc_html__( 'Default Value', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => '',
 				'dynamic' => [
@@ -420,20 +436,25 @@ class Form extends Form_Base {
 		$repeater->add_control(
 			'custom_id',
 			[
-				'label' => __( 'ID', 'elementor-pro' ),
+				'label' => esc_html__( 'ID', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
-				'description' => __( 'Please make sure the ID is unique and not used elsewhere in this form. This field allows <code>A-z 0-9</code> & underscore chars without spaces.', 'elementor-pro' ),
+				'description' => esc_html__( 'Please make sure the ID is unique and not used elsewhere in this form. This field allows `A-z 0-9` & underscore chars without spaces.', 'elementor-pro' ),
 				'render_type' => 'none',
+				'required' => true,
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
+		$shortcode_template = '{{ view.container.settings.get( \'custom_id\' ) }}';
 		$repeater->add_control(
 			'shortcode',
 			[
-				'label' => __( 'Shortcode', 'elementor-pro' ),
+				'label' => esc_html__( 'Shortcode', 'elementor-pro' ),
 				'type' => Controls_Manager::RAW_HTML,
 				'classes' => 'forms-field-shortcode',
-				'raw' => '<input class="elementor-form-field-shortcode" readonly />',
+				'raw' => '<input class="elementor-form-field-shortcode" value=\'[field id="' . $shortcode_template . '"]\' readonly />',
 			]
 		);
 
@@ -444,46 +465,49 @@ class Form extends Form_Base {
 		$this->start_controls_section(
 			'section_form_fields',
 			[
-				'label' => __( 'Form Fields', 'elementor-pro' ),
+				'label' => esc_html__( 'Form Fields', 'elementor-pro' ),
 			]
 		);
 
 		$this->add_control(
 			'form_name',
 			[
-				'label' => __( 'Form Name', 'elementor-pro' ),
+				'label' => esc_html__( 'Form Name', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'New Form', 'elementor-pro' ),
-				'placeholder' => __( 'Form Name', 'elementor-pro' ),
+				'default' => esc_html__( 'New Form', 'elementor-pro' ),
+				'placeholder' => esc_html__( 'Form Name', 'elementor-pro' ),
 			]
 		);
 
 		$this->add_control(
 			'form_fields',
 			[
-				'type' => Controls_Manager::REPEATER,
+				'type' => Fields_Repeater::CONTROL_TYPE,
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
 						'custom_id' => 'name',
 						'field_type' => 'text',
-						'field_label' => __( 'Name', 'elementor-pro' ),
-						'placeholder' => __( 'Name', 'elementor-pro' ),
+						'field_label' => esc_html__( 'Name', 'elementor-pro' ),
+						'placeholder' => esc_html__( 'Name', 'elementor-pro' ),
 						'width' => '100',
+						'dynamic' => [
+							'active' => true,
+						],
 					],
 					[
 						'custom_id' => 'email',
 						'field_type' => 'email',
 						'required' => 'true',
-						'field_label' => __( 'Email', 'elementor-pro' ),
-						'placeholder' => __( 'Email', 'elementor-pro' ),
+						'field_label' => esc_html__( 'Email', 'elementor-pro' ),
+						'placeholder' => esc_html__( 'Email', 'elementor-pro' ),
 						'width' => '100',
 					],
 					[
 						'custom_id' => 'message',
 						'field_type' => 'textarea',
-						'field_label' => __( 'Message', 'elementor-pro' ),
-						'placeholder' => __( 'Message', 'elementor-pro' ),
+						'field_label' => esc_html__( 'Message', 'elementor-pro' ),
+						'placeholder' => esc_html__( 'Message', 'elementor-pro' ),
 						'width' => '100',
 					],
 				],
@@ -494,14 +518,14 @@ class Form extends Form_Base {
 		$this->add_control(
 			'input_size',
 			[
-				'label' => __( 'Input Size', 'elementor-pro' ),
+				'label' => esc_html__( 'Input Size', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'xs' => __( 'Extra Small', 'elementor-pro' ),
-					'sm' => __( 'Small', 'elementor-pro' ),
-					'md' => __( 'Medium', 'elementor-pro' ),
-					'lg' => __( 'Large', 'elementor-pro' ),
-					'xl' => __( 'Extra Large', 'elementor-pro' ),
+					'xs' => esc_html__( 'Extra Small', 'elementor-pro' ),
+					'sm' => esc_html__( 'Small', 'elementor-pro' ),
+					'md' => esc_html__( 'Medium', 'elementor-pro' ),
+					'lg' => esc_html__( 'Large', 'elementor-pro' ),
+					'xl' => esc_html__( 'Extra Large', 'elementor-pro' ),
 				],
 				'default' => 'sm',
 				'separator' => 'before',
@@ -511,10 +535,10 @@ class Form extends Form_Base {
 		$this->add_control(
 			'show_labels',
 			[
-				'label' => __( 'Label', 'elementor-pro' ),
+				'label' => esc_html__( 'Label', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'elementor-pro' ),
-				'label_off' => __( 'Hide', 'elementor-pro' ),
+				'label_on' => esc_html__( 'Show', 'elementor-pro' ),
+				'label_off' => esc_html__( 'Hide', 'elementor-pro' ),
 				'return_value' => 'true',
 				'default' => 'true',
 				'separator' => 'before',
@@ -524,10 +548,10 @@ class Form extends Form_Base {
 		$this->add_control(
 			'mark_required',
 			[
-				'label' => __( 'Required Mark', 'elementor-pro' ),
+				'label' => esc_html__( 'Required Mark', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'elementor-pro' ),
-				'label_off' => __( 'Hide', 'elementor-pro' ),
+				'label_on' => esc_html__( 'Show', 'elementor-pro' ),
+				'label_off' => esc_html__( 'Hide', 'elementor-pro' ),
 				'default' => '',
 				'condition' => [
 					'show_labels!' => '',
@@ -538,11 +562,11 @@ class Form extends Form_Base {
 		$this->add_control(
 			'label_position',
 			[
-				'label' => __( 'Label Position', 'elementor-pro' ),
+				'label' => esc_html__( 'Label Position', 'elementor-pro' ),
 				'type' => Controls_Manager::HIDDEN,
 				'options' => [
-					'above' => __( 'Above', 'elementor-pro' ),
-					'inline' => __( 'Inline', 'elementor-pro' ),
+					'above' => esc_html__( 'Above', 'elementor-pro' ),
+					'inline' => esc_html__( 'Inline', 'elementor-pro' ),
 				],
 				'default' => 'above',
 				'condition' => [
@@ -554,26 +578,16 @@ class Form extends Form_Base {
 		$this->end_controls_section();
 
 		$this->start_controls_section(
-			'section_submit_button',
+			'section_buttons',
 			[
-				'label' => __( 'Submit Button', 'elementor-pro' ),
-			]
-		);
-
-		$this->add_control(
-			'button_text',
-			[
-				'label' => __( 'Text', 'elementor-pro' ),
-				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Send', 'elementor-pro' ),
-				'placeholder' => __( 'Send', 'elementor-pro' ),
+				'label' => esc_html__( 'Buttons', 'elementor-pro' ),
 			]
 		);
 
 		$this->add_control(
 			'button_size',
 			[
-				'label' => __( 'Size', 'elementor-pro' ),
+				'label' => esc_html__( 'Size', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'sm',
 				'options' => self::get_button_sizes(),
@@ -583,45 +597,48 @@ class Form extends Form_Base {
 		$this->add_responsive_control(
 			'button_width',
 			[
-				'label' => __( 'Column Width', 'elementor-pro' ),
+				'label' => esc_html__( 'Column Width', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'' => __( 'Default', 'elementor-pro' ),
+					'' => esc_html__( 'Default', 'elementor-pro' ),
 					'100' => '100%',
 					'80' => '80%',
 					'75' => '75%',
+					'70' => '70%',
 					'66' => '66%',
 					'60' => '60%',
 					'50' => '50%',
 					'40' => '40%',
 					'33' => '33%',
+					'30' => '30%',
 					'25' => '25%',
 					'20' => '20%',
 				],
 				'default' => '100',
+				'frontend_available' => true,
 			]
 		);
 
 		$this->add_responsive_control(
 			'button_align',
 			[
-				'label' => __( 'Alignment', 'elementor-pro' ),
+				'label' => esc_html__( 'Alignment', 'elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'start' => [
-						'title' => __( 'Left', 'elementor-pro' ),
+						'title' => esc_html__( 'Left', 'elementor-pro' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'elementor-pro' ),
+						'title' => esc_html__( 'Center', 'elementor-pro' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'end' => [
-						'title' => __( 'Right', 'elementor-pro' ),
+						'title' => esc_html__( 'Right', 'elementor-pro' ),
 						'icon' => 'eicon-text-align-right',
 					],
 					'stretch' => [
-						'title' => __( 'Justified', 'elementor-pro' ),
+						'title' => esc_html__( 'Justified', 'elementor-pro' ),
 						'icon' => 'eicon-text-align-justify',
 					],
 				],
@@ -631,24 +648,84 @@ class Form extends Form_Base {
 		);
 
 		$this->add_control(
+			'heading_steps_buttons',
+			[
+				'label' => esc_html__( 'Step Buttons', 'elementor-pro' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'step_next_label',
+			[
+				'label' => esc_html__( 'Next', 'elementor-pro' ),
+				'type' => Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
+				'frontend_available' => true,
+				'render_type' => 'none',
+				'default' => esc_html__( 'Next', 'elementor-pro' ),
+				'placeholder' => esc_html__( 'Next', 'elementor-pro' ),
+			]
+		);
+
+		$this->add_control(
+			'step_previous_label',
+			[
+				'label' => esc_html__( 'Previous', 'elementor-pro' ),
+				'type' => Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
+				'frontend_available' => true,
+				'render_type' => 'none',
+				'default' => esc_html__( 'Previous', 'elementor-pro' ),
+				'placeholder' => esc_html__( 'Previous', 'elementor-pro' ),
+			]
+		);
+
+		$this->add_control(
+			'heading_submit_button',
+			[
+				'label' => esc_html__( 'Submit Button', 'elementor-pro' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_control(
+			'button_text',
+			[
+				'label' => esc_html__( 'Submit', 'elementor-pro' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => esc_html__( 'Send', 'elementor-pro' ),
+				'placeholder' => esc_html__( 'Send', 'elementor-pro' ),
+				'dynamic' => [
+					'active' => true,
+				],
+			]
+		);
+
+		$this->add_control(
 			'selected_button_icon',
 			[
-				'label' => __( 'Icon', 'elementor-pro' ),
+				'label' => esc_html__( 'Icon', 'elementor-pro' ),
 				'type' => Controls_Manager::ICONS,
-				'fa4compatibility' => 'button_icon',
-				'label_block' => true,
+				'skin' => 'inline',
+				'label_block' => false,
 			]
 		);
 
 		$this->add_control(
 			'button_icon_align',
 			[
-				'label' => __( 'Icon Position', 'elementor-pro' ),
+				'label' => esc_html__( 'Icon Position', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'left',
 				'options' => [
-					'left' => __( 'Before', 'elementor-pro' ),
-					'right' => __( 'After', 'elementor-pro' ),
+					'left' => esc_html__( 'Before', 'elementor-pro' ),
+					'right' => esc_html__( 'After', 'elementor-pro' ),
 				],
 				'condition' => [
 					'selected_button_icon[value]!' => '',
@@ -659,7 +736,7 @@ class Form extends Form_Base {
 		$this->add_control(
 			'button_icon_indent',
 			[
-				'label' => __( 'Icon Spacing', 'elementor-pro' ),
+				'label' => esc_html__( 'Icon Spacing', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -679,14 +756,15 @@ class Form extends Form_Base {
 		$this->add_control(
 			'button_css_id',
 			[
-				'label' => __( 'Button ID', 'elementor-pro' ),
+				'label' => esc_html__( 'Button ID', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => '',
-				'title' => __( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'elementor-pro' ),
-				'label_block' => false,
-				'description' => __( 'Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows <code>A-z 0-9</code> & underscore chars without spaces.', 'elementor-pro' ),
+				'title' => esc_html__( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'elementor-pro' ),
+				'description' => esc_html__( 'Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows `A-z 0-9` & underscore chars without spaces.', 'elementor-pro' ),
 				'separator' => 'before',
-
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
@@ -695,11 +773,11 @@ class Form extends Form_Base {
 		$this->start_controls_section(
 			'section_integration',
 			[
-				'label' => __( 'Actions After Submit', 'elementor-pro' ),
+				'label' => esc_html__( 'Actions After Submit', 'elementor-pro' ),
 			]
 		);
 
-		$actions = Module::instance()->get_form_actions();
+		$actions = Module::instance()->actions_registrar->get();
 
 		$actions_options = [];
 
@@ -707,19 +785,31 @@ class Form extends Form_Base {
 			$actions_options[ $action->get_name() ] = $action->get_label();
 		}
 
+		$default_submit_actions = [ 'email' ];
+
+		/**
+		 * Default submit actions.
+		 *
+		 * Filters the list of submit actions pre deffined by Elementor forms.
+		 *
+		 * By default, only one submit action is set by Elementor forms, an 'email'
+		 * action. This hook allows developers to alter those submit action.
+		 *
+		 * @param array $default_submit_actions A list of default submit actions.
+		 */
+		$default_submit_actions = apply_filters( 'elementor_pro/forms/default_submit_actions', $default_submit_actions );
+
 		$this->add_control(
 			'submit_actions',
 			[
-				'label' => __( 'Add Action', 'elementor-pro' ),
+				'label' => esc_html__( 'Add Action', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT2,
 				'multiple' => true,
 				'options' => $actions_options,
 				'render_type' => 'none',
 				'label_block' => true,
-				'default' => [
-					'email',
-				],
-				'description' => __( 'Add actions that will be performed after a visitor submits the form (e.g. send an email notification). Choosing an action will add its setting below.', 'elementor-pro' ),
+				'default' => $default_submit_actions,
+				'description' => esc_html__( 'Add actions that will be performed after a visitor submits the form (e.g. send an email notification). Choosing an action will add its setting below.', 'elementor-pro' ),
 			]
 		);
 
@@ -729,10 +819,86 @@ class Form extends Form_Base {
 			$action->register_settings_section( $this );
 		}
 
+		// Steps settings.
+		$this->start_controls_section(
+			'section_steps_settings',
+			[
+				'label' => esc_html__( 'Steps Settings', 'elementor-pro' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+		$this->add_control(
+			'step_type',
+			[
+				'label' => esc_html__( 'Type', 'elementor-pro' ),
+				'type' => Controls_Manager::SELECT,
+				'frontend_available' => true,
+				'render_type' => 'none',
+				'options' => [
+					'none' => 'None',
+					'text' => 'Text',
+					'icon' => 'Icon',
+					'number' => 'Number',
+					'progress_bar' => 'Progress Bar',
+					'number_text' => 'Number & Text',
+					'icon_text' => 'Icon & Text',
+				],
+				'default' => 'number_text',
+			]
+		);
+
+		$this->add_control(
+			'step_icon_shape',
+			[
+				'label' => esc_html__( 'Shape', 'elementor-pro' ),
+				'type' => Controls_Manager::SELECT,
+				'frontend_available' => true,
+				'render_type' => 'none',
+				'options' => [
+					'circle' => 'Circle',
+					'square' => 'Square',
+					'rounded' => 'Rounded',
+					'none' => 'None',
+				],
+				'default' => 'circle',
+				'conditions' => [
+					'terms' => [
+						[
+							'name' => 'step_type',
+							'operator' => '!in',
+							'value' => [
+								'progress_bar',
+								'text',
+							],
+						],
+					],
+				],
+			]
+		);
+
+		$repeater->add_control(
+			'display_percentage',
+			[
+				'label' => esc_html__( 'Display Percentage', 'elementor-pro' ),
+				'type' => Controls_Manager::SWITCHER,
+				'frontend_available' => true,
+				'render_type' => 'none',
+				'return_value' => 'true',
+				'default' => '',
+				'condition' => [
+					'step_type' => 'progress_bar',
+				],
+			]
+		);
+
+		// End of steps settings.
+		$this->end_controls_section();
+
 		$this->start_controls_section(
 			'section_form_options',
 			[
-				'label' => __( 'Additional Options', 'elementor-pro' ),
+				'label' => esc_html__( 'Additional Options', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -740,18 +906,21 @@ class Form extends Form_Base {
 		$this->add_control(
 			'form_id',
 			[
-				'label' => __( 'Form ID', 'elementor-pro' ),
+				'label' => esc_html__( 'Form ID', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => 'new_form_id',
-				'description' => __( 'Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows <code>A-z 0-9</code> & underscore chars without spaces.', 'elementor-pro' ),
+				'description' => esc_html__( 'Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows `A-z 0-9` & underscore chars without spaces.', 'elementor-pro' ),
 				'separator' => 'after',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
 		$this->add_control(
 			'custom_messages',
 			[
-				'label' => __( 'Custom Messages', 'elementor-pro' ),
+				'label' => esc_html__( 'Custom Messages', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => '',
 				'separator' => 'before',
@@ -764,7 +933,7 @@ class Form extends Form_Base {
 		$this->add_control(
 			'success_message',
 			[
-				'label' => __( 'Success Message', 'elementor-pro' ),
+				'label' => esc_html__( 'Success Message', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => $default_messages[ Ajax_Handler::SUCCESS ],
 				'placeholder' => $default_messages[ Ajax_Handler::SUCCESS ],
@@ -773,13 +942,16 @@ class Form extends Form_Base {
 					'custom_messages!' => '',
 				],
 				'render_type' => 'none',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
 		$this->add_control(
 			'error_message',
 			[
-				'label' => __( 'Error Message', 'elementor-pro' ),
+				'label' => esc_html__( 'Error Message', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => $default_messages[ Ajax_Handler::ERROR ],
 				'placeholder' => $default_messages[ Ajax_Handler::ERROR ],
@@ -788,13 +960,16 @@ class Form extends Form_Base {
 					'custom_messages!' => '',
 				],
 				'render_type' => 'none',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
 		$this->add_control(
 			'required_field_message',
 			[
-				'label' => __( 'Required Message', 'elementor-pro' ),
+				'label' => esc_html__( 'Required Message', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => $default_messages[ Ajax_Handler::FIELD_REQUIRED ],
 				'placeholder' => $default_messages[ Ajax_Handler::FIELD_REQUIRED ],
@@ -803,13 +978,16 @@ class Form extends Form_Base {
 					'custom_messages!' => '',
 				],
 				'render_type' => 'none',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
 		$this->add_control(
 			'invalid_message',
 			[
-				'label' => __( 'Invalid Message', 'elementor-pro' ),
+				'label' => esc_html__( 'Invalid Message', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => $default_messages[ Ajax_Handler::INVALID_FORM ],
 				'placeholder' => $default_messages[ Ajax_Handler::INVALID_FORM ],
@@ -818,6 +996,9 @@ class Form extends Form_Base {
 					'custom_messages!' => '',
 				],
 				'render_type' => 'none',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
@@ -826,7 +1007,7 @@ class Form extends Form_Base {
 		$this->start_controls_section(
 			'section_form_style',
 			[
-				'label' => __( 'Form', 'elementor-pro' ),
+				'label' => esc_html__( 'Form', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -834,7 +1015,7 @@ class Form extends Form_Base {
 		$this->add_control(
 			'column_gap',
 			[
-				'label' => __( 'Columns Gap', 'elementor-pro' ),
+				'label' => esc_html__( 'Columns Gap', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 10,
@@ -855,7 +1036,7 @@ class Form extends Form_Base {
 		$this->add_control(
 			'row_gap',
 			[
-				'label' => __( 'Rows Gap', 'elementor-pro' ),
+				'label' => esc_html__( 'Rows Gap', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 10,
@@ -877,7 +1058,7 @@ class Form extends Form_Base {
 		$this->add_control(
 			'heading_label',
 			[
-				'label' => __( 'Label', 'elementor-pro' ),
+				'label' => esc_html__( 'Label', 'elementor-pro' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -886,7 +1067,7 @@ class Form extends Form_Base {
 		$this->add_control(
 			'label_spacing',
 			[
-				'label' => __( 'Spacing', 'elementor-pro' ),
+				'label' => esc_html__( 'Spacing', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 0,
@@ -911,14 +1092,13 @@ class Form extends Form_Base {
 		$this->add_control(
 			'label_color',
 			[
-				'label' => __( 'Text Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Text Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-field-group > label, {{WRAPPER}} .elementor-field-subgroup label' => 'color: {{VALUE}};',
 				],
-				'scheme' => [
-					'type' => Schemes\Color::get_type(),
-					'value' => Schemes\Color::COLOR_3,
+				'global' => [
+					'default' => Global_Colors::COLOR_TEXT,
 				],
 			]
 		);
@@ -926,7 +1106,7 @@ class Form extends Form_Base {
 		$this->add_control(
 			'mark_required_color',
 			[
-				'label' => __( 'Mark Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Mark Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -943,14 +1123,16 @@ class Form extends Form_Base {
 			[
 				'name' => 'label_typography',
 				'selector' => '{{WRAPPER}} .elementor-field-group > label',
-				'scheme' => Schemes\Typography::TYPOGRAPHY_3,
+				'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_TEXT,
+				],
 			]
 		);
 
 		$this->add_control(
 			'heading_html',
 			[
-				'label' => __( 'HTML Field', 'elementor-pro' ),
+				'label' => esc_html__( 'HTML Field', 'elementor-pro' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -959,7 +1141,7 @@ class Form extends Form_Base {
 		$this->add_control(
 			'html_spacing',
 			[
-				'label' => __( 'Spacing', 'elementor-pro' ),
+				'label' => esc_html__( 'Spacing', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 0,
@@ -979,14 +1161,13 @@ class Form extends Form_Base {
 		$this->add_control(
 			'html_color',
 			[
-				'label' => __( 'Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-field-type-html' => 'color: {{VALUE}};',
 				],
-				'scheme' => [
-					'type' => Schemes\Color::get_type(),
-					'value' => Schemes\Color::COLOR_3,
+				'global' => [
+					'default' => Global_Colors::COLOR_TEXT,
 				],
 			]
 		);
@@ -996,7 +1177,9 @@ class Form extends Form_Base {
 			[
 				'name' => 'html_typography',
 				'selector' => '{{WRAPPER}} .elementor-field-type-html',
-				'scheme' => Schemes\Typography::TYPOGRAPHY_3,
+				'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_TEXT,
+				],
 			]
 		);
 
@@ -1005,7 +1188,7 @@ class Form extends Form_Base {
 		$this->start_controls_section(
 			'section_field_style',
 			[
-				'label' => __( 'Field', 'elementor-pro' ),
+				'label' => esc_html__( 'Field', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1013,14 +1196,13 @@ class Form extends Form_Base {
 		$this->add_control(
 			'field_text_color',
 			[
-				'label' => __( 'Text Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Text Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-field-group .elementor-field' => 'color: {{VALUE}};',
 				],
-				'scheme' => [
-					'type' => Schemes\Color::get_type(),
-					'value' => Schemes\Color::COLOR_3,
+				'global' => [
+					'default' => Global_Colors::COLOR_TEXT,
 				],
 			]
 		);
@@ -1030,14 +1212,16 @@ class Form extends Form_Base {
 			[
 				'name' => 'field_typography',
 				'selector' => '{{WRAPPER}} .elementor-field-group .elementor-field, {{WRAPPER}} .elementor-field-subgroup label',
-				'scheme' => Schemes\Typography::TYPOGRAPHY_3,
+				'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_TEXT,
+				],
 			]
 		);
 
 		$this->add_control(
 			'field_background_color',
 			[
-				'label' => __( 'Background Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Background Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#ffffff',
 				'selectors' => [
@@ -1051,7 +1235,7 @@ class Form extends Form_Base {
 		$this->add_control(
 			'field_border_color',
 			[
-				'label' => __( 'Border Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Border Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-field-group:not(.elementor-field-type-upload) .elementor-field:not(.elementor-select-wrapper)' => 'border-color: {{VALUE}};',
@@ -1065,7 +1249,7 @@ class Form extends Form_Base {
 		$this->add_control(
 			'field_border_width',
 			[
-				'label' => __( 'Border Width', 'elementor-pro' ),
+				'label' => esc_html__( 'Border Width', 'elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'placeholder' => '1',
 				'size_units' => [ 'px' ],
@@ -1079,7 +1263,7 @@ class Form extends Form_Base {
 		$this->add_control(
 			'field_border_radius',
 			[
-				'label' => __( 'Border Radius', 'elementor-pro' ),
+				'label' => esc_html__( 'Border Radius', 'elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -1094,45 +1278,8 @@ class Form extends Form_Base {
 		$this->start_controls_section(
 			'section_button_style',
 			[
-				'label' => __( 'Button', 'elementor-pro' ),
+				'label' => esc_html__( 'Buttons', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->start_controls_tabs( 'tabs_button_style' );
-
-		$this->start_controls_tab(
-			'tab_button_normal',
-			[
-				'label' => __( 'Normal', 'elementor-pro' ),
-			]
-		);
-
-		$this->add_control(
-			'button_background_color',
-			[
-				'label' => __( 'Background Color', 'elementor-pro' ),
-				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Schemes\Color::get_type(),
-					'value' => Schemes\Color::COLOR_4,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .elementor-button' => 'background-color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'button_text_color',
-			[
-				'label' => __( 'Text Color', 'elementor-pro' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .elementor-button' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .elementor-button svg' => 'fill: {{VALUE}};',
-				],
 			]
 		);
 
@@ -1140,7 +1287,9 @@ class Form extends Form_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'button_typography',
-				'scheme' => Schemes\Typography::TYPOGRAPHY_4,
+				'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_ACCENT,
+				],
 				'selector' => '{{WRAPPER}} .elementor-button',
 			]
 		);
@@ -1149,29 +1298,119 @@ class Form extends Form_Base {
 			Group_Control_Border::get_type(), [
 				'name' => 'button_border',
 				'selector' => '{{WRAPPER}} .elementor-button',
+				'exclude' => [
+					'color',
+				],
+			]
+		);
+
+		$this->start_controls_tabs( 'tabs_button_style' );
+
+		$this->start_controls_tab(
+			'tab_button_normal',
+			[
+				'label' => esc_html__( 'Normal', 'elementor-pro' ),
 			]
 		);
 
 		$this->add_control(
-			'button_border_radius',
+			'heading_next_submit_button',
 			[
-				'label' => __( 'Border Radius', 'elementor-pro' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%' ],
+				'label' => esc_html__( 'Next & Submit Button', 'elementor-pro' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_control(
+			'button_background_color',
+			[
+				'label' => esc_html__( 'Background Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'global' => [
+					'default' => Global_Colors::COLOR_ACCENT,
+				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .e-form__buttons__wrapper__button-next' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-button[type="submit"]' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->add_control(
-			'button_text_padding',
+			'button_text_color',
 			[
-				'label' => __( 'Text Padding', 'elementor-pro' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
+				'label' => esc_html__( 'Text Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#ffffff',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .e-form__buttons__wrapper__button-next' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-button[type="submit"]' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-button[type="submit"] svg *' => 'fill: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'button_border_color',
+			[
+				'label' => esc_html__( 'Border Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .e-form__buttons__wrapper__button-next' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-button[type="submit"]' => 'border-color: {{VALUE}};',
+				],
+				'condition' => [
+					'button_border_border!' => '',
+				],
+			]
+		);
+
+		$this->add_control(
+			'heading_previous_button',
+			[
+				'label' => esc_html__( 'Previous Button', 'elementor-pro' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_control(
+			'previous_button_background_color',
+			[
+				'label' => esc_html__( 'Background Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'global' => [
+					'default' => Global_Colors::COLOR_ACCENT,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .e-form__buttons__wrapper__button-previous' => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'previous_button_text_color',
+			[
+				'label' => esc_html__( 'Text Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#ffffff',
+				'selectors' => [
+					'{{WRAPPER}} .e-form__buttons__wrapper__button-previous' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'previous_button_border_color',
+			[
+				'label' => esc_html__( 'Border Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .e-form__buttons__wrapper__button-previous' => 'border-color: {{VALUE}};',
+				],
+				'condition' => [
+					'button_border_border!' => '',
 				],
 			]
 		);
@@ -1181,17 +1420,27 @@ class Form extends Form_Base {
 		$this->start_controls_tab(
 			'tab_button_hover',
 			[
-				'label' => __( 'Hover', 'elementor-pro' ),
+				'label' => esc_html__( 'Hover', 'elementor-pro' ),
+			]
+		);
+
+		$this->add_control(
+			'heading_next_submit_button_hover',
+			[
+				'label' => esc_html__( 'Next & Submit Button', 'elementor-pro' ),
+				'type' => Controls_Manager::HEADING,
 			]
 		);
 
 		$this->add_control(
 			'button_background_hover_color',
 			[
-				'label' => __( 'Background Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Background Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
+				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-button:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .e-form__buttons__wrapper__button-next:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-button[type="submit"]:hover' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -1199,10 +1448,13 @@ class Form extends Form_Base {
 		$this->add_control(
 			'button_hover_color',
 			[
-				'label' => __( 'Text Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Text Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
+				'default' => '#ffffff',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-button:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .e-form__buttons__wrapper__button-next:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-button[type="submit"]:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-button[type="submit"]:hover svg *' => 'fill: {{VALUE}};',
 				],
 			]
 		);
@@ -1210,10 +1462,59 @@ class Form extends Form_Base {
 		$this->add_control(
 			'button_hover_border_color',
 			[
-				'label' => __( 'Border Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Border Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
+				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-button:hover' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .e-form__buttons__wrapper__button-next:hover' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-button[type="submit"]:hover' => 'border-color: {{VALUE}};',
+				],
+				'condition' => [
+					'button_border_border!' => '',
+				],
+			]
+		);
+
+		$this->add_control(
+			'heading_previous_button_hover',
+			[
+				'label' => esc_html__( 'Previous Button', 'elementor-pro' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_control(
+			'previous_button_background_color_hover',
+			[
+				'label' => esc_html__( 'Background Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .e-form__buttons__wrapper__button-previous:hover' => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'previous_button_text_color_hover',
+			[
+				'label' => esc_html__( 'Text Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#ffffff',
+				'selectors' => [
+					'{{WRAPPER}} .e-form__buttons__wrapper__button-previous:hover' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'previous_button_border_color_hover',
+			[
+				'label' => esc_html__( 'Border Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .e-form__buttons__wrapper__button-previous:hover' => 'border-color: {{VALUE}};',
 				],
 				'condition' => [
 					'button_border_border!' => '',
@@ -1224,7 +1525,7 @@ class Form extends Form_Base {
 		$this->add_control(
 			'button_hover_animation',
 			[
-				'label' => __( 'Animation', 'elementor-pro' ),
+				'label' => esc_html__( 'Animation', 'elementor-pro' ),
 				'type' => Controls_Manager::HOVER_ANIMATION,
 			]
 		);
@@ -1233,12 +1534,37 @@ class Form extends Form_Base {
 
 		$this->end_controls_tabs();
 
+		$this->add_control(
+			'button_border_radius',
+			[
+				'label' => esc_html__( 'Border Radius', 'elementor-pro' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .elementor-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'button_text_padding',
+			[
+				'label' => esc_html__( 'Text Padding', 'elementor-pro' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .elementor-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
 		$this->end_controls_section();
 
 		$this->start_controls_section(
 			'section_messages_style',
 			[
-				'label' => __( 'Messages', 'elementor-pro' ),
+				'label' => esc_html__( 'Messages', 'elementor-pro' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1247,7 +1573,9 @@ class Form extends Form_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'message_typography',
-				'scheme' => Schemes\Typography::TYPOGRAPHY_3,
+				'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_TEXT,
+				],
 				'selector' => '{{WRAPPER}} .elementor-message',
 			]
 		);
@@ -1255,7 +1583,7 @@ class Form extends Form_Base {
 		$this->add_control(
 			'success_message_color',
 			[
-				'label' => __( 'Success Message Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Success Message Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-message.elementor-message-success' => 'color: {{COLOR}};',
@@ -1266,7 +1594,7 @@ class Form extends Form_Base {
 		$this->add_control(
 			'error_message_color',
 			[
-				'label' => __( 'Error Message Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Error Message Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-message.elementor-message-danger' => 'color: {{COLOR}};',
@@ -1277,7 +1605,7 @@ class Form extends Form_Base {
 		$this->add_control(
 			'inline_message_color',
 			[
-				'label' => __( 'Inline Message Color', 'elementor-pro' ),
+				'label' => esc_html__( 'Inline Message Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-message.elementor-help-inline' => 'color: {{COLOR}};',
@@ -1285,6 +1613,426 @@ class Form extends Form_Base {
 			]
 		);
 
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_steps_style',
+			[
+				'label' => esc_html__( 'Steps', 'elementor-pro' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'steps_typography',
+				'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_ACCENT,
+				],
+				'selector' => '{{WRAPPER}} .e-form__indicators__indicator, {{WRAPPER}} .e-form__indicators__indicator__label',
+				'conditions' => [
+					'terms' => [
+						[
+							'name' => 'step_type',
+							'operator' => '!in',
+							'value' => [
+								'icon',
+								'progress_bar',
+							],
+						],
+					],
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'steps_gap',
+			[
+				'label' => esc_html__( 'Spacing', 'elementor-pro' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => 20,
+				],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}}' => '--e-form-steps-indicators-spacing: {{SIZE}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'steps_icon_size',
+			[
+				'label' => esc_html__( 'Icon Size', 'elementor-pro' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => 15,
+					'unit' => 'px',
+				],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'size_units' => [ 'px' ],
+				'conditions' => [
+					'terms' => [
+						[
+							'name' => 'step_type',
+							'operator' => 'in',
+							'value' => [
+								'icon',
+								'icon_text',
+							],
+						],
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}}' => '--e-form-steps-indicator-icon-size: {{SIZE}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'steps_padding',
+			[
+				'label' => esc_html__( 'Padding', 'elementor-pro' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => 30,
+					'unit' => 'px',
+				],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'size_units' => [ 'px' ],
+				'selectors' => [
+					'{{WRAPPER}}' => '--e-form-steps-indicator-padding: {{SIZE}}{{UNIT}}',
+				],
+				'conditions' => [
+					'terms' => [
+						[
+							'name' => 'step_type',
+							'operator' => '!in',
+							'value' => [
+								'text',
+								'progress_bar',
+							],
+						],
+					],
+				],
+			]
+		);
+
+		$this->start_controls_tabs( 'steps_state', [
+			'condition' => [
+				'step_type!' => 'progress_bar',
+			],
+		] );
+
+		$this->start_controls_tab(
+			'tab_steps_state_inactive',
+			[
+				'label' => esc_html__( 'Inactive', 'elementor-pro' ),
+			]
+		);
+
+		$this->add_control(
+			'step_inactive_primary_color',
+			[
+				'label' => esc_html__( 'Primary Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'global' => [
+					'default' => Global_Colors::COLOR_TEXT,
+				],
+				'selectors' => [
+					'{{WRAPPER}}' => '--e-form-steps-indicator-inactive-primary-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'step_inactive_secondary_color',
+			[
+				'label' => esc_html__( 'Secondary Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#ffffff',
+				'selectors' => [
+					'{{WRAPPER}}' => '--e-form-steps-indicator-inactive-secondary-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'tab_steps_state_active',
+			[
+				'label' => esc_html__( 'Active', 'elementor-pro' ),
+			]
+		);
+
+		$this->add_control(
+			'step_active_primary_color',
+			[
+				'label' => esc_html__( 'Primary Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'global' => [
+					'default' => Global_Colors::COLOR_ACCENT,
+				],
+				'selectors' => [
+					'{{WRAPPER}}' => '--e-form-steps-indicator-active-primary-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'step_active_secondary_color',
+			[
+				'label' => esc_html__( 'Secondary Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#ffffff',
+				'selectors' => [
+					'{{WRAPPER}}' => '--e-form-steps-indicator-active-secondary-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'tab_steps_state_completed',
+			[
+				'label' => esc_html__( 'Completed', 'elementor-pro' ),
+			]
+		);
+
+		$this->add_control(
+			'step_completed_primary_color',
+			[
+				'label' => esc_html__( 'Primary Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'global' => [
+					'default' => Global_Colors::COLOR_ACCENT,
+				],
+				'selectors' => [
+					'{{WRAPPER}}' => '--e-form-steps-indicator-completed-primary-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'step_completed_secondary_color',
+			[
+				'label' => esc_html__( 'Secondary Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#ffffff',
+				'condition' => [
+					'step_icon_shape!' => 'none',
+				],
+				'selectors' => [
+					'{{WRAPPER}}' => '--e-form-steps-indicator-completed-secondary-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->add_responsive_control(
+			'step_divider_width',
+			[
+				'label' => esc_html__( 'Divider Width', 'elementor-pro' ),
+				'separator' => 'before',
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => 1,
+					'unit' => 'px',
+				],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'size_units' => [ 'px' ],
+				'condition' => [
+					'step_type!' => 'progress_bar',
+				],
+				'selectors' => [
+					'{{WRAPPER}}' => '--e-form-steps-divider-width: {{SIZE}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'step_divider_gap',
+			[
+				'label' => esc_html__( 'Divider Gap', 'elementor-pro' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => 10,
+					'unit' => 'px',
+				],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'size_units' => [ 'px', '%' ],
+				'condition' => [
+					'step_type!' => 'progress_bar',
+				],
+				'selectors' => [
+					'{{WRAPPER}}' => '--e-form-steps-divider-gap: {{SIZE}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'step_progress_bar_color',
+			[
+				'label' => esc_html__( 'Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'global' => [
+					'default' => Global_Colors::COLOR_ACCENT,
+				],
+				'condition' => [
+					'step_type' => 'progress_bar',
+				],
+				'selectors' => [
+					'{{WRAPPER}}' => '--e-form-steps-indicator-progress-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'step_progress_bar_background_color',
+			[
+				'label' => esc_html__( 'Background Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'global' => [
+					'default' => Global_Colors::COLOR_TEXT,
+				],
+				'condition' => [
+					'step_type' => 'progress_bar',
+				],
+				'selectors' => [
+					'{{WRAPPER}}' => '--e-form-steps-indicator-progress-background-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'step_progress_bar_height',
+			[
+				'label' => esc_html__( 'Height', 'elementor-pro' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => 20,
+					'unit' => 'px',
+				],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'size_units' => [ 'px' ],
+				'condition' => [
+					'step_type' => 'progress_bar',
+				],
+				'selectors' => [
+					'{{WRAPPER}}' => '--e-form-steps-indicator-progress-height: {{SIZE}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'step_progress_bar_border_radius',
+			[
+				'label' => esc_html__( 'Border Radius', 'elementor-pro' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => 0,
+					'unit' => 'px',
+				],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'size_units' => [ 'px' ],
+				'condition' => [
+					'step_type' => 'progress_bar',
+				],
+				'selectors' => [
+					'{{WRAPPER}}' => '--e-form-steps-indicator-progress-border-radius: {{SIZE}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'step_progress_bar_percentage_heading',
+			[
+				'label' => esc_html__( 'Percentage', 'elementor-pro' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => [
+					'step_type' => 'progress_bar',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'step_progress_bar_percentage__typography',
+				'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_ACCENT,
+				],
+				'selector' => '{{WRAPPER}} .e-form__indicators__indicator__progress__meter',
+				'condition' => [
+					'step_type' => 'progress_bar',
+				],
+			]
+		);
+
+		$this->add_control(
+			'step_progress_bar_percentage_color',
+			[
+				'label' => esc_html__( 'Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'global' => [
+					'default' => Global_Colors::COLOR_TEXT,
+				],
+				'condition' => [
+					'step_type' => 'progress_bar',
+				],
+				'selectors' => [
+					'{{WRAPPER}}' => '--e-form-steps-indicator-progress-meter-color: {{VALUE}};',
+				],
+			]
+		);
+
+		// End of steps style.
 		$this->end_controls_section();
 
 	}
@@ -1305,14 +2053,15 @@ class Form extends Form_Base {
 
 		if ( ! Plugin::elementor()->editor->is_edit_mode() ) {
 			/**
-			 * Elementor form Pre render.
+			 * Elementor form pre render.
 			 *
-			 * Fires before the from is rendered in the frontend
+			 * Fires before the from is rendered in the frontend. This hook allows
+			 * developers to add functionality before the from is rendered.
 			 *
 			 * @since 2.4.0
 			 *
-			 * @param array $instance current form settings
-			 * @param Form $this current form widget instance
+			 * @param array $instance Current form settings.
+			 * @param Form  $this     An instance of the form.
 			 */
 			do_action( 'elementor-pro/forms/pre_render', $instance, $this );
 		}
@@ -1349,7 +2098,7 @@ class Form extends Form_Base {
 			$instance['button_width'] = '100';
 		}
 
-		$this->add_render_attribute( 'submit-group', 'class', 'elementor-col-' . $instance['button_width'] );
+		$this->add_render_attribute( 'submit-group', 'class', 'elementor-col-' . $instance['button_width'] . ' e-form__buttons' );
 
 		if ( ! empty( $instance['button_width_tablet'] ) ) {
 			$this->add_render_attribute( 'submit-group', 'class', 'elementor-md-' . $instance['button_width_tablet'] );
@@ -1383,12 +2132,26 @@ class Form extends Form_Base {
 			$this->add_render_attribute( 'button', 'id', $instance['button_css_id'] );
 		}
 
-		?>
-		<form class="elementor-form" method="post" <?php echo $this->get_render_attribute_string( 'form' ); ?>>
-			<input type="hidden" name="post_id" value="<?php echo Utils::get_current_post_id(); ?>"/>
-			<input type="hidden" name="form_id" value="<?php echo $this->get_id(); ?>"/>
+		$referer_title = trim( wp_title( '', false ) );
 
-			<div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>>
+		if ( ! $referer_title && is_home() ) {
+			$referer_title = get_option( 'blogname' );
+		}
+
+		?>
+		<form class="elementor-form" method="post" <?php $this->print_render_attribute_string( 'form' ); ?>>
+			<input type="hidden" name="post_id" value="<?php // PHPCS - the method Utils::get_current_post_id is safe.
+				echo Utils::get_current_post_id(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>"/>
+			<input type="hidden" name="form_id" value="<?php echo esc_attr( $this->get_id() ); ?>"/>
+			<input type="hidden" name="referer_title" value="<?php echo esc_attr( $referer_title ); ?>" />
+
+			<?php if ( is_singular() ) {
+				// `queried_id` may be different from `post_id` on Single theme builder templates.
+				?>
+				<input type="hidden" name="queried_id" value="<?php echo get_the_ID(); ?>"/>
+			<?php } ?>
+
+			<div <?php $this->print_render_attribute_string( 'wrapper' ); ?>>
 				<?php
 				foreach ( $instance['form_fields'] as $item_index => $item ) :
 					$item['input_size'] = $instance['input_size'];
@@ -1399,7 +2162,7 @@ class Form extends Form_Base {
 					/**
 					 * Render form field.
 					 *
-					 * Filters the field rendered by Elementor Forms.
+					 * Filters the field rendered by Elementor forms.
 					 *
 					 * @since 1.0.0
 					 *
@@ -1412,7 +2175,7 @@ class Form extends Form_Base {
 					/**
 					 * Render form field.
 					 *
-					 * Filters the field rendered by Elementor Forms.
+					 * Filters the field rendered by Elementor forms.
 					 *
 					 * The dynamic portion of the hook name, `$field_type`, refers to the field type.
 					 *
@@ -1424,14 +2187,17 @@ class Form extends Form_Base {
 					 */
 					$item = apply_filters( "elementor_pro/forms/render/item/{$field_type}", $item, $item_index, $this );
 
-					if ( 'hidden' === $item['field_type'] ) {
-						$item['field_label'] = false;
-					}
+					$print_label = ! in_array( $item['field_type'], [ 'hidden', 'html', 'step' ], true );
 					?>
-				<div <?php echo $this->get_render_attribute_string( 'field-group' . $item_index ); ?>>
+				<div <?php $this->print_render_attribute_string( 'field-group' . $item_index ); ?>>
 					<?php
-					if ( $item['field_label'] && 'html' !== $item['field_type'] ) {
-						echo '<label ' . $this->get_render_attribute_string( 'label' . $item_index ) . '>' . $item['field_label'] . '</label>';
+					if ( $print_label && $item['field_label'] ) {
+						?>
+							<label <?php $this->print_render_attribute_string( 'label' . $item_index ); ?>>
+								<?php // PHPCS - the variable $item['field_label'] is safe.
+								echo $item['field_label']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							</label>
+						<?php
 					}
 
 					switch ( $item['field_type'] ) :
@@ -1439,16 +2205,19 @@ class Form extends Form_Base {
 							echo do_shortcode( $item['field_html'] );
 							break;
 						case 'textarea':
-							echo $this->make_textarea_field( $item, $item_index );
+							// PHPCS - the method make_textarea_field is safe.
+							echo $this->make_textarea_field( $item, $item_index ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 							break;
 
 						case 'select':
-							echo $this->make_select_field( $item, $item_index );
+							// PHPCS - the method make_select_field is safe.
+							echo $this->make_select_field( $item, $item_index ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 							break;
 
 						case 'radio':
 						case 'checkbox':
-							echo $this->make_radio_checkbox_field( $item, $item_index, $item['field_type'] );
+							// PHPCS - the method make_radio_checkbox_field is safe.
+							echo $this->make_radio_checkbox_field( $item, $item_index, $item['field_type'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 							break;
 						case 'text':
 						case 'email':
@@ -1457,7 +2226,9 @@ class Form extends Form_Base {
 						case 'hidden':
 						case 'search':
 							$this->add_render_attribute( 'input' . $item_index, 'class', 'elementor-field-textual' );
-							echo '<input size="1" ' . $this->get_render_attribute_string( 'input' . $item_index ) . '>';
+							?>
+								<input size="1" <?php $this->print_render_attribute_string( 'input' . $item_index ); ?>>
+							<?php
 							break;
 						default:
 							$field_type = $item['field_type'];
@@ -1465,7 +2236,8 @@ class Form extends Form_Base {
 							/**
 							 * Elementor form field render.
 							 *
-							 * Fires when a field is rendered.
+							 * Fires when a field is rendered in the frontend. This hook allows developers to
+							 * add functionality when from fields are rendered.
 							 *
 							 * The dynamic portion of the hook name, `$field_type`, refers to the field type.
 							 *
@@ -1480,19 +2252,19 @@ class Form extends Form_Base {
 					?>
 				</div>
 				<?php endforeach; ?>
-				<div <?php echo $this->get_render_attribute_string( 'submit-group' ); ?>>
-					<button type="submit" <?php echo $this->get_render_attribute_string( 'button' ); ?>>
-						<span <?php echo $this->get_render_attribute_string( 'content-wrapper' ); ?>>
+				<div <?php $this->print_render_attribute_string( 'submit-group' ); ?>>
+					<button type="submit" <?php $this->print_render_attribute_string( 'button' ); ?>>
+						<span <?php $this->print_render_attribute_string( 'content-wrapper' ); ?>>
 							<?php if ( ! empty( $instance['button_icon'] ) || ! empty( $instance['selected_button_icon'] ) ) : ?>
-								<span <?php echo $this->get_render_attribute_string( 'icon-align' ); ?>>
+								<span <?php $this->print_render_attribute_string( 'icon-align' ); ?>>
 									<?php $this->render_icon_with_fallback( $instance ); ?>
 									<?php if ( empty( $instance['button_text'] ) ) : ?>
-										<span class="elementor-screen-only"><?php _e( 'Submit', 'elementor-pro' ); ?></span>
+										<span class="elementor-screen-only"><?php echo esc_html__( 'Submit', 'elementor-pro' ); ?></span>
 									<?php endif; ?>
 								</span>
 							<?php endif; ?>
 							<?php if ( ! empty( $instance['button_text'] ) ) : ?>
-								<span class="elementor-button-text"><?php echo $instance['button_text']; ?></span>
+								<span class="elementor-button-text"><?php $this->print_unescaped_setting( 'button_text' ); ?></span>
 							<?php endif; ?>
 						</span>
 					</button>
@@ -1502,8 +2274,15 @@ class Form extends Form_Base {
 		<?php
 	}
 
-	protected function _content_template() {
-		$submit_text = esc_html__( 'Submit', 'elementor-pro' );
+	/**
+	 * Render Form widget output in the editor.
+	 *
+	 * Written as a Backbone JavaScript template and used to generate the live preview.
+	 *
+	 * @since 2.9.0
+	 * @access protected
+	 */
+	protected function content_template() {
 		?>
 		<form class="elementor-form" id="{{settings.form_id}}" name="{{settings.form_name}}">
 			<div class="elementor-form-fields-wrapper elementor-labels-{{settings.label_position}}">
@@ -1519,7 +2298,8 @@ class Form extends Form_Base {
 							required = '',
 							inputField = '',
 							multiple = '',
-							fieldGroupClasses = 'elementor-field-group elementor-column elementor-field-type-' + item.field_type;
+							fieldGroupClasses = 'elementor-field-group elementor-column elementor-field-type-' + item.field_type,
+							printLabel = settings.show_labels && ! [ 'hidden', 'html', 'step' ].includes( item.field_type );
 
 						fieldGroupClasses += ' elementor-col-' + ( ( '' !== item.width ) ? item.width : '100' );
 
@@ -1529,10 +2309,6 @@ class Form extends Form_Base {
 
 						if ( item.width_mobile ) {
 							fieldGroupClasses += ' elementor-sm-' + item.width_mobile;
-						}
-
-						if ( ! settings.show_labels ) {
-							item.field_label = false;
 						}
 
 						if ( item.required ) {
@@ -1554,8 +2330,16 @@ class Form extends Form_Base {
 						}
 
 						switch ( item.field_type ) {
+							case 'step':
+								inputField = `<div
+									class="e-field-step elementor-hidden"
+									data-label="${ item.field_label }"
+									data-previousButton="${ item.previous_button || '' }"
+									data-nextButton="${ item.next_button || '' }"
+									data-iconUrl="${ 'svg' === item.selected_icon.library && item.selected_icon.value ? item.selected_icon.value.url : '' }"
+									data-iconLibrary="${ 'svg' !== item.selected_icon.library && item.selected_icon.value ? item.selected_icon.value : '' }"></div>`;
+								break;
 							case 'html':
-								item.field_label = false;
 								inputField = item.field_html;
 								break;
 
@@ -1650,7 +2434,7 @@ class Form extends Form_Base {
 							#>
 							<div class="{{ fieldGroupClasses }}">
 
-								<# if ( item.field_label ) { #>
+								<# if ( printLabel && item.field_label ) { #>
 									<label class="elementor-field-label" for="form_field_{{ i }}" {{{ labelVisibility }}}>{{{ item.field_label }}}</label>
 								<# } #>
 
@@ -1661,7 +2445,7 @@ class Form extends Form_Base {
 					}
 
 
-					var buttonClasses = 'elementor-field-group elementor-column elementor-field-type-submit';
+					var buttonClasses = 'elementor-field-group elementor-column elementor-field-type-submit e-form__buttons';
 
 					buttonClasses += ' elementor-col-' + ( ( '' !== settings.button_width ) ? settings.button_width : '100' );
 
@@ -1688,7 +2472,7 @@ class Form extends Form_Base {
 										<# } else { #>
 											<i class="{{ settings.button_icon }}" aria-hidden="true"></i>
 										<# } #>
-										<span class="elementor-screen-only"><?php echo $submit_text; ?></span>
+										<span class="elementor-screen-only"><?php echo esc_html__( 'Submit', 'elementor-pro' ); ?></span>
 									</span>
 								<# } #>
 
@@ -1701,5 +2485,9 @@ class Form extends Form_Base {
 			</div>
 		</form>
 		<?php
+	}
+
+	public function get_group_name() {
+		return 'forms';
 	}
 }

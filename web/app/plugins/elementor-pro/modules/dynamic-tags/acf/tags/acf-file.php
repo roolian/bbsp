@@ -1,8 +1,6 @@
 <?php
 namespace ElementorPro\Modules\DynamicTags\ACF\Tags;
 
-use Elementor\Controls_Manager;
-use Elementor\Core\DynamicTags\Data_Tag;
 use ElementorPro\Modules\DynamicTags\ACF\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,7 +14,7 @@ class ACF_File extends ACF_Image {
 	}
 
 	public function get_title() {
-		return __( 'ACF', 'elementor-pro' ) . ' ' . __( 'File Field', 'elementor-pro' );
+		return esc_html__( 'ACF', 'elementor-pro' ) . ' ' . esc_html__( 'File Field', 'elementor-pro' );
 	}
 
 	public function get_categories() {
@@ -25,7 +23,7 @@ class ACF_File extends ACF_Image {
 		];
 	}
 
-	protected function get_supported_fields() {
+	public function get_supported_fields() {
 		return [
 			'file',
 		];

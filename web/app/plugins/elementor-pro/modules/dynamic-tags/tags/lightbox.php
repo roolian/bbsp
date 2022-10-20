@@ -1,11 +1,11 @@
 <?php
 namespace ElementorPro\Modules\DynamicTags\Tags;
 
-use Elementor\Core\DynamicTags\Tag;
+use ElementorPro\Modules\DynamicTags\Tags\Base\Tag;
 use ElementorPro\Modules\DynamicTags\Module;
 use Elementor\Controls_Manager;
 use Elementor\Embed;
-use ElementorPro\Modules\LinkActions\Module as LinkActionsModule;
+use ElementorPro\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -19,7 +19,7 @@ class Lightbox extends Tag {
 	}
 
 	public function get_title() {
-		return __( 'Lightbox', 'elementor-pro' );
+		return esc_html__( 'Lightbox', 'elementor-pro' );
 	}
 
 	public function get_group() {
@@ -33,20 +33,19 @@ class Lightbox extends Tag {
 	// Keep Empty to avoid default advanced section
 	protected function register_advanced_section() {}
 
-	public function _register_controls() {
+	public function register_controls() {
 		$this->add_control(
 			'type',
 			[
-				'label' => __( 'Type', 'elementor-pro' ),
+				'label' => esc_html__( 'Type', 'elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'options' => [
 					'video' => [
-						'title' => __( 'Video', 'elementor-pro' ),
+						'title' => esc_html__( 'Video', 'elementor-pro' ),
 						'icon' => 'eicon-video-camera',
 					],
 					'image' => [
-						'title' => __( 'Image', 'elementor-pro' ),
+						'title' => esc_html__( 'Image', 'elementor-pro' ),
 						'icon' => 'eicon-image-bold',
 					],
 				],
@@ -56,7 +55,7 @@ class Lightbox extends Tag {
 		$this->add_control(
 			'image',
 			[
-				'label' => __( 'Image', 'elementor-pro' ),
+				'label' => esc_html__( 'Image', 'elementor-pro' ),
 				'type' => Controls_Manager::MEDIA,
 				'condition' => [
 					'type' => 'image',
@@ -67,7 +66,7 @@ class Lightbox extends Tag {
 		$this->add_control(
 			'video_url',
 			[
-				'label' => __( 'Video URL', 'elementor-pro' ),
+				'label' => esc_html__( 'Video URL', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
 				'condition' => [
@@ -78,10 +77,19 @@ class Lightbox extends Tag {
 	}
 
 	private function get_image_settings( $settings ) {
-		return [
+		$image_settings = [
 			'url' => $settings['image']['url'],
 			'type' => 'image',
 		];
+
+		$image_id = $settings['image']['id'];
+
+		if ( $image_id ) {
+			$lightbox_image_attributes = Plugin::elementor()->images_manager->get_lightbox_image_attributes( $image_id );
+			$image_settings = array_merge( $image_settings, $lightbox_image_attributes );
+		}
+
+		return $image_settings;
 	}
 
 	private function get_video_settings( $settings ) {
@@ -125,6 +133,7 @@ class Lightbox extends Tag {
 			return;
 		}
 
-		echo LinkActionsModule::create_action_url( 'lightbox', $value );
+		// PHPCS - the method Plugin::elementor()->frontend->create_action_hash is safe.
+		echo Plugin::elementor()->frontend->create_action_hash( 'lightbox', $value ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }

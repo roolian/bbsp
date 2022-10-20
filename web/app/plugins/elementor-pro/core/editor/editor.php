@@ -31,37 +31,31 @@ class Editor extends App {
 		add_action( 'elementor/editor/init', [ $this, 'on_elementor_editor_init' ] );
 		add_action( 'elementor/editor/after_enqueue_styles', [ $this, 'enqueue_editor_styles' ] );
 		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'enqueue_editor_scripts' ] );
+
+		add_filter( 'elementor/editor/localize_settings', [ $this, 'localize_settings' ] );
 	}
 
 	public function get_init_settings() {
-		$is_license_active = false;
-
-		$license_key = License_Admin::get_license_key();
-
-		if ( ! empty( $license_key ) ) {
-			$license_data = License_API::get_license_data();
-
-			if ( ! empty( $license_data['license'] ) && License_API::STATUS_VALID === $license_data['license'] ) {
-				$is_license_active = true;
-			}
-		}
-
 		$settings = [
-			'i18n' => [],
-			'isActive' => $is_license_active,
+			'isActive' => License_API::is_license_active(),
 			'urls' => [
 				'modules' => ELEMENTOR_PRO_MODULES_URL,
+				'connect' => License_Admin::get_url(),
 			],
 		];
 
 		/**
-		 * Editor settings.
+		 * Localized editor settings.
 		 *
-		 * Filters the editor settings.
+		 * Filters the localized settings used in the editor as JavaScript variables.
+		 *
+		 * By default Elementor Pro passes some editor settings to be consumed as JavaScript
+		 * variables. This hook allows developers to add extra settings values to be consumed
+		 * using JavaScript in the editor.
 		 *
 		 * @since 1.0.0
 		 *
-		 * @param array $settings settings.
+		 * @param array $settings Localized editor settings.
 		 */
 		$settings = apply_filters( 'elementor_pro/editor/localize_settings', $settings );
 
@@ -85,18 +79,43 @@ class Editor extends App {
 			$this->get_js_assets_url( 'editor' ),
 			[
 				'backbone-marionette',
-				'elementor-common-modules',
+				'elementor-common',
 				'elementor-editor-modules',
+				'elementor-editor-document',
 			],
 			ELEMENTOR_PRO_VERSION,
 			true
 		);
 
+		wp_set_script_translations( 'elementor-pro', 'elementor-pro' );
+
 		$this->print_config( 'elementor-pro' );
+	}
+
+	public function localize_settings( array $settings ) {
+		$settings['elementPromotionURL'] = Plugin::instance()->license_admin->get_connect_url([
+			'utm_source' => '%s', // Will be replaced in the frontend to the widget name
+			'utm_medium' => 'wp-dash',
+			'utm_campaign' => 'connect-and-activate-license',
+			'utm_content' => 'editor-widget-promotion',
+		]);
+
+		$settings['dynamicPromotionURL'] = Plugin::instance()->license_admin->get_connect_url( [
+			'utm_source' => '%s', // Will be replaced in the frontend to the control name
+			'utm_medium' => 'wp-dash',
+			'utm_campaign' => 'connect-and-activate-license',
+			'utm_content' => 'editor-dynamic-promotion',
+		] );
+
+		return $settings;
 	}
 
 	public function on_elementor_init() {
 		Plugin::elementor()->editor->notice_bar = new Notice_Bar();
+
+		if ( isset( Plugin::elementor()->editor->promotion ) ) {
+			Plugin::elementor()->editor->promotion = new Promotion();
+		}
 	}
 
 	public function on_elementor_editor_init() {

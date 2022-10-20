@@ -2,7 +2,7 @@
 namespace ElementorPro\Modules\DynamicTags\Toolset\Tags;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\DynamicTags\Tag;
+use ElementorPro\Modules\DynamicTags\Tags\Base\Tag;
 use ElementorPro\Modules\DynamicTags\Toolset\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -22,11 +22,11 @@ abstract class Toolset_Base extends Tag {
 		];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->add_control(
 			'key',
 			[
-				'label' => __( 'Key', 'elementor-pro' ),
+				'label' => esc_html__( 'Key', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'groups' => Module::get_control_options( $this->get_supported_fields() ),
 			]

@@ -45,10 +45,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <script type="text/template" id="tmpl-elementor-theme-builder-conditions-view">
 	<div class="elementor-template-library-blank-icon">
-		<img src="<?php echo ELEMENTOR_PRO_MODULES_URL; ?>theme-builder/assets/images/conditions-tab.svg">
+		<img src="<?php echo ELEMENTOR_PRO_MODULES_URL; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>theme-builder/assets/images/conditions-tab.svg">
 	</div>
-	<div class="elementor-template-library-blank-title">{{{ elementorPro.translate( 'conditions_title' ) }}}</div>
-	<div class="elementor-template-library-blank-message">{{{ elementorPro.translate( 'conditions_description' ) }}}</div>
+	<div class="elementor-template-library-blank-title">
+		{{ sprintf(
+			'<?php echo esc_html__( 'Where Do You Want to Display Your %s?', 'elementor-pro' ); ?>',
+			elementor.config.document.post_type_title
+		) }}
+	</div>
+	<div class="elementor-template-library-blank-message">
+		{{ sprintf(
+			'<?php echo esc_html__( 'Set the conditions that determine where your %s is used throughout your site.', 'elementor-pro' ); ?>',
+			elementor.config.document.post_type_title
+		) }}
+
+		<br />
+
+		<?php echo esc_html__( "For example, choose 'Entire Site' to display the template across your site.", 'elementor-pro' ); ?>
+	</div>
 	<div id="elementor-theme-builder-conditions">
 		<div id="elementor-theme-builder-conditions-controls"></div>
 	</div>
@@ -69,11 +83,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</span>
 	<div class="elementor-panel-footer-sub-menu-wrapper">
 		<div class="elementor-panel-footer-sub-menu">
-			<div id="elementor-panel-footer-theme-builder-button-preview-settings" class="elementor-panel-footer-sub-menu-item">
+			<div onclick="$e.run( 'theme-builder-publish/preview-settings' );" id="elementor-panel-footer-theme-builder-button-preview-settings" class="elementor-panel-footer-sub-menu-item">
 				<i class="eicon-wrench" aria-hidden="true"></i>
 				<span class="elementor-title"><?php esc_html_e( 'Settings', 'elementor-pro' ); ?></span>
 			</div>
-			<div id="elementor-panel-footer-theme-builder-button-open-preview" class="elementor-panel-footer-sub-menu-item">
+			<div onclick="$e.run( 'editor/documents/preview', { id: elementor.documents.getCurrent().id, force: true } );" id="elementor-panel-footer-theme-builder-button-open-preview" class="elementor-panel-footer-sub-menu-item">
 				<i class="eicon-editor-external-link" aria-hidden="true"></i>
 				<span class="elementor-title"><?php esc_html_e( 'Preview', 'elementor-pro' ); ?></span>
 			</div>
