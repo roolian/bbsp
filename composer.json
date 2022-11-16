@@ -60,7 +60,8 @@
         "wpackagist-plugin/easy-wp-smtp": "^1.4",
         "wpackagist-plugin/polylang": "^3.1",
         "wpackagist-plugin/connect-polylang-elementor": "^2.0",
-        "wpackagist-plugin/wp-health": "^2.5"
+        "wpackagist-plugin/wp-health": "^2.5",
+        "wp-media/wp-rocket": "v3.12.3.1"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.0.2",
