@@ -97,6 +97,7 @@ Config::define('DISALLOW_FILE_MODS', env('DISALLOW_FILE_MODS') ?: true);
 if(env('WP_ROCKET_EMAIL') && env('WP_ROCKET_KEY')){
     Config::define('WP_ROCKET_EMAIL', env('WP_ROCKET_EMAIL'));
     Config::define('WP_ROCKET_KEY', env('WP_ROCKET_KEY'));
+    Config::define( 'WP_CACHE', true );
 }
 
 /**
