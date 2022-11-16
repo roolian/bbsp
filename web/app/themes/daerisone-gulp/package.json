@@ -34,6 +34,6 @@
     "json-file": "^0.1.0",
     "scrollmagic": "^2.0.8",
     "slick-carousel": "^1.8.1",
-    "swiper": "^4.5.1"
+    "swiper": "^6.5.1"
   }
 }
