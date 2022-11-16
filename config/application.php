@@ -87,12 +87,12 @@ Config::define('NONCE_SALT', env('NONCE_SALT'));
 /**
  * Custom Settings
  */
-Config::define('AUTOMATIC_UPDATER_DISABLED', true);
+Config::define('AUTOMATIC_UPDATER_DISABLED', env('AUTOMATIC_UPDATER_DISABLED') ?: true);
 Config::define('DISABLE_WP_CRON', env('DISABLE_WP_CRON') ?: false);
 // Disable the plugin and theme file editor in the admin
-Config::define('DISALLOW_FILE_EDIT', true);
+Config::define('DISALLOW_FILE_EDIT', env('DISALLOW_FILE_EDIT') ?: true);
 // Disable plugin and theme updates and installation from the admin
-Config::define('DISALLOW_FILE_MODS', true);
+Config::define('DISALLOW_FILE_MODS', env('DISALLOW_FILE_MODS') ?: true);
 
 /**
  * Debugging Settings
