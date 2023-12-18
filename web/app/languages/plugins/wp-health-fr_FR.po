@@ -1,0 +1,765 @@
+# Translation of Plugins - WP Umbrella: Manage Multiple Sites &#8211; Ideal For WordPress Maintenance - Stable (latest release) in French (France)
+# This file is distributed under the same license as the Plugins - WP Umbrella: Manage Multiple Sites &#8211; Ideal For WordPress Maintenance - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-01-05 08:50:57+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.4\n"
+"Language: fr\n"
+"Project-Id-Version: Plugins - WP Umbrella: Manage Multiple Sites &#8211; Ideal For WordPress Maintenance - Stable (latest release)\n"
+
+#: src/Services/WhiteLabel.php:20
+msgid "Now go to WP Umbrella’s application to make the most of our features (automatic backups, uptime monitoring, safe update, php error monitoring, maintenance report, etc).  You can white label the plugin at any moment!"
+msgstr "Rendez-vous maintenant sur l’application WP Umbrella pour tirer le meilleur parti de nos fonctionnalités (sauvegardes automatiques, surveillance de la disponibilité, mise à jour sécurisée, surveillance des erreurs PHP, rapport de maintenance, etc.). Vous pouvez mettre l’extension en marque blanche à tout moment !"
+
+#. Author of the plugin
+msgid "WP Umbrella - Backup & Manage WordPress"
+msgstr "WP Umbrella - Backup & Manage WordPress"
+
+#: src/Actions/Admin/Ajax/TryUpdatePlugin.php:53
+msgid "Invalid request."
+msgstr "Requête non valide."
+
+#: src/Actions/Admin/Ajax/TryUpdatePlugin.php:40
+msgid "Admin request nonce check failed"
+msgstr "Échec de la vérification du nonce de la requête Admin"
+
+#: src/Actions/Admin/Ajax/TryUpdatePlugin.php:30
+msgid "Required parameters are missing"
+msgstr "Des paramètres obligatoires sont manquants"
+
+#: src/Services/WhiteLabel.php:19
+msgid "Helping Agencies and Freelancers with their WordPress Maintenance Business 🚀"
+msgstr "Aider les agences et les freelances dans leur activité de maintenance WordPress 🚀"
+
+#: src/Services/Manage/ManagePlugin.php:53
+#: src/Services/Manage/ManagePlugin.php:189
+msgid "Plugin %s not exist"
+msgstr "L’extension %s n’existe pas"
+
+#: src/Actions/Admin/PrepareErrorHandler.php:88
+msgid "An error occurred while trying to create a mu-plugin. Your host seems to restrict write permissions. Please contact: support@wp-umbrella.com"
+msgstr "Une erreur s’est produite lors de la tentative de création d’un extension indispensable. Votre hébergeur semble restreindre les droits d’écriture. Veuillez contacter : support@wp-umbrella.com"
+
+#. translators: %d refers to the total number of taskes completed
+#: thirds/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_Scheduler_command.php:183
+msgid "%d scheduled task completed."
+msgid_plural "%d scheduled tasks completed."
+msgstr[0] "%d tâche planifiée terminée."
+msgstr[1] "%d tâches planifiées terminées."
+
+#. translators: %s refers to the exception error message
+#: thirds/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_Scheduler_command.php:166
+msgid "There was an error running the action scheduler: %s"
+msgstr "Une erreur est survenue lors de l’exécution du planificateur d’actions : %s"
+
+#. translators: %d refers to the total number of batches executed
+#: thirds/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_Scheduler_command.php:147
+msgid "%d batch executed."
+msgid_plural "%d batches executed."
+msgstr[0] "%d lot exécuté."
+msgstr[1] "%d lots exécutés."
+
+#. translators: %d refers to how many scheduled taks were found to run
+#: thirds/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_Scheduler_command.php:130
+msgid "Found %d scheduled task"
+msgid_plural "Found %d scheduled tasks"
+msgstr[0] "Trouvé %d tâche planifiée"
+msgstr[1] "Trouvé %d tâches planifiées"
+
+#. translators: 1: action ID 2: exception message
+#: thirds/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:170
+msgid "Error processing action %1$s: %2$s"
+msgstr "Action de traitement d’erreur %1$s : %2$s"
+
+#. translators: 1: action ID 2: hook name
+#: thirds/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:155
+msgid "Completed processing action %1$s with hook: %2$s"
+msgstr "Action de traitement %1$s terminée avec le crochet : %2$s"
+
+#. translators: %s refers to the action ID
+#: thirds/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:138
+msgid "Started processing action %s"
+msgstr "Traitement de l’action %s commencé"
+
+#: thirds/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:113
+msgid "The claim has been lost. Aborting current batch."
+msgstr "La demande a été perdue. Abandon du lot actuel."
+
+#. translators: %d: amount of actions
+#: thirds/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:93
+msgid "Running %d action"
+msgid_plural "Running %d actions"
+msgstr[0] "%d action en cours d’exécution"
+msgstr[1] "%d actions en cours d’exécution"
+
+#: thirds/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:61
+msgid "There are too many concurrent batches."
+msgstr "Il y a trop de lots simultanés."
+
+#: thirds/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:59
+msgid "There are too many concurrent batches, but the run is forced to continue."
+msgstr "Nombre de lots simultanés trop élevé, mais l’exécution est forcée de continuer."
+
+#. translators: %s php class name
+#: thirds/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:33
+#: thirds/action-scheduler/classes/WP_CLI/ProgressBar.php:47
+msgid "The %s class can only be run within WP CLI."
+msgstr "La classe %s peut uniquement être exécutée avec WP CLI."
+
+#. translators: 1: source action ID 2: source store class 3: destination action
+#. ID 4: destination store class
+#: thirds/action-scheduler/classes/migration/Runner.php:107
+msgid "Migrated action with ID %1$d in %2$s to ID %3$d in %4$s"
+msgstr "Migration de l’action avec l’ID %1$d dans %2$s vers l’ID %3$d dans %4$s"
+
+#. translators: %d: amount of actions
+#: thirds/action-scheduler/classes/migration/Runner.php:82
+msgid "Migrating %d action"
+msgid_plural "Migrating %d actions"
+msgstr[0] "Migration d’%d action"
+msgstr[1] "Migration de %d actions"
+
+#: thirds/action-scheduler/classes/migration/Controller.php:162
+msgid "Action Scheduler migration in progress. The list of scheduled actions may be incomplete."
+msgstr "La migration de l’outil de planification d’actions est en cours. La liste des actions planifiées peut ne pas être complète."
+
+#: thirds/action-scheduler/classes/migration/Config.php:118
+msgid "Destination logger must be configured before running a migration"
+msgstr "L’outil de journalisation de destination doit être configuré avant d’exécuter une migration"
+
+#: thirds/action-scheduler/classes/migration/Config.php:96
+msgid "Destination store must be configured before running a migration"
+msgstr "Le stockage de destination doit être configuré avant d’effectuer une migration"
+
+#: thirds/action-scheduler/classes/migration/Config.php:74
+msgid "Source logger must be configured before running a migration"
+msgstr "La connexion à la source doit être configurée avant d’exécuter une migration"
+
+#: thirds/action-scheduler/classes/migration/Config.php:52
+msgid "Source store must be configured before running a migration"
+msgstr "Le stockage des sources doit être configuré avant d’effectuer une migration"
+
+#: thirds/action-scheduler/classes/migration/ActionMigrator.php:95
+msgid "Unable to remove source migrated action %s"
+msgstr "Impossible de retirer l’action source migrée %s"
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_TaxonomyRegistrar.php:14
+msgid "Action Group"
+msgstr "Groupe d’action"
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:42
+msgid "No actions found in trash"
+msgstr "Aucune action trouvée dans la corbeille"
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:41
+msgid "No actions found"
+msgstr "Aucune action trouvée"
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:40
+msgid "Search Scheduled Actions"
+msgstr "Rechercher des actions planifiées"
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:38
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:39
+msgid "View Action"
+msgstr "Voir l’action"
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:37
+msgid "New Scheduled Action"
+msgstr "Nouvelle action planifiée"
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:36
+msgid "Edit Scheduled Action"
+msgstr "Modifier l’action planifiée"
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:35
+msgid "Edit"
+msgstr "Modifier"
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:34
+msgid "Add New Scheduled Action"
+msgstr "Ajouter une nouvelle action planifiée"
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:33
+msgid "Add"
+msgstr "Ajouter"
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:32
+msgctxt "Admin menu name"
+msgid "Scheduled Actions"
+msgstr "Actions planifiées"
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:31
+msgid "Scheduled Action"
+msgstr "Action planifiée"
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:20
+msgid "Scheduled actions are hooks triggered on a cetain date and time."
+msgstr "Les actions planifiées sont des crochets déclenchés à une certaine date et à une certaine heure."
+
+#. translators: %s: count
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostStatusRegistrar.php:53
+msgid "In-Progress <span class=\"count\">(%s)</span>"
+msgid_plural "In-Progress <span class=\"count\">(%s)</span>"
+msgstr[0] "En progression <span class=\"count\">(%s)</span>"
+msgstr[1] "En progression <span class=\"count\">(%s)</span>"
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostStatusRegistrar.php:51
+msgctxt "post"
+msgid "In-Progress"
+msgstr "En progression"
+
+#. translators: %s: count
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostStatusRegistrar.php:38
+msgid "Failed <span class=\"count\">(%s)</span>"
+msgid_plural "Failed <span class=\"count\">(%s)</span>"
+msgstr[0] "Échoué <span class=\"count\">(%s)</span>"
+msgstr[1] "Échoués <span class=\"count\">(%s)</span>"
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostStatusRegistrar.php:36
+msgctxt "post"
+msgid "Failed"
+msgstr "Échec"
+
+#. translators: %s is the error message
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:1055
+msgid "%s Support for strings longer than this will be removed in a future version."
+msgstr "La prise en charge par %s de chaînes d’une longueur supérieure à cette valeur sera supprimée dans une version à venir."
+
+#. translators: %s: action ID
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:878
+msgid "Unable to mark failure on action %s. Database error."
+msgstr "Impossible de marquer l’échec de l’action %s. Erreur de la base de données."
+
+#. translators: %s: action ID
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:852
+msgid "Unable to unlock claim on action %s. Database error."
+msgstr "Impossible de déverrouiller la demande d’action %s. Erreur de la base de données."
+
+#. translators: %s: claim ID
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:824
+msgid "Unable to unlock claim %s. Database error."
+msgstr "Impossible de déverrouiller la demande %s. Erreur de la base de données."
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:318
+msgid "Invalid schedule. Cannot save action."
+msgstr "Planification non valide. Impossible d’enregistrer l’action."
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:101
+msgid "Unable to save action."
+msgstr "Impossible d’enregistrer l’action."
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1076
+msgid "Unknown status found for action."
+msgstr "État inconnu trouvé pour l’action."
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1074
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:904
+msgid "Invalid action ID. No status found."
+msgstr "ID d’action non valide. Aucun état trouvé."
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:864
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:696
+msgid "Unable to claim actions. Database error."
+msgstr "Impossible de demander des actions. Erreur de la base de données."
+
+#. translators: %s: group name
+#. translators: %s is the group name
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:844
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:717
+msgid "The group \"%s\" does not exist."
+msgstr "Le groupe « %s » n’existe pas."
+
+#. translators: %s: action ID
+#. translators: %s is the action ID
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:632
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:724
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:755
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1001
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1044
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:515
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:534
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:564
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:974
+msgid "Unidentified action %s"
+msgstr "Action %s non identifiée"
+
+#: src/Services/ActionScheduler/StoreRetrocompatibility.php:84
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:375
+msgid "Invalid value for select or count parameter. Cannot query actions."
+msgstr "Valeur du paramètre « select » ou « count » non valide. Impossible d’interroger les actions."
+
+#. translators: %s: error message
+#. translators: %s: action error message
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:118
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:49
+#: thirds/action-scheduler/classes/migration/ActionScheduler_DBStoreMigrator.php:44
+msgid "Error saving action: %s"
+msgstr "Erreur lors de l’enregistrement de l’action : %s"
+
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:110
+msgid "Database error."
+msgstr "Erreur de la base de données."
+
+#. translators: 1: next cleanup message 2: github issue URL
+#: thirds/action-scheduler/classes/ActionScheduler_WPCommentCleaner.php:108
+msgid "Action Scheduler has migrated data to custom tables; however, orphaned log entries exist in the WordPress Comments table. %1$s <a href=\"%2$s\">Learn more &raquo;</a>"
+msgstr "Le planificateur d’actions a migré les données dans des tableaux personnalisés. Il existe toutefois des entrées de journal orphelines dans le tableau de commentaires WordPress. %1$s <a href=\"%2$s\">En savoir plus »</a>"
+
+#. translators: %s: date interval
+#: thirds/action-scheduler/classes/ActionScheduler_WPCommentCleaner.php:103
+msgid "This data will be deleted in %s."
+msgstr "Ces données seront supprimées dans %s."
+
+#: thirds/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:126
+msgid "Newest Scheduled Date"
+msgstr "Date planifiée la plus récente"
+
+#: thirds/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:125
+msgid "Oldest Scheduled Date"
+msgstr "Date planifiée la plus ancienne"
+
+#: thirds/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:124
+msgid "Count"
+msgstr "Compteur"
+
+#: thirds/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:122
+msgid "Action Status"
+msgstr "État de l’action"
+
+#: thirds/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:118
+msgid "Data store:"
+msgstr "Stockage de données :"
+
+#: thirds/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:114
+msgid "Version:"
+msgstr "Version :"
+
+#: thirds/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:111
+msgid "This section shows details of Action Scheduler."
+msgstr "Cette section affiche les détails du planificateur d’actions."
+
+#: thirds/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:111
+msgid "Action Scheduler"
+msgstr "Planificateur d’actions"
+
+#: thirds/action-scheduler/classes/ActionScheduler_QueueRunner.php:215
+msgid "Every minute"
+msgstr "Toutes les minutes"
+
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:648
+msgid "Search hook, args and claim ID"
+msgstr "Rechercher des crochets, des paramètres et des ID de demande"
+
+#. translators: %s: date interval
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:488
+msgid " (%s)"
+msgstr " (%s)"
+
+#. translators: %s: date interval
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:485
+msgid " (%s ago)"
+msgstr " (il y a %s)"
+
+#. translators: 1: action HTML 2: action ID 3: error message
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:435
+msgid "Could not process change for action: \"%1$s\" (ID: %2$d). Error: %3$s"
+msgstr "Impossible de traiter les modifications de l’action suivante : « %1$s » (ID : %2$d). Erreur :  %3$s"
+
+#. translators: %s: action HTML
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:429
+msgid "Successfully processed change for action: %s"
+msgstr "Modification de l’action bien traitée : %s"
+
+#. translators: %s: action HTML
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:425
+msgid "Successfully canceled action: %s"
+msgstr "L’action a bien été annulée : %s"
+
+#. translators: %s: action HTML
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:421
+msgid "Successfully executed action: %s"
+msgstr "Action a bien été exécutée : %s"
+
+#. translators: %d: seconds
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:400
+msgid "The next queue will begin processing in approximately %d seconds."
+msgstr "Le traitement de la file d’attente suivante commencera dans environ %d secondes."
+
+#. translators: %s: process URL
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:397
+msgid "A new queue has begun processing. <a href=\"%s\">View actions in-progress &raquo;</a>"
+msgstr "Le traitement d’une nouvelle file d’attente a commencé. <a href=\"%s\">Voir les actions en cours »</a>"
+
+#. translators: %s: amount of claims
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:380
+msgid "Maximum simultaneous queues already in progress (%s queue). No additional queues will begin processing until the current queues are complete."
+msgid_plural "Maximum simultaneous queues already in progress (%s queues). No additional queues will begin processing until the current queues are complete."
+msgstr[0] "Nombre maximal de files d’attente simultanées déjà en cours (%s file d’attente). Aucune file d’attente supplémentaire ne commencera à être traitée tant que les files d’attente actuelles ne seront pas terminées."
+msgstr[1] "Nombre maximal de files d’attente simultanées déjà en cours (%s files d’attentes). Aucune file d’attente supplémentaire ne commencera à être traitée tant que les files d’attente actuelles ne seront pas terminées."
+
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:364
+msgid "It appears one or more database tables were missing. Attempting to re-create the missing table(s)."
+msgstr "Il semble qu’une ou plusieurs tables de la base de données étaient manquantes. Tentative de recréation des tables manquantes."
+
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:266
+msgid "Non-repeating"
+msgstr "Non répétitif"
+
+#. translators: %s: time interval
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:260
+msgid "Every %s"
+msgstr "Tous les %s"
+
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:224
+msgid "Now!"
+msgstr "Maintenant !"
+
+#. translators: %s: amount of time
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:174
+msgid "%s second"
+msgid_plural "%s seconds"
+msgstr[0] "%s seconde"
+msgstr[1] "%s secondes"
+
+#. translators: %s: amount of time
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:169
+msgid "%s minute"
+msgid_plural "%s minutes"
+msgstr[0] "%s minute"
+msgstr[1] "%s minutes"
+
+#. translators: %s: amount of time
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:164
+msgid "%s hour"
+msgid_plural "%s hours"
+msgstr[0] "%s heure"
+msgstr[1] "%s heures"
+
+#. translators: %s: amount of time
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:159
+msgid "%s day"
+msgid_plural "%s days"
+msgstr[0] "%s jour"
+msgstr[1] "%s jours"
+
+#. translators: %s: amount of time
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:154
+msgid "%s week"
+msgid_plural "%s weeks"
+msgstr[0] "%s semaine"
+msgstr[1] "%s semaines"
+
+#. translators: %s: amount of time
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:149
+msgid "%s month"
+msgid_plural "%s months"
+msgstr[0] "%s mois"
+msgstr[1] "%s mois"
+
+#. translators: %s: amount of time
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:144
+msgid "%s year"
+msgid_plural "%s years"
+msgstr[0] "%s année"
+msgstr[1] "%s années"
+
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:134
+msgid "Cancel the action now to avoid it being run in future"
+msgstr "Annuler l’action maintenant pour éviter son exécution ultérieure"
+
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:130
+msgid "Process the action now as if it were run as part of a queue"
+msgstr "Traiter l’action maintenant comme si elle était exécutée dans le cadre d’une file d’attente"
+
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:129
+msgid "Run"
+msgstr "Démarrer"
+
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:122
+msgid "Claim ID"
+msgstr "ID de demande"
+
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:101
+msgid "Scheduled Date"
+msgstr "Date planifiée"
+
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:92
+msgid "Delete"
+msgstr "Supprimer"
+
+#. translators: 1: action ID 2: arguments
+#: thirds/action-scheduler/classes/ActionScheduler_InvalidActionException.php:40
+msgid "Action [%1$s] has invalid arguments. It cannot be JSON decoded to an array. $args = %2$s"
+msgstr "L’action [%1$s] comporte des arguments non valides. Elle ne peut pas être un JSON décodé dans un tableau. $args = %2$s"
+
+#. translators: 1: action ID 2: schedule
+#: thirds/action-scheduler/classes/ActionScheduler_InvalidActionException.php:21
+msgid "Action [%1$s] has an invalid schedule: %2$s"
+msgstr "La planification de l’action [%1$s] n’est pas valide : %2$s"
+
+#: thirds/action-scheduler/classes/ActionScheduler_DataController.php:137
+msgid "Attempting to reduce used memory..."
+msgstr "Tentative de réduction de la mémoire utilisée…"
+
+#. translators: %d: amount of time
+#: thirds/action-scheduler/classes/ActionScheduler_DataController.php:133
+msgid "Stopped the insanity for %d second"
+msgid_plural "Stopped the insanity for %d seconds"
+msgstr[0] "Mis en pause pendant %d seconde"
+msgstr[1] "Mis en pause pendant %d secondes"
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:247
+msgid "Activity log for the action."
+msgstr "Journal d’activité de l’action."
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:247
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:102
+msgid "Log"
+msgstr "Journal"
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:246
+msgid "The date/time the action is/was scheduled to run."
+msgstr "Date/heure d’exécution programmée de l’action."
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:246
+msgid "Scheduled"
+msgstr "Planifié"
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:245
+msgid "The action's schedule frequency."
+msgstr "Fréquence de planification de l’action."
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:245
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:100
+msgid "Recurrence"
+msgstr "Récurrence"
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:244
+msgid "Optional action group."
+msgstr "Groupe d’actions facultatives."
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:244
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:99
+msgid "Group"
+msgstr "Groupe"
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:243
+msgid "Optional data array passed to the action hook."
+msgstr "Ensemble de données facultatives transmises au crochet d’action."
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:243
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:98
+msgid "Arguments"
+msgstr "Arguments"
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:242
+msgid "Action statuses are Pending, Complete, Canceled, Failed"
+msgstr "État des actions : En attente, Terminée, Annulée, Échouée"
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:242
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:97
+msgid "Status"
+msgstr "État"
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:241
+msgid "Name of the action hook that will be triggered."
+msgstr "Nom du crochet d’action qui sera déclenché."
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:241
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:96
+msgid "Hook"
+msgstr "Crochet d’action"
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:239
+msgid "Scheduled Action Columns"
+msgstr "Colonnes des actions planifiées"
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:237
+msgid "Columns"
+msgstr "Colonnes"
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:229
+msgid "Action Scheduler is a scalable, traceable job queue for background processing large sets of actions. Action Scheduler works by triggering an action hook to run at some time in the future. Scheduled actions can also be scheduled to run on a recurring schedule."
+msgstr "Le planificateur d’actions est une file d’attente de tâches évolutive et traçable dédié au traitement en arrière-plan d’importants ensembles d’actions. Le planificateur d’action fonctionne en déclenchant l’exécution d’un crochet d’action ultérieurement. Il est également possible d’exécuter les actions planifiées suivant une programmation récurrente."
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:227
+msgid "About Action Scheduler %s"
+msgstr "À propos du planificateur d’actions %s"
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:225
+msgid "About"
+msgstr "À propos"
+
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:60
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:75
+#: thirds/action-scheduler/classes/ActionScheduler_AdminView.php:76
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:89
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:19
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:30
+msgid "Scheduled Actions"
+msgstr "Actions planifiées"
+
+#: thirds/action-scheduler/classes/ActionScheduler_ActionFactory.php:226
+msgid "Invalid action - must be a recurring action."
+msgstr "Action non valide - Ce doit être une action récurrente."
+
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Store.php:409
+msgid "Canceled"
+msgstr "Annulé"
+
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Store.php:408
+msgid "Failed"
+msgstr "Échoué"
+
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Store.php:407
+msgid "In-progress"
+msgstr "En progression"
+
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Store.php:406
+msgid "Pending"
+msgstr "En attente"
+
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Store.php:405
+msgid "Complete"
+msgstr "Terminé"
+
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Store.php:329
+msgid "ActionScheduler_Action::$args too long. To ensure the args column can be indexed, action args should not be more than %d characters when encoded as JSON."
+msgstr "Valeur trop longue pour « ActionScheduler_Action::$args ». Pour garantir l’indexation de la colonne des arguments, les arguments d’action ne doivent pas comprendre plus de %d caractères lors de l’encodage au format JSON."
+
+#. translators: %s: exception message
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:156
+msgid "There was a failure scheduling the next instance of this action: %s"
+msgstr "Une défaillance est survenue lors de la planification de l’instance suivante de cette action : %s"
+
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:148
+msgid "There was a failure fetching this action"
+msgstr "Défaillance lors de la récupération de l’action."
+
+#. translators: %s: exception message
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:146
+msgid "There was a failure fetching this action: %s"
+msgstr "Une défaillance est survenue lors de la récupération de cette action : %s"
+
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:131
+msgid "action ignored"
+msgstr "action ignorée"
+
+#. translators: %s: context
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:129
+msgid "action ignored via %s"
+msgstr "action ignorée via %s"
+
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:123
+msgid "action reset"
+msgstr "réinitialisation de l’action"
+
+#. translators: 1: error message 2: filename 3: line
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:118
+msgid "unexpected shutdown: PHP Fatal error %1$s in %2$s on line %3$s"
+msgstr "arrêt inattendu : erreur fatale PHP %1$s dans %2$s à la ligne %3$s"
+
+#. translators: %s: exception message
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:105
+msgid "action failed: %s"
+msgstr "échec de l’action : %s"
+
+#. translators: 1: context 2: exception message
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:102
+msgid "action failed via %1$s: %2$s"
+msgstr "échec de l’action via %1$s : %2$s"
+
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:94
+msgid "action complete"
+msgstr "action terminée"
+
+#. translators: %s: context
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:92
+msgid "action complete via %s"
+msgstr "action terminée via %s"
+
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:84
+msgid "action started"
+msgstr "action commencée"
+
+#. translators: %s: context
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:82
+msgid "action started via %s"
+msgstr "action commencée via %s"
+
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:76
+#: thirds/action-scheduler/classes/data-stores/ActionScheduler_DBLogger.php:142
+msgid "action canceled"
+msgstr "action annulée"
+
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:72
+msgid "action created"
+msgstr "action créée"
+
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Abstract_ListTable.php:755
+msgid "Search"
+msgstr "Rechercher"
+
+#. translators: %s: search query
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Abstract_ListTable.php:650
+msgid "Search results for \"%s\""
+msgstr "Résultats de recherche pour « %s »"
+
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler_Abstract_ListTable.php:523
+msgid "Filter"
+msgstr "Filtre"
+
+#: thirds/action-scheduler/classes/abstracts/ActionScheduler.php:195
+msgid "%s() was called before the Action Scheduler data store was initialized"
+msgstr "%s() a été appelé avant que les données de Planification d’Actions soient initialisées"
+
+#. Description of the plugin
+#: src/Services/WhiteLabel.php:15
+msgid "WP Umbrella is the ultimate all-in-one solution to manage, maintain and monitor one, or multiple WordPress websites."
+msgstr "WP Umbrella est la solution tout-en-un ultime pour infogérer et surveiller plusieurs sites WordPress."
+
+#: src/Actions/Admin/PrepareErrorHandler.php:80
+msgid "We have detected that it is impossible to write to your \"mu-plugins\" folder in your installation. In order for us to work properly, you need to change the rights to this folder. You can contact us at support for more information: support@wp-umbrella.com"
+msgstr "Nous avons détecté qu’il est impossible d’écrire dans le dossier \"mu-plugins\" de votre installation. Pour que notre extension puisse fonctionner correctement, vous devez modifier les droits de ce dossier. Vous pouvez contacter notre support pour plus d’informations : support@wp-umbrella.com"
+
+#: thirds/action-scheduler/classes/ActionScheduler_ListTable.php:133
+msgid "Cancel"
+msgstr "Annuler"
+
+#. Author URI of the plugin
+msgid "https://wp-umbrella.com/"
+msgstr "https://wp-umbrella.com/fr/"
+
+#. Plugin Name of the plugin
+#: src/Services/WhiteLabel.php:14
+msgid "WP Umbrella"
+msgstr "WP Umbrella"
+
+#: src/Actions/Admin/PrepareErrorHandler.php:95
+msgid "An error was caused when WP Umbrella attempted to create a file in your directory mu-plugins. Please contact: support@wp-umbrella.com"
+msgstr "Une erreur est survenue lorsque WP Umbrella a tenté de créer un fichier dans votre répertoire mu-plugins. Veuillez contacter support@wp-umbrella.com."
+
+#: src/Actions/Admin/WhiteLabel.php:109 templates/admin/pages/settings.php:16
+msgid "Settings"
+msgstr "Réglages"
+
+#. translators: 1 HTML Tag, 2 HTML Tag
+#: templates/admin/notices/no-configuration.php:12
+msgid "WP Umbrella is installed but not configured yet. %s Go to the settings.%s It only takes 1 minute! "
+msgstr "WP Umbrella est installé mais pas encore configuré. %s Allez dans les réglages.%s Cela ne prend qu’une minute ! "
+
+#. translators: 1 HTML Tag, 2 HTML Tag
+#: templates/admin/notices/no-curl.php:12
+msgid "WP Umbrella: You need to activate cURL. If you need help, just ask us directly at support@wp-umbrella.com"
+msgstr "WP Umbrella : vous devez activer cURL. Si vous avez besoin d’aide, demandez-nous directement via support@wp-umbrella.com"
+
+#. translators: 1 is a plugin name, 2 is WP Umbrella version, 3 is current php
+#. version.
+#: templates/admin/notices/php-min.php:12
+msgid "%1$s  requires PHP %2$s minimum, your website is actually running version %3$s."
+msgstr "%1$s nécessite PHP %2$s minimum, votre site utilise actuellement la version %3$s."

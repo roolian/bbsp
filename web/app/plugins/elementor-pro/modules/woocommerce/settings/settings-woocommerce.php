@@ -130,6 +130,19 @@ class Settings_Woocommerce extends Tab_Base {
 		);
 
 		$this->add_control(
+			'woocommerce_shop_page_id',
+			[
+				'label' => esc_html__( 'Shop', 'elementor-pro' ),
+				'type' => QueryModule::QUERY_CONTROL_ID,
+				'select2options' => [
+					'placeholder' => esc_html__( 'Select a page', 'elementor-pro' ),
+				],
+				'autocomplete' => $autocomplete,
+				'default' => get_option( 'woocommerce_shop_page_id' ),
+			]
+		);
+
+		$this->add_control(
 			'woocommerce_pages_notice',
 			[
 				'type' => Controls_Manager::RAW_HTML,
@@ -453,7 +466,6 @@ class Settings_Woocommerce extends Tab_Base {
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => $prefix . '_message_text_shadow',
-				'label' => esc_html__( 'Text Shadow', 'elementor-pro' ),
 				'selector' => $selectors[ $prefix . '_message_text_shadow' ],
 			]
 		);
@@ -498,7 +510,6 @@ class Settings_Woocommerce extends Tab_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => $prefix . '_notice_box_box_shadow',
-				'label' => esc_html__( 'Box Shadow', 'elementor-pro' ),
 				'selector' => $selectors[ $prefix . '_notice_box_box_shadow' ],
 			]
 		);
@@ -516,7 +527,7 @@ class Settings_Woocommerce extends Tab_Base {
 			[
 				'label' => esc_html__( 'Border Radius', 'elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'selectors' => $selectors[ $prefix . '_notice_box_border_radius' ],
 			]
 		);
@@ -543,7 +554,6 @@ class Settings_Woocommerce extends Tab_Base {
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => $prefix . '_button_text_shadow',
-				'label' => esc_html__( 'Text Shadow', 'elementor-pro' ),
 				'selector' => $selectors[ $prefix . '_button_text_shadow' ],
 			]
 		);
@@ -575,7 +585,6 @@ class Settings_Woocommerce extends Tab_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => $prefix . '_buttons_normal_box_shadow',
-				'label' => esc_html__( 'Box Shadow', 'elementor-pro' ),
 				'selector' => $selectors[ $prefix . '_buttons_normal_box_shadow' ],
 			]
 		);
@@ -607,7 +616,6 @@ class Settings_Woocommerce extends Tab_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => $prefix . '_buttons_focus_box_shadow',
-				'label' => esc_html__( 'Box Shadow', 'elementor-pro' ),
 				'selector' => $selectors[ $prefix . '_buttons_focus_box_shadow' ],
 			]
 		);
@@ -666,7 +674,7 @@ class Settings_Woocommerce extends Tab_Base {
 			[
 				'label' => esc_html__( 'Width', 'elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
 				'selectors' => $selectors[ $prefix . '_buttons_border_width' ],
 				'condition' => [
 					$prefix . '_buttons_border_type!' => 'none',
@@ -691,7 +699,7 @@ class Settings_Woocommerce extends Tab_Base {
 			[
 				'label' => esc_html__( 'Border Radius', 'elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'selectors' => $selectors[ $prefix . '_buttons_border_radius' ],
 			]
 		);
@@ -701,7 +709,7 @@ class Settings_Woocommerce extends Tab_Base {
 			[
 				'label' => esc_html__( 'Padding', 'elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em' ],
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
 				'selectors' => $selectors[ $prefix . '_buttons_padding' ],
 			]
 		);
@@ -724,6 +732,7 @@ class Settings_Woocommerce extends Tab_Base {
 			'woocommerce_myaccount_page_id' => 'woocommerce_myaccount_page_id',
 			'woocommerce_terms_page_id' => 'woocommerce_terms_page_id',
 			'woocommerce_purchase_summary_page_id' => 'elementor_woocommerce_purchase_summary_page_id',
+			'woocommerce_shop_page_id' => 'woocommerce_shop_page_id',
 		];
 		foreach ( $ec_wc_key_mapping as $ec_key => $wc_key ) {
 			if ( array_key_exists( $ec_key, $data['settings'] ) ) {

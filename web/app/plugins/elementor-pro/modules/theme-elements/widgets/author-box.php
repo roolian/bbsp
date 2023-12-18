@@ -75,6 +75,20 @@ class Author_Box extends Base {
 			]
 		);
 
+		// Used by the WordPress `get_avatar_url()` function to set the image size.
+		$this->add_control(
+			'avatar_size',
+			[
+				'label' => esc_html__( 'Picture Size', 'elementor-pro' ),
+				'type' => Controls_Manager::NUMBER,
+				'default' => 300,
+				'condition' => [
+					'source!' => 'custom',
+					'show_avatar' => 'yes',
+				],
+			]
+		);
+
 		//This controls for custom source
 		$this->add_control(
 			'author_avatar',
@@ -196,6 +210,7 @@ class Author_Box extends Base {
 					'source!' => 'custom',
 				],
 				'render_type' => 'template',
+				'separator' => 'before',
 			]
 		);
 
@@ -340,6 +355,7 @@ class Author_Box extends Base {
 			[
 				'label' => esc_html__( 'Image Size', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', 'rem', 'custom' ],
 				'range' => [
 					'px' => [
 						'min' => 0,
@@ -357,6 +373,7 @@ class Author_Box extends Base {
 			[
 				'label' => esc_html__( 'Gap', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', 'rem', 'custom' ],
 				'range' => [
 					'px' => [
 						'min' => 0,
@@ -406,10 +423,13 @@ class Author_Box extends Base {
 			[
 				'label' => esc_html__( 'Border Width', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
 				'range' => [
 					'px' => [
-						'min' => 0,
 						'max' => 20,
+					],
+					'em' => [
+						'max' => 2,
 					],
 				],
 				'selectors' => [
@@ -426,6 +446,7 @@ class Author_Box extends Base {
 			[
 				'label' => esc_html__( 'Border Radius', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-author-box__avatar img' => 'border-radius: {{SIZE}}{{UNIT}}',
 				],
@@ -494,6 +515,7 @@ class Author_Box extends Base {
 			[
 				'label' => esc_html__( 'Gap', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', 'rem', 'custom' ],
 				'range' => [
 					'px' => [
 						'min' => 0,
@@ -545,6 +567,7 @@ class Author_Box extends Base {
 			[
 				'label' => esc_html__( 'Gap', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', 'rem', 'custom' ],
 				'range' => [
 					'px' => [
 						'min' => 0,
@@ -664,10 +687,13 @@ class Author_Box extends Base {
 			[
 				'label' => esc_html__( 'Border Width', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
 				'range' => [
 					'px' => [
-						'min' => 0,
 						'max' => 20,
+					],
+					'em' => [
+						'max' => 2,
 					],
 				],
 				'selectors' => [
@@ -685,6 +711,7 @@ class Author_Box extends Base {
 			[
 				'label' => esc_html__( 'Border Radius', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
 					'px' => [
 						'min' => 0,
@@ -706,7 +733,7 @@ class Author_Box extends Base {
 			[
 				'label' => esc_html__( 'Padding', 'elementor-pro' ),
 				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em' ],
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-author-box__button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -729,7 +756,7 @@ class Author_Box extends Base {
 
 		if ( 'current' === $settings['source'] ) {
 
-			$avatar_args['size'] = 300;
+			$avatar_args['size'] = $settings['avatar_size'];
 
 			$user_id = get_the_author_meta( 'ID' );
 			$author['avatar'] = get_avatar_url( $user_id, $avatar_args );
@@ -781,7 +808,7 @@ class Author_Box extends Base {
 			}
 
 			if ( ! empty( $link_url ) ) {
-				$this->add_render_attribute( 'author_link', 'href', $link_url );
+				$this->add_render_attribute( 'author_link', 'href', esc_url( $link_url ) );
 
 				if ( ! empty( $link_target ) ) {
 					$this->add_render_attribute( 'author_link', 'target', $link_target );
@@ -799,7 +826,7 @@ class Author_Box extends Base {
 		);
 
 		if ( $print_link ) {
-			$this->add_render_attribute( 'button', 'href', $author['posts_url'] );
+			$this->add_render_attribute( 'button', 'href', esc_url( $author['posts_url'] ) );
 		}
 
 		if ( $print_link && ! empty( $settings['button_hover_animation'] ) ) {
@@ -811,11 +838,14 @@ class Author_Box extends Base {
 		}
 
 		if ( $print_avatar ) {
-			$this->add_render_attribute( 'avatar', 'src', $author['avatar'] );
-
-			if ( ! empty( $author['display_name'] ) ) {
-				$this->add_render_attribute( 'avatar', 'alt', $author['display_name'] );
-			}
+			$this->add_render_attribute(
+				'avatar',
+				[
+					'src' => esc_url( $author['avatar'] ),
+					'alt' => ( ! empty( $author['display_name'] ) ) ? $author['display_name'] : esc_html__( 'Author picture', 'elementor-pro' ),
+					'loading' => 'lazy',
+				]
+			);
 		}
 
 		?>
