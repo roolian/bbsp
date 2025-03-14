@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d961a03f15da49f8e43741ac4fefb736",
+    "content-hash": "5d8607bb76504f855a9e3b651a38d794",
     "packages": [
         {
             "name": "berlindb/core",
@@ -1299,15 +1299,15 @@
         },
         {
             "name": "wpackagist-plugin/the-plus-addons-for-elementor-page-builder",
-            "version": "5.6.14",
+            "version": "6.2.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/the-plus-addons-for-elementor-page-builder/",
-                "reference": "tags/5.6.14"
+                "reference": "tags/6.2.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/the-plus-addons-for-elementor-page-builder.5.6.14.zip"
+                "url": "https://downloads.wordpress.org/plugin/the-plus-addons-for-elementor-page-builder.6.2.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1335,15 +1335,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "23.9",
+            "version": "24.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/23.9"
+                "reference": "tags/24.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.23.9.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.24.6.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
