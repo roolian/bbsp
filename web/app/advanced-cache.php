@@ -8,9 +8,9 @@ defined( 'ABSPATH' ) || exit;
 
 define( 'WP_ROCKET_ADVANCED_CACHE', true );
 
-$rocket_path        = '/var/www/bbsp.fr/web/app/plugins/wp-rocket/';
-$rocket_config_path = '/var/www/bbsp.fr/web/app/wp-rocket-config/';
-$rocket_cache_path  = '/var/www/bbsp.fr/web/app/cache/wp-rocket/';
+$rocket_path        = '/var/www/bbsp/web/app/plugins/wp-rocket/';
+$rocket_config_path = '/var/www/bbsp/web/app/wp-rocket-config/';
+$rocket_cache_path  = '/var/www/bbsp/web/app/cache/wp-rocket/';
 
 if (
 	version_compare( phpversion(), '7.3', '<' )
@@ -23,8 +23,8 @@ if (
 }
 
 
-if ( file_exists( '/var/www/bbsp.fr/web/app/plugins/wp-rocket/inc/classes/dependencies/mobiledetect/mobiledetectlib/Mobile_Detect.php' ) && ! class_exists( 'WP_Rocket_Mobile_Detect' ) ) {
-	include_once '/var/www/bbsp.fr/web/app/plugins/wp-rocket/inc/classes/dependencies/mobiledetect/mobiledetectlib/Mobile_Detect.php';
+if ( file_exists( '/var/www/bbsp/web/app/plugins/wp-rocket/inc/classes/dependencies/mobiledetect/mobiledetectlib/Mobile_Detect.php' ) && ! class_exists( 'WP_Rocket_Mobile_Detect' ) ) {
+	include_once '/var/www/bbsp/web/app/plugins/wp-rocket/inc/classes/dependencies/mobiledetect/mobiledetectlib/Mobile_Detect.php';
 }
 
 

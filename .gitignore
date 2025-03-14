@@ -5,6 +5,9 @@ web/app/plugins/*
 !web/app/plugins/elementor-pro
 web/app/mu-plugins/*/
 web/app/upgrade
+web/app/umbrella-upgrade-temp-backup
+web/app/wp-rocket-config
+web/app/cache
 web/app/uploads/*
 !web/app/uploads/.gitkeep
 

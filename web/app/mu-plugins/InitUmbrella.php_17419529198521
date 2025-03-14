@@ -32,10 +32,6 @@ if (file_exists(untrailingslashit(WP_PLUGIN_DIR) . '/wp-health/wp-umbrella-funct
 
             require_once $basename . '/vendor/autoload.php';
 
-			if(!class_exists("\WPUmbrella\Core\Kernel")){
-				return;
-			}
-
             Kernel::execute([
                 'file' => $basename . '/wp-health.php',
                 'slug' => 'wp-health',
